@@ -1,0 +1,515 @@
+[
+  {
+    "paper_id": "p0009",
+    "title": "How Faithful is your Synthetic Data? Sample-level Metrics for Evaluating and Auditing Generative Models",
+    "pdf_url": "https://proceedings.mlr.press/v162/alaa22a/alaa22a.pdf",
+    "figures": [
+      1,
+      2,
+      3
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "metric_explanation",
+    "design_inference": "Make an unfamiliar evaluation metric concrete with a small distribution example, then show the evaluation workflow. Keep metric definitions next to their visual encodings."
+  },
+  {
+    "paper_id": "p0011",
+    "title": "XAI for Transformers: Better Explanations through Conservative Propagation",
+    "pdf_url": "https://proceedings.mlr.press/v162/ali22a/ali22a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "module_detail",
+    "design_inference": "Use a focused module inset for the operation that changes. A complete transformer stack is unnecessary when the contribution concerns a local explanation rule."
+  },
+  {
+    "paper_id": "p0012",
+    "title": "Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval",
+    "pdf_url": "https://proceedings.mlr.press/v162/alon22a/alon22a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "worked_example",
+    "design_inference": "Carry a short text example from the retrieval mechanism into automaton construction so the abstract data structure remains understandable."
+  },
+  {
+    "paper_id": "p0020",
+    "title": "VariGrow: Variational Architecture Growing for Task-Agnostic Continual Learning based on Bayesian Novelty",
+    "pdf_url": "https://proceedings.mlr.press/v162/ardywibowo22a/ardywibowo22a.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "dynamic_architecture",
+    "design_inference": "Show an architecture-growth mechanism through a small number of expert components. Explicitly mark which structures are added over time."
+  },
+  {
+    "paper_id": "p0028",
+    "title": "From Noisy Prediction to True Label: Noisy Prediction Calibration via Generative Model",
+    "pdf_url": "https://proceedings.mlr.press/v162/bae22a/bae22a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "graph_semantics",
+    "design_inference": "Separate the conceptual correction from the probabilistic model. Distinct edge styles need a local key when they denote different processes."
+  },
+  {
+    "paper_id": "p0031",
+    "title": "A Hierarchical Transitive-Aligned Graph Kernel for Un-attributed Graphs",
+    "pdf_url": "https://proceedings.mlr.press/v162/bai22a/bai22a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "problem_to_representation",
+    "design_inference": "Connect recognizable input examples to graph abstraction before introducing hierarchical representations."
+  },
+  {
+    "paper_id": "p0033",
+    "title": "Gaussian Mixture Variational Autoencoder with Contrastive Learning for Multi-Label Classification",
+    "pdf_url": "https://proceedings.mlr.press/v162/bai22c/bai22c.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "typed_dataflow",
+    "design_inference": "Name the intermediate representations, including label embeddings, so readers can follow what each encoder consumes and produces."
+  },
+  {
+    "paper_id": "p0035",
+    "title": "Data Scaling Laws in NMT: The Effect of Noise and Architecture",
+    "pdf_url": "https://proceedings.mlr.press/v162/bansal22b/bansal22b.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "scaling_evidence",
+    "design_inference": "A scaling claim calls for curves across the relevant scale, not one isolated winning score. State what changed between training setups."
+  },
+  {
+    "paper_id": "p0038",
+    "title": "Generative Modeling for Multi-task Visual Learning",
+    "pdf_url": "https://proceedings.mlr.press/v162/bao22c/bao22c.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "concept_then_method",
+    "design_inference": "A shared-representation versus generative-learning comparison can motivate the proposal; a separate architecture figure can then expose its components."
+  },
+  {
+    "paper_id": "p0050",
+    "title": "Improving Language Models by Retrieving from Trillions of Tokens",
+    "pdf_url": "https://proceedings.mlr.press/v162/borgeaud22a/borgeaud22a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "evidence_then_architecture",
+    "design_inference": "RETRO separates the scaling result from an architecture explanation built around short chunks. Preserve that difference in explanatory depth between teaser and method."
+  },
+  {
+    "paper_id": "p0056",
+    "title": "IGLUE: A Benchmark for Transfer Learning across Modalities, Tasks, and Languages",
+    "pdf_url": "https://proceedings.mlr.press/v162/bugliarello22a/bugliarello22a.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "task_landscape",
+    "design_inference": "For benchmarks, use recognizable task examples to orient the reader. Do not force a method-superiority narrative onto a dataset contribution."
+  },
+  {
+    "paper_id": "p0087",
+    "title": "Structure-Aware Transformer for Graph Representation Learning",
+    "pdf_url": "https://proceedings.mlr.press/v162/chen22r/chen22r.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "counterexample_then_layer",
+    "design_inference": "Use a small pair of graphs to reveal the limitation of a representation, then show the proposed structure-aware layer with the same graph vocabulary."
+  },
+  {
+    "paper_id": "p0097",
+    "title": "Efficient Online ML API Selection for Multi-Label Classification Tasks",
+    "pdf_url": "https://proceedings.mlr.press/v162/chen22ad/chen22ad.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "hybrid_teaser",
+    "design_inference": "FrugalMCT explicitly pairs a workflow with an empirical performance panel, then expands the decision process in the method figure. This is a direct structural precedent for the requested teaser."
+  },
+  {
+    "paper_id": "p0116",
+    "title": "Recasting Self-Attention with Holographic Reduced Representations",
+    "pdf_url": "https://proceedings.mlr.press/v202/alam23a/alam23a.pdf",
+    "figures": [
+      1,
+      2,
+      3
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "overview_and_inset",
+    "design_inference": "A primary-result figure can lead, while a compact single-head inset explains the novel attention operation and a wider overview shows how it fits."
+  },
+  {
+    "paper_id": "p0136",
+    "title": "Half-Hop: A graph upsampling approach for slowing down message passing",
+    "pdf_url": "https://proceedings.mlr.press/v202/azabou23a/azabou23a.pdf",
+    "figures": [
+      1,
+      2,
+      3
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "graph_transformation",
+    "design_inference": "Show original and transformed graphs using the same node identities. Mechanism analysis and predictive performance should be distinguished."
+  },
+  {
+    "paper_id": "p0139",
+    "title": "Efficient Self-supervised Learning with Contextualized Target Representations for Vision, Speech and Language",
+    "pdf_url": "https://proceedings.mlr.press/v202/baevski23a/baevski23a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "teacher_student_and_efficiency",
+    "design_inference": "Use a concrete input to explain teacher targets and repeated masked student inputs. Efficiency plots should identify hardware, time units and matched evaluation conditions."
+  },
+  {
+    "paper_id": "p0152",
+    "title": "Neural Algorithmic Reasoning with Causal Regularisation",
+    "pdf_url": "https://proceedings.mlr.press/v202/bevilacqua23a/bevilacqua23a.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "example_and_causal_assumption",
+    "design_inference": "Pair a small algorithmic example with the causal assumption it motivates. Label assumptions as assumptions rather than drawing them as measured outcomes."
+  },
+  {
+    "paper_id": "p0301",
+    "title": "Is Retain Set All You Need in Machine Unlearning? Restoring Performance of Unlearned Models with Out-Of-Distribution Images",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00004.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "multi_level_method",
+    "design_inference": "A method overview can connect the overall scheme, a loss detail and the representation change. Keep the three levels visibly distinct."
+  },
+  {
+    "paper_id": "p0303",
+    "title": "4D Contrastive Superflows are Dense 3D Representation Learners",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00019.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "normalized_benchmark_comparison",
+    "design_inference": "Normalized scores across many datasets require an explicit reference and metric directions. For a new figure, direct aligned comparisons may communicate exact gaps better than an area-based summary."
+  },
+  {
+    "paper_id": "p0304",
+    "title": "ItTakesTwo: Leveraging Peer Representations for Semi-supervised LiDAR Semantic Segmentation",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00022.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "complementary_representations",
+    "design_inference": "Use the same scene and class vocabulary to reveal complementary errors across representations, then explain cross-supervision in the method."
+  },
+  {
+    "paper_id": "p0305",
+    "title": "Ponymation: Learning Articulated 3D Animal Motions from Unlabeled Online Videos",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00029.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "training_inference_boundary",
+    "design_inference": "Distinguish what the model learns from unlabeled videos from what it generates at inference. Reuse the same motion representation across both views."
+  },
+  {
+    "paper_id": "p0308",
+    "title": "Learning Camouflaged Object Detection from Noisy Pseudo Label",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00051.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "supervision_comparison",
+    "design_inference": "A supervision comparison must identify both the annotation type and the resulting output. Do not imply annotation budgets are equal when they are not."
+  },
+  {
+    "paper_id": "p0311",
+    "title": "Learn from the Learnt: Source-Free Active Domain Adaptation via Contrastive Sampling and Visual Persistence",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00073.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "hybrid_teaser",
+    "design_inference": "The caption explicitly pairs a problem-setting panel with a performance panel. Ratios shown schematically must be disclosed when they differ from actual annotation budgets."
+  },
+  {
+    "paper_id": "p0313",
+    "title": "Motion Mamba: Efficient and Long Sequence Motion Generation",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00100.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "efficiency_and_quality",
+    "design_inference": "Long-sequence capability and generation efficiency are different claims; give each an appropriate visual measurement before presenting the architecture."
+  },
+  {
+    "paper_id": "p0315",
+    "title": "\"Tracking Meets LoRA: Faster Training, Larger Model, Stronger Performance\"",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00113.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "resource_feasibility",
+    "design_inference": "A performance-versus-training comparison can include failed runs caused by memory limits. Represent those as infeasible or missing values, not numeric zeros."
+  },
+  {
+    "paper_id": "p0317",
+    "title": "ZeST: Zero-Shot Material Transfer from a Single Image",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00144.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "input_instruction_output",
+    "design_inference": "A material-transfer example should make the exemplar, editable input and output roles obvious. The method can then expose separate material and geometry guidance."
+  },
+  {
+    "paper_id": "p0324",
+    "title": "\"EMDM: Efficient Motion Diffusion Model for Fast, High-Quality Human Motion Generation\"",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00168.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "hybrid_teaser",
+    "design_inference": "EMDM combines motion examples, task-specific runtime claims and a comparison panel. A redesigned teaser should preserve task conditions and avoid merging incomparable runtimes."
+  },
+  {
+    "paper_id": "p0327",
+    "title": "Self-supervised Feature Adaptation for 3D Industrial Anomaly Detection",
+    "pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00180.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "failure_case_then_method",
+    "design_inference": "Matched qualitative examples can expose overestimation or texture-related failures. The method diagram then explains the within-modality and cross-modality objectives."
+  },
+  {
+    "paper_id": "p0401",
+    "title": "Modelling Cellular Perturbations with the Sparse Additive Mechanism Shift Variational Autoencoder",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/0001ca33ba34ce0351e4612b744b3936-Paper-Conference.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "dual_representation",
+    "design_inference": "A generative-process view and a probabilistic-graph view serve different audiences. Use aligned variable names so the two panels cross-reference cleanly."
+  },
+  {
+    "paper_id": "p0402",
+    "title": "Cross-Episodic Curriculum for Transformer Agents",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/001608167bb652337af5df0129aeaabd-Paper-Conference.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "curriculum_sequence",
+    "design_inference": "Show ordered experiences before the learning stage when order is the contribution. A generic transformer box alone would omit the mechanism."
+  },
+  {
+    "paper_id": "p0403",
+    "title": "PaintSeg: Painting Pixels for Training-free Segmentation",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/0021c2cb1b9b6a71ac478ea52a93b25a-Paper-Conference.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "iterative_refinement",
+    "design_inference": "Represent alternating operations as an explicit update cycle, and show how the state changes between iterations."
+  },
+  {
+    "paper_id": "p0404",
+    "title": "Bootstrapping Vision-Language Learning with Decoupled Language Pre-training",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/002262941c9edfd472a79298b2ac5e17-Paper-Conference.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "training_variants",
+    "design_inference": "Align competing training schemes by function and identify frozen versus trainable modules. A separate detailed figure can explain the newly introduced component."
+  },
+  {
+    "paper_id": "p0406",
+    "title": "Natural Actor-Critic for Robust Reinforcement Learning with Function Approximation",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/007f4927e60699392425f267d43f0940-Paper-Conference.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "robustness_evidence",
+    "design_inference": "Robustness figures should identify nominal and perturbed conditions. Report what the uncertainty band means and how many independent runs were used."
+  },
+  {
+    "paper_id": "p0410",
+    "title": "Provable Adversarial Robustness for Group Equivariant Tasks: Graphs, Point Clouds, Molecules, and More",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/00db17c36b5435195760520efa96d99c-Paper-Conference.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "invariance_counterexample",
+    "design_inference": "Small transformations of the same object make invariance and equivariance concrete. Show the expected output transformation, not only the changed input."
+  },
+  {
+    "paper_id": "p0412",
+    "title": "Ambient Diffusion: Learning Clean Distributions from Corrupted Data",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/012af729c5d14d279581fc8a5db975a1-Paper-Conference.pdf",
+    "figures": [
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "mask_and_supervision",
+    "design_inference": "In corrupted-data learning, show which pixels are observed, additionally hidden and used for supervision. Color roles should be tied to these semantic states."
+  },
+  {
+    "paper_id": "p0413",
+    "title": "Scalable Membership Inference Attacks via Quantile Regression",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/01328d0767830e73a612f9073e9ff15f-Paper-Conference.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "budget_and_provenance",
+    "design_inference": "Comparisons across attack budgets should label computational effort. Distinguish reproduced measurements from values visually read from another paper."
+  },
+  {
+    "paper_id": "p0420",
+    "title": "Equivariant Flow Matching with Hybrid Probability Transport for 3D Molecule Generation",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/01d64478381c33e29ed611f1719f5a37-Paper-Conference.pdf",
+    "figures": [
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "trajectory_comparison",
+    "design_inference": "When path efficiency is the proposal, align start and end states and compare intermediate trajectories. Encode time consistently across methods."
+  },
+  {
+    "paper_id": "p0422",
+    "title": "Large language models transition from integrating across position-yoked, exponential windows to structure-yoked, power-law windows",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/020ad0ac6a1974e6748e4a5a48110a07-Paper-Conference.pdf",
+    "figures": [
+      1
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "theoretical_shape_comparison",
+    "design_inference": "A conceptual family of integration-window shapes can explain a modeling hypothesis. Clearly separate analytic illustrative curves from empirical fitted curves."
+  },
+  {
+    "paper_id": "p0424",
+    "title": "Detecting Any Human-Object Interaction Relationship: Universal HOI Detector with Spatial Prompt Learning on Foundation Models",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/02687e7b22abc64e651be8da74ec610e-Paper-Conference.pdf",
+    "figures": [
+      1,
+      2
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "baseline_to_proposal",
+    "design_inference": "Use a compact comparison of existing and proposed pipelines to reveal the changed information source, then expand the proposed feature hierarchy."
+  },
+  {
+    "paper_id": "p0428",
+    "title": "AVIS: Autonomous Visual Information Seeking with Large Language Model Agent",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/029df12a9363313c3e41047844ecad94-Paper-Conference.pdf",
+    "figures": [
+      2,
+      3
+    ],
+    "evidence_level": "analyst_caption_reviewed",
+    "visual_reviewed": false,
+    "pattern": "agent_control_flow",
+    "design_inference": "An agent method needs decision, execution and continuation or backtracking semantics. Show permitted transitions and loop termination, not an ambiguous single arrow chain."
+  }
+]

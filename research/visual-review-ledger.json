@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-09",
+  "reviewer": "visual_research subagent",
+  "counts": {
+    "visual_assets_inspected": 20,
+    "distinct_papers_with_visual_assets": 20,
+    "additional_text_only_papers": 4,
+    "source_verified_table_fixtures": 5
+  },
+  "scope_statement": "Purposive sample of high-impact/seminal AI paper figures plus official related repository illustrations. No objective 'best papers' ranking or representative population inference. Twenty official assets actually displayed; some are repository rearrangements or supplements, not the publication page itself. No hundreds-of-papers visual-review claim is warranted by this ledger.",
+  "retrieval_method": "GitHub connector fetch_file with encoding=base64; nonempty image bytes displayed using image(). Captions and methods checked using primary arXiv PDFs/HTML. PDF screenshot web interface returned reference strings without image pixels; direct arXiv downloads returned403.",
+  "visual_reviews": [
+    {
+      "paper": "DETR",
+      "visual_asset_url": "https://github.com/facebookresearch/detr/blob/HEAD/.github/DETR.png",
+      "publication_relationship": "Fig. 1, PDF p. 2",
+      "design_observation": "Repeated gull image makes predicted-to-target matching tangible.",
+      "limitation": "Mark matching as training-only; unmatched queries predict no-object.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "ViT",
+      "visual_asset_url": "https://github.com/google-research/vision_transformer/blob/HEAD/vit_figure.png",
+      "publication_relationship": "Fig. 1, PDF p. 3",
+      "design_observation": "Picture patches retain their identity through tokenization; detail lives in an inset.",
+      "limitation": "Many parallel arrows become clutter at column width.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "SAM",
+      "visual_asset_url": "https://github.com/facebookresearch/segment-anything/blob/HEAD/assets/model_diagram.png",
+      "publication_relationship": "Fig. 4; [caption](https://arxiv.org/html/2304.02643v1) verified",
+      "design_observation": "Large encoder, small prompt/decoder blocks, multiple scissors masks convey amortization and ambiguity.",
+      "limitation": "Area suggests qualitative size, not a calibrated FLOPs ratio; text-prompt support must match the actual implementation being drawn.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "Latent Diffusion",
+      "visual_asset_url": "https://github.com/CompVis/latent-diffusion/blob/HEAD/assets/modelfigure.png",
+      "publication_relationship": "Fig. 3; [method](https://arxiv.org/html/2112.10752v2) verified",
+      "design_observation": "Nested pixel, latent, and conditioning regions explain where computation occurs.",
+      "limitation": "Dense legend and tiny Q/K/V marks need enlargement or a separate inset.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "3D Gaussian Splatting",
+      "visual_asset_url": "https://github.com/graphdeco-inria/gaussian-splatting/blob/HEAD/assets/teaser.png",
+      "publication_relationship": "Fig. 1 related bicycle comparison",
+      "design_observation": "Matched crops expose thin-structure quality alongside speed and training cost.",
+      "limitation": "One scene is not aggregate evidence; two proposed settings trade quality against speed.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "Mamba",
+      "visual_asset_url": "https://github.com/state-spaces/mamba/blob/HEAD/assets/selection.png",
+      "publication_relationship": "Fig. 1, PDF p. 3",
+      "design_observation": "Orange state streams and blue input-dependent selection reveal two interacting mechanisms.",
+      "limitation": "State replication and channel count are schematic; label dimensions if used quantitatively.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "ControlNet",
+      "visual_asset_url": "https://github.com/lllyasviel/ControlNet/blob/HEAD/github_page/sd.png",
+      "publication_relationship": "Fig. 3; [caption](https://arxiv.org/html/2302.05543v3) verified",
+      "design_observation": "Gray locked blocks contrast with a blue trainable copy and zero-convolution links.",
+      "limitation": "Long bypasses can disappear after reduction; label additive links and training state explicitly.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "Swin Transformer",
+      "visual_asset_url": "https://github.com/microsoft/Swin-Transformer/blob/HEAD/figures/teaser.png",
+      "publication_relationship": "Repository composite of hierarchy, shifted windows, blocks and stages",
+      "design_observation": "Spatial windows make cross-window communication concrete.",
+      "limitation": "Composite contains several abstraction levels; separate overview and mechanism when small.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "CLIP",
+      "visual_asset_url": "https://github.com/openai/CLIP/blob/HEAD/CLIP.png",
+      "publication_relationship": "Rearranged Fig. 1 content, PDF p. 2",
+      "design_observation": "Training pairing matrix and zero-shot label prompts share modality colors.",
+      "limitation": "Keep training separate from deployment; matrix cells are similarities, not measured task accuracies.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "DDPM",
+      "visual_asset_url": "https://github.com/hojonathanho/diffusion/blob/HEAD/resources/samples.png",
+      "publication_relationship": "Repository sample montage; related to paper sample figures",
+      "design_observation": "Diverse image domains immediately communicate generative capability.",
+      "limitation": "A montage alone provides neither algorithm semantics nor comparative evidence; do not imply cherry-picked examples are a distributional test.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "FlashAttention",
+      "visual_asset_url": "https://github.com/Dao-AILab/flash-attention/blob/HEAD/assets/flashattn_banner.jpg",
+      "publication_relationship": "Fig. 1, PDF p. 2",
+      "design_observation": "Bottleneck diagram, tiling computation, and time decomposition form a compact causal story.",
+      "limitation": "Hardware figures are version-specific; 7.6× concerns the reported attention benchmark. Never estimate exact component timings by eye.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "NeRF",
+      "visual_asset_url": "https://github.com/bmild/nerf/blob/HEAD/imgs/pipeline.jpg",
+      "publication_relationship": "Fig. 2, PDF p. 5",
+      "design_observation": "The same two rays connect coordinate samples, network output, integration, and rendering loss.",
+      "limitation": "Density depends on position; view direction conditions color. A generic joint-output box can hide this distinction.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "MLP-Mixer",
+      "visual_asset_url": "https://github.com/google-research/vision_transformer/blob/HEAD/mixer_figure.png",
+      "publication_relationship": "Fig. 1, PDF p. 2",
+      "design_observation": "Matrix transposition visibly distinguishes token mixing from channel mixing.",
+      "limitation": "Colors encode tensor organization; do not reuse them for unrelated module classes in the same figure.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "LoRA",
+      "visual_asset_url": "https://github.com/microsoft/LoRA/blob/HEAD/examples/NLG/figures/LoRA_GPT3.PNG",
+      "publication_relationship": "Earlier Fig. 2 variant; v2 PDF p. 8 adds Adapter(H)",
+      "design_observation": "Two aligned cost–accuracy plots expose efficiency across orders of magnitude.",
+      "limitation": "Repository raster and latest PDF differ. Use source table values, not old curve interpolation; include missing baselines when appropriate.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "LLaVA",
+      "visual_asset_url": "https://github.com/llava-vl/llava-vl.github.io/blob/HEAD/images/llava_arch.png",
+      "publication_relationship": "Fig. 1, PDF p. 4",
+      "design_observation": "Small projection bridge connects visual tokens to the language token stream.",
+      "limitation": "The fan of token arrows becomes hairline clutter; compress it without suggesting bidirectional generation.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "BLIP-2",
+      "visual_asset_url": "https://github.com/salesforce/LAVIS/blob/HEAD/projects/blip2/blip2_illustration.png",
+      "publication_relationship": "Fig. 1, PDF p. 1",
+      "design_observation": "Frozen towers, central query bridge, staged labels, and one example state the proposal.",
+      "limitation": "Explain snowflakes in words; lengthy example text competes with the method.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "InstructBLIP",
+      "visual_asset_url": "https://github.com/salesforce/LAVIS/blob/HEAD/projects/instructblip/comparison.png",
+      "publication_relationship": "Fig. 5 variant, PDF p. 13",
+      "design_observation": "Shared image/question and aligned response rows permit direct qualitative comparison.",
+      "limitation": "Long prose is slow to scan; quote only the diagnostic spans, preserving meaning and selection provenance.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "StyleGAN2-ADA",
+      "visual_asset_url": "https://github.com/NVlabs/stylegan2-ada-pytorch/blob/HEAD/docs/stylegan2-ada-training-curves.png",
+      "publication_relationship": "Repository training benchmark; exact paper-figure match not established",
+      "design_observation": "Dataset/resolution small multiples keep GPU-count colors consistent and retain visible instability.",
+      "limitation": "Axis ranges differ; identify each panel's scale. Do not smooth away spikes or equate unequal hardware budgets.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "EDM",
+      "visual_asset_url": "https://github.com/NVlabs/edm/blob/HEAD/docs/teaser-1280x640.jpg",
+      "publication_relationship": "Repository mathematical teaser; exact paper-figure match not established",
+      "design_observation": "A zoom inset connects local trajectory behavior with global sampling geometry.",
+      "limitation": "Unlabeled density color and technical axes are insufficient for a lay teaser; add a plain-language explanation.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    },
+    {
+      "paper": "SAM 2",
+      "visual_asset_url": "https://github.com/facebookresearch/sam2/blob/HEAD/assets/model_diagram.png",
+      "publication_relationship": "Fig. 3; [caption](https://arxiv.org/html/2408.00714v2) verified",
+      "design_observation": "Faded temporal copies and routed memory loops communicate streaming reuse.",
+      "limitation": "Caption explicitly notes an omitted image-embedding input to the memory encoder; restore it when the task demands architectural completeness.",
+      "review_level": "visual_asset_inspected",
+      "pixel_inspection": true,
+      "pdf_page_pixels_inspected": false
+    }
+  ],
+  "text_only_reviews": [
+    {
+      "paper": "Attention Is All You Need",
+      "source": "https://arxiv.org/pdf/1706.03762v7",
+      "reviewed": "Figure1 caption, Section3 architecture, Table2",
+      "pixel_inspection": false
+    },
+    {
+      "paper": "Deep Residual Learning for Image Recognition",
+      "source": "https://arxiv.org/pdf/1512.03385",
+      "reviewed": "Figure1/6 captions and Table6",
+      "pixel_inspection": false
+    },
+    {
+      "paper": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "source": "https://arxiv.org/pdf/1505.04597",
+      "reviewed": "Figure1 caption and contracting/expanding path description",
+      "pixel_inspection": false
+    },
+    {
+      "paper": "Masked Autoencoders Are Scalable Vision Learners",
+      "source": "https://arxiv.org/pdf/2111.06377",
+      "reviewed": "Figure1 caption, Section3, Tables1-2",
+      "pixel_inspection": false
+    }
+  ],
+  "excluded_attempts": [
+    {
+      "paper": "AlphaFold",
+      "reason": "Only decorative repository header actually viewed; excluded from figure sample. Primary Nature Figure1 caption/data were available."
+    },
+    {
+      "paper": "DINO",
+      "reason": "GitHub content response had zero-length base64 for >1MB asset; image never rendered; excluded."
+    },
+    {
+      "paper": "DMD2",
+      "reason": "GitHub content response had zero-length base64 for >1MB asset; image never rendered; excluded."
+    },
+    {
+      "paper": "InstructPix2Pix",
+      "reason": "The inspected local repository example was an input image alone; excluded from paper figure sample."
+    }
+  ],
+  "reproduction": "Original imagery not redistributed. Source URLs and original analytical notes only."
+}

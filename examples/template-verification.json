@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "overlapping_nodes_rejected": true,
+    "unknown_endpoint_rejected": true,
+    "edge_through_unrelated_node_warns": true,
+    "false_gain_rejected": true,
+    "template-teaser_dimensions_exact": true,
+    "template-teaser_dpi_300": true,
+    "template-teaser_editable_svg_text": true,
+    "template-method_dimensions_exact": true,
+    "template-method_dpi_300": true,
+    "template-method_editable_svg_text": true,
+    "native_drawio_nodes_and_edges": true,
+    "pdf_font_embedding_checked": true
+  },
+  "all_passed": true,
+  "visual_review": "Both PNGs reviewed; PDF teaser rendered via Poppler and inspected. Removed legend/data collision, fixed hidden representation tiles, reserved chart label gutters. Native draw.io structure inspected but not opened in diagrams.net."
+}

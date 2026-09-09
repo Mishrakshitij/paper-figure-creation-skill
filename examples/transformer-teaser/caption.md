@@ -1,0 +1,3 @@
+**Attention-based translation and reported benchmark quality.** The illustrative token schematic shows shared source context, not measured attention weights. The plot includes every nonempty EN-DE entry from Table 2 of Vaswani et al., *Attention Is All You Need*, evaluated on newstest2014. Ensemble systems are labeled. Training budgets and system details differ; the plot does not establish an equal-compute causal comparison. No uncertainty is given for these entries. Missing EN-DE entries are not imputed. [Source: Table 2](https://arxiv.org/pdf/1706.03762).
+
+Alt text: Three example source tokens enter self-attention. A dot chart compares eight reported systems; Transformer base and big attain 27.3 and 28.4 BLEU, with ensemble status explicit for two baselines.

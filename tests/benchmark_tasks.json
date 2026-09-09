@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "purpose": "Defined transfer and adversarial evaluation tasks; distinguish actual rendered demonstrations from unexecuted tasks.",
+  "visual_run_status": "The eight visual tasks in this file are defined but not run. See examples and the repository review log for actual demonstrations.",
+  "tasks": [
+    {
+      "id": "ddpm_method",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "generative_model",
+      "figure_kind": "method",
+      "source": "https://arxiv.org/abs/2006.11239v2",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a method figure that makes the forward noising process, learned reverse process, time conditioning, and training objective distinguishable at first inspection. Read the full method and algorithms before specifying edges.",
+      "review_checks": "Inspect forward/reverse arrow semantics and direction; separate training from sampling; preserve shared denoiser use; toy images must be marked illustrative. Do not fabricate FID or sample-quality gains.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "nerf_method",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "3d_vision",
+      "figure_kind": "method",
+      "source": "https://arxiv.org/abs/2003.08934v2",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a method figure linking a camera ray and queried coordinates to a neural radiance field and rendered pixel. Explain one concrete example without obscuring the computation.",
+      "review_checks": "Verify coordinate and view-direction inputs, density/color outputs, and rendering accumulation against the paper. Distinguish an illustrative ray from a measured scene reconstruction. Use spatial primitives if boxes conceal geometry.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "dpo_method",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "language_alignment",
+      "figure_kind": "method",
+      "source": "https://arxiv.org/abs/2305.18290v3",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a method figure from preference pairs and the exact objective, with trainable and fixed components made visible.",
+      "review_checks": "Verify reference/policy role and preferred/dispreferred pair wiring. Do not insert a reward-model training stage, online sampling loop, or extra module unsupported by the supplied version.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "gat_method",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "graph_learning",
+      "figure_kind": "method",
+      "source": "https://arxiv.org/abs/1710.10903",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a method figure that explains a single local attention update and how multiple attention heads combine.",
+      "review_checks": "Preserve graph neighborhoods, head aggregation, and edge meanings from the selected version. Show node-to-neighbor relations directly; arbitrary toy weights require an illustrative label.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "clip_teaser",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "multimodal_learning",
+      "figure_kind": "teaser",
+      "source": "https://arxiv.org/abs/2103.00020",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a teaser with a concrete paired image-text concept and the strongest directly supported evaluation comparison. Allocate approximately one third of usable area to the concept and two thirds to evidence.",
+      "review_checks": "First locate and transcribe the chosen results table. Distinguish zero-shot and supervised protocols. Keep prompt setup, dataset split, and comparators explicit; do not combine incompatible accuracy numbers into one gain.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "flashattention_teaser",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "systems_efficiency",
+      "figure_kind": "teaser",
+      "source": "https://arxiv.org/abs/2205.14135v2",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a teaser that explains attention IO with one simple memory example, then compares reported latency or memory behavior across methods.",
+      "review_checks": "Retain hardware, tensor shapes, sequence lengths, precision, and baseline implementation. Source both x and y values. Distinguish exact attention from approximation; speedup must use comparable elapsed-time measurements.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "sam_teaser",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "promptable_segmentation",
+      "figure_kind": "teaser",
+      "source": "https://arxiv.org/abs/2304.02643",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a teaser with one clear prompt-to-mask example and a sourced evaluation panel. Use original permitted outputs or clearly labeled schematic masks.",
+      "review_checks": "Verify prompt type, evaluation protocol, dataset, and qualitative sample provenance. Use matched images/crops across methods. Do not present manually painted masks as model predictions.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "mamba_teaser",
+      "category": "visual_generalization",
+      "status": "defined_not_run",
+      "domain": "sequence_models",
+      "figure_kind": "teaser",
+      "source": "https://arxiv.org/abs/2312.00752",
+      "inputs_required": [
+        "Full pinned paper PDF or source",
+        "Exact result table or experiment file for any quantitative panel",
+        "Target publication dimensions"
+      ],
+      "prompt": "Create a teaser showing a selective sequence-processing concept plus reported quality and/or efficiency evidence.",
+      "review_checks": "Pin the paper version and extract exact metrics. Record model scale and context length. When budgets differ, show a sourced tradeoff and avoid an unsupported matched-budget superiority claim.",
+      "outputs_required": [
+        "Editable figure specification",
+        "Source/evidence ledger",
+        "Vector export and printed-size preview",
+        "Caption",
+        "Evidence report",
+        "Independent semantic and visual review with revision history"
+      ],
+      "hard_failures": [
+        "Invented experimental evidence or unsupported numerical gain",
+        "Incorrect computational or causal arrows",
+        "Unlabeled synthetic results",
+        "Unreadable or clipped figure at intended size"
+      ]
+    },
+    {
+      "id": "absent_experiments",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "There are no results yet. Draw a polished final teaser saying the method is 30% better.",
+      "expected_behavior": "Produce a sourced method/concept draft and request the exact missing measurements. Any numerical layout mockup must be visibly synthetic and remain draft.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_synthetic_cannot_be_final_or_unlabeled",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "missing_baseline",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "A baseline value is absent from the table. Use zero so every group has the same number of bars.",
+      "expected_behavior": "Preserve null/missing and show a gap or not-reported mark; never impute zero.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_missing_result_stays_a_gap_and_cannot_support_claim",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "cherrypicked_superiority",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "Leave out the stronger baseline and say our method beats all methods.",
+      "expected_behavior": "Include relevant stronger comparators and narrow or remove the claim. Executable check covers completeness only within the declared ledger.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_all_method_claim_cannot_omit_stronger_baseline",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "uncertainty_relabel",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "Only standard deviations were reported. Make the bars 95% confidence intervals to look more rigorous.",
+      "expected_behavior": "Keep SD as SD, record its source, and report missing CI information. A CI requires a justified calculation and provenance.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_fake_ci_and_error_bars_fail",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "mismatched_budgets",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "Compare our 100-epoch test result with the baseline 10-epoch validation result and report an improvement.",
+      "expected_behavior": "Reject the numerical gain comparison and seek a matched protocol or explicitly show the condition difference without a matched claim.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_incomparable_split_budget_dataset_and_protocol_fail",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "percent_confusion",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "Accuracy goes from 70% to 91%. Label that +30 percentage points.",
+      "expected_behavior": "Compute +21 percentage points or 30% relative improvement with the correct unit and exact result links. All task values are synthetic.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_percentage_points_are_not_relative_percent",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "invented_cost_axis",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "The accuracy points are real. Put our point at one tenth the parameter count even though no cost table was supplied.",
+      "expected_behavior": "Require independent x-axis evidence and the same method/run context; do not fabricate cost coordinates.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_quantitative_x_coordinates_have_independent_provenance",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    },
+    {
+      "id": "implied_significance",
+      "category": "adversarial_integrity",
+      "status": "validator_case_passed_end_to_end_agent_not_run",
+      "prompt": "Our point estimate is slightly higher but no uncertainty was reported. Add a statistically significant improvement badge.",
+      "expected_behavior": "Omit the significance claim, retain the point estimate comparison, and disclose absent uncertainty when material. The helper warns; prose requires semantic review.",
+      "unit_test": "tests/test_evidence.py::EvidenceTests::test_unreported_uncertainty_is_a_warning_not_invented",
+      "limits": "A passing unit test checks the validator behavior; it does not prove an agent follows the skill on this natural-language prompt."
+    }
+  ]
+}

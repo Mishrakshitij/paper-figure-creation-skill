@@ -1,0 +1,17 @@
+{
+  "figure_kind": "method",
+  "dimensions_in": [
+    7,
+    4.5
+  ],
+  "font_size_pt": 8.5,
+  "products": [
+    "examples/mae-method/figure.svg",
+    "examples/mae-method/figure.pdf",
+    "examples/mae-method/figure.png",
+    "examples/mae-method/figure.drawio"
+  ],
+  "errors": [],
+  "warnings": [],
+  "verification_scope": "Node bounds, node text containment, and page text clipping. Human visual and scientific review remain required."
+}

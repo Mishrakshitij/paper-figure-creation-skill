@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "kind": "teaser",
+  "status": "final",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.0,
+    "title": "Transformer: attention-based translation",
+    "subtitle": "WMT 2014 English\u2013German \u00b7 newstest2014 \u00b7 reported systems",
+    "note": "Table 2: all EN\u2013DE entries are shown. System budgets differ; no equal-compute claim."
+  },
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "transformer",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/1706.03762",
+        "location": "Table 2, PDF page 8, EN-DE column; Figure 1 and Section 3"
+      }
+    ]
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "bleu",
+        "label": "BLEU",
+        "direction": "higher",
+        "unit": "BLEU"
+      }
+    ],
+    "results": [
+      {
+        "id": "bytenet",
+        "method_id": "bytenet",
+        "metric_id": "bleu",
+        "value": 23.75,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, ByteNet, EN-DE"
+      },
+      {
+        "id": "gnmt",
+        "method_id": "gnmt",
+        "metric_id": "bleu",
+        "value": 24.6,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, GNMT + RL, EN-DE"
+      },
+      {
+        "id": "convs2s",
+        "method_id": "convs2s",
+        "metric_id": "bleu",
+        "value": 25.16,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, ConvS2S, EN-DE"
+      },
+      {
+        "id": "moe",
+        "method_id": "moe",
+        "metric_id": "bleu",
+        "value": 26.03,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, MoE, EN-DE"
+      },
+      {
+        "id": "gnmt_ensemble",
+        "method_id": "gnmt_ensemble",
+        "metric_id": "bleu",
+        "value": 26.3,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, GNMT + RL (ensemble), EN-DE"
+      },
+      {
+        "id": "conv_ensemble",
+        "method_id": "conv_ensemble",
+        "metric_id": "bleu",
+        "value": 26.36,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, ConvS2S (ensemble), EN-DE"
+      },
+      {
+        "id": "base",
+        "method_id": "base",
+        "metric_id": "bleu",
+        "value": 27.3,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, Transformer base, EN-DE"
+      },
+      {
+        "id": "big",
+        "method_id": "big",
+        "metric_id": "bleu",
+        "value": 28.4,
+        "source_id": "transformer",
+        "comparison": {
+          "dataset": "WMT 2014 English-German",
+          "split": "newstest2014",
+          "budget": "Original Table 2 system-specific training budgets; not compute matched",
+          "protocol": "Published comparison; ensemble status explicitly labeled"
+        },
+        "source_location": "Table 2, Transformer big, EN-DE"
+      }
+    ],
+    "claims": []
+  },
+  "concept": {
+    "kind": "custom",
+    "title": "Tokens share context",
+    "input_label": "Illustrative source sentence",
+    "nodes": [
+      {
+        "id": "t1",
+        "label": "The",
+        "x": 0.03,
+        "y": 0.7,
+        "w": 0.25,
+        "h": 0.16
+      },
+      {
+        "id": "t2",
+        "label": "cat",
+        "x": 0.36,
+        "y": 0.7,
+        "w": 0.25,
+        "h": 0.16
+      },
+      {
+        "id": "t3",
+        "label": "sat",
+        "x": 0.69,
+        "y": 0.7,
+        "w": 0.25,
+        "h": 0.16
+      },
+      {
+        "id": "attn",
+        "label": "Self-attention",
+        "x": 0.14,
+        "y": 0.36,
+        "w": 0.7,
+        "h": 0.19,
+        "role": "proposed"
+      },
+      {
+        "id": "out",
+        "label": "Context for each token",
+        "x": 0.03,
+        "y": 0.06,
+        "w": 0.91,
+        "h": 0.16,
+        "shape": "text"
+      }
+    ],
+    "edges": [
+      {
+        "source": "t1",
+        "target": "attn",
+        "source_port": "bottom",
+        "target_port": "top"
+      },
+      {
+        "source": "t2",
+        "target": "attn",
+        "source_port": "bottom",
+        "target_port": "top"
+      },
+      {
+        "source": "t3",
+        "target": "attn",
+        "source_port": "bottom",
+        "target_port": "top"
+      },
+      {
+        "source": "attn",
+        "target": "out",
+        "source_port": "bottom",
+        "target_port": "top",
+        "role": "proposed"
+      }
+    ],
+    "note": "Encoder connectivity, not measured weights."
+  },
+  "charts": [
+    {
+      "type": "dot",
+      "title": "Reported translation quality",
+      "metric_id": "bleu",
+      "categories": [
+        "ByteNet",
+        "GNMT + RL",
+        "ConvS2S",
+        "MoE",
+        "GNMT + RL (ensemble)",
+        "ConvS2S (ensemble)",
+        "Transformer base",
+        "Transformer big"
+      ],
+      "xlabel": "BLEU \u2191",
+      "xlim": [
+        23,
+        29.5
+      ],
+      "xticks": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "legend": false,
+      "value_labels": true,
+      "value_format": ".2f",
+      "series": [
+        {
+          "label": "Reported systems",
+          "values": [
+            23.75,
+            24.6,
+            25.16,
+            26.03,
+            26.3,
+            26.36,
+            27.3,
+            28.4
+          ],
+          "result_ids": [
+            "bytenet",
+            "gnmt",
+            "convs2s",
+            "moe",
+            "gnmt_ensemble",
+            "conv_ensemble",
+            "base",
+            "big"
+          ],
+          "point_roles": [
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "proposed",
+            "proposed"
+          ]
+        }
+      ]
+    }
+  ]
+}

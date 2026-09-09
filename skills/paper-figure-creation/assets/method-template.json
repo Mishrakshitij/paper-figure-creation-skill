@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "kind": "method",
+  "status": "draft",
+  "figure": {
+    "width_in": 7.2,
+    "height_in": 3.6,
+    "title": "A small trainable branch adapts a frozen backbone",
+    "subtitle": "Illustrative architecture template; replace with the verified paper mechanism",
+    "note": "Solid arrows: inference path. Dashed arrow: training signal. \u2295: addition."
+  },
+  "provenance": {
+    "data_status": "synthetic",
+    "sources": [
+      {
+        "id": "demo",
+        "kind": "synthetic",
+        "locator": "Original design demonstration",
+        "location": "Hand-authored illustrative values; not experimental evidence"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "input",
+      "x": 0.005,
+      "y": 0.37,
+      "w": 0.16,
+      "h": 0.24,
+      "label": "Input tokens",
+      "representation": {
+        "rows": 2,
+        "cols": 4,
+        "selected": [
+          1,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "id": "frozen",
+      "x": 0.275,
+      "y": 0.62,
+      "w": 0.24,
+      "h": 0.22,
+      "label": "Backbone W",
+      "state": "frozen"
+    },
+    {
+      "id": "adapt",
+      "x": 0.275,
+      "y": 0.17,
+      "w": 0.24,
+      "h": 0.22,
+      "label": "Adapter \u0394W",
+      "state": "trainable",
+      "role": "proposed"
+    },
+    {
+      "id": "sum",
+      "x": 0.62,
+      "y": 0.4,
+      "w": 0.065,
+      "h": 0.18,
+      "shape": "circle",
+      "label": "\u2295"
+    },
+    {
+      "id": "output",
+      "x": 0.78,
+      "y": 0.38,
+      "w": 0.21,
+      "h": 0.22,
+      "label": "Prediction \u0177"
+    },
+    {
+      "id": "loss",
+      "x": 0.78,
+      "y": 0.02,
+      "w": 0.21,
+      "h": 0.19,
+      "label": "Task loss \u2112"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input",
+      "target": "frozen",
+      "via": [
+        [
+          0.215,
+          0.49
+        ],
+        [
+          0.215,
+          0.73
+        ]
+      ]
+    },
+    {
+      "source": "input",
+      "target": "adapt",
+      "via": [
+        [
+          0.215,
+          0.49
+        ],
+        [
+          0.215,
+          0.28
+        ]
+      ],
+      "role": "proposed"
+    },
+    {
+      "source": "frozen",
+      "target": "sum",
+      "target_port": "top",
+      "via": [
+        [
+          0.6525,
+          0.73
+        ]
+      ]
+    },
+    {
+      "source": "adapt",
+      "target": "sum",
+      "target_port": "bottom",
+      "via": [
+        [
+          0.6525,
+          0.28
+        ]
+      ],
+      "role": "proposed"
+    },
+    {
+      "source": "sum",
+      "target": "output"
+    },
+    {
+      "source": "output",
+      "target": "loss",
+      "source_port": "bottom",
+      "target_port": "top",
+      "kind": "training"
+    },
+    {
+      "source": "loss",
+      "target": "adapt",
+      "source_port": "left",
+      "target_port": "bottom",
+      "via": [
+        [
+          0.395,
+          0.115
+        ]
+      ],
+      "kind": "training",
+      "label": "Update \u0394W only",
+      "label_position": [
+        0.59,
+        0.055
+      ],
+      "role": "proposed"
+    }
+  ],
+  "annotations": [
+    {
+      "x": 0.275,
+      "y": 0.94,
+      "text": "Preserve the pretrained computation"
+    },
+    {
+      "x": 0.275,
+      "y": 0.46,
+      "text": "Add the proposed trainable change",
+      "role": "proposed"
+    }
+  ]
+}

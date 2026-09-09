@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="method" name="Method">
+    <mxGraphModel dx="700" dy="450" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="700" pageHeight="450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="group-0" value="PRETRAINING" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=top;align=left;spacing=10;fillColor=#F6F8F9;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="94.49999999999999" width="651.0" height="174.42" as="geometry" />
+        </mxCell>
+        <mxCell id="group-1" value="RECOGNITION AFTER FINE-TUNING" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=top;align=left;spacing=10;fillColor=#F6F8F9;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="290.34" width="651.0" height="110.16000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="patches" value="Image patches" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=bottom;spacingBottom=8;" vertex="1" parent="1">
+          <mxGeometry x="37.52" y="122.03999999999999" width="104.16000000000001" height="58.14000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-0" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="54.1856" y="131.45868000000002" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-1" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="71.89280000000001" y="131.45868000000002" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-2" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="89.60000000000001" y="131.45868000000002" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-3" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="107.30720000000001" y="131.45868000000002" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-4" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="54.1856" y="144.24948" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-5" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="71.89280000000001" y="144.24948" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-6" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="89.60000000000001" y="144.24948" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="patches-tile-7" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="107.30720000000001" y="144.24948" width="15.936480000000001" height="11.511720000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="visible" value="Keep 25%" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="174.23000000000002" y="128.15999999999997" width="91.14" height="45.900000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="encoder" value="Encoder&#10;visible only" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="297.91999999999996" y="128.15999999999997" width="104.16000000000001" height="45.900000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="decoder" value="Decoder&#10;lightweight" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="441.14000000000004" y="128.15999999999997" width="104.16000000000001" height="45.900000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="pixels" value="Pixels" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="584.36" y="128.15999999999997" width="78.12" height="45.900000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="mask" value="Mask tokens" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="441.14000000000004" y="213.84" width="104.16000000000001" height="36.720000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="loss" value="MSE loss" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="577.85" y="213.84" width="91.14" height="36.720000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="full" value="All patches" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=bottom;spacingBottom=8;" vertex="1" parent="1">
+          <mxGeometry x="57.05000000000001" y="331.65" width="110.67000000000002" height="48.96" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-0" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="74.75720000000001" y="339.58152" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-1" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="93.57110000000003" y="339.58152" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-2" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="112.38500000000002" y="339.58152" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-3" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="131.19890000000004" y="339.58152" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-4" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="74.75720000000001" y="350.35272" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-5" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="93.57110000000003" y="350.35272" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-6" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="112.38500000000002" y="350.35272" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="full-tile-7" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="131.19890000000004" y="350.35272" width="16.932510000000004" height="9.69408" as="geometry" />
+        </mxCell>
+        <mxCell id="reuse" value="Encoder&#10;pretrained weights" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="245.84000000000006" y="331.65" width="136.71" height="48.96" as="geometry" />
+        </mxCell>
+        <mxCell id="head" value="Task head" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="467.18000000000006" y="331.65" width="130.20000000000002" height="48.96" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-0" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="patches" target="visible">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-1" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="visible" target="encoder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="encoder" target="decoder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="decoder" target="pixels">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" value="restore positions" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="mask" target="decoder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="pixels" target="loss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" value="masked-patch targets" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="patches" target="loss">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="89.60000000000001" y="259.73999999999995" />
+              <mxPoint x="561.575" y="259.73999999999995" />
+              <mxPoint x="561.575" y="232.20000000000002" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-7" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="full" target="reuse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="reuse" target="head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="annotation-0" value="Decoder removed for recognition." style="shape=text;rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.11;" vertex="1" parent="1">
+          <mxGeometry x="662.48" y="304.11" width="13.02000000000001" height="15.3" as="geometry" />
+        </mxCell>
+        <mxCell id="page-title" value="MAE: visible-only encoding during pretraining" style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=16.67;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="9.0" width="651.0" height="31.500000000000004" as="geometry" />
+        </mxCell>
+        <mxCell id="page-subtitle" value="The decoder reconstructs masked patches; recognition reuses the encoder." style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=11.11;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="54.0" width="651.0" height="31.500000000000004" as="geometry" />
+        </mxCell>
+        <mxCell id="page-note" value="Dashed: loss supervision. Masked-patch loss only. Patch projection and positional embeddings omitted." style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=11.11;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="423.0" width="651.0" height="31.500000000000004" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

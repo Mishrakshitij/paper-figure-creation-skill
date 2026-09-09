@@ -1,0 +1,16 @@
+{
+  "figure_kind": "teaser",
+  "dimensions_in": [
+    7,
+    4.0
+  ],
+  "font_size_pt": 8.5,
+  "products": [
+    "examples/transformer-teaser/figure.svg",
+    "examples/transformer-teaser/figure.pdf",
+    "examples/transformer-teaser/figure.png"
+  ],
+  "errors": [],
+  "warnings": [],
+  "verification_scope": "Node bounds, edge-node intersections, node text containment, and page text clipping. Human visual and scientific review remain required."
+}

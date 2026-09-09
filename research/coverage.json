@@ -1,0 +1,48 @@
+{
+  "papers_catalogued": 500,
+  "pdf_text_retrieved": 480,
+  "papers_with_caption_candidates": 443,
+  "caption_candidate_passages": 1068,
+  "analyst_caption_reviewed": 40,
+  "broad_corpus_visually_reviewed": 0,
+  "metadata_only": 20,
+  "pdf_text_without_caption_candidates": 37,
+  "all_canonical_pdf_urls_available": true,
+  "strata": [
+    {
+      "venue": "ICML",
+      "year": 2021,
+      "papers": 100,
+      "pdf_text_retrieved": 100,
+      "with_caption_candidates": 92
+    },
+    {
+      "venue": "ICML",
+      "year": 2022,
+      "papers": 100,
+      "pdf_text_retrieved": 97,
+      "with_caption_candidates": 92
+    },
+    {
+      "venue": "ICML",
+      "year": 2023,
+      "papers": 100,
+      "pdf_text_retrieved": 100,
+      "with_caption_candidates": 93
+    },
+    {
+      "venue": "ECCV",
+      "year": 2024,
+      "papers": 100,
+      "pdf_text_retrieved": 90,
+      "with_caption_candidates": 90
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2023,
+      "papers": 100,
+      "pdf_text_retrieved": 93,
+      "with_caption_candidates": 76
+    }
+  ]
+}

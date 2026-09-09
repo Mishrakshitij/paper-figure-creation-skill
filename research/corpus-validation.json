@@ -1,0 +1,16 @@
+{
+  "validation_date": "2026-09-09",
+  "records": 500,
+  "unique_ids": 500,
+  "unique_titles": 500,
+  "unique_canonical_primary_pdf_urls": 500,
+  "canonical_urls_available_for_all_records": true,
+  "primary_hosts": ["proceedings.mlr.press", "www.ecva.net", "proceedings.neurips.cc"],
+  "maximum_caption_excerpt_words": 22,
+  "supplement_or_appendix_url_count": 0,
+  "readable_pdf_title_token_overlap_check": "All 480 readable PDF windows passed a 70% normalized title-word overlap sanity check.",
+  "synthesis_urls_checked_against_corpus": true,
+  "script_validation": ["Python source compiled", "--help executed"],
+  "script_network_execution": "Not run: shell access to primary paper hosts returned HTTP 403 in this environment. Corpus retrieval used the available web browser tool. The local reproduction downloader therefore has not been validated end-to-end against the network here.",
+  "scope": "No visual-quality scores or visual-review flags were inferred from caption extraction. The separate curated visual study records actual screenshot inspection."
+}

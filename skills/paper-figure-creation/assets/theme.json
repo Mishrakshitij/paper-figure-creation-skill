@@ -1,0 +1,24 @@
+{
+  "font_family": "DejaVu Sans",
+  "font_size": 8.5,
+  "title_size": 12,
+  "panel_title_size": 9.5,
+  "small_size": 8.0,
+  "ink": "#17232B",
+  "muted": "#64717A",
+  "accent": "#007D8A",
+  "accent_light": "#E6F2F3",
+  "warm": "#CC7733",
+  "warm_light": "#FFF0E0",
+  "baseline_colors": [
+    "#667580",
+    "#986C00",
+    "#8E5681",
+    "#37454F"
+  ],
+  "grid": "#DCE2E5",
+  "paper": "#FFFFFF",
+  "panel": "#F6F8F9",
+  "line_width": 0.9,
+  "dpi": 300
+}

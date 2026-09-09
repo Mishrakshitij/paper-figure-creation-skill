@@ -1,0 +1,86 @@
+{
+  "source": "https://arxiv.org/pdf/2106.09685v2",
+  "table": "4",
+  "rows": [
+    {
+      "id": "ft",
+      "method": "Full FT",
+      "params_millions": 175255.8,
+      "WikiSQL": 73.8,
+      "MNLI_m": 89.5,
+      "SAMSum_R1": 52.0,
+      "SAMSum_R2": 28.0,
+      "SAMSum_RL": 44.5
+    },
+    {
+      "id": "bitfit",
+      "method": "BitFit",
+      "params_millions": 14.2,
+      "WikiSQL": 71.3,
+      "MNLI_m": 91.0,
+      "SAMSum_R1": 51.3,
+      "SAMSum_R2": 27.4,
+      "SAMSum_RL": 43.5
+    },
+    {
+      "id": "preembed",
+      "method": "PreEmbed",
+      "params_millions": 3.2,
+      "WikiSQL": 63.1,
+      "MNLI_m": 88.6,
+      "SAMSum_R1": 48.3,
+      "SAMSum_R2": 24.2,
+      "SAMSum_RL": 40.5
+    },
+    {
+      "id": "prelayer",
+      "method": "PreLayer",
+      "params_millions": 20.2,
+      "WikiSQL": 70.1,
+      "MNLI_m": 89.5,
+      "SAMSum_R1": 50.8,
+      "SAMSum_R2": 27.3,
+      "SAMSum_RL": 43.5
+    },
+    {
+      "id": "adapter7",
+      "method": "AdapterH",
+      "params_millions": 7.1,
+      "WikiSQL": 71.9,
+      "MNLI_m": 89.8,
+      "SAMSum_R1": 53.0,
+      "SAMSum_R2": 28.9,
+      "SAMSum_RL": 44.8
+    },
+    {
+      "id": "adapter40",
+      "method": "AdapterH",
+      "params_millions": 40.1,
+      "WikiSQL": 73.2,
+      "MNLI_m": 91.5,
+      "SAMSum_R1": 53.2,
+      "SAMSum_R2": 29.0,
+      "SAMSum_RL": 45.1
+    },
+    {
+      "id": "lora4",
+      "method": "LoRA",
+      "params_millions": 4.7,
+      "WikiSQL": 73.4,
+      "MNLI_m": 91.7,
+      "SAMSum_R1": 53.8,
+      "SAMSum_R2": 29.8,
+      "SAMSum_RL": 45.9
+    },
+    {
+      "id": "lora37",
+      "method": "LoRA",
+      "params_millions": 37.7,
+      "WikiSQL": 74.0,
+      "MNLI_m": 91.6,
+      "SAMSum_R1": 53.4,
+      "SAMSum_R2": 29.2,
+      "SAMSum_RL": 45.1
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="method" name="Method">
+    <mxGraphModel dx="700" dy="460" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="700" pageHeight="460" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="group-0" value="N ENCODER BLOCKS" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=top;align=left;spacing=10;fillColor=#F6F8F9;" vertex="1" parent="1">
+          <mxGeometry x="70.07000000000001" y="102.85600000000001" width="221.34000000000003" height="181.424" as="geometry" />
+        </mxCell>
+        <mxCell id="group-1" value="N DECODER BLOCKS" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=top;align=left;spacing=10;fillColor=#F6F8F9;" vertex="1" parent="1">
+          <mxGeometry x="356.51000000000005" y="102.85600000000001" width="286.44" height="184.552" as="geometry" />
+        </mxCell>
+        <mxCell id="src" value="Source tokens" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="115.64000000000001" y="364.044" width="130.20000000000002" height="37.536" as="geometry" />
+        </mxCell>
+        <mxCell id="semb" value="Embed + position" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="115.64000000000001" y="303.04799999999994" width="130.20000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="self" value="Self-attention" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="115.64000000000001" y="218.592" width="130.20000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="eff" value="Feed-forward" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="115.64000000000001" y="131.00799999999998" width="130.20000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="tgt" value="Previous outputs&#10;(shifted right)" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="376.0400000000001" y="360.916" width="130.20000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="temb" value="Embed + position" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="376.0400000000001" y="303.04799999999994" width="130.20000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="masked" value="Masked&#10;self-attention" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="376.0400000000001" y="215.464" width="130.20000000000002" height="50.048" as="geometry" />
+        </mxCell>
+        <mxCell id="cross" value="Cross-attention" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="376.0400000000001" y="134.136" width="130.20000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="dff" value="Feed-&#10;forward" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="525.7700000000001" y="134.136" width="104.16000000000001" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="logits" value="Linear +&#10;softmax" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="532.2800000000001" y="303.04799999999994" width="110.67000000000002" height="43.79200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="next" value="Next token" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="532.2800000000001" y="364.044" width="110.67000000000002" height="37.536" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-0" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="src" target="semb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-1" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="semb" target="self">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="self" target="eff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" value="keys, values" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="eff" target="cross">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="tgt" target="temb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="temb" target="masked">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" value="queries" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="masked" target="cross">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cross" target="dff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dff" target="logits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="logits" target="next">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="page-title" value="Transformer: attention connects source and target sequences" style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=16.67;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="9.200000000000001" width="651.0" height="32.2" as="geometry" />
+        </mxCell>
+        <mxCell id="page-subtitle" value="Original post-norm blocks: LayerNorm(x + Sublayer(x)). Residual wiring omitted in this overview." style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=11.11;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="55.199999999999996" width="651.0" height="32.2" as="geometry" />
+        </mxCell>
+        <mxCell id="page-note" value="Schematic. Embeddings and prediction head sit outside repeated blocks. Token feedback omitted." style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=11.11;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="24.500000000000004" y="432.4" width="651.0" height="32.2" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

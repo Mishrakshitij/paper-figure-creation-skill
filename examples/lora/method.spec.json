@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "status": "draft",
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "method",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Section 4.1, printed page 4, Equation 3 and subsequent scaling/initialization/merge paragraphs; Section 4.2, printed page 5"
+      },
+      {
+        "id": "protocol",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Section D.4, printed pages 19-20; Table 12, printed page 21; Section 5.5 and Table 4 caption, printed page 8"
+      },
+      {
+        "id": "row_ft",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (Full FT) row with 175,255.8M trainable parameters"
+      },
+      {
+        "id": "row_bitfit",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (BitFit) row with 14.2M trainable parameters"
+      },
+      {
+        "id": "row_preembed",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (PreEmbed) row with 3.2M trainable parameters"
+      },
+      {
+        "id": "row_prelayer",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (PreLayer) row with 20.2M trainable parameters"
+      },
+      {
+        "id": "row_adapter7",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (AdapterH) row with 7.1M trainable parameters"
+      },
+      {
+        "id": "row_adapter40",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (AdapterH) row with 40.1M trainable parameters"
+      },
+      {
+        "id": "row_lora4",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (LoRA) row with 4.7M trainable parameters"
+      },
+      {
+        "id": "row_lora37",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (LoRA) row with 37.7M trainable parameters"
+      }
+    ],
+    "retrieved_utc": "2026-09-09",
+    "paper_version": "arXiv:2106.09685v2, 16 Oct 2021",
+    "extraction": "Web tool parsed original PDF text. Direct PDF download returned HTTP403. No digitization of plots.",
+    "inclusion": "Every Table 4 method/parameter setting; WikiSQL and MNLI-m columns plotted. Full SAMSum data preserved here.",
+    "task_uncertainty": {
+      "WikiSQL_typical_sd_pp": 0.5,
+      "MNLI_m_typical_sd_pp": 0.1,
+      "SAMSum_typical_sd_points": [
+        0.2,
+        0.2,
+        0.1
+      ],
+      "source_id": "protocol",
+      "interpretation": "Task-level typical standard deviations over random seeds, not entry-specific estimates. No chart error bars."
+    }
+  },
+  "method_contract": {
+    "h": "W0 x + (alpha/r) B(Ax)",
+    "dimensions": {
+      "W0": "d x k",
+      "A": "r x k",
+      "B": "d x r",
+      "x": "k",
+      "h": "d"
+    },
+    "frozen": [
+      "W0"
+    ],
+    "trainable": [
+      "A",
+      "B"
+    ],
+    "initialization": {
+      "A": "random Gaussian",
+      "B": "zero"
+    },
+    "inference": "Wmerged = W0 + (alpha/r) BA"
+  },
+  "kind": "method",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.6,
+    "title": "LoRA computation: train a low-rank branch, then merge",
+    "geometry_source": "build_figures.py"
+  },
+  "evidence": {
+    "metrics": [],
+    "results": [],
+    "claims": []
+  },
+  "canonical_geometry": "build_figures.py:method_figure"
+}

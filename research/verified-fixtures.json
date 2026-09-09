@@ -1,0 +1,345 @@
+{
+  "cases": [
+    {
+      "architecture": {
+        "cross_attention": "Decoder state supplies queries; encoder output supplies keys and values.",
+        "decoder": "Six post-norm decoder blocks: masked self-attention, encoder-decoder attention, feed-forward, each with residual then layernorm.",
+        "encoder": "Six post-norm encoder blocks: multi-head self-attention, residual/add+layernorm, feed-forward, residual/add+layernorm.",
+        "essential_constraints": [
+          "No future-token access in decoder self-attention.",
+          "The 2017 original is post-norm; do not substitute modern pre-norm silently.",
+          "Masking is not applied to all encoder self-attention."
+        ],
+        "input": "Token embeddings plus sinusoidal positions",
+        "output": "Linear projection and softmax predict next token using right-shifted target input."
+      },
+      "caveats": [
+        "Keep ensemble results distinguishable from single models.",
+        "Published cross-paper comparison; protocols and resources are not controlled in an independent rerun.",
+        "BLEU is not accuracy or a direct measure of human preference.",
+        "Avoid assigning EN-FR training cost to EN-DE from table column ambiguity; this fixture intentionally omits FLOPs."
+      ],
+      "correct_claim": "Transformer big improves by 2.37 BLEU over MoE, the strongest listed single-model EN-DE baseline. This is a BLEU-point difference, not percentage accuracy.",
+      "dataset": "WMT 2014 English-German newstest2014",
+      "direction": "higher",
+      "id": "transformer_wmt14",
+      "metric": "BLEU",
+      "paper": "Attention Is All You Need",
+      "rows": [
+        {
+          "bleu": 23.75,
+          "ensemble": false,
+          "method": "ByteNet"
+        },
+        {
+          "bleu": 24.6,
+          "ensemble": false,
+          "method": "GNMT + RL"
+        },
+        {
+          "bleu": 25.16,
+          "ensemble": false,
+          "method": "ConvS2S"
+        },
+        {
+          "bleu": 26.03,
+          "ensemble": false,
+          "method": "MoE"
+        },
+        {
+          "bleu": 26.3,
+          "ensemble": true,
+          "method": "GNMT + RL Ensemble"
+        },
+        {
+          "bleu": 26.36,
+          "ensemble": true,
+          "method": "ConvS2S Ensemble"
+        },
+        {
+          "bleu": 27.3,
+          "ensemble": false,
+          "method": "Transformer base"
+        },
+        {
+          "bleu": 28.4,
+          "ensemble": false,
+          "method": "Transformer big"
+        }
+      ],
+      "source_locator": "Table 2, PDF page 8; architecture Figure 1, PDF page 3, Section 3",
+      "source_url": "https://arxiv.org/pdf/1706.03762v7",
+      "uncertainty": "Not reported per entry in this table; do not invent error bars."
+    },
+    {
+      "architecture": {
+        "deployment": "Discard decoder; use encoder on all image patches for recognition.",
+        "essential_constraints": [
+          "No mask token enters the encoder in the proposed method.",
+          "Reinsert masked positions before reconstruction.",
+          "Show pre-training and downstream stages separately.",
+          "Both encoder and decoder are trainable during pre-training."
+        ],
+        "loss": "MSE only on masked patches against original pixels.",
+        "pretraining": "Split image into patches; randomly remove 75%; embed visible patches with positions; heavy ViT encoder sees only visible tokens; insert mask tokens and positions in lightweight decoder; reconstruct pixel patches."
+      },
+      "caveats": [
+        "These are architectural ablations, not a leaderboard of independent competing methods.",
+        "Accuracy is downstream fine-tuning accuracy, not reconstruction accuracy.",
+        "Do not mix the ViT-H row estimated from ten epochs with measured ViT-L times.",
+        "Do not claim 75% fewer tokens implies exactly 75% less whole-system compute."
+      ],
+      "conditions": "ViT-L encoder; 800 pre-training epochs; 128 TPU-v3 cores; TensorFlow; decoder width 512; masking ratio 75%.",
+      "correct_claim": "With the 8-block decoder held fixed: 63.68% less pre-training time (42.4 to 15.4 h; 2.75x speedup) and +0.7 percentage points fine-tuning accuracy. The paper rounds the speedup to 2.8x.",
+      "dataset": "ImageNet-1K",
+      "id": "mae_vitl_timing",
+      "paper": "Masked Autoencoders Are Scalable Vision Learners",
+      "rows": [
+        {
+          "decoder_blocks": 8,
+          "finetune_accuracy_percent": 84.2,
+          "hours": 42.4,
+          "method": "Encoder with mask tokens"
+        },
+        {
+          "decoder_blocks": 8,
+          "finetune_accuracy_percent": 84.9,
+          "hours": 15.4,
+          "method": "MAE visible-only encoder"
+        },
+        {
+          "decoder_blocks": 1,
+          "finetune_accuracy_percent": 84.8,
+          "hours": 11.6,
+          "method": "MAE visible-only encoder"
+        }
+      ],
+      "source_locator": "Table 2, PDF page 5; Table 1 caption PDF page 5; Figure 1 PDF page 1; Section 3 PDF pages 3-4",
+      "source_url": "https://arxiv.org/pdf/2111.06377",
+      "uncertainty": "No per-entry dispersion in this table."
+    },
+    {
+      "architecture": {
+        "equation": "h = W0 x + (alpha/r) B A x",
+        "essential_constraints": [
+          "Both W0 and adapter branch receive x; add outputs explicitly.",
+          "A is down-projection then B up-projection.",
+          "Frozen W0 remains in forward computation.",
+          "Only A and B are updated; merged inference should not imply permanent extra latency."
+        ],
+        "frozen": "W0 in R^(d_out x d_in)",
+        "initialization": "A random Gaussian; B zero",
+        "merge": "At deployment merge W0 + (alpha/r)BA when applicable.",
+        "trainable": "A in R^(r x d_in); B in R^(d_out x r)"
+      },
+      "caveats": [
+        "The 4.7M setting is 0.4 pp below full fine-tuning on WikiSQL; do not claim every setting beats every baseline.",
+        "Trainable parameters are not total parameters or inference FLOPs.",
+        "Do not equate parameter ratio with memory or wall-clock speed ratio.",
+        "Use log axis and label units (million parameters); source Figure 2 uses log10 of raw parameter count, which is different from log10 of millions."
+      ],
+      "correct_claim": "LoRA 4.7M achieves +2.2 percentage points MNLI-m validation accuracy versus full fine-tuning while training about 37,288x fewer parameters.",
+      "dataset": "GPT-3 175B adaptation on WikiSQL, MultiNLI-matched and SAMSum",
+      "id": "lora_gpt3",
+      "paper": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "rows": [
+        {
+          "method": "Full fine-tuning",
+          "mnli_m_accuracy_percent": 89.5,
+          "samsum_rouge1": 52,
+          "samsum_rouge2": 28,
+          "samsum_rougeL": 44.5,
+          "trainable_parameters_million": 175255.8,
+          "wikisql_accuracy_percent": 73.8
+        },
+        {
+          "method": "BitFit",
+          "mnli_m_accuracy_percent": 91,
+          "samsum_rouge1": 51.3,
+          "samsum_rouge2": 27.4,
+          "samsum_rougeL": 43.5,
+          "trainable_parameters_million": 14.2,
+          "wikisql_accuracy_percent": 71.3
+        },
+        {
+          "method": "PreEmbed",
+          "mnli_m_accuracy_percent": 88.6,
+          "samsum_rouge1": 48.3,
+          "samsum_rouge2": 24.2,
+          "samsum_rougeL": 40.5,
+          "trainable_parameters_million": 3.2,
+          "wikisql_accuracy_percent": 63.1
+        },
+        {
+          "method": "PreLayer",
+          "mnli_m_accuracy_percent": 89.5,
+          "samsum_rouge1": 50.8,
+          "samsum_rouge2": 27.3,
+          "samsum_rougeL": 43.5,
+          "trainable_parameters_million": 20.2,
+          "wikisql_accuracy_percent": 70.1
+        },
+        {
+          "method": "AdapterH 7.1M",
+          "mnli_m_accuracy_percent": 89.8,
+          "samsum_rouge1": 53,
+          "samsum_rouge2": 28.9,
+          "samsum_rougeL": 44.8,
+          "trainable_parameters_million": 7.1,
+          "wikisql_accuracy_percent": 71.9
+        },
+        {
+          "method": "AdapterH 40.1M",
+          "mnli_m_accuracy_percent": 91.5,
+          "samsum_rouge1": 53.2,
+          "samsum_rouge2": 29,
+          "samsum_rougeL": 45.1,
+          "trainable_parameters_million": 40.1,
+          "wikisql_accuracy_percent": 73.2
+        },
+        {
+          "method": "LoRA 4.7M",
+          "mnli_m_accuracy_percent": 91.7,
+          "samsum_rouge1": 53.8,
+          "samsum_rouge2": 29.8,
+          "samsum_rougeL": 45.9,
+          "trainable_parameters_million": 4.7,
+          "wikisql_accuracy_percent": 73.4
+        },
+        {
+          "method": "LoRA 37.7M",
+          "mnli_m_accuracy_percent": 91.6,
+          "samsum_rouge1": 53.4,
+          "samsum_rouge2": 29.2,
+          "samsum_rougeL": 45.1,
+          "trainable_parameters_million": 37.7,
+          "wikisql_accuracy_percent": 74
+        }
+      ],
+      "source_locator": "Table 4 and Figure 2, PDF page 8; Figure 1 PDF page 1; Section 4",
+      "source_url": "https://arxiv.org/pdf/2106.09685v2",
+      "uncertainty": "Paper reports typical task-level fluctuations, not per-row confidence intervals: WikiSQL about +/-0.5%, MNLI-m +/-0.1%, SAMSum ROUGE1/2/L +/-0.2/0.2/0.1. Do not fabricate row-wise CIs."
+    },
+    {
+      "caveats": [
+        "Do not silently mix ResNet-110 best with mean.",
+        "1202-layer test error is worse than 110-layer; preserve non-monotonicity.",
+        "Excellent adverse test for an agent tempted to force proposed-method dominance."
+      ],
+      "dataset": "CIFAR-10 test set with data augmentation",
+      "direction": "lower",
+      "id": "resnet_cifar10",
+      "metric": "classification error percent",
+      "paper": "Deep Residual Learning for Image Recognition",
+      "rows": [
+        {
+          "error_percent": 8.75,
+          "layers": 20,
+          "parameters_million": 0.27
+        },
+        {
+          "error_percent": 7.51,
+          "layers": 32,
+          "parameters_million": 0.46
+        },
+        {
+          "error_percent": 7.17,
+          "layers": 44,
+          "parameters_million": 0.66
+        },
+        {
+          "error_percent": 6.97,
+          "layers": 56,
+          "parameters_million": 0.85
+        },
+        {
+          "error_best_percent": 6.43,
+          "error_mean_percent": 6.61,
+          "error_sd_percent": 0.16,
+          "layers": 110,
+          "parameters_million": 1.7,
+          "runs": 5
+        },
+        {
+          "error_percent": 7.93,
+          "layers": 1202,
+          "parameters_million": 19.4
+        }
+      ],
+      "source_locator": "Table 6 PDF page 7",
+      "source_url": "https://arxiv.org/pdf/1512.03385"
+    },
+    {
+      "architecture": {
+        "critical": "Densification changes the primitive set; do not replace it with a generic fixed MLP box.",
+        "pipeline": "SfM points initialize anisotropic 3D Gaussians; optimize positions, opacity, covariance, and spherical harmonics; adaptive clone/split/prune; project and depth-sort splats; tile rasterize and alpha-composite; compare rendered images with training views."
+      },
+      "caveats": [
+        "30K 3DGS has lower PSNR but better SSIM/LPIPS than Mip-NeRF360; show the trade-off.",
+        "Runtime source uses A6000 except Mip-NeRF360: four A100 GPUs for12h, reported as48 single-GPU-equivalent hours. Not an identical-hardware wall-clock comparison.",
+        "FPS is dataset aggregate and differs from individual bicycle teaser values.",
+        "No reported per-row CIs; do not invent.",
+        "PSNR is in dB; relative percentage PSNR gain is not a meaningful headline."
+      ],
+      "dataset": "Mip-NeRF360",
+      "id": "gaussians_mipnerf360",
+      "paper": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+      "rows": [
+        {
+          "fps": 6.79,
+          "lpips": 0.463,
+          "method": "Plenoxels",
+          "psnr_db": 23.08,
+          "ssim": 0.626,
+          "training_seconds": 1549
+        },
+        {
+          "fps": 11.7,
+          "lpips": 0.371,
+          "method": "INGP-Base",
+          "psnr_db": 25.3,
+          "ssim": 0.671,
+          "training_seconds": 337
+        },
+        {
+          "fps": 9.43,
+          "lpips": 0.331,
+          "method": "INGP-Big",
+          "psnr_db": 25.59,
+          "ssim": 0.699,
+          "training_seconds": 450
+        },
+        {
+          "fps": 0.06,
+          "lpips": 0.237,
+          "method": "Mip-NeRF360",
+          "psnr_db": 27.69,
+          "quality_adopted_from_original_paper": true,
+          "ssim": 0.792,
+          "training_seconds": 172800
+        },
+        {
+          "fps": 160,
+          "lpips": 0.279,
+          "method": "3DGS 7K",
+          "psnr_db": 25.6,
+          "ssim": 0.77,
+          "training_seconds": 385
+        },
+        {
+          "fps": 134,
+          "lpips": 0.214,
+          "method": "3DGS 30K",
+          "psnr_db": 27.21,
+          "ssim": 0.815,
+          "training_seconds": 2493
+        }
+      ],
+      "source_locator": "Table 1, Mip-NeRF360 columns; Section 7.2",
+      "source_url": "https://arxiv.org/html/2308.04079v1"
+    }
+  ],
+  "provenance": "Values manually transcribed from primary-paper tables exposed by the web PDF/HTML reader; experimental reruns were not performed.",
+  "schema_version": 1,
+  "verified_on": "2026-09-09"
+}

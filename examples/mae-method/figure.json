@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "kind": "method",
+  "status": "final",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.5,
+    "title": "MAE: visible-only encoding during pretraining",
+    "subtitle": "The decoder reconstructs masked patches; recognition reuses the encoder.",
+    "note": "Dashed: loss supervision. Masked-patch loss only. Patch projection and positional embeddings omitted."
+  },
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "mae",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2111.06377v3",
+        "location": "Table 2, PDF page 5, ViT-L rows; Section 3 and Figure 1"
+      }
+    ]
+  },
+  "evidence": {
+    "metrics": [],
+    "results": [],
+    "claims": []
+  },
+  "groups": [
+    {
+      "label": "PRETRAINING",
+      "x": 0,
+      "y": 0.43,
+      "w": 1,
+      "h": 0.57
+    },
+    {
+      "label": "RECOGNITION AFTER FINE-TUNING",
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 0.36
+    }
+  ],
+  "nodes": [
+    {
+      "id": "patches",
+      "label": "Image patches",
+      "x": 0.02,
+      "y": 0.72,
+      "w": 0.16,
+      "h": 0.19,
+      "representation": {
+        "rows": 2,
+        "cols": 4,
+        "selected": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "id": "visible",
+      "label": "Keep 25%",
+      "x": 0.23,
+      "y": 0.74,
+      "w": 0.14,
+      "h": 0.15,
+      "role": "proposed"
+    },
+    {
+      "id": "encoder",
+      "label": "Encoder",
+      "x": 0.42,
+      "y": 0.74,
+      "w": 0.16,
+      "h": 0.15,
+      "role": "proposed",
+      "detail": "visible only"
+    },
+    {
+      "id": "decoder",
+      "label": "Decoder",
+      "x": 0.64,
+      "y": 0.74,
+      "w": 0.16,
+      "h": 0.15,
+      "detail": "lightweight"
+    },
+    {
+      "id": "pixels",
+      "label": "Pixels",
+      "x": 0.86,
+      "y": 0.74,
+      "w": 0.12,
+      "h": 0.15
+    },
+    {
+      "id": "mask",
+      "label": "Mask tokens",
+      "x": 0.64,
+      "y": 0.49,
+      "w": 0.16,
+      "h": 0.12
+    },
+    {
+      "id": "loss",
+      "label": "MSE loss",
+      "x": 0.85,
+      "y": 0.49,
+      "w": 0.14,
+      "h": 0.12
+    },
+    {
+      "id": "full",
+      "label": "All patches",
+      "x": 0.05,
+      "y": 0.065,
+      "w": 0.17,
+      "h": 0.16,
+      "representation": {
+        "rows": 2,
+        "cols": 4,
+        "selected": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "id": "reuse",
+      "label": "Encoder",
+      "x": 0.34,
+      "y": 0.065,
+      "w": 0.21,
+      "h": 0.16,
+      "role": "proposed",
+      "detail": "pretrained weights"
+    },
+    {
+      "id": "head",
+      "label": "Task head",
+      "x": 0.68,
+      "y": 0.065,
+      "w": 0.2,
+      "h": 0.16
+    }
+  ],
+  "edges": [
+    {
+      "source": "patches",
+      "target": "visible"
+    },
+    {
+      "source": "visible",
+      "target": "encoder",
+      "role": "proposed"
+    },
+    {
+      "source": "encoder",
+      "target": "decoder"
+    },
+    {
+      "source": "decoder",
+      "target": "pixels"
+    },
+    {
+      "source": "mask",
+      "target": "decoder",
+      "source_port": "top",
+      "target_port": "bottom",
+      "label": "restore positions",
+      "label_position": [
+        0.72,
+        0.675
+      ]
+    },
+    {
+      "source": "pixels",
+      "target": "loss",
+      "source_port": "bottom",
+      "target_port": "top",
+      "kind": "training"
+    },
+    {
+      "source": "patches",
+      "target": "loss",
+      "source_port": "bottom",
+      "target_port": "left",
+      "via": [
+        [
+          0.1,
+          0.46
+        ],
+        [
+          0.825,
+          0.46
+        ],
+        [
+          0.825,
+          0.55
+        ]
+      ],
+      "label": "masked-patch targets",
+      "label_position": [
+        0.35,
+        0.46
+      ],
+      "kind": "training"
+    },
+    {
+      "source": "full",
+      "target": "reuse"
+    },
+    {
+      "source": "reuse",
+      "target": "head"
+    }
+  ],
+  "annotations": [
+    {
+      "x": 0.98,
+      "y": 0.29,
+      "ha": "right",
+      "text": "Decoder removed for recognition."
+    }
+  ]
+}

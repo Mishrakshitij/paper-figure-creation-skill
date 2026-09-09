@@ -1,0 +1,17 @@
+{
+  "figure_kind": "method",
+  "dimensions_in": [
+    7,
+    4.6
+  ],
+  "font_size_pt": 8.5,
+  "products": [
+    "examples/transformer-method/figure.svg",
+    "examples/transformer-method/figure.pdf",
+    "examples/transformer-method/figure.png",
+    "examples/transformer-method/figure.drawio"
+  ],
+  "errors": [],
+  "warnings": [],
+  "verification_scope": "Node bounds, edge-node intersections, node text containment, and page text clipping. Human visual and scientific review remain required."
+}

@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "kind": "method",
+  "status": "final",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.6,
+    "title": "Transformer: attention connects source and target sequences",
+    "subtitle": "Original post-norm blocks: LayerNorm(x + Sublayer(x)). Residual wiring omitted in this overview.",
+    "note": "Schematic. Embeddings and prediction head sit outside repeated blocks. Token feedback omitted."
+  },
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "transformer",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/1706.03762",
+        "location": "Table 2, PDF page 8, EN-DE column; Figure 1 and Section 3"
+      }
+    ]
+  },
+  "evidence": {
+    "metrics": [],
+    "results": [],
+    "claims": []
+  },
+  "groups": [
+    {
+      "label": "N ENCODER BLOCKS",
+      "x": 0.07,
+      "y": 0.4,
+      "w": 0.34,
+      "h": 0.58
+    },
+    {
+      "label": "N DECODER BLOCKS",
+      "x": 0.51,
+      "y": 0.39,
+      "w": 0.44,
+      "h": 0.59
+    }
+  ],
+  "nodes": [
+    {
+      "id": "src",
+      "label": "Source tokens",
+      "x": 0.14,
+      "y": 0.025,
+      "w": 0.2,
+      "h": 0.12
+    },
+    {
+      "id": "semb",
+      "label": "Embed + position",
+      "x": 0.14,
+      "y": 0.2,
+      "w": 0.2,
+      "h": 0.14
+    },
+    {
+      "id": "self",
+      "label": "Self-attention",
+      "x": 0.14,
+      "y": 0.47,
+      "w": 0.2,
+      "h": 0.14,
+      "role": "proposed"
+    },
+    {
+      "id": "eff",
+      "label": "Feed-forward",
+      "x": 0.14,
+      "y": 0.75,
+      "w": 0.2,
+      "h": 0.14
+    },
+    {
+      "id": "tgt",
+      "label": "Previous outputs\n(shifted right)",
+      "x": 0.54,
+      "y": 0.015,
+      "w": 0.2,
+      "h": 0.14
+    },
+    {
+      "id": "temb",
+      "label": "Embed + position",
+      "x": 0.54,
+      "y": 0.2,
+      "w": 0.2,
+      "h": 0.14
+    },
+    {
+      "id": "masked",
+      "label": "Masked\nself-attention",
+      "x": 0.54,
+      "y": 0.46,
+      "w": 0.2,
+      "h": 0.16,
+      "role": "proposed"
+    },
+    {
+      "id": "cross",
+      "label": "Cross-attention",
+      "x": 0.54,
+      "y": 0.74,
+      "w": 0.2,
+      "h": 0.14,
+      "role": "proposed"
+    },
+    {
+      "id": "dff",
+      "label": "Feed-\nforward",
+      "x": 0.77,
+      "y": 0.74,
+      "w": 0.16,
+      "h": 0.14
+    },
+    {
+      "id": "logits",
+      "label": "Linear +\nsoftmax",
+      "x": 0.78,
+      "y": 0.2,
+      "w": 0.17,
+      "h": 0.14
+    },
+    {
+      "id": "next",
+      "label": "Next token",
+      "x": 0.78,
+      "y": 0.025,
+      "w": 0.17,
+      "h": 0.12
+    }
+  ],
+  "edges": [
+    {
+      "source": "src",
+      "target": "semb",
+      "source_port": "top",
+      "target_port": "bottom"
+    },
+    {
+      "source": "semb",
+      "target": "self",
+      "source_port": "top",
+      "target_port": "bottom"
+    },
+    {
+      "source": "self",
+      "target": "eff",
+      "source_port": "top",
+      "target_port": "bottom"
+    },
+    {
+      "source": "eff",
+      "target": "cross",
+      "label": "keys, values",
+      "label_position": [
+        0.435,
+        0.855
+      ]
+    },
+    {
+      "source": "tgt",
+      "target": "temb",
+      "source_port": "top",
+      "target_port": "bottom"
+    },
+    {
+      "source": "temb",
+      "target": "masked",
+      "source_port": "top",
+      "target_port": "bottom"
+    },
+    {
+      "source": "masked",
+      "target": "cross",
+      "source_port": "top",
+      "target_port": "bottom",
+      "label": "queries",
+      "label_position": [
+        0.64,
+        0.68
+      ]
+    },
+    {
+      "source": "cross",
+      "target": "dff"
+    },
+    {
+      "source": "dff",
+      "target": "logits",
+      "source_port": "bottom",
+      "target_port": "top"
+    },
+    {
+      "source": "logits",
+      "target": "next",
+      "source_port": "bottom",
+      "target_port": "top"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "figure": "mae-teaser",
+      "pixels": [
+        2100,
+        1140
+      ],
+      "width_inches": 7.0,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "vector_text": true
+    },
+    {
+      "figure": "mae-method",
+      "pixels": [
+        2100,
+        1350
+      ],
+      "width_inches": 7.0,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "vector_text": true
+    },
+    {
+      "figure": "transformer-teaser",
+      "pixels": [
+        2100,
+        1200
+      ],
+      "width_inches": 7.0,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "vector_text": true
+    },
+    {
+      "figure": "transformer-method",
+      "pixels": [
+        2100,
+        1380
+      ],
+      "width_inches": 7.0,
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "vector_text": true
+    }
+  ],
+  "scope": "Physical widths, pixel dimensions and SVG text structure; visual review recorded separately."
+}

@@ -1,0 +1,31 @@
+{
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "uncertainty_unreported",
+      "path": "evidence.results",
+      "message": "No uncertainty is declared for: ft_params, ft_wiki, ft_mnli, ft_r1, ft_r2, ft_rl, bitfit_params, bitfit_wiki, bitfit_mnli, bitfit_r1, bitfit_r2, bitfit_rl, preembed_params, preembed_wiki, preembed_mnli, preembed_r1, preembed_r2, preembed_rl, prelayer_params, prelayer_wiki, prelayer_mnli, prelayer_r1, prelayer_r2, prelayer_rl, adapter7_params, adapter7_wiki, adapter7_mnli, adapter7_r1, adapter7_r2, adapter7_rl, adapter40_params, adapter40_wiki, adapter40_mnli, adapter40_r1, adapter40_r2, adapter40_rl, lora4_params, lora4_wiki, lora4_mnli, lora4_r1, lora4_r2, lora4_rl, lora37_params, lora37_wiki, lora37_mnli, lora37_r1, lora37_r2, lora37_rl. Do not fabricate intervals or assert significance."
+    }
+  ],
+  "computed_claims": [
+    {
+      "id": "wiki_delta",
+      "type": "percentage_point_difference",
+      "value": -0.3999999999999915,
+      "unit": "pp",
+      "display": "-0.4 pp",
+      "baseline_result_id": "ft_wiki",
+      "proposed_result_id": "lora4_wiki"
+    },
+    {
+      "id": "mnli_delta",
+      "type": "percentage_point_difference",
+      "value": 2.200000000000003,
+      "unit": "pp",
+      "display": "2.2 pp",
+      "baseline_result_id": "ft_mnli",
+      "proposed_result_id": "lora4_mnli"
+    }
+  ]
+}

@@ -1,0 +1,1048 @@
+{
+  "version": 1,
+  "kind": "teaser",
+  "status": "draft",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.1,
+    "concept_fraction": 0.33,
+    "title": "LoRA: adapt a frozen model with low-rank updates",
+    "geometry_source": "build_figures.py",
+    "note": "Original reported data; schematic task example. Two-column draft; venue unspecified."
+  },
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "method",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Section 4.1, printed page 4, Equation 3 and subsequent scaling/initialization/merge paragraphs; Section 4.2, printed page 5"
+      },
+      {
+        "id": "protocol",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Section D.4, printed pages 19-20; Table 12, printed page 21; Section 5.5 and Table 4 caption, printed page 8"
+      },
+      {
+        "id": "row_ft",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (Full FT) row with 175,255.8M trainable parameters"
+      },
+      {
+        "id": "row_bitfit",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (BitFit) row with 14.2M trainable parameters"
+      },
+      {
+        "id": "row_preembed",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (PreEmbed) row with 3.2M trainable parameters"
+      },
+      {
+        "id": "row_prelayer",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (PreLayer) row with 20.2M trainable parameters"
+      },
+      {
+        "id": "row_adapter7",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (AdapterH) row with 7.1M trainable parameters"
+      },
+      {
+        "id": "row_adapter40",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (AdapterH) row with 40.1M trainable parameters"
+      },
+      {
+        "id": "row_lora4",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (LoRA) row with 4.7M trainable parameters"
+      },
+      {
+        "id": "row_lora37",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (LoRA) row with 37.7M trainable parameters"
+      }
+    ],
+    "retrieved_utc": "2026-09-09",
+    "paper_version": "arXiv:2106.09685v2, 16 Oct 2021",
+    "extraction": "Web tool parsed original PDF text. Direct PDF download returned HTTP403. No digitization of plots.",
+    "inclusion": "Every Table 4 method/parameter setting; WikiSQL and MNLI-m columns plotted. Full SAMSum data preserved here.",
+    "task_uncertainty": {
+      "WikiSQL_typical_sd_pp": 0.5,
+      "MNLI_m_typical_sd_pp": 0.1,
+      "SAMSum_typical_sd_points": [
+        0.2,
+        0.2,
+        0.1
+      ],
+      "source_id": "protocol",
+      "interpretation": "Task-level typical standard deviations over random seeds, not entry-specific estimates. No chart error bars."
+    }
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "params",
+        "label": "Trainable parameters",
+        "unit": "million parameters",
+        "direction": "lower"
+      },
+      {
+        "id": "wiki",
+        "label": "WikiSQL logical-form accuracy",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "mnli",
+        "label": "MNLI-matched accuracy",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "r1",
+        "label": "SAMSum ROUGE-1",
+        "unit": "ROUGE points",
+        "direction": "higher"
+      },
+      {
+        "id": "r2",
+        "label": "SAMSum ROUGE-2",
+        "unit": "ROUGE points",
+        "direction": "higher"
+      },
+      {
+        "id": "rl",
+        "label": "SAMSum ROUGE-L",
+        "unit": "ROUGE points",
+        "direction": "higher"
+      }
+    ],
+    "results": [
+      {
+        "id": "ft_params",
+        "method_id": "ft",
+        "metric_id": "params",
+        "source_id": "row_ft",
+        "value": 175255.8,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_wiki",
+        "method_id": "ft",
+        "metric_id": "wiki",
+        "source_id": "row_ft",
+        "value": 73.8,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_mnli",
+        "method_id": "ft",
+        "metric_id": "mnli",
+        "source_id": "row_ft",
+        "value": 89.5,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_r1",
+        "method_id": "ft",
+        "metric_id": "r1",
+        "source_id": "row_ft",
+        "value": 52.0,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_r2",
+        "method_id": "ft",
+        "metric_id": "r2",
+        "source_id": "row_ft",
+        "value": 28.0,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_rl",
+        "method_id": "ft",
+        "metric_id": "rl",
+        "source_id": "row_ft",
+        "value": 44.5,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_params",
+        "method_id": "bitfit",
+        "metric_id": "params",
+        "source_id": "row_bitfit",
+        "value": 14.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_wiki",
+        "method_id": "bitfit",
+        "metric_id": "wiki",
+        "source_id": "row_bitfit",
+        "value": 71.3,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_mnli",
+        "method_id": "bitfit",
+        "metric_id": "mnli",
+        "source_id": "row_bitfit",
+        "value": 91.0,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_r1",
+        "method_id": "bitfit",
+        "metric_id": "r1",
+        "source_id": "row_bitfit",
+        "value": 51.3,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_r2",
+        "method_id": "bitfit",
+        "metric_id": "r2",
+        "source_id": "row_bitfit",
+        "value": 27.4,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_rl",
+        "method_id": "bitfit",
+        "metric_id": "rl",
+        "source_id": "row_bitfit",
+        "value": 43.5,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_params",
+        "method_id": "preembed",
+        "metric_id": "params",
+        "source_id": "row_preembed",
+        "value": 3.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_wiki",
+        "method_id": "preembed",
+        "metric_id": "wiki",
+        "source_id": "row_preembed",
+        "value": 63.1,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_mnli",
+        "method_id": "preembed",
+        "metric_id": "mnli",
+        "source_id": "row_preembed",
+        "value": 88.6,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_r1",
+        "method_id": "preembed",
+        "metric_id": "r1",
+        "source_id": "row_preembed",
+        "value": 48.3,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_r2",
+        "method_id": "preembed",
+        "metric_id": "r2",
+        "source_id": "row_preembed",
+        "value": 24.2,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_rl",
+        "method_id": "preembed",
+        "metric_id": "rl",
+        "source_id": "row_preembed",
+        "value": 40.5,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_params",
+        "method_id": "prelayer",
+        "metric_id": "params",
+        "source_id": "row_prelayer",
+        "value": 20.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_wiki",
+        "method_id": "prelayer",
+        "metric_id": "wiki",
+        "source_id": "row_prelayer",
+        "value": 70.1,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_mnli",
+        "method_id": "prelayer",
+        "metric_id": "mnli",
+        "source_id": "row_prelayer",
+        "value": 89.5,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_r1",
+        "method_id": "prelayer",
+        "metric_id": "r1",
+        "source_id": "row_prelayer",
+        "value": 50.8,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_r2",
+        "method_id": "prelayer",
+        "metric_id": "r2",
+        "source_id": "row_prelayer",
+        "value": 27.3,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_rl",
+        "method_id": "prelayer",
+        "metric_id": "rl",
+        "source_id": "row_prelayer",
+        "value": 43.5,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_params",
+        "method_id": "adapter7",
+        "metric_id": "params",
+        "source_id": "row_adapter7",
+        "value": 7.1,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_wiki",
+        "method_id": "adapter7",
+        "metric_id": "wiki",
+        "source_id": "row_adapter7",
+        "value": 71.9,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_mnli",
+        "method_id": "adapter7",
+        "metric_id": "mnli",
+        "source_id": "row_adapter7",
+        "value": 89.8,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_r1",
+        "method_id": "adapter7",
+        "metric_id": "r1",
+        "source_id": "row_adapter7",
+        "value": 53.0,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_r2",
+        "method_id": "adapter7",
+        "metric_id": "r2",
+        "source_id": "row_adapter7",
+        "value": 28.9,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_rl",
+        "method_id": "adapter7",
+        "metric_id": "rl",
+        "source_id": "row_adapter7",
+        "value": 44.8,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_params",
+        "method_id": "adapter40",
+        "metric_id": "params",
+        "source_id": "row_adapter40",
+        "value": 40.1,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_wiki",
+        "method_id": "adapter40",
+        "metric_id": "wiki",
+        "source_id": "row_adapter40",
+        "value": 73.2,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_mnli",
+        "method_id": "adapter40",
+        "metric_id": "mnli",
+        "source_id": "row_adapter40",
+        "value": 91.5,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_r1",
+        "method_id": "adapter40",
+        "metric_id": "r1",
+        "source_id": "row_adapter40",
+        "value": 53.2,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_r2",
+        "method_id": "adapter40",
+        "metric_id": "r2",
+        "source_id": "row_adapter40",
+        "value": 29.0,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_rl",
+        "method_id": "adapter40",
+        "metric_id": "rl",
+        "source_id": "row_adapter40",
+        "value": 45.1,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_params",
+        "method_id": "lora4",
+        "metric_id": "params",
+        "source_id": "row_lora4",
+        "value": 4.7,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_wiki",
+        "method_id": "lora4",
+        "metric_id": "wiki",
+        "source_id": "row_lora4",
+        "value": 73.4,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_mnli",
+        "method_id": "lora4",
+        "metric_id": "mnli",
+        "source_id": "row_lora4",
+        "value": 91.7,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_r1",
+        "method_id": "lora4",
+        "metric_id": "r1",
+        "source_id": "row_lora4",
+        "value": 53.8,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_r2",
+        "method_id": "lora4",
+        "metric_id": "r2",
+        "source_id": "row_lora4",
+        "value": 29.8,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_rl",
+        "method_id": "lora4",
+        "metric_id": "rl",
+        "source_id": "row_lora4",
+        "value": 45.9,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_params",
+        "method_id": "lora37",
+        "metric_id": "params",
+        "source_id": "row_lora37",
+        "value": 37.7,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "GPT-3 Table 4 adaptation",
+          "split": "training parameter count; not an evaluation split",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_wiki",
+        "method_id": "lora37",
+        "metric_id": "wiki",
+        "source_id": "row_lora37",
+        "value": 74.0,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_mnli",
+        "method_id": "lora37",
+        "metric_id": "mnli",
+        "source_id": "row_lora37",
+        "value": 91.6,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_r1",
+        "method_id": "lora37",
+        "metric_id": "r1",
+        "source_id": "row_lora37",
+        "value": 53.4,
+        "source_column": "SAMSum ROUGE-1",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_r2",
+        "method_id": "lora37",
+        "metric_id": "r2",
+        "source_id": "row_lora37",
+        "value": 29.2,
+        "source_column": "SAMSum ROUGE-2",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_rl",
+        "method_id": "lora37",
+        "metric_id": "rl",
+        "source_id": "row_lora37",
+        "value": 45.1,
+        "source_column": "SAMSum ROUGE-L",
+        "comparison": {
+          "dataset": "SAMSum",
+          "split": "as reported in Table 4; split not explicit in table caption",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "wiki_delta",
+        "type": "percentage_point_difference",
+        "proposed_result_id": "lora4_wiki",
+        "baseline_result_id": "ft_wiki",
+        "decimals": 1,
+        "display_value": -0.4
+      },
+      {
+        "id": "mnli_delta",
+        "type": "percentage_point_difference",
+        "proposed_result_id": "lora4_mnli",
+        "baseline_result_id": "ft_mnli",
+        "decimals": 1,
+        "display_value": 2.2
+      }
+    ]
+  },
+  "charts": [
+    {
+      "type": "dot",
+      "title": "WikiSQL logical-form accuracy",
+      "metric_id": "wiki",
+      "categories": [
+        "Full FT",
+        "BitFit",
+        "PreEmbed",
+        "PreLayer",
+        "AdapterH",
+        "AdapterH",
+        "LoRA",
+        "LoRA"
+      ],
+      "xlabel": "Accuracy (%) \u2191",
+      "series": [
+        {
+          "id": "wiki",
+          "label": "Table 4 methods",
+          "values": [
+            73.8,
+            71.3,
+            63.1,
+            70.1,
+            71.9,
+            73.2,
+            73.4,
+            74.0
+          ],
+          "result_ids": [
+            "ft_wiki",
+            "bitfit_wiki",
+            "preembed_wiki",
+            "prelayer_wiki",
+            "adapter7_wiki",
+            "adapter40_wiki",
+            "lora4_wiki",
+            "lora37_wiki"
+          ],
+          "point_roles": [
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "proposed",
+            "proposed"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dot",
+      "title": "MNLI-matched accuracy",
+      "metric_id": "mnli",
+      "categories": [
+        "Full FT",
+        "BitFit",
+        "PreEmbed",
+        "PreLayer",
+        "AdapterH",
+        "AdapterH",
+        "LoRA",
+        "LoRA"
+      ],
+      "xlabel": "Accuracy (%) \u2191",
+      "series": [
+        {
+          "id": "mnli",
+          "label": "Table 4 methods",
+          "values": [
+            89.5,
+            91.0,
+            88.6,
+            89.5,
+            89.8,
+            91.5,
+            91.7,
+            91.6
+          ],
+          "result_ids": [
+            "ft_mnli",
+            "bitfit_mnli",
+            "preembed_mnli",
+            "prelayer_mnli",
+            "adapter7_mnli",
+            "adapter40_mnli",
+            "lora4_mnli",
+            "lora37_mnli"
+          ],
+          "point_roles": [
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "baseline",
+            "proposed",
+            "proposed"
+          ]
+        }
+      ]
+    }
+  ],
+  "row_order": [
+    "ft",
+    "bitfit",
+    "preembed",
+    "prelayer",
+    "adapter7",
+    "adapter40",
+    "lora4",
+    "lora37"
+  ],
+  "method_labels": {
+    "ft": "Full FT",
+    "bitfit": "BitFit",
+    "preembed": "PreEmbed",
+    "prelayer": "PreLayer",
+    "adapter7": "AdapterH",
+    "adapter40": "AdapterH",
+    "lora4": "LoRA",
+    "lora37": "LoRA"
+  },
+  "layout": {
+    "concept_region_inches": [
+      0.18,
+      0.85,
+      2.14,
+      2.68
+    ],
+    "evidence_region_inches": [
+      2.52,
+      0.85,
+      4.3,
+      2.68
+    ],
+    "font_pt": 8.5,
+    "axis_limits": {
+      "wiki": [
+        62,
+        77.5
+      ],
+      "mnli": [
+        88.1,
+        92.7
+      ]
+    },
+    "baseline_marker": "o",
+    "proposed_marker": "D"
+  },
+  "method_contract": {
+    "h": "W0 x + (alpha/r) B(Ax)",
+    "dimensions": {
+      "W0": "d x k",
+      "A": "r x k",
+      "B": "d x r",
+      "x": "k",
+      "h": "d"
+    },
+    "frozen": [
+      "W0"
+    ],
+    "trainable": [
+      "A",
+      "B"
+    ],
+    "initialization": {
+      "A": "random Gaussian",
+      "B": "zero"
+    },
+    "inference": "Wmerged = W0 + (alpha/r) BA"
+  }
+}

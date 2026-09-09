@@ -1,0 +1,77 @@
+{
+  "retrieval_date": "2026-09-09",
+  "sample_size": 500,
+  "per_stratum": 100,
+  "ordering": "Retain proceedings order within the keyword-prioritized and other-title groups; deduplicate exact titles; take 100 per venue/year.",
+  "title_priority_regex": "diffus|transform|model|neural|learn|vision|language|generat|represent|attention|graph|reinforce|segment|detect|image|agent|efficien|scal|robust|causal|quant|adapt|sample|domain",
+  "limitations": [
+    "Convenience selection from bounded browser windows, with strong author-order bias in PMLR volumes.",
+    "No award ranking or figure-quality ranking.",
+    "Browser window line offsets can change when proceedings HTML changes; the canonical paper URL manifest is the reproducible frozen sample."
+  ],
+  "sources": [
+    {
+      "venue": "ICML",
+      "year": 2022,
+      "url": "https://proceedings.mlr.press/v162/",
+      "browser_lineno": 0,
+      "papers_selected": 46
+    },
+    {
+      "venue": "ICML",
+      "year": 2022,
+      "url": "https://proceedings.mlr.press/v162/",
+      "browser_lineno": 650,
+      "papers_selected": 54
+    },
+    {
+      "venue": "ICML",
+      "year": 2023,
+      "url": "https://proceedings.mlr.press/v202/",
+      "browser_lineno": 0,
+      "papers_selected": 50
+    },
+    {
+      "venue": "ICML",
+      "year": 2023,
+      "url": "https://proceedings.mlr.press/v202/",
+      "browser_lineno": 650,
+      "papers_selected": 50
+    },
+    {
+      "venue": "ICML",
+      "year": 2021,
+      "url": "https://proceedings.mlr.press/v139/",
+      "browser_lineno": 0,
+      "papers_selected": 49
+    },
+    {
+      "venue": "ICML",
+      "year": 2021,
+      "url": "https://proceedings.mlr.press/v139/",
+      "browser_lineno": 650,
+      "papers_selected": 51
+    },
+    {
+      "venue": "ECCV",
+      "year": 2024,
+      "url": "https://www.ecva.net/papers.php",
+      "browser_lineno": 0,
+      "papers_selected": 57
+    },
+    {
+      "venue": "ECCV",
+      "year": 2024,
+      "url": "https://www.ecva.net/papers.php",
+      "browser_lineno": 800,
+      "papers_selected": 43
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2023,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023",
+      "browser_lineno": 0,
+      "papers_selected": 100
+    }
+  ]
+}

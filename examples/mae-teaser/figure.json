@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "kind": "teaser",
+  "status": "final",
+  "figure": {
+    "width_in": 7,
+    "height_in": 3.8,
+    "title": "MAE: encode fewer patches, retain recognition quality",
+    "subtitle": "ViT-L/16 \u00b7 ImageNet-1K \u00b7 800 epochs \u00b7 128 TPU-v3 cores",
+    "note": "Table 2 ablation: 63.7% less time and +0.7 percentage points for the 8-block variant."
+  },
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "mae",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2111.06377v3",
+        "location": "Table 2, PDF page 5, ViT-L rows; Section 3 and Figure 1"
+      }
+    ]
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "acc",
+        "label": "Fine-tuned top-1 accuracy",
+        "direction": "higher",
+        "unit": "percent"
+      },
+      {
+        "id": "time",
+        "label": "Pretraining wall-clock time",
+        "direction": "lower",
+        "unit": "hours"
+      }
+    ],
+    "results": [
+      {
+        "id": "masked8_acc",
+        "method_id": "masked8",
+        "metric_id": "acc",
+        "value": 84.2,
+        "source_id": "mae",
+        "comparison": {
+          "dataset": "ImageNet-1K",
+          "split": "validation",
+          "budget": "800 pretraining epochs; 128 TPU-v3 cores; TensorFlow",
+          "protocol": "Table 2; 75% masking; decoder width 512; fine-tuned top-1"
+        },
+        "source_location": "Table 2, ViT-L row masked8"
+      },
+      {
+        "id": "masked8_time",
+        "method_id": "masked8",
+        "metric_id": "time",
+        "value": 42.4,
+        "source_id": "mae",
+        "comparison": {
+          "dataset": "ImageNet-1K",
+          "split": "validation",
+          "budget": "800 pretraining epochs; 128 TPU-v3 cores; TensorFlow",
+          "protocol": "Table 2; 75% masking; decoder width 512; fine-tuned top-1"
+        },
+        "source_location": "Table 2, ViT-L row masked8"
+      },
+      {
+        "id": "visible8_acc",
+        "method_id": "visible8",
+        "metric_id": "acc",
+        "value": 84.9,
+        "source_id": "mae",
+        "comparison": {
+          "dataset": "ImageNet-1K",
+          "split": "validation",
+          "budget": "800 pretraining epochs; 128 TPU-v3 cores; TensorFlow",
+          "protocol": "Table 2; 75% masking; decoder width 512; fine-tuned top-1"
+        },
+        "source_location": "Table 2, ViT-L row visible8"
+      },
+      {
+        "id": "visible8_time",
+        "method_id": "visible8",
+        "metric_id": "time",
+        "value": 15.4,
+        "source_id": "mae",
+        "comparison": {
+          "dataset": "ImageNet-1K",
+          "split": "validation",
+          "budget": "800 pretraining epochs; 128 TPU-v3 cores; TensorFlow",
+          "protocol": "Table 2; 75% masking; decoder width 512; fine-tuned top-1"
+        },
+        "source_location": "Table 2, ViT-L row visible8"
+      },
+      {
+        "id": "visible1_acc",
+        "method_id": "visible1",
+        "metric_id": "acc",
+        "value": 84.8,
+        "source_id": "mae",
+        "comparison": {
+          "dataset": "ImageNet-1K",
+          "split": "validation",
+          "budget": "800 pretraining epochs; 128 TPU-v3 cores; TensorFlow",
+          "protocol": "Table 2; 75% masking; decoder width 512; fine-tuned top-1"
+        },
+        "source_location": "Table 2, ViT-L row visible1"
+      },
+      {
+        "id": "visible1_time",
+        "method_id": "visible1",
+        "metric_id": "time",
+        "value": 11.6,
+        "source_id": "mae",
+        "comparison": {
+          "dataset": "ImageNet-1K",
+          "split": "validation",
+          "budget": "800 pretraining epochs; 128 TPU-v3 cores; TensorFlow",
+          "protocol": "Table 2; 75% masking; decoder width 512; fine-tuned top-1"
+        },
+        "source_location": "Table 2, ViT-L row visible1"
+      }
+    ],
+    "claims": [
+      {
+        "id": "time_gain",
+        "type": "reduction",
+        "baseline_result_id": "masked8_time",
+        "proposed_result_id": "visible8_time",
+        "display_value": 63.7,
+        "decimals": 1
+      },
+      {
+        "id": "acc_gain",
+        "type": "percentage_point_difference",
+        "baseline_result_id": "masked8_acc",
+        "proposed_result_id": "visible8_acc",
+        "display_value": 0.7,
+        "decimals": 1
+      }
+    ]
+  },
+  "concept": {
+    "kind": "token_grid",
+    "title": "Learn from visible patches",
+    "input_label": "Illustrative image patch grid",
+    "rows": 4,
+    "cols": 4,
+    "selected": [
+      1,
+      6,
+      9,
+      15
+    ],
+    "labels": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "operation_label": "Keep 25%\nfor the encoder",
+    "output_label": "Reconstruct what\nis missing",
+    "note": "Mask tokens enter the decoder later."
+  },
+  "charts": [
+    {
+      "type": "scatter",
+      "title": "Quality and training time",
+      "metric_id": "acc",
+      "x_metric_id": "time",
+      "xlabel": "Pretraining time (hours) \u2193",
+      "ylabel": "Fine-tuned top-1 (%) \u2191",
+      "xlim": [
+        5,
+        49
+      ],
+      "ylim": [
+        84.05,
+        85.08
+      ],
+      "legend": false,
+      "series": [
+        {
+          "label": "Encoder with mask tokens",
+          "role": "baseline",
+          "values": [
+            84.2
+          ],
+          "result_ids": [
+            "masked8_acc"
+          ],
+          "x_values": [
+            42.4
+          ],
+          "x_result_ids": [
+            "masked8_time"
+          ],
+          "point_labels": [
+            "Encoder with mask tokens"
+          ],
+          "point_label_offsets": [
+            [
+              -7,
+              8
+            ]
+          ]
+        },
+        {
+          "label": "Visible only \u00b7 8-block decoder",
+          "role": "proposed",
+          "values": [
+            84.9
+          ],
+          "result_ids": [
+            "visible8_acc"
+          ],
+          "x_values": [
+            15.4
+          ],
+          "x_result_ids": [
+            "visible8_time"
+          ],
+          "point_labels": [
+            "Visible only \u00b7 8-block decoder"
+          ],
+          "point_label_offsets": [
+            [
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "label": "Visible only \u00b7 1-block decoder",
+          "role": "baseline",
+          "values": [
+            84.8
+          ],
+          "result_ids": [
+            "visible1_acc"
+          ],
+          "x_values": [
+            11.6
+          ],
+          "x_result_ids": [
+            "visible1_time"
+          ],
+          "point_labels": [
+            "Visible only \u00b7 1-block decoder"
+          ],
+          "point_label_offsets": [
+            [
+              7,
+              -24
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

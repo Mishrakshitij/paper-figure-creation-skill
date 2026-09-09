@@ -1,0 +1,1 @@
+-r skills/paper-figure-creation/requirements.txt

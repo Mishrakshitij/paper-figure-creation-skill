@@ -1,0 +1,3 @@
+**MAE pretraining and downstream recognition.** During pretraining, the encoder receives visible patches; mask tokens join later at the lightweight decoder. Dashed supervision paths connect reconstructed pixels and original masked-patch targets to the MSE objective. Downstream recognition uses the encoder on complete images and removes the pretraining decoder. Patch projection, positional embeddings and internal blocks are omitted. This is an original schematic based on [He et al., Figure 1 and Section 3](https://arxiv.org/pdf/2111.06377v3).
+
+Alt text: Upper lane shows visible-only encoding, decoder reconstruction and masked-patch supervision. Lower lane shows all patches passing through the pretrained encoder and a recognition head.

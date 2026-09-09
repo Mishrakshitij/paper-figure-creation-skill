@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="method" name="Method">
+    <mxGraphModel dx="720" dy="360" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="720" pageHeight="360" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="input" value="Input tokens" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;verticalAlign=bottom;spacingBottom=8;" vertex="1" parent="1">
+          <mxGeometry x="28.548000000000002" y="171.072" width="107.13600000000001" height="58.752" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-0" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="45.68976000000001" y="180.58982400000002" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-1" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="63.90288000000001" y="180.58982400000002" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-2" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="82.11600000000001" y="180.58982400000002" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-3" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="100.32912000000002" y="180.58982400000002" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-4" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="45.68976000000001" y="193.515264" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-5" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="63.90288000000001" y="193.515264" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-6" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="82.11600000000001" y="193.515264" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="input-tile-7" value="" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="100.32912000000002" y="193.515264" width="16.391808" height="11.632896000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="frozen" value="Backbone W&#10;frozen" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="209.34000000000003" y="114.76799999999999" width="160.704" height="53.856" as="geometry" />
+        </mxCell>
+        <mxCell id="adapt" value="Adapter ΔW&#10;trainable" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#E6F2F3;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="209.34000000000003" y="224.928" width="160.704" height="53.856" as="geometry" />
+        </mxCell>
+        <mxCell id="sum" value="⊕" style="shape=ellipse;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="440.35200000000003" y="178.41599999999997" width="43.524" height="44.064" as="geometry" />
+        </mxCell>
+        <mxCell id="output" value="Prediction ŷ" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="547.488" y="173.51999999999998" width="140.616" height="53.856" as="geometry" />
+        </mxCell>
+        <mxCell id="loss" value="Task loss ℒ" style="shape=rectangle;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=center;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.81;" vertex="1" parent="1">
+          <mxGeometry x="547.488" y="268.992" width="140.616" height="46.512" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-0" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="input" target="frozen">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="169.16400000000002" y="200.44799999999998" />
+              <mxPoint x="169.16400000000002" y="141.696" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-1" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="input" target="adapt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="169.16400000000002" y="200.44799999999998" />
+              <mxPoint x="169.16400000000002" y="251.856" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-2" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="frozen" target="sum">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="462.114" y="141.696" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="adapt" target="sum">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="462.114" y="251.856" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-4" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sum" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#64717A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="output" target="loss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" value="Update ΔW only" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#007D8A;fontFamily=DejaVu Sans;fontSize=11.11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="loss" target="adapt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="289.692" y="292.248" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="annotation-0" value="Preserve the pretrained computation" style="shape=text;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=left;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.11;" vertex="1" parent="1">
+          <mxGeometry x="209.34000000000003" y="84.168" width="435.24" height="12.24" as="geometry" />
+        </mxCell>
+        <mxCell id="annotation-1" value="Add the proposed trainable change" style="shape=text;rounded=1;arcSize=8;whiteSpace=wrap;html=0;align=left;fillColor=#FFFFFF;strokeColor=#64717A;fontFamily=DejaVu Sans;fontColor=#17232B;fontSize=11.11;" vertex="1" parent="1">
+          <mxGeometry x="209.34000000000003" y="201.67200000000003" width="435.24" height="12.24" as="geometry" />
+        </mxCell>
+        <mxCell id="page-title" value="A small trainable branch adapts a frozen backbone" style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=16.67;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="25.200000000000003" y="7.2" width="669.6" height="25.200000000000003" as="geometry" />
+        </mxCell>
+        <mxCell id="page-subtitle" value="Illustrative architecture template; replace with the verified paper mechanism" style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=11.11;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="25.200000000000003" y="43.199999999999996" width="669.6" height="25.200000000000003" as="geometry" />
+        </mxCell>
+        <mxCell id="page-note" value="Solid arrows: inference path. Dashed arrow: training signal. ⊕: addition." style="text;html=0;align=left;verticalAlign=top;fontFamily=DejaVu Sans;fontSize=11.11;fontColor=#17232B;" vertex="1" parent="1">
+          <mxGeometry x="25.200000000000003" y="338.4" width="669.6" height="25.200000000000003" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
