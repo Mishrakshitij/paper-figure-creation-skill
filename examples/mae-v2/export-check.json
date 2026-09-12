@@ -1,0 +1,30 @@
+{
+  "pdf_page_points": [
+    0.0,
+    0.0,
+    504.0,
+    284.3999938964844
+  ],
+  "pdf_fonts": [
+    [
+      15,
+      "ttf",
+      "Type0",
+      "EVICAO+DejaVuSans-Bold",
+      "F1",
+      "Identity-H"
+    ],
+    [
+      22,
+      "ttf",
+      "Type0",
+      "BMQQDV+DejaVuSans",
+      "F2",
+      "Identity-H"
+    ]
+  ],
+  "svg_text_elements": 67,
+  "svg_raster_image_elements": 0,
+  "svg_width": "504pt",
+  "svg_height": "284.4pt"
+}

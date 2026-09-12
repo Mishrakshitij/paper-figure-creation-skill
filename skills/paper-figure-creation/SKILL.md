@@ -5,7 +5,7 @@ description: Create or revise evidence-grounded introduction teasers and method 
 
 # Paper figure creation
 
-Make the contribution understandable on first inspection, then make every detail defensible on close reading. Produce original scientific figures from the manuscript, algorithm, and experimental evidence. A figure is an argument with traceable evidence, not an advertisement for the proposed method.
+Make the contribution understandable on first inspection, then make every detail defensible on close reading. Design an original visual argument from the manuscript, algorithm, and experimental evidence. Correct labels on connected boxes are only a starting point: the reader should see what the objects are, what changes, and why that change matters.
 
 ## Choose the job
 
@@ -16,7 +16,7 @@ Make the contribution understandable on first inspection, then make every detail
 | Both | Share semantic colors, notation, component names, and example identity; allocate detail differently | Both references |
 | Rework an existing figure | Inspect its source and rendered image; preserve correct semantics and repair specific communication failures | Relevant mode plus [review.md](references/review.md) |
 
-Read [evidence.md](references/evidence.md) before drawing numerical claims. Read [design-system.md](references/design-system.md) for physical sizing and editable-tool choices. Use [pattern-atlas.md](references/pattern-atlas.md) when the appropriate visual grammar is unclear. These references are selective; do not load the full research corpus for an ordinary figure request.
+Start with [visual-story.md](references/visual-story.md) when inventing a composition or repairing a weak figure. Read [evidence.md](references/evidence.md) before drawing numerical claims, [design-system.md](references/design-system.md) for physical styling and editable tools, and [semantic-primitives.md](references/semantic-primitives.md) when implementing worked examples. Use [pattern-atlas.md](references/pattern-atlas.md) for additional topology choices. Load these selectively; an ordinary figure request does not need the full research corpus.
 
 ## Establish a compact figure brief
 
@@ -33,19 +33,23 @@ Write the brief and unresolved assumptions beside the figure source. When dimens
 
 ## Design before rendering
 
-Create two small composition alternatives in source or scratch. Compare their reading order, evidence area, and where the contribution becomes visible. Choose the simpler one that preserves the scientific distinctions.
+Inspect the actual pixels of any supplied visual references. Identify how their objects, correspondences, grouping and reading path explain the science; do not infer visual quality from captions or copy a paper's surface styling. Record inaccessible references as uninspected. A reference can motivate a grammar without making that grammar appropriate for this paper.
+
+Turn the brief into a **representation contract**: the concrete input/output example, which marks denote which objects, what each transformation changes, the first-to-last reading path, and where novelty becomes visible. Save it with the source. Favor a small worked example when it reveals the mechanism; a purely symbolic architecture can be clearer when exact dimensions and operators are the contribution.
+
+For a new complex figure, or when an existing composition has failed, sketch **three genuinely different compositions** before detailed drawing: change grouping, narrative order or the relation between overview and example, not merely colors. Select using the brief's communication needs. Routine local repairs can retain a proven composition. [visual-story.md](references/visual-story.md) gives concrete selection and repair recipes.
 
 For a teaser, default to **30–40% of usable panel area for problem/example/idea and 60–70% for experimental evidence**. This is a layout preference, not a distribution of figure types or a license to invent evidence. Use 35:65 as a starting point. Adapt only for a concrete reason and record that reason. The first glance should reveal the task and the supported takeaway; the second should reveal the comparator and conditions.
 
-For a method figure, choose a topology that matches the algorithm: sequence, residual branch, encoder/decoder with skip links, two-stage training/inference, retrieval plus generation, iterative refinement, or multiscale hierarchy. Avoid forcing distinct methods into the same row of rounded boxes.
+For a method figure, choose a topology that exposes the central operation: repeated candidate rows with aligned stages, paired baseline/proposal paths, a shared-state iteration, spatial geometry with a local operator inset, or another faithful structure. Plan branch and loop routing with the composition, before filling the available space.
 
-Use representational marks where the science needs them: patch grids for masking, tokens for sequences, paired views for contrastive learning, camera rays for rendering, documents for retrieval, or a matrix pair for low-rank updates. Generic “Input → Our module → Better output” diagrams hide the very idea the figure must explain.
+Make scientific objects recognizable: a passage with a selected sentence, the same grid before and after an operation, retained token identities, low-rank factors with dimensions, or an observed scene with vector overlays. Use only the detail needed to explain the change. Let repeated identities retain position or encoding, and show the novel transformation inside its module rather than highlighting an opaque “Ours” box.
 
 ## Build an editable, reproducible artifact
 
 Prefer deterministic vector authoring: Matplotlib for experimental plots, SVG or native diagrams.net for geometry, and TikZ when the manuscript requires it. Use raster imagery only for real visual examples or clearly identified illustrations. Do not ask an image generator to draw quantitative axes, numbers, equations, or authoritative architecture wiring.
 
-The bundled engine is an optional starting point, not a ceiling on design:
+The bundled engine is a starting point for compatible layouts. Use custom vector code or native diagram geometry when its grammar cannot express the chosen representation; do not simplify the scientific story merely to fit a renderer:
 
 ```bash
 python scripts/validate_evidence.py figure.json
@@ -62,7 +66,7 @@ Read [review.md](references/review.md). Always inspect actual rendered pixels at
 
 1. **Evidence check:** trace plotted marks and claims to source cells; recompute improvements; preserve unfavorable results and qualify incomparable baselines.
 2. **Semantic check:** trace one example through the method; verify arrows, merge operators, losses, conditioning, frozen states, and what exists at inference.
-3. **Visual check:** inspect the paper-width export, grayscale preview, text extents, label collisions, edge crossings, crop, and consistency between related figures.
+3. **Visual check:** inspect a thumbnail for grouping and emphasis, then the paper-width export for comprehension and legibility. Check correspondences, example-to-operator alignment, novelty visibility, grayscale, collisions, crop, and consistency between related figures. A clean export can still fail to explain the method.
 4. **Independent check when available:** give a reviewer the figure and caption without the intended interpretation. Ask them to state the task, change, result, and method path. Compare their answer with the brief. Do not treat a self-assigned score as an independent comprehension test.
 5. Repair the highest-impact observed failure, rerender, and recheck the affected criterion. Continue while concrete defects remain. If two revisions do not resolve a structural problem, change the layout rather than accumulating patches. Stop once hard gates pass and further changes are cosmetic; document material open limitations.
 

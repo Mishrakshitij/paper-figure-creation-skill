@@ -1,0 +1,11 @@
+{
+  "copied_files": [
+    "build_figures.py",
+    "teaser.spec.json",
+    "method.spec.json"
+  ],
+  "used_explicit_skill_root": true,
+  "exit_code": 0,
+  "output": "Wrote original SEAL teaser and method; current evidence validated.",
+  "generated_main_artifacts": true
+}

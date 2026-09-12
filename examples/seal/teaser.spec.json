@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "status": "draft",
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "knowledge",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Table 2, all five rows and all three columns; Section 4.2 and Appendix B for protocol"
+      },
+      {
+        "id": "arc",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Table 1, all four rows; Section 4.1 and Appendix A for filtered-task protocol"
+      },
+      {
+        "id": "method",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Sections 3.1\u20133.2, Algorithm 1 and Figures 1\u20133"
+      },
+      {
+        "id": "author_site",
+        "kind": "artifact",
+        "locator": "https://jyopari.github.io/posts/seal",
+        "location": "Method overview and domain-instantiation figures; viewed as original pixels, numerical website text not used"
+      }
+    ],
+    "retrieved_utc": "2026-09-12",
+    "paper_version": "2506.10943v2 (18 September 2025)",
+    "extraction": "Exact HTML table values, checked against source rows. Project-page CPT prose is stale relative to v2 and excluded.",
+    "uncertainty": "No entry-specific uncertainty in Tables 1\u20132; no error bars or significance claim.",
+    "example_status": "Invented Lyra passage and grid examples illustrate representations; not reported model outputs."
+  },
+  "kind": "teaser",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.8,
+    "concept_fraction": 0.34,
+    "title": "SEAL: learn how to write your own training data",
+    "geometry_source": "build_figures.py",
+    "note": "Original redesign, reported data; schematic example. Two-column draft, venue unspecified."
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "single",
+        "label": "No-context SQuAD accuracy: Single passage (LoRA)",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "cpt200",
+        "label": "No-context SQuAD accuracy: Continued pretraining: 200 passages",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "cpt2067",
+        "label": "No-context SQuAD accuracy: Continued pretraining: 2067 passages",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "arc",
+        "label": "Successful adaptations on filtered ARC tasks",
+        "unit": "percent",
+        "direction": "higher"
+      }
+    ],
+    "results": [
+      {
+        "id": "base_single",
+        "method_id": "base",
+        "metric_id": "single",
+        "value": 32.7,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Base model row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "base_cpt200",
+        "method_id": "base",
+        "metric_id": "cpt200",
+        "value": 32.7,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Base model row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "base_cpt2067",
+        "method_id": "base",
+        "metric_id": "cpt2067",
+        "value": 29.0,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Base model row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "passage_single",
+        "method_id": "passage",
+        "metric_id": "single",
+        "value": 33.5,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Passage only row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "passage_cpt200",
+        "method_id": "passage",
+        "metric_id": "cpt200",
+        "value": 36.0,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Passage only row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "passage_cpt2067",
+        "method_id": "passage",
+        "metric_id": "cpt2067",
+        "value": 31.2,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Passage only row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "synthetic_single",
+        "method_id": "synthetic",
+        "metric_id": "single",
+        "value": 39.7,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Self-generated data row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "synthetic_cpt200",
+        "method_id": "synthetic",
+        "metric_id": "cpt200",
+        "value": 50.6,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Self-generated data row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "synthetic_cpt2067",
+        "method_id": "synthetic",
+        "metric_id": "cpt2067",
+        "value": 43.4,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Self-generated data row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "gpt41_single",
+        "method_id": "gpt41",
+        "metric_id": "single",
+        "value": 46.3,
+        "source_id": "knowledge",
+        "source_location": "Table 2: GPT-4.1 data row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "gpt41_cpt200",
+        "method_id": "gpt41",
+        "metric_id": "cpt200",
+        "value": 59.4,
+        "source_id": "knowledge",
+        "source_location": "Table 2: GPT-4.1 data row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "gpt41_cpt2067",
+        "method_id": "gpt41",
+        "metric_id": "cpt2067",
+        "value": 49.2,
+        "source_id": "knowledge",
+        "source_location": "Table 2: GPT-4.1 data row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "seal_single",
+        "method_id": "seal",
+        "metric_id": "single",
+        "value": 47.0,
+        "source_id": "knowledge",
+        "source_location": "Table 2: SEAL row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "seal_cpt200",
+        "method_id": "seal",
+        "metric_id": "cpt200",
+        "value": 58.2,
+        "source_id": "knowledge",
+        "source_location": "Table 2: SEAL row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "seal_cpt2067",
+        "method_id": "seal",
+        "metric_id": "cpt2067",
+        "value": 46.4,
+        "source_id": "knowledge",
+        "source_location": "Table 2: SEAL row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "icl_arc",
+        "method_id": "icl",
+        "metric_id": "arc",
+        "value": 0,
+        "source_id": "arc",
+        "source_location": "Table 1: ICL row",
+        "comparison": {
+          "dataset": "ARC curated subset; Llama-3.2-1B-Instruct",
+          "split": "8 filtered evaluation tasks (11 training tasks)",
+          "budget": "5 independently applied self-edits per evaluation task for SEAL and self-edit baseline; method-dependent adaptation",
+          "protocol": "Section 4.1 and Table 1; percentage of edits yielding correct outputs for self-editing methods"
+        }
+      },
+      {
+        "id": "selfedit_arc",
+        "method_id": "selfedit",
+        "metric_id": "arc",
+        "value": 20,
+        "source_id": "arc",
+        "source_location": "Table 1: Self-edit, no RL row",
+        "comparison": {
+          "dataset": "ARC curated subset; Llama-3.2-1B-Instruct",
+          "split": "8 filtered evaluation tasks (11 training tasks)",
+          "budget": "5 independently applied self-edits per evaluation task for SEAL and self-edit baseline; method-dependent adaptation",
+          "protocol": "Section 4.1 and Table 1; percentage of edits yielding correct outputs for self-editing methods"
+        }
+      },
+      {
+        "id": "seal_arc",
+        "method_id": "seal",
+        "metric_id": "arc",
+        "value": 72.5,
+        "source_id": "arc",
+        "source_location": "Table 1: SEAL row",
+        "comparison": {
+          "dataset": "ARC curated subset; Llama-3.2-1B-Instruct",
+          "split": "8 filtered evaluation tasks (11 training tasks)",
+          "budget": "5 independently applied self-edits per evaluation task for SEAL and self-edit baseline; method-dependent adaptation",
+          "protocol": "Section 4.1 and Table 1; percentage of edits yielding correct outputs for self-editing methods"
+        }
+      },
+      {
+        "id": "oracle_arc",
+        "method_id": "oracle",
+        "metric_id": "arc",
+        "value": 100,
+        "source_id": "arc",
+        "source_location": "Table 1: Oracle TTT row",
+        "comparison": {
+          "dataset": "ARC curated subset; Llama-3.2-1B-Instruct",
+          "split": "8 filtered evaluation tasks (11 training tasks)",
+          "budget": "5 independently applied self-edits per evaluation task for SEAL and self-edit baseline; method-dependent adaptation",
+          "protocol": "Section 4.1 and Table 1; percentage of edits yielding correct outputs for self-editing methods"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "single_vs_own",
+        "type": "percentage_point_difference",
+        "baseline_result_id": "synthetic_single",
+        "proposed_result_id": "seal_single",
+        "display_value": 7.3,
+        "decimals": 1
+      }
+    ]
+  },
+  "charts": [
+    {
+      "type": "dot",
+      "metric_id": "single",
+      "series": [
+        {
+          "label": "Base model",
+          "values": [
+            32.7
+          ],
+          "result_ids": [
+            "base_single"
+          ]
+        },
+        {
+          "label": "Passage only",
+          "values": [
+            33.5
+          ],
+          "result_ids": [
+            "passage_single"
+          ]
+        },
+        {
+          "label": "Self-generated data",
+          "values": [
+            39.7
+          ],
+          "result_ids": [
+            "synthetic_single"
+          ]
+        },
+        {
+          "label": "GPT-4.1 data",
+          "values": [
+            46.3
+          ],
+          "result_ids": [
+            "gpt41_single"
+          ]
+        },
+        {
+          "label": "SEAL",
+          "values": [
+            47.0
+          ],
+          "result_ids": [
+            "seal_single"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dot",
+      "metric_id": "cpt200",
+      "series": [
+        {
+          "label": "Base model",
+          "values": [
+            32.7
+          ],
+          "result_ids": [
+            "base_cpt200"
+          ]
+        },
+        {
+          "label": "Passage only",
+          "values": [
+            36.0
+          ],
+          "result_ids": [
+            "passage_cpt200"
+          ]
+        },
+        {
+          "label": "Self-generated data",
+          "values": [
+            50.6
+          ],
+          "result_ids": [
+            "synthetic_cpt200"
+          ]
+        },
+        {
+          "label": "GPT-4.1 data",
+          "values": [
+            59.4
+          ],
+          "result_ids": [
+            "gpt41_cpt200"
+          ]
+        },
+        {
+          "label": "SEAL",
+          "values": [
+            58.2
+          ],
+          "result_ids": [
+            "seal_cpt200"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dot",
+      "metric_id": "cpt2067",
+      "series": [
+        {
+          "label": "Base model",
+          "values": [
+            29.0
+          ],
+          "result_ids": [
+            "base_cpt2067"
+          ]
+        },
+        {
+          "label": "Passage only",
+          "values": [
+            31.2
+          ],
+          "result_ids": [
+            "passage_cpt2067"
+          ]
+        },
+        {
+          "label": "Self-generated data",
+          "values": [
+            43.4
+          ],
+          "result_ids": [
+            "synthetic_cpt2067"
+          ]
+        },
+        {
+          "label": "GPT-4.1 data",
+          "values": [
+            49.2
+          ],
+          "result_ids": [
+            "gpt41_cpt2067"
+          ]
+        },
+        {
+          "label": "SEAL",
+          "values": [
+            46.4
+          ],
+          "result_ids": [
+            "seal_cpt2067"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "metric_id": "arc",
+      "series": [
+        {
+          "label": "ICL",
+          "values": [
+            0
+          ],
+          "result_ids": [
+            "icl_arc"
+          ]
+        },
+        {
+          "label": "Self-edit, no RL",
+          "values": [
+            20
+          ],
+          "result_ids": [
+            "selfedit_arc"
+          ]
+        },
+        {
+          "label": "SEAL",
+          "values": [
+            72.5
+          ],
+          "result_ids": [
+            "seal_arc"
+          ]
+        },
+        {
+          "label": "Oracle TTT",
+          "values": [
+            100
+          ],
+          "result_ids": [
+            "oracle_arc"
+          ]
+        }
+      ]
+    }
+  ],
+  "row_order": [
+    "base",
+    "passage",
+    "synthetic",
+    "gpt41",
+    "seal"
+  ],
+  "settings": [
+    [
+      "single",
+      "Single passage (LoRA)",
+      "1 passage; LoRA"
+    ],
+    [
+      "cpt200",
+      "Continued pretraining: 200 passages",
+      "200 passages; full finetuning"
+    ],
+    [
+      "cpt2067",
+      "Continued pretraining: 2067 passages",
+      "2067 passages; full finetuning"
+    ]
+  ],
+  "method_labels": {
+    "base": "Base model",
+    "passage": "Passage only",
+    "synthetic": "Self-generated data",
+    "gpt41": "GPT-4.1 data",
+    "seal": "SEAL"
+  },
+  "arc_order": [
+    "icl",
+    "selfedit",
+    "seal",
+    "oracle"
+  ],
+  "arc_labels": {
+    "icl": "ICL",
+    "selfedit": "Self-edit, no RL",
+    "seal": "SEAL",
+    "oracle": "Oracle TTT"
+  }
+}

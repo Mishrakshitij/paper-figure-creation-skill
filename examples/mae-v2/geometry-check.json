@@ -1,0 +1,20 @@
+{
+  "figure_width_in": 7,
+  "figure_height_in": 3.95,
+  "visible_patch_ids": [
+    2,
+    6,
+    11,
+    15
+  ],
+  "packed_visible_ids": [
+    11,
+    2,
+    15,
+    6
+  ],
+  "mask_count": 12,
+  "text_outside_canvas": [],
+  "figure_status": "reviewed example draft; target manuscript unavailable",
+  "numerical_experiments": "none; patch counts are an illustrative 16-patch construction"
+}

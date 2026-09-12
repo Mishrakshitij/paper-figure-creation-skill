@@ -2,6 +2,31 @@
 
 These are original explanatory redraws using published data. They are not the original authors' artwork or new experimental reproductions. Each directory preserves source/specification, editable vector output, PDF and PNG.
 
+## Revised visual examples
+
+These examples address the first gallery's generic representations. The [design review](../docs/design-upgrade.md) records what changed and what remained uncertain. Teaching scenes, passages and schematic rewards are identified in the figures; reported plots retain their source ledgers.
+
+| Paper | Figure and editable exports | What the drawing now makes visible |
+| --- | --- | --- |
+| MAE | [PNG](mae-v2/figure.png) · [PDF](mae-v2/figure.pdf) · [SVG](mae-v2/figure.svg) · [source](mae-v2/build_figure.py) | One scene, retained patch identities, packed visible inputs, asymmetric computation, restored positions and masked targets |
+| SEAL teaser | [PNG](seal/seal-teaser.png) · [PDF](seal/seal-teaser.pdf) · [SVG](seal/seal-teaser.svg) · [source](seal/build_figures.py) | A concrete self-edit connected to recall, all reported methods across three knowledge settings, and the filtered-ARC comparison |
+| SEAL method | [PNG](seal/seal-method.png) · [PDF](seal/seal-method.pdf) · [SVG](seal/seal-method.svg) | Parallel candidate edits, independent adapted model states, post-adaptation scoring and the policy update |
+| WMRL method | [PNG](wmrl/wmrl-method.png) · [PDF](wmrl/wmrl-method.pdf) · [SVG](wmrl/wmrl-method.svg) · [source](wmrl/build_figure.py) | Candidate groups, the paired anchor route, fitting versus applying calibration, and reliability-weighted update fusion |
+
+![Revised MAE method](mae-v2/figure.png)
+
+![SEAL introduction teaser](seal/seal-teaser.png)
+
+![SEAL method](seal/seal-method.png)
+
+![WMRL method](wmrl/wmrl-method.png)
+
+The [earlier MAE method](mae-method/figure.png) is preserved for a same-paper visual comparison. This is an authored redesign, not a matched independent experiment measuring the skill's effect. Rebuild commands and captions live beside each revised example.
+
+## Earlier gallery
+
+These examples document the initial implementation. They preserve useful evidence and export behavior, but they are not the new ceiling for visual explanation.
+
 | Paper | Teaser | Method | What the case tests |
 | --- | --- | --- | --- |
 | MAE | [PNG](mae-teaser/figure.png) · [PDF](mae-teaser/figure.pdf) · [SVG](mae-teaser/figure.svg) | [PNG](mae-method/figure.png) · [PDF](mae-method/figure.pdf) · [draw.io](mae-method/figure.drawio) | Real masking representation, cost-quality trade-off, training/inference separation |

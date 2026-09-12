@@ -1,0 +1,22 @@
+{
+  "seal-teaser": {
+    "pages": 1,
+    "page_size_pt": [
+      504.0,
+      345.6000061035156
+    ],
+    "text_extractable": true,
+    "svg_live_text": 66,
+    "svg_embedded_raster_images": 0
+  },
+  "seal-method": {
+    "pages": 1,
+    "page_size_pt": [
+      504.0,
+      385.20001220703125
+    ],
+    "text_extractable": true,
+    "svg_live_text": 49,
+    "svg_embedded_raster_images": 0
+  }
+}

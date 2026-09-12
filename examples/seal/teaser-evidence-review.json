@@ -1,0 +1,22 @@
+{
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "uncertainty_unreported",
+      "path": "evidence.results",
+      "message": "No uncertainty is declared for: base_single, base_cpt200, base_cpt2067, passage_single, passage_cpt200, passage_cpt2067, synthetic_single, synthetic_cpt200, synthetic_cpt2067, gpt41_single, gpt41_cpt200, gpt41_cpt2067, seal_single, seal_cpt200, seal_cpt2067, icl_arc, selfedit_arc, seal_arc, oracle_arc. Do not fabricate intervals or assert significance."
+    }
+  ],
+  "computed_claims": [
+    {
+      "id": "single_vs_own",
+      "type": "percentage_point_difference",
+      "value": 7.299999999999997,
+      "unit": "pp",
+      "display": "7.3 pp",
+      "baseline_result_id": "synthetic_single",
+      "proposed_result_id": "seal_single"
+    }
+  ]
+}

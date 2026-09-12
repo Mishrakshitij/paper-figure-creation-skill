@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "status": "draft",
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "knowledge",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Table 2, all five rows and all three columns; Section 4.2 and Appendix B for protocol"
+      },
+      {
+        "id": "arc",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Table 1, all four rows; Section 4.1 and Appendix A for filtered-task protocol"
+      },
+      {
+        "id": "method",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Sections 3.1\u20133.2, Algorithm 1 and Figures 1\u20133"
+      },
+      {
+        "id": "author_site",
+        "kind": "artifact",
+        "locator": "https://jyopari.github.io/posts/seal",
+        "location": "Method overview and domain-instantiation figures; viewed as original pixels, numerical website text not used"
+      }
+    ],
+    "retrieved_utc": "2026-09-12",
+    "paper_version": "2506.10943v2 (18 September 2025)",
+    "extraction": "Exact HTML table values, checked against source rows. Project-page CPT prose is stale relative to v2 and excluded.",
+    "uncertainty": "No entry-specific uncertainty in Tables 1\u20132; no error bars or significance claim.",
+    "example_status": "Invented Lyra passage and grid examples illustrate representations; not reported model outputs."
+  },
+  "kind": "method",
+  "figure": {
+    "width_in": 7,
+    "height_in": 5.35,
+    "title": "SEAL trains an editor through the results of adaptation",
+    "geometry_source": "build_figures.py"
+  },
+  "evidence": {
+    "metrics": [],
+    "results": [],
+    "claims": []
+  },
+  "method_contract": {
+    "input": "Context C plus downstream evaluation task tau during RL training",
+    "policy": "Current LM with parameters theta_t samples candidate self-edits",
+    "inner": "Each candidate independently adapts a copy of the current weights by SFT (LoRA in the demonstrated individual updates)",
+    "evaluation": "Downstream task performance determines reward; no gradient through reward",
+    "outer": "On-policy ReST-EM: select rewarded context/edit pairs, SFT edit generation to obtain theta_(t+1)",
+    "selection": "Generic positive-improvement reward; knowledge-incorporation implementation selects the best candidate",
+    "deployment": "Generate self-edit and adapt; outer reward-training loop is not required at inference",
+    "knowledge": "Generated implications are finetuning data; downstream QA omits the source passage",
+    "fewshot": "Self-edit selects augmentations and training settings; adapted model predicts held-out output"
+  },
+  "canonical_geometry": "build_figures.py:method_figure"
+}

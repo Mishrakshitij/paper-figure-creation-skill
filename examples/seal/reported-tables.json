@@ -1,0 +1,72 @@
+{
+  "source": "https://arxiv.org/html/2506.10943v2",
+  "table2": [
+    [
+      "base",
+      "Base model",
+      [
+        32.7,
+        32.7,
+        29.0
+      ]
+    ],
+    [
+      "passage",
+      "Passage only",
+      [
+        33.5,
+        36.0,
+        31.2
+      ]
+    ],
+    [
+      "synthetic",
+      "Self-generated data",
+      [
+        39.7,
+        50.6,
+        43.4
+      ]
+    ],
+    [
+      "gpt41",
+      "GPT-4.1 data",
+      [
+        46.3,
+        59.4,
+        49.2
+      ]
+    ],
+    [
+      "seal",
+      "SEAL",
+      [
+        47.0,
+        58.2,
+        46.4
+      ]
+    ]
+  ],
+  "table1": [
+    [
+      "icl",
+      "ICL",
+      0
+    ],
+    [
+      "selfedit",
+      "Self-edit, no RL",
+      20
+    ],
+    [
+      "seal",
+      "SEAL",
+      72.5
+    ],
+    [
+      "oracle",
+      "Oracle TTT",
+      100
+    ]
+  ]
+}

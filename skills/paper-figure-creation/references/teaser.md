@@ -6,9 +6,26 @@ A useful teaser answers four questions in one reading path: what is difficult, w
 
 Start with the concept panel at roughly 35% of usable width or area and evidence at roughly 65%. This ratio is a preference supplied for this skill, not a conclusion from the literature study. The examples in the research corpus motivate visual patterns, not a universal layout frequency.
 
+Write the connection explicitly: “The concept shows [specific intervention]; plot A tests [its consequence]; plot B adds [a distinct condition or trade-off].” If these clauses describe unrelated stories, revise the selection or layout. A teaser should visually connect the abstract's idea and the experiments that support it.
+
+## Choose the overall reading path
+
+The 35:65 preference does not require a fixed left concept/right chart template. Compare a few compositions when the story is unresolved:
+
+| Layout | Useful when | Main design test |
+|---|---|---|
+| Compact worked example beside one or two large plots | The mechanism is local and the evidence needs wide axes | Can the reader connect the visible intervention to the named method in the plots? |
+| Example strip above aligned evidence panels | The setup requires a sequence or several corresponding objects | Does the example remain legible without taking over the evidence area? |
+| Matched problem/proposal pair beside evidence | A changed action or outcome explains the contribution | Are input, crop, scale and conditions held constant across the pair? |
+| Shared example with a small local operator inset and an evidence block | The novelty is hidden within an otherwise familiar process | Does the inset expose the change without duplicating the method figure? |
+
+Let the task and intervention be recognizable at first glance, with the comparison accessible at ordinary paper size. A reader should not need to follow the detailed training loop before understanding why the experiments matter. Put that detail in the method figure.
+
 ## Compose the concept panel
 
 Show one small example rather than a list of application icons. Define the task in plain words, then draw the operation that changes it. A lay reader should be able to describe the situation; a domain reader should recognize the mechanism.
+
+Use enough actual content to make the setup meaningful: a selected passage fact and corresponding question, a retained versus discarded token, or a grid with an interpretable transformation. A document outline filled only with gray strokes can identify “text,” but it cannot teach how that text is edited. Conversely, a full paragraph or screenshot is excessive if only one fact matters. The representation contract in [visual-story.md](visual-story.md) helps choose that boundary.
 
 | Scientific change | Useful concept encoding | Avoid |
 | --- | --- | --- |
@@ -33,6 +50,8 @@ If a drawn example is illustrative, label it as a schematic in the panel or capt
 | What fails? | Matched qualitative pairs plus quantitative scope | Representative selection rule and observed outputs |
 
 Use one strong plot if it answers the claim. Add a second only when it supplies a distinct necessary axis, such as cost versus quality, robustness, or an ablation. Do not pack unrelated datasets into one axis to reach a desired visual density.
+
+A strong reference may use a dense radar, many small panels or a large benchmark summary. Reuse such a form only when the new data and reader's question justify it. Radar geometry can imply comparisons through arbitrary axis order, scales and filled area; aligned dot plots or small multiples often make metric-specific comparisons easier. Explain normalization if used and keep the original units recoverable. Do not copy chart types as a visual theme.
 
 ## Make the proposed method findable without distorting the comparison
 

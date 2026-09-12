@@ -1,6 +1,6 @@
 # Figure design system
 
-Read this for physical sizing, semantic styling and editable-tool choices. The defaults here are authored design recommendations, not empirical findings or universal submission rules. Venue/year instructions take precedence. Sources were checked on 2026-09-09; verify the target venue again for a submission.
+Read this after choosing the visual argument in [visual-story.md](visual-story.md). Physical sizing, semantic styling and editable-tool choices should support that argument. The defaults here are authored design recommendations, not empirical findings or universal submission rules. Venue/year instructions take precedence. Sources were checked on 2026-09-09; verify the target venue again for a submission.
 
 ## Size the final figure first
 
@@ -20,6 +20,14 @@ The current CVPR 2026 author kit specifies 3.25-inch columns, 6.875-inch total w
 
 Nature's guidance uses a different 5–7 pt figure-text range and asks for editable vector text/lines, standard fonts, labeled axes with units and accessible colors. Borrow the production principles; do not turn its font sizes into AI-conference defaults. [Nature figure specifications](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/)
 
+## Establish hierarchy before styling
+
+Set three levels: major regions visible in a thumbnail; objects and operations readable at paper size; local notation available on close inspection. Use region headings, position and spacing to establish order before assigning colors. A heavier boundary should identify a meaningful distinction, such as the proposed operation or an evaluation boundary, rather than surround every object equally.
+
+Allocate room according to the question a region answers. Conventional machinery can be compact while a novel edit, alignment, update or aggregation deserves an expanded representation. Space between stages can carry flowing-object labels and make correspondence clearer; an arbitrary grid of equal boxes rarely serves every stage equally well.
+
+Dense diagrams can remain legible when repeated units share a grammar: the same stage columns, object widths, local label positions and edge conventions. Preserve a clear main route and reserve separate routing channels for feedback, supervision or callouts. Avoid enclosing every nested concept in another rectangle; alignment and whitespace can often express the grouping.
+
 ## Use semantic tokens
 
 Read `assets/theme.json` when using the bundled renderer. Keep the same roles across teaser, method and experimental panels; tokens can change for a paper's established style without changing scientific meaning.
@@ -30,11 +38,27 @@ Read `assets/theme.json` when using the bundled renderer. Keep the same roles ac
 | Primary baseline | Dark neutral + distinguishable marker/line style | Muted baselines must remain readable |
 | Other baselines | Distinct dark-enough hues or grays + shape/line redundancy | Do not collapse several methods to indistinguishable pale lines |
 | Conventional backbone | Pale neutral fill, dark text, visible boundary | “Conventional” does not mean unimportant or frozen |
-| Novel operation | Accent boundary and its actual name | A color change alone cannot explain novelty |
+| Novel operation | Accent boundary plus a visible input/output transformation or local operator | A color change and a method name alone cannot explain novelty |
 | Training-only content | Labeled lane/group; optional warm accent | Do not encode training-only, loss and gradients identically without explaining it |
 | Text | Dark neutral on plain background | Avoid colored paragraphs or text over busy examples |
 
-Use one standard sans-serif family plus a compatible math font. Render symbols from the same notation used in the manuscript. Keep normal text and scientific labels editable when possible. Avoid gradients, shadows, glass effects, decorative icons and unrelated imagery. An icon or real example is useful only if it makes the actual task or representation easier to understand.
+Use one standard sans-serif family plus a compatible math font. Render symbols from the same notation used in the manuscript. Keep normal text and scientific labels editable when possible. Prefer flat fills and restrained boundaries for paper graphics; avoid effects that obscure objects or imply unsupported magnitude. An icon, miniature image or texture is useful when it conveys the actual task, object type or state. A field-valued gradient can be scientific data; a decorative gradient behind a module usually adds little.
+
+Assign color after deciding what it means. It may distinguish candidate identity, modality, trainability or proposal status, but a single hue should not silently switch among those meanings in one figure. Keep persistent objects recognizable across panels. Use a local key or direct labels when several semantic families coexist. Do not enforce one accent if the mechanism genuinely requires multiple distinguishable states; do not add colors merely to make boxes look different.
+
+## Choose object representations deliberately
+
+| Object or relationship | Useful representation | Retain / omit |
+|---|---|---|
+| Passage or generated edit | Document with a short meaningful excerpt and selected span | Retain the fact or instruction that drives the example; omit unrelated prose |
+| Prompt or configuration | Compact code/text card with a few actual or schematic fields | Retain consequential fields and mark omissions; avoid unreadable miniature code |
+| Grid or image transformation | Matched crops/cells with shared geometry and targeted overlays | Retain correspondence; do not invent attention maps or prediction quality |
+| Token or candidate identity | Repeated token/chip/row with stable label and redundant visual cue | Retain identity through selection and merging; avoid random colors |
+| Tensor or low-rank operator | Matrix/factor geometry, dimensions, explicit operation | Retain algebra and shape change; omit decorative cell detail |
+| Original/adapted model | The same model shape with a clear state/parameter label | Retain which weights change and which are reused; do not imply a new architecture |
+| Agent/environment interaction | Repeated local interaction pattern plus separate update path | Retain what is observed versus predicted and where learning signals go |
+
+Use these when they explain an otherwise hidden distinction. A conventional encoder may need only a labeled block. A generated edit that is the contribution often needs content. [semantic-primitives.md](semantic-primitives.md) supplies editable building blocks; it is not a mandatory visual vocabulary.
 
 For a custom palette, `#0072B2` (proposal), `#5F6368`, `#986C00` and `#8E5681` are optional dark-enough starting colors on white; assign redundant markers. This custom set is not the exact Okabe–Ito palette, and a palette's name is not evidence that a particular rendered figure is accessible.
 

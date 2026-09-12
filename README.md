@@ -5,9 +5,11 @@ A portable agent skill for two AI-paper figure types:
 - **Introduction teaser:** a concrete problem and proposed idea in roughly 35% of the usable area, with source-grounded experimental evidence in roughly 65%.
 - **Method / architecture:** an editable explanation of the computation, branches, training signals, and actual proposed change.
 
-The skill combines design instructions, a figure-pattern atlas, a semantic theme, editable templates, deterministic rendering, and numerical evidence checks. It supports a review-and-repair workflow rather than promising an automatic perfect figure.
+The skill combines paper-specific visual design, editable vector authoring, reproducible plots and numerical evidence checks. Start by deciding what the reader needs to **see**: a changed representation, a candidate's path, an update loop, a spatial relationship, or a comparison taught by a worked example.
 
-![Original MAE teaser redraw](examples/mae-teaser/figure.png)
+![Revised MAE method: follow image content and patch identities through masking, encoding, reassembly and reconstruction](examples/mae-v2/figure.png)
+
+The [design revision](docs/design-upgrade.md) responds to feedback that the first gallery was too generic. It draws on actual author-hosted figures from SEAL, BAT, StudentSim, Qwen-Drive and WMRL. New examples include a same-paper MAE redesign, a SEAL teaser/method pair and a WMRL method. See the [gallery](examples/README.md) and [source-by-source critique](research/reference-upgrade/README.md).
 
 ## Install
 
@@ -42,7 +44,11 @@ Example request:
 
 Codex also supports `$paper-figure-creation`; Claude Code supports `/paper-figure-creation`. Attach the manuscript, method description or code, result tables, and target venue template when available. The skill has no model-name or API-key dependency.
 
-## Render a starter
+## Design and build
+
+Read the skill's [visual-story workflow](skills/paper-figure-creation/references/visual-story.md) to choose representations and composition. It includes worked-example recipes, alternative topologies, persistent object identities and local mechanism views. The [semantic-object helpers](skills/paper-figure-creation/references/semantic-primitives.md) provide editable documents, tokens, model states, matrices, grids, configurations and routed connectors for custom compositions.
+
+The JSON renderer below is a starter for compatible layouts. Its output is not the quality target for every paper. Use custom vector geometry when the scientific explanation needs it; the newer examples show that route.
 
 The Python renderer needs Python 3.10+, Matplotlib and NumPy. The evidence validator uses the Python standard library.
 
@@ -64,7 +70,7 @@ Outputs include editable-text SVG, vector PDF with embedded fonts, 300-DPI PNG a
 
 The [research record](research/README.md) separates a 500-paper proceedings corpus, automated PDF/caption retrieval, and 20 close visual reviews of official paper-related assets. It does **not** claim 500 hand-reviewed figures, a representative survey, or an objective ranking of the 500 best papers.
 
-The gallery contains original redraws for MAE, Transformer and LoRA. Numerical results are transcribed from papers, not newly reproduced experiments. Initial failures and subsequent repairs are recorded in the [evaluation report](docs/evaluation.md). An independent agent used the skill for the LoRA pair; this is a limited forward test, not proof of superiority over Claude, GPT, or another figure workflow.
+The gallery contains original explanatory figures for MAE, Transformer, LoRA, SEAL and WMRL. Numerical results are transcribed from papers, not newly reproduced experiments. The [first evaluation](docs/evaluation.md) is a historical record; its aggregate aesthetic scores are no longer an acceptance criterion. The revised skill uses separate scientific and communication gates, with concrete misunderstandings and repairs in the [design review](docs/design-upgrade.md). An independent agent used the earlier skill for the LoRA pair. The new figures are guided design iterations with separate comprehension review, not a controlled superiority benchmark.
 
 ```bash
 python -m unittest discover -s tests -v
