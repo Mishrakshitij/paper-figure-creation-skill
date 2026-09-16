@@ -1,0 +1,178 @@
+{
+  "date": "2026-09-16",
+  "reviewer": "independent agent, separate context, expected answers withheld",
+  "scope": "14 authored manuscript-fragment fixtures; no baseline or generalization claim",
+  "presence_and_selection_matches": 14,
+  "case_count": 14,
+  "checks": [
+    {
+      "id": "results_only",
+      "expected": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "static_construction",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    },
+    {
+      "id": "existing_environment",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    },
+    {
+      "id": "related_work_only",
+      "expected": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "abstract_only",
+      "expected": {
+        "presence": "unclear",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "unclear",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "three_requested",
+      "expected": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "adapted_setup",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    },
+    {
+      "id": "method_environment_word",
+      "expected": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "task_generator",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    },
+    {
+      "id": "explicit_missing_source",
+      "expected": {
+        "presence": "unclear",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "unclear",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "construction_without_agent",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    },
+    {
+      "id": "substantive_existing_static",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    },
+    {
+      "id": "private_training_signal",
+      "expected": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "observed": {
+        "presence": "absent",
+        "select_setup": false
+      },
+      "matches": true
+    },
+    {
+      "id": "mixed_timing",
+      "expected": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "observed": {
+        "presence": "present",
+        "select_setup": true
+      },
+      "matches": true
+    }
+  ],
+  "follow_up": "Clarified absent versus unclear and visual-family versus execution-family distinction; figure quality is assessed separately."
+}

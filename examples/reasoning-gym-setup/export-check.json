@@ -1,0 +1,28 @@
+{
+  "pdf_pages": 1,
+  "pdf_size_pt": [
+    504.0,
+    298.79998779296875
+  ],
+  "pdf_fonts": [
+    [
+      15,
+      "ttf",
+      "Type0",
+      "EVICAO+DejaVuSans-Bold",
+      "F1",
+      "Identity-H"
+    ],
+    [
+      22,
+      "ttf",
+      "Type0",
+      "BMQQDV+DejaVuSans",
+      "F2",
+      "Identity-H"
+    ]
+  ],
+  "proof_dpi": 110,
+  "proof_source": "figure.pdf",
+  "svg_text_editable": true
+}

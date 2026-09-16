@@ -1,0 +1,9 @@
+# Caption
+
+**Procedural task construction and single-turn evaluation in Reasoning Gym.** A task generator produces entries from a task choice, configuration, dataset size, and seed. The selected README example contains one sea slug and one deer. Its wording is condensed into a short question plus animal-count labels for layout. Only the text question is supplied to the model; its candidate answer is then checked by the task-specific verifier using the generated entry, including the reference and metadata. Animal pictograms explain the text prompt for readers. The candidate `4` is illustrative, and the displayed `1.0` is the documented result of verifying this reference answer, not a measured model performance. Other tasks can admit multiple valid solutions and use different verification rules. The figure shows the evaluation path rather than the library's RL training loop.
+
+Sources: [paper §2, arXiv v2](https://arxiv.org/html/2505.24760v2), [pinned implementation README, Quickstart](https://github.com/open-thought/reasoning-gym/blob/49b07130b3fcd12f2d064bba7c43869543a0e7e7/README.md).
+
+# Alt text
+
+Three columns show configuration, a generated entry, and answer verification. On the left, the leg-counting generator uses seed 42, size 10, and default parameters. A fork sends the first entry's text question upward and its reference and metadata downward. The question asks for the total legs of one sea slug and one deer, illustrated with original animal pictograms. A right-pointing arrow sends the question to a reasoning model. Its illustrative candidate answer, 4, goes down across a dashed boundary to a task verifier. The lower lane contains reference answer 4 and metadata about animal counts; these go directly to the verifier, with no arrow to the model. The verifier outputs score 1.0. Notes state that this is a schematic evaluation path and that other tasks can have multiple valid solutions.

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "kind": "benchmark",
+  "status": "draft",
+  "figure": {
+    "width_in": 7,
+    "height_in": 4.75,
+    "title": "WebArena: Complete real tasks on self-hosted websites",
+    "subtitle": "UI, element ID and single-step sequence are illustrative; no agent run."
+  },
+  "provenance": {
+    "data_status": "mixed",
+    "sources": [
+      {"id": "paper", "kind": "paper", "locator": "https://arxiv.org/html/2307.13854v4", "location": "Sections 2–3, Appendix A.2 and A.9"},
+      {"id": "task601", "kind": "artifact", "locator": "https://github.com/web-arena-x/webarena/blob/v0.2.0/config_files/test.raw.json", "location": "task_id 601; blob 91e88d7c3bce867b7f7608c8229c84b7be11ef1e"},
+      {"id": "schematic", "kind": "synthetic", "locator": "build_figure.py", "location": "browser() and setup_figure(); original UI geometry, invented element ID 42 and one-step teaching sequence"}
+    ]
+  },
+  "benchmark_setup": {
+    "presence": "present",
+    "source_id": "paper",
+    "source_location": "Sections 2–3 introduce the environment and benchmark; this illustration uses pinned task 601",
+    "contribution": "new_environment",
+    "family": "interactive_environment",
+    "unit_of_evaluation": "One attempt to satisfy a natural-language web task",
+    "instance_construction": "Task 601 supplies a forum question, authenticated Reddit-like website start state, and evaluator configuration. Figure begins after navigation and typing.",
+    "agent_visible": ["User's task goal", "Current URL and tabs", "Focused-page observation as screenshot, HTML, or accessibility tree", "Effects visible through the website after actions"],
+    "evaluator_only": ["Reference forum URL in evaluation configuration", "Task-specific programmatic post-content criterion"],
+    "evaluation": "Task 601 uses url_match and program_html: the reference /f/nyc URL must be contained in the predicted URL, and the resolved post's .submission__inner text must contain the requested question. This is a criterion, not a recorded result.",
+    "observation": "URL, open tabs and focused-page content; the source supports screenshot, HTML and accessibility-tree alternatives. Invented ID 42 illustrates accessibility-target addressing.",
+    "actions": "Click, type, hover, scroll, key press, URL navigation and tab operations. The figure illustrates one click after earlier navigation and text entry.",
+    "state_transition": "Executing the illustrative Post action changes a composer state into a posted-submission state; subsequent observations expose that change.",
+    "reset": "The environment supplies reset scripts, but task 601 specifically sets require_reset=false. No mandatory reset is drawn.",
+    "termination": "The original baseline action language supports stop[answer]. The figure shows evaluation at task completion without prescribing a universal step budget."
+  },
+  "evidence": {"metrics": [], "results": [], "claims": []},
+  "nodes": [],
+  "notes": "Validation contract for a custom figure, not the template renderer's geometry. The exact vector layout lives in build_figure.py. Synthetic source means illustrative interface elements; no synthetic experimental values are present."
+}

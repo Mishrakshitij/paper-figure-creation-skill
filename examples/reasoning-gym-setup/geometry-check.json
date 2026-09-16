@@ -1,0 +1,328 @@
+{
+  "width_in": 7,
+  "height_in": 4.15,
+  "min_font_pt": 8.5,
+  "text_outside_canvas": [],
+  "text_bounds": [
+    {
+      "text": "Reasoning Gym",
+      "font_pt": 12.0,
+      "bounds_in": [
+        0.18,
+        3.85,
+        1.6338,
+        4.03
+      ]
+    },
+    {
+      "text": "Generate a problem; verify the answer",
+      "font_pt": 11.0,
+      "bounds_in": [
+        1.82,
+        3.865,
+        4.7988,
+        4.015
+      ]
+    },
+    {
+      "text": "Procedural benchmark setup \u00b7 one selected leg-counting example",
+      "font_pt": 9.0,
+      "bounds_in": [
+        0.18,
+        3.595,
+        4.3088,
+        3.725
+      ]
+    },
+    {
+      "text": "a  Configure",
+      "font_pt": 9.2,
+      "bounds_in": [
+        0.18,
+        3.275,
+        1.0638,
+        3.405
+      ]
+    },
+    {
+      "text": "b  Generate one entry",
+      "font_pt": 9.2,
+      "bounds_in": [
+        2.04,
+        3.275,
+        3.6262,
+        3.405
+      ]
+    },
+    {
+      "text": "c  Answer and verify",
+      "font_pt": 9.2,
+      "bounds_in": [
+        4.69,
+        3.275,
+        6.1638,
+        3.405
+      ]
+    },
+    {
+      "text": "Task generator",
+      "font_pt": 9.2,
+      "bounds_in": [
+        0.32,
+        2.795,
+        1.4013,
+        2.925
+      ]
+    },
+    {
+      "text": "leg_counting",
+      "font_pt": 9.2,
+      "bounds_in": [
+        0.49,
+        2.495,
+        1.31,
+        2.625
+      ]
+    },
+    {
+      "text": "Seed",
+      "font_pt": 9.0,
+      "bounds_in": [
+        0.32,
+        2.085,
+        0.635,
+        2.215
+      ]
+    },
+    {
+      "text": "42",
+      "font_pt": 9.0,
+      "bounds_in": [
+        1.315,
+        2.085,
+        1.49,
+        2.215
+      ]
+    },
+    {
+      "text": "Size",
+      "font_pt": 9.0,
+      "bounds_in": [
+        0.32,
+        1.765,
+        0.5775,
+        1.895
+      ]
+    },
+    {
+      "text": "10",
+      "font_pt": 9.0,
+      "bounds_in": [
+        1.315,
+        1.765,
+        1.49,
+        1.895
+      ]
+    },
+    {
+      "text": "Params",
+      "font_pt": 9.0,
+      "bounds_in": [
+        0.32,
+        1.445,
+        0.7825,
+        1.575
+      ]
+    },
+    {
+      "text": "defaults",
+      "font_pt": 9.0,
+      "bounds_in": [
+        0.9138,
+        1.445,
+        1.49,
+        1.575
+      ]
+    },
+    {
+      "text": "10 entries",
+      "font_pt": 9.0,
+      "bounds_in": [
+        0.7438,
+        0.965,
+        1.3762,
+        1.095
+      ]
+    },
+    {
+      "text": "TEXT QUESTION",
+      "font_pt": 8.5,
+      "bounds_in": [
+        2.17,
+        2.835,
+        3.23,
+        2.965
+      ]
+    },
+    {
+      "text": "How many legs in total?",
+      "font_pt": 9.5,
+      "bounds_in": [
+        2.17,
+        2.615,
+        3.7725,
+        2.745
+      ]
+    },
+    {
+      "text": "1 sea slug",
+      "font_pt": 8.5,
+      "bounds_in": [
+        2.2494,
+        1.99,
+        2.8506,
+        2.12
+      ]
+    },
+    {
+      "text": "1 deer",
+      "font_pt": 8.5,
+      "bounds_in": [
+        3.2988,
+        1.99,
+        3.6812,
+        2.12
+      ]
+    },
+    {
+      "text": "Only the question goes to the model",
+      "font_pt": 8.5,
+      "bounds_in": [
+        2.0581,
+        1.725,
+        4.2219,
+        1.855
+      ]
+    },
+    {
+      "text": "Reasoning model",
+      "font_pt": 9.2,
+      "bounds_in": [
+        5.37,
+        2.53,
+        6.61,
+        2.66
+      ]
+    },
+    {
+      "text": "Candidate:",
+      "font_pt": 9.0,
+      "bounds_in": [
+        5.19,
+        1.905,
+        5.875,
+        2.035
+      ]
+    },
+    {
+      "text": "4",
+      "font_pt": 12.0,
+      "bounds_in": [
+        6.1038,
+        1.88,
+        6.22,
+        2.06
+      ]
+    },
+    {
+      "text": "HELD BY EVALUATOR",
+      "font_pt": 8.5,
+      "bounds_in": [
+        2.04,
+        1.365,
+        3.415,
+        1.495
+      ]
+    },
+    {
+      "text": "Reference answer: 4",
+      "font_pt": 9.5,
+      "bounds_in": [
+        2.17,
+        1.045,
+        3.71,
+        1.175
+      ]
+    },
+    {
+      "text": "Metadata: animal counts",
+      "font_pt": 8.5,
+      "bounds_in": [
+        2.17,
+        0.825,
+        3.6425,
+        0.955
+      ]
+    },
+    {
+      "text": "Task verifier",
+      "font_pt": 9.5,
+      "bounds_in": [
+        4.9112,
+        1.015,
+        5.8388,
+        1.145
+      ]
+    },
+    {
+      "text": "score_answer",
+      "font_pt": 8.5,
+      "bounds_in": [
+        4.9738,
+        0.815,
+        5.7762,
+        0.945
+      ]
+    },
+    {
+      "text": "1.0",
+      "font_pt": 10.0,
+      "bounds_in": [
+        6.4869,
+        0.93,
+        6.7331,
+        1.07
+      ]
+    },
+    {
+      "text": "score",
+      "font_pt": 8.5,
+      "bounds_in": [
+        6.4519,
+        0.585,
+        6.7681,
+        0.715
+      ]
+    },
+    {
+      "text": "Schematic: drawings explain the text prompt; candidate 4 is illustrative (documented score: 1.0).",
+      "font_pt": 8.5,
+      "bounds_in": [
+        0.18,
+        0.355,
+        5.9612,
+        0.485
+      ]
+    },
+    {
+      "text": "Other tasks use their own verifiers and may accept multiple valid solutions.",
+      "font_pt": 8.5,
+      "bounds_in": [
+        0.18,
+        0.125,
+        4.67,
+        0.255
+      ]
+    }
+  ]
+}

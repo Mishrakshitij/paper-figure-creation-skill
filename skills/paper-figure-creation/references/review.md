@@ -12,6 +12,7 @@ Use `pass`, `fail` or `not_applicable` with an evidence note. A failure leaves t
 | Correct claim arithmetic | Named metric/direction/comparator; correct denominator and units | “30% better” confuses percentage points with relative change |
 | Fair comparison | Declared comparison set and compatible protocol; qualifications shown | Different test splits, compute or metrics are ranked without disclosure |
 | Honest chart geometry | Scales, transforms, aggregation and uncertainty match the evidence | Missing methods rendered as zero, fake error bars, misleading cropped bars |
+| Correct setup, when selected | Task construction, information access, interactions, state and scoring match the source | Hidden reference leaks to the tested model; evaluator score is drawn as training feedback |
 | Correct method | Nodes, edges, losses, states and data access match the manuscript | Training labels appear as available inference inputs |
 | Usable output | File opens; critical text/marks visible at intended size; no clipped glyphs | SVG exists but labels disappear in the exported manuscript PDF |
 
@@ -55,6 +56,8 @@ Measure labels in final printed points, not just design-canvas pixels. Text over
 | Is approximately 60–70% of useful content area devoted to empirical evidence, or is deviation justified? | Are inference, training-only content, supervision and update paths correctly distinguished? |
 | Do axis labels, conditions, comparator and uncertainty support the headline? | Are joins, repetition, dimensions, memory access and loss terms faithful to the paper? |
 | Do complementary plots add different evidence without hiding unfavorable regimes? | Can a callout, crossing or bidirectional arrow be misread as a computation? |
+
+For a benchmark/environment figure, ask what one task is, what the tested system can see and produce or do, what changes or persists, and what the evaluator checks. Verify the setup-presence decision and new/adapted/existing status. Distinguish construction from execution, private references from visible context, per-case scores from aggregation, and evaluation from training feedback. Use the complete questions in [benchmark-environment.md](benchmark-environment.md). Static benchmarks need no invented action loop.
 
 ## Record defects, not a substitute quality score
 

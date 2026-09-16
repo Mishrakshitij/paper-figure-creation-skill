@@ -1,0 +1,61 @@
+{
+  "type": "authored manuscript-fragment fixtures; not real held-out papers",
+  "cases": [
+    {
+      "id": "results_only",
+      "prompt": "The paper introduces a new attention layer. Experiments report accuracy on MMLU, GSM8K, and HumanEval in a result table. No task construction or evaluation setup is described. Create appropriate paper figures."
+    },
+    {
+      "id": "static_construction",
+      "prompt": "Section 3 introduces a benchmark built by collecting public tables, annotating questions and answer spans, rejecting ambiguous items, and splitting by source document. Section 4 supplies questions and tables to models; answers are scored against withheld references. Design the appropriate figures."
+    },
+    {
+      "id": "existing_environment",
+      "prompt": "Section 4.1 uses an existing warehouse simulator. Each episode starts at a sampled shelf, exposes a local camera and inventory, permits move/pick/place actions, ends at delivery or 100 steps, and scores delivery plus collision penalties. The paper proposes only the policy. Show its experimental setup."
+    },
+    {
+      "id": "related_work_only",
+      "prompt": "The related-work section surveys WebArena, OSWorld, and embodied agent benchmarks. This paper itself proves a generalization bound and contains no evaluated benchmark or environment."
+    },
+    {
+      "id": "abstract_only",
+      "prompt": "Only a title and abstract are supplied: We introduce ExampleBench, a comprehensive evaluation suite. The abstract lists an aggregate model ranking but gives no task definition, source instances, or scoring workflow. Decide whether enough setup evidence is present to draw it."
+    },
+    {
+      "id": "three_requested",
+      "prompt": "Please produce all three standard figure types. Available manuscript: low-rank operator derivation, optimizer architecture, and a table of final CIFAR accuracy. No benchmark setup or protocol is provided."
+    },
+    {
+      "id": "adapted_setup",
+      "prompt": "Appendix B describes an adaptation of a navigation benchmark: original scenes and action space are retained, observations receive controlled occlusions, each condition uses the same start-goal pairs, and success is arrival within 1 meter before timeout. Draw the setup and identify the adaptation."
+    },
+    {
+      "id": "method_environment_word",
+      "prompt": "Our method embeds a token into a latent environment vector and applies a recurrent attention operator. Environment here names a learned feature. The supplied paper contains algebra and a method definition only."
+    },
+    {
+      "id": "task_generator",
+      "prompt": "Section 2 defines seeded task generators with configurable difficulty. Each instance contains a question, private solution metadata, and a task-specific score function. A model produces one response. No persistent state or action loop exists."
+    },
+    {
+      "id": "explicit_missing_source",
+      "prompt": "Draw the environment figure for our benchmark. We have not supplied the paper, protocol, task, observation, action, or scoring definition."
+    },
+    {
+      "id": "construction_without_agent",
+      "prompt": "Section 3 describes benchmark construction from repository commits: mine bug-fix pairs, reconstruct the pre-fix container, retain instances whose new tests fail before the fix and pass afterward, and package issue text with the starting repository. Evaluation applies a submitted patch and runs the held-out tests."
+    },
+    {
+      "id": "substantive_existing_static",
+      "prompt": "The evaluation section explains an existing summarization setup: each model sees a news article, returns a summary under the same length cap, and blinded human raters score factual consistency and coverage using a specified rubric. The contribution is a new model."
+    },
+    {
+      "id": "private_training_signal",
+      "prompt": "The method diagram contains a frozen teacher, training labels, distillation loss, and student updates. No evaluation task or benchmark setup is described in the supplied manuscript."
+    },
+    {
+      "id": "mixed_timing",
+      "prompt": "Section 3 introduces a video interaction benchmark. Perception tasks expose full clips. Interaction tasks expose only a prefix, ask whether to interrupt, then score generated replies using withheld future-context annotations. Different access conditions must remain distinct."
+    }
+  ]
+}

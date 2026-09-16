@@ -2,6 +2,19 @@
 
 These are original explanatory redraws using published data. They are not the original authors' artwork or new experimental reproductions. Each directory preserves source/specification, editable vector output, PDF and PNG.
 
+## Benchmark and environment setup figures
+
+The third mode activates only when the paper contains a substantive setup. These two original compositions test different setup families; they are guided worked examples, not experiments measuring the skill's superiority. The [update](../docs/benchmark-environment-update.md) records source checks and conditional-routing tests.
+
+| Paper | Editable exports and source | What the figure explains |
+| --- | --- | --- |
+| WebArena | [PNG](webarena-setup/figure.png) · [PDF](webarena-setup/figure.pdf) · [SVG](webarena-setup/figure.svg) · [source](webarena-setup/build_figure.py) | A concrete forum task, agent observation/action, changed website state, and separate functional checks |
+| ReasoningGym | [PNG](reasoning-gym-setup/figure.png) · [PDF](reasoning-gym-setup/figure.pdf) · [SVG](reasoning-gym-setup/figure.svg) · [source](reasoning-gym-setup/build_figure.py) | Configurable procedural generation, a text question, private reference/metadata, and task-specific scoring |
+
+![WebArena setup](webarena-setup/figure.png)
+
+![ReasoningGym setup](reasoning-gym-setup/figure.png)
+
 ## Revised visual examples
 
 These examples address the first gallery's generic representations. The [design review](../docs/design-upgrade.md) records what changed and what remained uncertain. Teaching scenes, passages and schematic rewards are identified in the figures; reported plots retain their source ledgers.

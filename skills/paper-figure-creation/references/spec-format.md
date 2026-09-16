@@ -9,7 +9,7 @@ python scripts/validate_evidence.py figure.json --output evidence-report.json
 python scripts/render_figure.py figure.json --output output/figure --strict-layout
 ```
 
-The output stem becomes `.svg` (editable text), `.pdf` (embedded TrueType fonts), `.png` (300 dpi), `.qa.json`, and for method figures `.drawio` (native editable diagrams.net XML). Export keeps the exact specified dimensions. The drawing engine uses Matplotlib and NumPy. A separate PDF artifact marker may be required by the hosting environment before authoring PDFs.
+The output stem becomes `.svg` (editable text), `.pdf` (embedded TrueType fonts), `.png` (300 dpi), `.qa.json`, and for method or benchmark figures `.drawio` (native editable diagrams.net XML). Export keeps the exact specified dimensions. The drawing engine uses Matplotlib and NumPy. A separate PDF artifact marker may be required by the hosting environment before authoring PDFs.
 
 ## Common envelope
 
@@ -33,7 +33,7 @@ The output stem becomes `.svg` (editable text), `.pdf` (embedded TrueType fonts)
 }
 ```
 
-`kind` is `teaser` or `method`. Use `status: final` only for reported data. Synthetic/mixed figures receive a visible watermark. `theme` optionally overrides keys in `assets/theme.json`. All font sizes are points; exported width/height are inches. Default normal type is 8.5 pt at 7.2 inches. Judge at final print width before reducing fonts.
+`kind` is `teaser`, `method`, or conditionally `benchmark`. Use `status: final` only for reported data. Synthetic/mixed figures receive a visible watermark. `theme` optionally overrides keys in `assets/theme.json`. All font sizes are points; exported width/height are inches. Default normal type is 8.5 pt at 7.2 inches. Judge at final print width before reducing fonts.
 
 ## Teaser concept
 
@@ -104,6 +104,48 @@ Edges require `source`, `target`. Optional: `source_port`/`target_port` (`left`,
 
 The native draw.io export preserves editable nodes, representations (including masked cells) and routed edges, including `arrow: false` headless connectors. It is an independent editorial copy, not guaranteed pixel-identical to SVG/PDF. Reimport edits into the JSON spec or document which file becomes authoritative before regenerating.
 
+## Benchmark / environment eligibility and contract
+
+Use `kind: benchmark` only when the paper contains a benchmark, environment, or substantive evaluation setup that needs explanation. A new method's ordinary dataset list does not automatically warrant this figure. Read [benchmark-environment.md](benchmark-environment.md) to choose a paper-specific composition; `assets/benchmark-template.json` is an illustrative interaction scaffold, not a universal design.
+
+The renderer requires a compact `benchmark_setup` contract. The following static example demonstrates fields only; replace every description with verified source content:
+
+```json
+{
+  "kind": "benchmark",
+  "benchmark_setup": {
+    "presence": "present",
+    "source_id": "paper",
+    "source_location": "Section 3 and Figure 2",
+    "contribution": "new_benchmark",
+    "family": "static_benchmark",
+    "unit_of_evaluation": "One question paired with an image",
+    "instance_construction": "Source images are annotated, checked, and assigned to disjoint splits",
+    "agent_visible": ["Image", "Question"],
+    "evaluator_only": ["Held-out reference answer"],
+    "evaluation": "Compare each model response with the reference using the source's scoring rule"
+  }
+}
+```
+
+`source_id` must reference `provenance.sources`; `source_location` must pinpoint where the setup is established. `presence` may be recorded as `absent` or `unclear` during planning, but the validator blocks rendering a benchmark figure until it is `present`. Do not change this value merely to pass validation. Resolve uncertainty from the paper or omit the figure. An illustrative synthetic setup is permitted only as a visibly labeled draft under the ordinary synthetic-source gates.
+
+| Field | Required content |
+| --- | --- |
+| `contribution` | `new_benchmark`, `new_environment`, `adapted_setup`, or `existing_setup`; do not imply an existing benchmark is proposed by the paper. |
+| `family` | `static_benchmark`, `interactive_environment`, or `mixed`. |
+| `unit_of_evaluation` | What one question, instance, episode, submission, or trial means. |
+| `instance_construction` | How tasks are obtained and prepared, with split/reset distinctions where relevant. |
+| `agent_visible` | Explicit array of information available to the evaluated model/agent, not just model weights or inputs by guesswork. |
+| `evaluator_only` | Explicit array of information reserved for evaluation; `[]` is valid when there is none. |
+| `evaluation` | What is scored, by what rule, and at which stage; name actual rewards versus terminal evaluation separately. |
+
+For `interactive_environment` and `mixed`, also provide nonempty `observation`, `actions`, `state_transition`, `reset`, and `termination` descriptions. Describe the interactive portion of mixed setups specifically. If the source states that there is no reset, record that fact; do not fabricate a conventional episodic reset. A source detail that remains unknown must be resolved or the design kept outside the validated final path. Static benchmarks require **none** of these episode fields and must not acquire an invented observation–action loop to fit a template.
+
+Use the same manual `nodes`, `edges`, `groups`, and `annotations` geometry as methods. Benchmark nodes optionally declare `visibility: agent|evaluator|public` for audit metadata. This does not automatically style or hide nodes. Make the information boundary visible with explicit region labels and purposeful routes. The validator does not infer leakage from arbitrary arrows: a scientific reviewer must check whether each link denotes an observation, action, state transfer, score, or training signal. Structured `benchmark_setup` prose is not automatically printed on the figure; choose the visible labels and caption deliberately.
+
+These checks establish a complete declared contract and reject an ineligible figure. They cannot verify source accuracy, protocol validity, private-information leakage, or benchmark novelty. Numbers, result charts, uncertainty, and comparisons remain subject to the same evidence checks as other figure kinds.
+
 ## Bounded checks and review
 
-Hard checks reject plotted finite observations outside the active limits, nonpositive logarithmic coordinates, overlapping/out-of-bounds nodes and unknown endpoints. Method geometry and node text checks also run recursively for custom teaser concepts. Chart y-label gutters are measured and reserved inside their evidence panel. Pixel-based text containment reports potential overflowing node labels and off-page text; `--strict-layout` exits nonzero for those warnings. Edge crossings through unrelated nodes also warn. These checks do **not** certify scientific correctness, edge-edge crossings, legend collisions, overall text overlap or readability. Inspect PNG and PDF at final size and a grayscale/thumbnail view; revise the source and rerender. All final evidence and architecture still need human scientific review.
+Hard checks reject plotted finite observations outside the active limits, nonpositive logarithmic coordinates, overlapping/out-of-bounds nodes and unknown endpoints. Method and benchmark geometry share the same node and text checks; these also run recursively for custom teaser concepts. Chart y-label gutters are measured and reserved inside their evidence panel. Pixel-based text containment reports potential overflowing node labels and off-page text; `--strict-layout` exits nonzero for those warnings. Edge crossings through unrelated nodes also warn. These checks do **not** certify scientific correctness, edge-edge crossings, legend collisions, overall text overlap or readability. Inspect PNG and PDF at final size and a grayscale/thumbnail view; revise the source and rerender. All final evidence, architecture, and setup semantics still need human scientific review.

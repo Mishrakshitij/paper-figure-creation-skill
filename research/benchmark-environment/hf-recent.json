@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-16",
+  "purpose": "Recent benchmark/environment figure research; Hugging Face monthly discovery plus primary-source screening.",
+  "selection_policy": "Convenience sample emphasizing relevant highly upvoted month entries and diversity of evaluation contracts. Votes measure community attention, not scientific validity or visual design quality.",
+  "monthly_pages": [
+    {
+      "month": "2026-03",
+      "url": "https://huggingface.co/papers/month/2026-03",
+      "access": "read_success",
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "url": "https://huggingface.co/papers/month/2026-06",
+      "access": "read_success",
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "url": "https://huggingface.co/papers/month/2026-08",
+      "access": "read_success",
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "url": "https://huggingface.co/papers/month/2026-09",
+      "access": "read_success",
+      "partial_month": true
+    }
+  ],
+  "vote_policy": "Record the visible number immediately preceding the title on the monthly listing, not GitHub star counts after titles. Values can differ from live paper-page votes; e.g. SocialOmni was 247 on month listing and 248 on paper page; ALE 391 vs 393. No explicit monthly rank was recorded.",
+  "coverage": {
+    "candidate_primary_screen_count": 17,
+    "pixel_inspected_paper_count": 6,
+    "pixel_inspected_asset_count": 6,
+    "primary_setup_or_repository_text_only_count": 3,
+    "primary_abstract_only_count": 8
+  },
+  "papers": [
+    {
+      "paper_id": "2603.13594",
+      "title_short": "EnterpriseOps-Gym",
+      "discovery_month": "2026-03",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-03",
+      "hf_paper_url": "https://huggingface.co/papers/2603.13594",
+      "monthly_visible_upvotes": 150,
+      "monthly_rank": null,
+      "family": "stateful enterprise tools",
+      "primary_source": "https://github.com/ServiceNow/EnterpriseOps-Gym/blob/main/README.md",
+      "design_inference": "Stateful sandbox, task policies, tool calls, and outcome checks must be distinct.",
+      "review_level": "pixels_and_primary_text",
+      "pixel_inspected": true
+    },
+    {
+      "paper_id": "2603.16859",
+      "title_short": "SocialOmni",
+      "discovery_month": "2026-03",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-03",
+      "hf_paper_url": "https://huggingface.co/papers/2603.16859",
+      "monthly_visible_upvotes": 247,
+      "monthly_rank": null,
+      "family": "audio-visual interaction",
+      "primary_source": "https://github.com/MAC-AutoML/SocialOmni/blob/main/README.md",
+      "design_inference": "Separate full-video perception from prefix-only interaction; show a timing gate before generated speech.",
+      "review_level": "pixels_and_primary_text",
+      "pixel_inspected": true
+    },
+    {
+      "paper_id": "2606.05405",
+      "title_short": "Agents' Last Exam",
+      "discovery_month": "2026-06",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-06",
+      "hf_paper_url": "https://huggingface.co/papers/2606.05405",
+      "monthly_visible_upvotes": 391,
+      "monthly_rank": null,
+      "family": "professional computer workflows",
+      "primary_source": "https://arxiv.org/html/2606.05405v1",
+      "design_inference": "Separate task construction from load/start/evaluate lifecycle; show agent-visible inputs and evaluator-only references.",
+      "review_level": "primary_setup_text",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2606.13681",
+      "title_short": "EvoArena",
+      "discovery_month": "2026-06",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-06",
+      "hf_paper_url": "https://huggingface.co/papers/2606.13681",
+      "monthly_visible_upvotes": 145,
+      "monthly_rank": null,
+      "family": "evolving task environments",
+      "primary_source": "https://github.com/Aiden0526/EvoArena/blob/main/README.md",
+      "design_inference": "Show release-to-release changes and fixed task identity; distinguish step success from whole-chain success.",
+      "review_level": "pixels_and_primary_text",
+      "pixel_inspected": true
+    },
+    {
+      "paper_id": "2608.16859",
+      "title_short": "HarnessEval-W",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2608.16859",
+      "monthly_visible_upvotes": 341,
+      "monthly_rank": null,
+      "family": "world-model rollout evaluation",
+      "primary_source": "https://github.com/MirroS-Lab/HarnessEval-W/blob/main/README.md",
+      "design_inference": "Separate case context, diagnostic routing, rollout evidence, and score aggregation.",
+      "review_level": "pixels_and_primary_text",
+      "pixel_inspected": true
+    },
+    {
+      "paper_id": "2608.19880",
+      "title_short": "EnvHarness",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2608.19880",
+      "monthly_visible_upvotes": 276,
+      "monthly_rank": null,
+      "family": "environment transformation",
+      "primary_source": "https://github.com/google-research/envharness/blob/main/README.md",
+      "design_inference": "Align reset/action/observation interfaces across variants so the intervention location is visible.",
+      "review_level": "pixels_and_primary_text",
+      "pixel_inspected": true
+    },
+    {
+      "paper_id": "2608.26105",
+      "title_short": "VBVR-Pro",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2608.26105",
+      "monthly_visible_upvotes": 271,
+      "monthly_rank": null,
+      "family": "visual reasoning benchmark",
+      "primary_source": "https://github.com/Video-Reason/VBVR-Pro-Bench/blob/main/README.md",
+      "design_inference": "Separate image/text conditioning from generated sequence and hidden symbolic ground truth; identify in-domain and held-out task sets.",
+      "review_level": "primary_setup_text",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2608.24979",
+      "title_short": "FrontierChallenge",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2608.24979",
+      "monthly_visible_upvotes": 148,
+      "monthly_rank": null,
+      "family": "scientific deliverable workflows",
+      "primary_source": "https://arxiv.org/abs/2608.24979v2",
+      "design_inference": "Show the required artifact bundle and the full-completion gate; do not equate partial credit with task completion.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2609.04148",
+      "title_short": "Terminal-Universe",
+      "discovery_month": "2026-09",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-09",
+      "hf_paper_url": "https://huggingface.co/papers/2609.04148",
+      "monthly_visible_upvotes": 295,
+      "monthly_rank": null,
+      "family": "terminal environment construction",
+      "primary_source": "https://arxiv.org/abs/2609.04148v1",
+      "design_inference": "Distinguish recovered workspace, generated task, and interaction session; show breadth and depth as separate expansion axes.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2607.28956",
+      "title_short": "MerchantBench",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2607.28956",
+      "monthly_visible_upvotes": 111,
+      "monthly_rank": null,
+      "family": "long-horizon business simulation",
+      "primary_source": "https://github.com/KhanCold/merchantbench/blob/main/README.md",
+      "design_inference": "Show environment state, supplier events, order lifecycle, and different feedback delays; separate simulator and agent clocks.",
+      "review_level": "pixels_and_primary_text",
+      "pixel_inspected": true
+    },
+    {
+      "paper_id": "2603.03790",
+      "title_short": "T2S-Bench",
+      "discovery_month": "2026-03",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-03",
+      "hf_paper_url": "https://huggingface.co/papers/2603.03790",
+      "monthly_visible_upvotes": 122,
+      "monthly_rank": null,
+      "family": "text-to-structure dataset",
+      "primary_source": "https://arxiv.org/abs/2603.03790v1",
+      "design_inference": "Use a concrete source passage and target graph/structure to define the task; reserve model reasoning for the method figure.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2602.23866",
+      "title_short": "SWE-rebench V2",
+      "discovery_month": "2026-03",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-03",
+      "hf_paper_url": "https://huggingface.co/papers/2602.23866",
+      "monthly_visible_upvotes": 92,
+      "monthly_rank": null,
+      "family": "executable software task construction",
+      "primary_source": "https://arxiv.org/abs/2602.23866v2",
+      "design_inference": "Show repository harvesting, runnable environment construction, test validation, and release packaging as distinct stages.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2608.27456",
+      "title_short": "UrbanGround",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2608.27456",
+      "monthly_visible_upvotes": 112,
+      "monthly_rank": null,
+      "family": "embodied urban navigation",
+      "primary_source": "https://arxiv.org/abs/2608.27456v1",
+      "design_inference": "Distinguish the city state from first-person observations and map access; show route changes and moving pedestrians as environment dynamics.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2608.27345",
+      "title_short": "PAWBench",
+      "discovery_month": "2026-08",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-08",
+      "hf_paper_url": "https://huggingface.co/papers/2608.27345",
+      "monthly_visible_upvotes": 146,
+      "monthly_rank": null,
+      "family": "stochastic world-model evaluation",
+      "primary_source": "https://arxiv.org/abs/2608.27345v3",
+      "design_inference": "Draw repeated rollouts from the same initial condition and compare outcome distributions, not only one plausible clip.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2606.12344",
+      "title_short": "Claw-SWE-Bench",
+      "discovery_month": "2026-06",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-06",
+      "hf_paper_url": "https://huggingface.co/papers/2606.12344",
+      "monthly_visible_upvotes": 72,
+      "monthly_rank": null,
+      "family": "coding harness evaluation",
+      "primary_source": "https://arxiv.org/abs/2606.12344v1",
+      "design_inference": "Expose the fixed prompt, runtime budget, workspace, patch extraction, and evaluator contract around interchangeable agent harnesses.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2606.17861",
+      "title_short": "GameCraft-Bench",
+      "discovery_month": "2026-06",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-06",
+      "hf_paper_url": "https://huggingface.co/papers/2606.17861",
+      "monthly_visible_upvotes": 60,
+      "monthly_rank": null,
+      "family": "game generation evaluation",
+      "primary_source": "https://arxiv.org/abs/2606.17861v1",
+      "design_inference": "Separate specification, produced game artifact, executable replay, and judge; a static screenshot alone cannot define gameplay evaluation.",
+      "review_level": "primary_abstract",
+      "pixel_inspected": false
+    },
+    {
+      "paper_id": "2606.19338",
+      "title_short": "RNG-Bench",
+      "discovery_month": "2026-06",
+      "monthly_page_url": "https://huggingface.co/papers/month/2026-06",
+      "hf_paper_url": "https://huggingface.co/papers/2606.19338",
+      "monthly_visible_upvotes": 52,
+      "monthly_rank": null,
+      "family": "partially observed games",
+      "primary_source": "https://arxiv.org/html/2606.19338",
+      "design_inference": "Show revealed history versus current observation, and distinguish forgetting from action choice; mark controlled difficulty axes.",
+      "review_level": "primary_setup_text",
+      "pixel_inspected": false
+    }
+  ],
+  "visual_reviews": [
+    {
+      "paper_id": "2603.13594",
+      "repository": "ServiceNow/EnterpriseOps-Gym",
+      "path": "assets/teaser.png",
+      "blob_sha": "bf40c36081a8f0f635d9dfc2d8708864ed0321be",
+      "identity": "Author README benchmark overview; feature/construction panels over a concrete failed enterprise episode.",
+      "observations": [
+        "The lower row makes policy, executed tool calls, environment records, and failed SQL checks legible as one example.",
+        "Numbered construction stages occupy a separate panel from agent execution."
+      ],
+      "transfer": "Pair one concrete episode with a smaller construction strip when both matter.",
+      "caution": "Dense text and heavy panel borders consume considerable space; do not copy the full poster-like density.",
+      "pixel_inspected": true,
+      "asset_url": "https://github.com/ServiceNow/EnterpriseOps-Gym/blob/main/assets/teaser.png",
+      "inspection_method": "GitHub fetch_file base64 rendered as image; source artwork not saved in repository"
+    },
+    {
+      "paper_id": "2603.16859",
+      "repository": "MAC-AutoML/SocialOmni",
+      "path": "docs/assets/socialomni_overview.png",
+      "blob_sha": "938bbfe1569c0d828fca2028b41625e8c4e6b0dc",
+      "identity": "Author overview with benchmark composition, task design, and performance columns.",
+      "observations": [
+        "The middle column changes video access from full context to a prefix.",
+        "The interaction task branches at an interruption decision before language generation and scoring."
+      ],
+      "transfer": "Draw information access and conditional actions explicitly.",
+      "caution": "The broad taxonomy ring and two radar plots are not necessary for a dedicated setup figure; task contract deserves the area.",
+      "pixel_inspected": true,
+      "asset_url": "https://github.com/MAC-AutoML/SocialOmni/blob/main/docs/assets/socialomni_overview.png",
+      "inspection_method": "GitHub fetch_file base64 rendered as image; source artwork not saved in repository"
+    },
+    {
+      "paper_id": "2606.13681",
+      "repository": "Aiden0526/EvoArena",
+      "path": "assets/evoarena_overview.png",
+      "blob_sha": "6909d390975eefc29d01bf74d2d361a75514ec9f",
+      "identity": "Author benchmark overview: terminal release sequence, software milestones, and changing preference example.",
+      "observations": [
+        "Repeated terminal cards preserve the goal while visibly changing paths, package availability, privilege, and implementation.",
+        "Other panels use milestone and conversation sequences instead of forcing all domains into one glyph."
+      ],
+      "transfer": "Use aligned repeated state snapshots to reveal what changes and what persists across releases.",
+      "caution": "Do not conflate these release transitions with ordinary within-episode environment steps.",
+      "pixel_inspected": true,
+      "asset_url": "https://github.com/Aiden0526/EvoArena/blob/main/assets/evoarena_overview.png",
+      "inspection_method": "GitHub fetch_file base64 rendered as image; source artwork not saved in repository"
+    },
+    {
+      "paper_id": "2608.16859",
+      "repository": "MirroS-Lab/HarnessEval-W",
+      "path": "assets/fig_pipeline.png",
+      "blob_sha": "bffdfab2ba018c0e0f97c2f050ec4651ce9de0b0",
+      "identity": "Author evaluation pipeline: case, skill routing, frame-grounded reasoning, score.",
+      "observations": [
+        "A concrete robot scene and prompt anchor the abstract evaluator stages.",
+        "A red frame crop locates the unexpected human intervention that supports a diagnostic judgment."
+      ],
+      "transfer": "Connect every diagnostic judgment to the actual observable artifact or frame that supports it.",
+      "caution": "Evaluator sub-agents are not the system under test; label the boundary to prevent role confusion.",
+      "pixel_inspected": true,
+      "asset_url": "https://github.com/MirroS-Lab/HarnessEval-W/blob/main/assets/fig_pipeline.png",
+      "inspection_method": "GitHub fetch_file base64 rendered as image; source artwork not saved in repository"
+    },
+    {
+      "paper_id": "2607.28956",
+      "repository": "KhanCold/merchantbench",
+      "path": "assets/method.png",
+      "blob_sha": "0d665ddbb2d47093a16e39dd16bac5087c796329",
+      "identity": "Author environment overview with merchant agent, supplier/store/order simulation, and evaluation.",
+      "observations": [
+        "Nested regions separate the merchant from the persistent environment and evaluation.",
+        "The order lifecycle is visibly sequential; feedback arrows distinguish fast supplier changes from delayed order outcomes.",
+        "The evaluation panel states different agent and simulator time steps."
+      ],
+      "transfer": "Represent multiple clocks and feedback latency when they determine benchmark difficulty.",
+      "caution": "The overview's broad bidirectional arrows do not identify exact action payloads; a new figure should label action and observation directions separately.",
+      "pixel_inspected": true,
+      "asset_url": "https://github.com/KhanCold/merchantbench/blob/main/assets/method.png",
+      "inspection_method": "GitHub fetch_file base64 rendered as image; source artwork not saved in repository"
+    },
+    {
+      "paper_id": "2608.19880",
+      "repository": "google-research/envharness",
+      "path": "figs/example.jpg",
+      "blob_sha": "c4365a915c166841ed30130c6627d63c41afe5fa",
+      "identity": "Author component comparison, corresponding to paper Figure 3 interface overview.",
+      "observations": [
+        "Four columns retain reset/step/observation alignment while moving the intervention to the relevant interface.",
+        "The frozen environment remains visibly unchanged; selective colored arrows show which interface is transformed.",
+        "Short code excerpts substantiate the operations beneath the diagrams."
+      ],
+      "transfer": "Use same geometry and selective emphasis for controlled setup variants.",
+      "caution": "Author repository uses Setup/Rule/Link labels while the retrieved PDF prose also uses Stage/Contract/Chain; bind terminology to the selected source version.",
+      "pixel_inspected": true,
+      "asset_url": "https://github.com/google-research/envharness/blob/main/figs/example.jpg",
+      "inspection_method": "GitHub fetch_file base64 rendered as image; source artwork not saved in repository"
+    }
+  ],
+  "limitations": [
+    "Only six actual images were visually inspected; remaining entries are explicitly text-only.",
+    "The ALE author teaser was fetched but could not be processed as an image; it is not counted as a visual review.",
+    "Hugging Face month reflects listing/submission month, not necessarily arXiv identifier month (e.g. MerchantBench and SWE-rebench V2).",
+    "Several arXiv HTML/abstract and HF link requests failed; accessible primary repository or alternate official paper representations were used.",
+    "The sample is not exhaustive and does not establish a best-paper ranking or empirically prove design superiority."
+  ]
+}

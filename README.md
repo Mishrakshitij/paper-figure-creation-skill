@@ -1,15 +1,18 @@
 # Paper Figure Creation Skill
 
-A portable agent skill for two AI-paper figure types:
+A portable agent skill for three AI-paper figure types:
 
 - **Introduction teaser:** a concrete problem and proposed idea in roughly 35% of the usable area, with source-grounded experimental evidence in roughly 65%.
 - **Method / architecture:** an editable explanation of the computation, branches, training signals, and actual proposed change.
+- **Benchmark / environment setup:** a concrete task, its inputs or interactions, information boundaries, and scoring—**selected only when the paper actually contains a substantive setup to explain**.
 
 The skill combines paper-specific visual design, editable vector authoring, reproducible plots and numerical evidence checks. Start by deciding what the reader needs to **see**: a changed representation, a candidate's path, an update loop, a spatial relationship, or a comparison taught by a worked example.
 
 ![Revised MAE method: follow image content and patch identities through masking, encoding, reassembly and reconstruction](examples/mae-v2/figure.png)
 
 The [design revision](docs/design-upgrade.md) responds to feedback that the first gallery was too generic. It draws on actual author-hosted figures from SEAL, BAT, StudentSim, Qwen-Drive and WMRL. New examples include a same-paper MAE redesign, a SEAL teaser/method pair and a WMRL method. See the [gallery](examples/README.md) and [source-by-source critique](research/reference-upgrade/README.md).
+
+The new [setup-figure mode](skills/paper-figure-creation/references/benchmark-environment.md) covers static/procedural benchmarks, interactive environments, construction pipelines and controlled variants. Reporting scores on named datasets alone does not trigger it. See the [benchmark update](docs/benchmark-environment-update.md), [research record](research/benchmark-environment/README.md), and original WebArena and ReasoningGym examples in the [gallery](examples/README.md).
 
 ## Install
 
@@ -40,7 +43,7 @@ If an installation already exists, review your local customizations before repla
 
 Example request:
 
-> Use paper-figure-creation to create a teaser and method diagram from this manuscript and results file. Use the paper's actual methods and numbers, roughly 35% concept and 65% evidence in the teaser, and a 7-inch-wide draft. Export editable SVG, PDF, PNG, source data, and a caption. Review both figures at print size and fix concrete defects.
+> Use paper-figure-creation to design the applicable figures for this manuscript: a teaser, a method diagram, and a benchmark/environment setup figure only if the paper describes a substantive setup. Use actual source facts and results, roughly 35% concept and 65% evidence in the teaser, and a 7-inch-wide draft. Export editable SVG, PDF, PNG, source data, and captions. Review at print size and fix concrete defects.
 
 Codex also supports `$paper-figure-creation`; Claude Code supports `/paper-figure-creation`. Attach the manuscript, method description or code, result tables, and target venue template when available. The skill has no model-name or API-key dependency.
 
@@ -62,22 +65,24 @@ python skills/paper-figure-creation/scripts/render_figure.py \
   --output output/method --strict-layout
 ```
 
+For an eligible benchmark or environment setup, adapt `assets/benchmark-template.json` and run it through the same renderer. Record presence and source location before selecting this mode; the template uses synthetic content solely to demonstrate the schema.
+
 Starter values are visibly labeled synthetic and are only for layout. Replace them with a sourced evidence ledger before using a figure in a paper. Read the [spec format](skills/paper-figure-creation/references/spec-format.md). Custom SVG, Matplotlib or TikZ layouts remain valid when a method needs a different visual structure.
 
-Outputs include editable-text SVG, vector PDF with embedded fonts, 300-DPI PNG and a bounded geometry report. Method figures also export native `.drawio` cells. Native diagrams.net application rendering has not been verified; `.drawio` is an editable graph export, with JSON/source as the canonical geometry. See the [example gallery](examples/README.md).
+Outputs include editable-text SVG, vector PDF with embedded fonts, 300-DPI PNG and a bounded geometry report. Method and benchmark figures also export native `.drawio` cells. Native diagrams.net application rendering has not been verified; `.drawio` is an editable graph export, with JSON/source as the canonical geometry. See the [example gallery](examples/README.md).
 
 ## Evidence and evaluation
 
 The [research record](research/README.md) separates a 500-paper proceedings corpus, automated PDF/caption retrieval, and 20 close visual reviews of official paper-related assets. It does **not** claim 500 hand-reviewed figures, a representative survey, or an objective ranking of the 500 best papers.
 
-The gallery contains original explanatory figures for MAE, Transformer, LoRA, SEAL and WMRL. Numerical results are transcribed from papers, not newly reproduced experiments. The [first evaluation](docs/evaluation.md) is a historical record; its aggregate aesthetic scores are no longer an acceptance criterion. The revised skill uses separate scientific and communication gates, with concrete misunderstandings and repairs in the [design review](docs/design-upgrade.md). An independent agent used the earlier skill for the LoRA pair. The new figures are guided design iterations with separate comprehension review, not a controlled superiority benchmark.
+The gallery contains original explanatory figures for MAE, Transformer, LoRA, SEAL and WMRL, plus setup figures for WebArena and ReasoningGym. Numerical results are transcribed from papers, not newly reproduced experiments. The [first evaluation](docs/evaluation.md) is a historical record; its aggregate aesthetic scores are no longer an acceptance criterion. The revised skill uses separate scientific and communication gates, with concrete misunderstandings and repairs in the [design review](docs/design-upgrade.md). An independent agent used the earlier skill for the LoRA pair. The new figures are guided design iterations with separate comprehension review, not a controlled superiority benchmark.
 
 ```bash
 python -m unittest discover -s tests -v
 python examples/build_specs.py
 ```
 
-The validator checks declared data, both chart axes, comparability, uncertainty and improvement arithmetic. It cannot verify a source merely because a URL is present, detect every misleading prose claim, or judge whether an omitted baseline matters. Scientific review and actual pixel inspection remain required.
+The validator checks declared data, both chart axes, comparability, uncertainty and improvement arithmetic. For benchmark figures it also checks declared eligibility and source anchors, with different contract requirements for static and interactive setups. It cannot verify a source merely because a URL is present, detect every misleading prose claim, or judge whether an omitted baseline matters. Scientific review and actual pixel inspection remain required.
 
 ## Provenance and license
 

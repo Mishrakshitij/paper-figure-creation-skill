@@ -1,0 +1,8 @@
+{
+  "working_directory": "/tmp",
+  "custom_output_directory": true,
+  "main_png_sha256_matches": true,
+  "dependencies": "matplotlib only; proof generation additionally used PyMuPDF",
+  "external_assets": false,
+  "note": "This verifies reproducible raster output after a rebuild from a different working directory; it is not an independent skill effectiveness test."
+}

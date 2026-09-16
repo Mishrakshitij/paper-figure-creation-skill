@@ -1,0 +1,117 @@
+{
+  "type": "independent instruction-following review of authored manuscript-fragment fixtures; not an empirical benchmark or a real-paper quality evaluation",
+  "cases": [
+    {
+      "id": "results_only",
+      "presence": "absent",
+      "select_setup": false,
+      "family": null,
+      "setup_status": null,
+      "rationale": "Named benchmarks and a results table do not establish an eligible setup; the fragment explicitly says no setup or construction is described."
+    },
+    {
+      "id": "static_construction",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Construction pipeline",
+      "setup_status": "new",
+      "rationale": "Section 3 introduces task sourcing, annotation, rejection and splitting; Section 4 supplies a concrete model-input and withheld-reference scoring workflow. Use construction plus a static execution example."
+    },
+    {
+      "id": "existing_environment",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Embodied or spatial environment",
+      "setup_status": "existing",
+      "rationale": "Section 4.1 specifies initialization, observations, movement and manipulation actions, stopping and scoring. The simulator qualifies although only the policy is a new contribution."
+    },
+    {
+      "id": "related_work_only",
+      "presence": "absent",
+      "select_setup": false,
+      "family": null,
+      "setup_status": null,
+      "rationale": "A related-work survey is excluded, and the fragment expressly states this paper contains no evaluated benchmark or environment."
+    },
+    {
+      "id": "abstract_only",
+      "presence": "unclear",
+      "select_setup": false,
+      "family": null,
+      "setup_status": "new",
+      "rationale": "The abstract claims a new suite but supplies no task definition, instance source or scoring workflow. Retrieve the setup section or primary supplement before selecting this mode; the claimed novelty does not establish sufficient setup evidence."
+    },
+    {
+      "id": "three_requested",
+      "presence": "absent",
+      "select_setup": false,
+      "family": null,
+      "setup_status": null,
+      "rationale": "No eligible setup is described in the supplied manuscript; requesting all three types does not override that gate. Ask for the missing setup section or protocol before producing the requested setup figure."
+    },
+    {
+      "id": "adapted_setup",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Controlled environment variants",
+      "setup_status": "adapted",
+      "rationale": "Appendix B specifies the retained navigation interface, controlled observation occlusions, matched start-goal pairs and arrival-before-timeout criterion. Align the variants to expose the adaptation."
+    },
+    {
+      "id": "method_environment_word",
+      "presence": "absent",
+      "select_setup": false,
+      "family": null,
+      "setup_status": null,
+      "rationale": "Environment names a learned feature in an algebraic method, not an evaluated environment or setup."
+    },
+    {
+      "id": "task_generator",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Static or procedural benchmark",
+      "setup_status": null,
+      "rationale": "Section 2 specifies seeded generation, difficulty, public questions, private solution metadata and task-specific scoring of one response. No interaction loop should be added. Novelty relative to an existing setup is not stated."
+    },
+    {
+      "id": "explicit_missing_source",
+      "presence": "unclear",
+      "select_setup": false,
+      "family": null,
+      "setup_status": null,
+      "rationale": "No source or substantive setup information is available. Ask for a setup/protocol excerpt that defines the task, access and scoring; do not invent an environment to satisfy the explicit request."
+    },
+    {
+      "id": "construction_without_agent",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Construction pipeline",
+      "setup_status": null,
+      "rationale": "Section 3 specifies mining, environment reconstruction, before/after test validation, model-visible issue/repository inputs and held-out-test evaluation of a patch. This qualifies without a described agent loop; new versus adapted or existing status is not explicit."
+    },
+    {
+      "id": "substantive_existing_static",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Static or procedural benchmark",
+      "setup_status": "existing",
+      "rationale": "The evaluation section defines one article-to-summary case, the common length cap and blinded rubric-based human assessment. A substantive existing static workflow qualifies even though the model is the contribution."
+    },
+    {
+      "id": "private_training_signal",
+      "presence": "absent",
+      "select_setup": false,
+      "family": null,
+      "setup_status": null,
+      "rationale": "Teacher, labels and distillation loss describe training computation; the fragment explicitly contains no evaluation task or benchmark setup."
+    },
+    {
+      "id": "mixed_timing",
+      "presence": "present",
+      "select_setup": true,
+      "family": "Controlled environment variants",
+      "setup_status": "new",
+      "rationale": "Section 3 introduces concrete full-clip and prefix-only task conditions, an interrupt/reply output and withheld future-context scoring annotations. Align access conditions and keep future context separate; exact scoring remains unresolved."
+    }
+  ]
+}

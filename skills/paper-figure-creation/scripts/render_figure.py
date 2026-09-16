@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render auditable, editable scientific teaser and method figures from JSON.
+"""Render editable scientific teaser, method, and benchmark figures from JSON.
 
 This renderer is a deterministic starter, not an automatic scientific designer.
 Write the figure's story, select evidence and choose geometry before rendering.
@@ -384,7 +384,9 @@ def drawio_export(spec, path, theme):
     def X(x): return (.035 + .93 * x) * W
     def Y(y): return (1 - .11 - (top - .11) * y) * H
     doc = ET.Element("mxfile", host="app.diagrams.net", version="24.7.17")
-    diagram = ET.SubElement(doc, "diagram", id="method", name="Method")
+    kind = spec.get("kind", "method")
+    diagram = ET.SubElement(doc, "diagram", id=kind,
+                            name="Benchmark / environment" if kind == "benchmark" else "Method")
     model = ET.SubElement(diagram, "mxGraphModel", dx=str(W), dy=str(H), grid="1", gridSize="10", page="1", pageScale="1", pageWidth=str(W), pageHeight=str(H), math="0", shadow="0")
     root = ET.SubElement(model, "root")
     ET.SubElement(root, "mxCell", id="0")
@@ -454,7 +456,7 @@ def geometry_check(spec):
     if spec.get("kind")=="teaser" and spec.get("concept",{}).get("kind")=="custom":
         ce,cw=geometry_check({**spec["concept"],"kind":"method"})
         return ["Concept: "+e for e in ce],["Concept: "+w for w in cw]
-    if spec.get("kind") != "method": return errors,warnings
+    if spec.get("kind") not in ("method", "benchmark"): return errors,warnings
     nodes = spec.get("nodes", [])
     ids = [n["id"] for n in nodes]
     if len(ids) != len(set(ids)): errors.append("Node IDs must be unique")
@@ -506,7 +508,7 @@ def geometry_check(spec):
 
 def text_geometry_check(fig, spec, ax):
     """Catch node labels too large for their boxes using final renderer bounds."""
-    if spec.get("kind") not in ("method","custom"): return []
+    if spec.get("kind") not in ("method","benchmark","custom"): return []
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     nodes = {n["id"]:n for n in spec["nodes"]}
@@ -590,7 +592,7 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
             fig.legend(handles,labels,loc="lower center",bbox_to_anchor=(.5,.07),
                        ncol=len(handles),handlelength=1.5,columnspacing=1.6)
         fig.add_artist(plt.Line2D([left+share-.025]*2,[bottom-.03,top+.06],transform=fig.transFigure,color=theme["grid"],lw=.7))
-    elif kind == "method":
+    elif kind in ("method", "benchmark"):
         top=.79 if subtitle else .83
         ax=fig.add_axes([.035,.11,.93,top-.11])
         draw_method_contents(ax,spec,theme)
@@ -626,12 +628,12 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
         if fmt=="pdf": metadata.update({"CreationDate":None,"ModDate":None})
         fig.savefig(path,dpi=theme["dpi"],metadata=metadata)
         products.append(str(path))
-    if kind=="method":
+    if kind in ("method", "benchmark"):
         path=output.with_suffix(".drawio"); drawio_export(spec,path,theme); products.append(str(path))
     plt.close(fig)
     report={"figure_kind":kind,"dimensions_in":[width,height],"font_size_pt":theme["font_size"],
             "products":products,"errors":errors,"warnings":warnings,
-            "verification_scope":"Chart point visibility and log domains; method/custom-concept node bounds, edge-node intersections, node text containment; page text clipping. Human visual and scientific review remain required."}
+            "verification_scope":"Chart point visibility and log domains; method/benchmark/custom-concept node bounds, edge-node intersections, node text containment; page text clipping. Benchmark eligibility is a declared source-backed contract, not verified scientific truth. Human visual and scientific review remain required."}
     output.with_suffix(".qa.json").write_text(json.dumps(report,indent=2)+"\n")
     return report
 

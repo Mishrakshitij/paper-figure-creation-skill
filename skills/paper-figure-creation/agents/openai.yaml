@@ -1,4 +1,4 @@
 interface:
   display_name: "Paper Figure Creation"
-  short_description: "Evidence-grounded AI paper teasers and method diagrams"
-  default_prompt: "Use $paper-figure-creation to design an introduction teaser and method diagram from this manuscript and its experimental results."
+  short_description: "AI paper teasers, methods, and benchmark setup figures"
+  default_prompt: "Use $paper-figure-creation to design figures from this manuscript and evidence, including a benchmark or environment setup figure only if the paper contains a substantive setup to explain."

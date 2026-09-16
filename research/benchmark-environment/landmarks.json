@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-16",
+  "selection": "Purposive coverage of benchmark contracts and environment types; not a ranking of paper or figure quality. Complements the separate Hugging Face monthly screening.",
+  "coverage": {"papers_screened": 15, "official_assets_pixel_reviewed": 6, "text_only_cases": 9},
+  "limitations": ["Six official repository images were actually displayed and inspected. Remaining cases inform the setup contract from text, not visual-quality claims.", "Images are linked with exact Git blob hashes; original artwork is not redistributed.", "Project pages and repository main branches can describe later releases. Version scope is explicit in each record.", "This is design research, not a systematic literature review or an empirical ranking of figure effectiveness."],
+  "papers": [
+    {
+      "id": "webarena", "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents", "year": 2023,
+      "family": "interactive web environment", "version_scope": "Original WebArena, ICLR 2024 paper arXiv:2307.13854v4; task fixture from repository v0.2.0.",
+      "sources": ["https://arxiv.org/html/2307.13854v4", "https://webarena.dev/", "https://github.com/web-arena-x/webarena/tree/v0.2.0"],
+      "review_level": "official_asset_pixels_and_paper_text",
+      "asset": {"repository": "web-arena-x/webarena", "path": "media/overview.png", "git_blob_sha": "9c5920639b8d67de5149b56141c8a3d1a2074606", "url": "https://github.com/web-arena-x/webarena/blob/main/media/overview.png"},
+      "source_anchors": ["Sections 2.1-2.4", "Section 3.2 and Table 1", "Appendices A.2, A.6, A.9", "v0.2.0 config_files/test.raw.json task 601, blob 91e88d7c3bce867b7f7608c8229c84b7be11ef1e"],
+      "setup_facts": ["812 tasks in self-hosted web applications.", "Intent and observable browser context drive actions; website transitions yield new observations.", "Functional checking can inspect URLs, DOM content, APIs, or database state instead of requiring a reference action sequence.", "Fresh Docker images restore initial website data when reset is needed."],
+      "pixel_observations": ["The application collection is visually enclosed as the environment, while the agent sits outside.", "Paired curved arrows distinguish action from feedback; natural-language tasks enter separately.", "A lower evaluation path ends in functional success/failure and is distinct from the agent loop."],
+      "transfer": "Use an actual task and visible state change; keep the evaluator separate from agent observations.",
+      "caution": "A logo collage explains domain breadth but not what changes after an action. Add a small concrete episode. The original baseline's 30-transition budget is not an inherent environment limit."
+    },
+    {
+      "id": "visualwebarena", "title": "VisualWebArena: Evaluating Multimodal Agents on Realistic Visually Grounded Web Tasks", "year": 2024,
+      "family": "multimodal web environment", "version_scope": "arXiv:2401.13649v2, 6 June 2024; official overview asset fetched 2026-09-16.",
+      "sources": ["https://arxiv.org/html/2401.13649v2", "https://jykoh.com/vwa", "https://github.com/web-arena-x/visualwebarena"],
+      "review_level": "official_asset_pixels_and_paper_text",
+      "asset": {"repository": "web-arena-x/visualwebarena", "path": "media/overview.png", "git_blob_sha": "35b61ae65b95313370f903e54107fd6afcbfe136", "url": "https://github.com/web-arena-x/visualwebarena/blob/main/media/overview.png"},
+      "source_anchors": ["Figure 1", "Sections 3.1-3.3", "Section 4"],
+      "setup_facts": ["910 tasks across classifieds, shopping, and Reddit.", "All tasks require visual grounding; some goals also include input images.", "Page observations and element-targeted actions are separated; success evaluates the task outcome."],
+      "pixel_observations": ["Three repeated rows pair a real webpage with its task specification.", "Images embedded inside task text show why the benchmark requires vision.", "A concrete click action exits the agent, rather than an unspecified output arrow."],
+      "transfer": "Show the modality-bearing input inline with the example. A generic image icon cannot explain the required visual reasoning.",
+      "caution": "The overview gives little space to scoring; a complete benchmark setup figure should add the evaluator without suggesting that image matching alone determines success."
+    },
+    {
+      "id": "osworld", "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments", "year": 2024,
+      "family": "desktop computer environment", "version_scope": "Original 2024 environment infrastructure asset; official v1 website now also documents later Verified changes. Do not mix v1, Verified, and 2.0 results.",
+      "sources": ["https://osworld-v1.xlang.ai/", "https://github.com/OS-World/OS-World.github.io", "https://github.com/xlang-ai/OSWorld"],
+      "review_level": "official_asset_pixels_and_project_text",
+      "asset": {"repository": "OS-World/OS-World.github.io", "path": "static/images/environment_infrastructure_.png", "git_blob_sha": "20548390f79fd895d1925c60bbd9880b5044cfbf", "url": "https://github.com/OS-World/OS-World.github.io/blob/main/static/images/environment_infrastructure_.png"},
+      "source_anchors": ["Project page: OSWorld Environment Infrastructure", "Project page: original benchmark overview"],
+      "setup_facts": ["Original benchmark describes 369 tasks in real desktop and web applications.", "Task setup configuration initializes state; a VM controller executes actions and retrieves observations.", "Evaluation performs postprocessing, retrieves resulting files or information, and applies a task-specific metric."],
+      "pixel_observations": ["Highlighted configuration fragments reuse the colors of setup, getter, postprocessing, and metric blocks.", "Nested containment distinguishes coordinator, simulator, task manager, and external virtual machines.", "Action and observation arrows pass through an interface; evaluation exits on its own path."],
+      "transfer": "Bind one concrete configuration field to the world object or evaluator it controls. Use containment to explain responsibility.",
+      "caution": "Long code fragments overwhelm at column width. An original compact figure should retain only the meaningful fields and label omitted details."
+    },
+    {
+      "id": "swebench", "title": "SWE-bench: Can Language Models Resolve Real-world GitHub Issues?", "year": 2023,
+      "family": "repository task construction and executable evaluation", "version_scope": "Original 2,294-task benchmark, not Lite, Verified, Multilingual, or Multimodal. Current original-project page and its teaser asset inspected.",
+      "sources": ["https://www.swebench.com/original.html", "https://github.com/SWE-bench/SWE-bench", "https://openreview.net/forum?id=VTF8yNQM66"],
+      "review_level": "official_asset_pixels_and_project_text",
+      "asset": {"repository": "SWE-bench/swe-bench.github.io", "path": "img/teaser.png", "git_blob_sha": "4f06f9831f7321e42e5a01002e3feb4eeb5a8eff", "url": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/img/teaser.png"},
+      "source_anchors": ["Original project page: Overview", "Official repository: Overview and data collection links"],
+      "setup_facts": ["Issues and qualifying pull requests from 12 Python repositories provide 2,294 original task instances.", "The system receives issue text and the repository state to modify.", "Fail-to-pass tests check whether a patch resolves the issue; the artwork also explicitly shows pass-to-pass preservation."],
+      "pixel_observations": ["Issue text plus file-tree objects make the input tangible.", "The proposed patch is a changed file tree with additions and deletions.", "The before/after test matrix makes the success criterion visible using the same rows."],
+      "transfer": "Represent dataset construction separately from solver execution. Use a before/after validity check to explain why a retained task is measurable.",
+      "caution": "Current project prose describes Docker evaluation; avoid implying that every implementation detail was unchanged since the 2023 release. OpenReview's forum was challenge-blocked; official project content was accessible."
+    },
+    {
+      "id": "alfworld", "title": "ALFWorld: Aligning Text and Embodied Environments for Interactive Learning", "year": 2020,
+      "family": "aligned text and embodied environments", "version_scope": "ICLR 2021 work, official README and teaser asset.",
+      "sources": ["https://github.com/alfworld/alfworld", "https://alfworld.github.io/", "https://openreview.net/forum?id=0IOX0YcCdTn"],
+      "review_level": "official_asset_pixels_and_repository_text",
+      "asset": {"repository": "alfworld/alfworld", "path": "media/alfworld_teaser.png", "git_blob_sha": "146f9224fcab01c4ef5d4bc1af84ca02f819310d", "url": "https://github.com/alfworld/alfworld/blob/master/media/alfworld_teaser.png"},
+      "source_anchors": ["Official README introduction, blob 5fb84fd350574a13ff0ca88fcc22488e378c1a54"],
+      "setup_facts": ["TextWorld environments parallel embodied tasks from ALFRED.", "Alignment supports high-level reasoning in an abstract space and low-level execution in the embodied world."],
+      "pixel_observations": ["Side-by-side text transcript and rendered kitchen frames expose the two interfaces.", "Color distinguishes action verbs and target objects in the transcript.", "Stacked frames indicate multiple low-level actions needed for embodied behavior."],
+      "transfer": "For paired environments, keep the same task/entity visible in both views and show the abstraction boundary.",
+      "caution": "Do not imply a one-to-one action correspondence from adjacent panels; a high-level text action can require many embodied steps."
+    },
+    {
+      "id": "toolbench", "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs", "year": 2023,
+      "family": "tool benchmark construction", "version_scope": "ToolBench within ToolLLM, official overview and repository; later StableToolBench is a distinct revision.",
+      "sources": ["https://github.com/OpenBMB/ToolBench", "https://arxiv.org/abs/2307.16789"],
+      "review_level": "official_asset_pixels_and_repository_text",
+      "asset": {"repository": "OpenBMB/ToolBench", "path": "assets/overview.png", "git_blob_sha": "86a735ef5bc10f7d91e281953a64b076599c29ce", "url": "https://github.com/OpenBMB/ToolBench/blob/master/assets/overview.png"},
+      "source_anchors": ["Official README dataset construction and inference overview, blob da8ea02d145628b4eff3c19c8a16513a49828627"],
+      "setup_facts": ["API collection, instruction generation, and solution-path annotation produce ToolBench.", "The project also trains a tool retriever and ToolLLaMA, and evaluates tool-using responses with ToolEval."],
+      "pixel_observations": ["Three construction stages occupy the left region; retrieval and iterative API use occupy the right.", "Black, green, and orange paths distinguish construction, training, and inference.", "The dataset is a persistent object at the transition between construction and model training."],
+      "transfer": "Use stage ownership and a persistent dataset artifact to stop construction and evaluation from collapsing into one ambiguous chain.",
+      "caution": "Do not import the training branch into a benchmark-only paper. Tool access/version stability is part of the benchmark contract."
+    },
+    {
+      "id": "agentbench", "title": "AgentBench: Evaluating LLMs as Agents", "year": 2023,
+      "family": "multi-domain agent suite", "version_scope": "Repository v0.2; main now contains a later function-calling adaptation.",
+      "sources": ["https://github.com/THUDM/AgentBench/tree/v0.2", "https://arxiv.org/abs/2308.03688"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["v0.2 README, blob 1954cb030163f6f00a9269a18a5f3e2e0534e79d"],
+      "setup_facts": ["Eight environment families cover OS, database, knowledge graph, card game, lateral-thinking puzzles, household tasks, shopping, and browsing.", "Development and test splits are provided; the framework connects agents to task workers."],
+      "transfer": "A suite overview should show a shared agent interface with representative domain-specific observations/actions, then identify how per-domain scores are combined.",
+      "caution": "A domain icon wheel alone cannot explain the evaluation protocol. Official agentbench.png metadata was found, but image content was not returned, so no pixel-quality claim is made."
+    },
+    {
+      "id": "gaia", "title": "GAIA: A Benchmark for General AI Assistants", "year": 2023,
+      "family": "static multimodal questions with tools", "version_scope": "Original GAIA formulation; official dataset card read without opening gated task files.",
+      "sources": ["https://huggingface.co/datasets/gaia-benchmark/GAIA", "https://arxiv.org/html/2311.12983v1"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Paper Sections 3.1-3.4; captions for Figures 1-2", "Dataset card: Data and leaderboard"],
+      "setup_facts": ["Questions may include attachments and require different combinations of reasoning, browsing, and other tools.", "Outputs are short, unambiguous answers scored by type-aware normalization and matching.", "The dataset distinguishes public development information and private test answers."],
+      "transfer": "Use an input dossier, optional tool traces, and a separate answer-key evaluator; do not invent a stateful simulator merely because the solver uses tools.",
+      "caution": "Captions were read but pixels were not inspected. Dataset gating and non-redistribution conditions were respected; no gated benchmark item is copied."
+    },
+    {
+      "id": "tau-bench", "title": "tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains", "year": 2024,
+      "family": "conversational tool environment", "version_scope": "arXiv:2406.12045v1, 17 June 2024. Current repository warns that newer tau releases change tasks; they are not conflated here.",
+      "sources": ["https://arxiv.org/html/2406.12045v1", "https://github.com/sierra-research/tau-bench"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Figure 1 caption", "Sections 3-4", "Appendix B"],
+      "setup_facts": ["An agent exchanges messages with an LM-simulated user and calls domain APIs under a policy document.", "Evaluation compares resulting database state with an annotated goal state.", "Repeated-trial reliability is distinct from success on a single run."],
+      "transfer": "Use two interaction channels, user dialogue and tools, around the agent. Put user-private scenario information and evaluator goal state outside the agent-visible lane.",
+      "caution": "Do not confuse pass^k (all repeated attempts succeed) with pass@k (at least one succeeds). Figure 1 was caption-reviewed, not pixel-reviewed."
+    },
+    {
+      "id": "behavior-1k", "title": "BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation", "year": 2024,
+      "family": "embodied simulation benchmark", "version_scope": "arXiv:2403.09227v1, 14 March 2024. Later challenge subsets and protocols are separate.",
+      "sources": ["https://arxiv.org/abs/2403.09227v1", "https://behavior.stanford.edu/", "https://github.com/StanfordVL/BEHAVIOR-1K"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Paper abstract", "Official repository introduction, blob c35855e6d6e6684b780535bd6e338cbc3f2c0d07", "Project documentation task definitions and object states"],
+      "setup_facts": ["The work separates activity definitions from the OmniGibson simulation that realizes them.", "Human-centered everyday activities involve scenes, objects, physical properties, and long-horizon manipulation."],
+      "transfer": "Show a task goal, a scene with relevant object states, and a before/after state predicate. Keep the robot's sensors distinct from simulator ground truth.",
+      "caution": "A photorealistic room image is insufficient without agent affordances and success conditions. No pixels reviewed here; no claim that current challenge settings match the original paper."
+    },
+    {
+      "id": "procgen", "title": "Leveraging Procedural Generation to Benchmark Reinforcement Learning", "year": 2020,
+      "family": "procedural generalization benchmark", "version_scope": "ICML 2020 / PMLR 119 paper; official repository checked for environment interface.",
+      "sources": ["https://proceedings.mlr.press/v119/cobbe20a.html", "https://proceedings.mlr.press/v119/cobbe20a/cobbe20a.pdf", "https://github.com/openai/procgen"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Proceedings abstract", "Official README: environment list and interfaces, blob f4a80e7130110d3a76238a3432383e40d34d3d91"],
+      "setup_facts": ["Sixteen procedurally generated game environments test sample efficiency and generalization.", "The interface returns pixel observations; episode return and level completion are distinct recorded outcomes."],
+      "transfer": "Show a level generator branching to training and held-out levels, with an episode inset. Make the split unit and reuse policy explicit.",
+      "caution": "Do not invent a split size or seed range without the exact experimental protocol. A screenshot gallery communicates diversity, not held-out generalization."
+    },
+    {
+      "id": "deepmind-control", "title": "DeepMind Control Suite", "year": 2018,
+      "family": "continuous control suite", "version_scope": "Original 2018 report linked from the current suite README; current repository includes later domains.",
+      "sources": ["https://github.com/google-deepmind/dm_control/tree/main/dm_control/suite", "https://arxiv.org/abs/1801.00690"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Suite README, blob d7dca5c5b81b5cdf3e7274aa59f4087611cc5c49"],
+      "setup_facts": ["A task is selected by domain and task name.", "Reset initializes an episode; bounded actions feed step; the returned timestep exposes reward, discount, observation, and termination status."],
+      "transfer": "Draw the domain/task distinction and the observation-action-reward interface. Use a physical scene inset when continuous coordinates or constraints are central.",
+      "caution": "Avoid replacing continuous action signals with a generic text-command arrow or presenting later quadruped additions as original 2018 content."
+    },
+    {
+      "id": "terminal-bench", "title": "Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces", "year": 2026,
+      "family": "terminal environment and task verification", "version_scope": "ICLR 2026 proceedings, explicitly Terminal-Bench 2.0.",
+      "sources": ["https://proceedings.iclr.cc/paper_files/paper/2026/hash/444a3737adaee10d86ad2ef5f74468e6-Abstract-Conference.html", "https://www.tbench.ai/"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["ICLR 2026 proceedings abstract"],
+      "setup_facts": ["Terminal-Bench 2.0 contains 89 tasks inspired by real workflows.", "Each task has a dedicated environment, human-written solution, and verification tests."],
+      "transfer": "Show the per-task package as instruction plus environment plus private verifier. Render a short terminal interaction and the resulting artifact, rather than a whole software stack.",
+      "caution": "The reference solution verifies task viability; it must not be drawn as an input provided to the evaluated agent. No paper pixels inspected."
+    },
+    {
+      "id": "browsecomp", "title": "BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents", "year": 2025,
+      "family": "research question construction", "version_scope": "Official 10 April 2025 release description.",
+      "sources": ["https://openai.com/index/browsecomp/", "https://github.com/openai/simple-evals"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Official release: About the BrowseComp benchmark and construction checks"],
+      "setup_facts": ["1,266 questions target information that is difficult to locate but admits a short verifiable answer.", "Construction starts with a fact and creates an inverted question, followed by difficulty checks.", "The authors explicitly distinguish the narrow answer format from open-ended user queries."],
+      "transfer": "A construction figure should show seed fact, constraints, question, independent difficulty checks, and a withheld answer key. Keep solver browsing in a separate stage.",
+      "caution": "Do not draw the construction model-failure filter as the final scoring criterion, or imply the benchmark covers every form of research assistance."
+    },
+    {
+      "id": "webshop", "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents", "year": 2022,
+      "family": "shopping environment", "version_scope": "Original WebShop work and official repository description; reduced preview data is distinct from the full benchmark.",
+      "sources": ["https://github.com/princeton-nlp/webshop", "https://arxiv.org/abs/2207.01206", "https://webshop-pnlp.github.io/"],
+      "review_level": "text_only_not_pixel_reviewed",
+      "source_anchors": ["Official README: Introduction and observation modes, blob eae73b266da66b83a785cdd1cbd0eeefb010c9a6"],
+      "setup_facts": ["A simulated commerce website contains real product data and crowd-authored instructions.", "The agent navigates, searches, chooses options, and purchases a product to satisfy the instruction.", "HTML and simplified text modes expose different observation representations."],
+      "transfer": "Connect instruction attributes to visible product choices and the final selected artifact. A compact search-results-product-purchase trace explains the task semantics.",
+      "caution": "The repository defaults to a small preview dataset; never use preview counts to label the published benchmark. The linked animated diagram was not inspected."
+    }
+  ]
+}

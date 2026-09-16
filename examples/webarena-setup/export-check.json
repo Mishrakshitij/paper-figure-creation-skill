@@ -1,0 +1,26 @@
+{
+  "pdf_pages": 1,
+  "pdf_points": [
+    504.0,
+    342.0
+  ],
+  "required_text_missing": [],
+  "svg_text_elements": 39,
+  "pdf_image_count": 0,
+  "fonts": [
+    {
+      "name": "EVICAO+DejaVuSans-Bold",
+      "type": "Type0"
+    },
+    {
+      "name": "BMQQDV+DejaVuSans",
+      "type": "Type0"
+    },
+    {
+      "name": "FJGZKM+DejaVuSansMono",
+      "type": "Type0"
+    }
+  ],
+  "checks_scope": "PDF page size, text extraction, vector content, SVG live text; no geometric guarantee",
+  "accessibility_target_label_present": true
+}

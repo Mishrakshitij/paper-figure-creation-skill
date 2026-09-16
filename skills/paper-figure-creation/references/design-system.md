@@ -98,3 +98,7 @@ Mural is useful for storyboards, comparing layouts and reviewer annotations. Its
 Keep required scripts, assets and references inside this installed skill. A single-skill install may omit repository-level shared files; the supplied Addy Osmani repository documents this exact portability issue. Avoid vendor-specific tool dependencies when plain data, code and SVG can preserve the workflow. [Addy repository portability note](https://github.com/addyosmani/agent-skills/blob/main/README.md), [Agent Skills specification](https://agentskills.io/specification)
 
 Read `delivery.md` for manuscript insertion and export checks. An editable source, a vector export and a preview serve different purposes; retain all three when requested rather than treating a flattened PNG as the master.
+
+## Setup-specific composition
+
+For an eligible benchmark/environment figure, select the grammar in [benchmark-environment.md](benchmark-environment.md). Keep task, tested system, environment/state and evaluator distinguishable through labels and geometry as well as color. Use a concrete sample or interaction at the center, with construction and aggregation only as detailed as the paper needs. The teaser 35:65 area preference does not apply.

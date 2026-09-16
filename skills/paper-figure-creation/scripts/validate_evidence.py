@@ -66,8 +66,8 @@ def validate_spec(spec):
         return report
     if spec.get("version") != 1 or isinstance(spec.get("version"), bool):
         issue("schema_version", "version", "Supported version is the integer 1.")
-    if not member(spec.get("kind"), {"teaser", "method"}):
-        issue("figure_kind", "kind", "Expected teaser or method.")
+    if not member(spec.get("kind"), {"teaser", "method", "benchmark"}):
+        issue("figure_kind", "kind", "Expected teaser, method, or benchmark.")
     if not member(spec.get("status"), {"draft", "final"}):
         issue("figure_status", "status", "Declare draft or final.")
 
@@ -101,6 +101,43 @@ def validate_spec(spec):
         if not re.search(r"\b(synthetic|illustrative)\b", visible, re.I):
             issue("synthetic_label", "figure.subtitle", "Include a visible SYNTHETIC DATA or ILLUSTRATIVE DATA label in subtitle or watermark.")
         issue("synthetic_not_evidence", "provenance", "Draft synthetic values establish layout only; they do not support paper claims.", True)
+
+    # A benchmark/environment figure is conditional on an actual setup in the
+    # paper. These fields record the eligibility decision and its source; they
+    # cannot establish that the cited source says what the author claims.
+    if spec.get("kind") == "benchmark":
+        setup = spec.get("benchmark_setup")
+        if not isinstance(setup, dict):
+            issue("benchmark_setup", "benchmark_setup", "Provide the source-backed benchmark/environment setup contract.")
+            setup = {}
+        if setup.get("presence") != "present":
+            issue("benchmark_presence", "benchmark_setup.presence", "Use a benchmark figure only when the paper contains a verified setup; absent or unclear does not qualify.")
+        if not member(setup.get("source_id"), sources):
+            issue("benchmark_source", "benchmark_setup.source_id", "Reference a declared source establishing that the benchmark/environment setup exists.")
+        if not nonempty(setup.get("source_location")):
+            issue("benchmark_source", "benchmark_setup.source_location", "Give the exact section, figure, appendix, or code location establishing the setup.")
+        if not member(setup.get("contribution"), {"new_benchmark", "new_environment", "adapted_setup", "existing_setup"}):
+            issue("benchmark_contribution", "benchmark_setup.contribution", "Distinguish a new benchmark/environment from an adapted or existing setup.")
+        family = setup.get("family")
+        if not member(family, {"static_benchmark", "interactive_environment", "mixed"}):
+            issue("benchmark_family", "benchmark_setup.family", "Declare static_benchmark, interactive_environment, or mixed.")
+        for field in ("unit_of_evaluation", "instance_construction", "evaluation"):
+            if not nonempty(setup.get(field)):
+                issue("benchmark_contract", "benchmark_setup." + field, "Describe this setup component from the source; do not invent missing settings.")
+        for field in ("agent_visible", "evaluator_only"):
+            value = setup.get(field)
+            if not isinstance(value, list) or any(not nonempty(item) for item in value):
+                issue("benchmark_visibility", "benchmark_setup." + field, "Declare an array of information descriptions; use [] when this category is empty.")
+        # Static datasets do not imply actions, episodes, resets, or an agent
+        # loop. A mixed setup includes an interactive component, so the same
+        # episode contract is required for that component.
+        if member(family, {"interactive_environment", "mixed"}):
+            for field in ("observation", "actions", "state_transition", "reset", "termination"):
+                if not nonempty(setup.get(field)):
+                    issue("benchmark_episode", "benchmark_setup." + field, "Describe the interactive component's episode contract from the source.")
+        for i, node in objects(spec.get("nodes", []), "nodes"):
+            if "visibility" in node and not member(node["visibility"], {"agent", "evaluator", "public"}):
+                issue("benchmark_node_visibility", f"nodes[{i}].visibility", "Optional visibility must be agent, evaluator, or public; this metadata does not hide a node from the reader.")
 
     evidence = spec.get("evidence", {})
     if not isinstance(evidence, dict):

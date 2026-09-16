@@ -1,0 +1,12 @@
+{
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "synthetic_not_evidence",
+      "path": "provenance",
+      "message": "Draft synthetic values establish layout only; they do not support paper claims."
+    }
+  ],
+  "computed_claims": []
+}

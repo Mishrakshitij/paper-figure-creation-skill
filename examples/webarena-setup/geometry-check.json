@@ -1,0 +1,16 @@
+{
+  "width_in": 7,
+  "height_in": 4.75,
+  "text_outside_canvas": [],
+  "minimum_font_pt": 7.5,
+  "primary_font_pt": "8\u20139.4",
+  "main_png_dpi": 220,
+  "proof_png_dpi": 110,
+  "data_status": "schematic episode, sourced task contract",
+  "observed_episode": false,
+  "diagram_kind": "benchmark_environment",
+  "limitations": [
+    "No layout-overlap solver; rendered figure must also be visually inspected.",
+    "No actual manuscript page supplied; venue-size proof is 7 inches wide."
+  ]
+}
