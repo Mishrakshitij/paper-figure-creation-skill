@@ -4,7 +4,7 @@ Keep the canonical spec/source, evidence ledger, caption, and review record besi
 
 | Destination | Preferred artifact | Verification |
 | --- | --- | --- |
-| LaTeX / Overleaf | Vector PDF | Fonts embedded, no unintended Type 3 fonts, correct media box, crop and physical width |
+| LaTeX / Overleaf | PDF with vector text/geometry and embedded example images when needed | Fonts embedded, no unintended Type 3 fonts, correct media box, crop and physical width |
 | Word | SVG where supported; high-resolution PNG fallback | Inserted width, label readability, actual exported document rendering |
 | Google Docs | High-resolution PNG when SVG import is unsuitable | Check target rendering and compression; preserve vector master externally |
 | diagrams.net | Native uncompressed `.drawio` plus PDF/SVG | Nodes, edges, ports, text and grouping remain editable |
@@ -38,3 +38,5 @@ Inspect the resulting image. A PDF with no fonts may intentionally contain outli
 For PNG, compute required pixels from physical inches × target DPI. At 7 inches and 300 DPI, width is 2100 pixels. Do not resample a small image and claim new detail. Keep original image crops, common qualitative scales, and any required image permissions or attribution in provenance.
 
 Generated examples in this repository are original explanatory redraws of published methods or data. They are not the authors' figures, new experiments, or reproductions of reported training runs.
+
+For a hybrid figure, package the selected image asset and generation/provenance note with the build source. Keep exact labels and relations editable, record effective raster resolution at intended size, and verify a rasterized final PDF. Describe the result as hybrid instead of fully vector. See [hybrid-authoring.md](hybrid-authoring.md).

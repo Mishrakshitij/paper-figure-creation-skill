@@ -1,0 +1,45 @@
+{
+  "figure_type": "benchmark",
+  "reviewed_on": "2026-09-16",
+  "source_version_note": "HF discovery month, paper revision, and implementation snapshot are different and not treated as interchangeable.",
+  "sources": [
+    {
+      "id": "paper-v2",
+      "url": "https://arxiv.org/html/2505.24760v2",
+      "title": "Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards",
+      "version": "arXiv v2, 2025-10-20",
+      "locations": ["Section 2: generators, parameter controls, and algorithmic verification", "Section 4: distinction between training reward and evaluation accuracy"],
+      "supports": ["Procedural generation", "Configurable complexity", "Task-specific algorithmic verification", "Do not conflate training reward and evaluation accuracy"]
+    },
+    {
+      "id": "readme-pinned",
+      "url": "https://github.com/open-thought/reasoning-gym/blob/49b07130b3fcd12f2d064bba7c43869543a0e7e7/README.md",
+      "commit": "49b07130b3fcd12f2d064bba7c43869543a0e7e7",
+      "blob_sha": "d7e3d8e0f644a70c69a0c36e5d33337aed7107ea",
+      "locations": ["About", "Quickstart", "Training: interface example"],
+      "supports": ["create_dataset task, size, seed and task-specific config", "First leg-counting entry: 1 sea slug and 1 deer", "Reference answer 4", "Entry fields question, answer, metadata", "score_answer on reference returns 1.0", "Some tasks accept multiple valid solutions", "Example evaluation call supplies entry question to model and complete entry to scorer"]
+    },
+    {
+      "id": "author-image",
+      "url": "https://github.com/open-thought/reasoning-gym/blob/49b07130b3fcd12f2d064bba7c43869543a0e7e7/assets/examples.png",
+      "blob_sha": "9279f6fd5c52f495f6db89c58d6273e125eddc51",
+      "inspection": "Actual image pixels inspected; three columns of Logic, Cognition and Games task/answer examples.",
+      "design_lesson": "Anchor a procedural benchmark in readable task content instead of anonymous dataset boxes.",
+      "redistributed": false
+    },
+    {
+      "id": "discovery",
+      "url": "https://huggingface.co/papers/month/2025-06",
+      "role": "Candidate discovery only, not scientific evidence or a visual-quality score"
+    }
+  ],
+  "numeric_items": [
+    {"displayed": "42", "meaning": "seed", "source_id": "readme-pinned", "location": "Quickstart"},
+    {"displayed": "10", "meaning": "dataset size", "source_id": "readme-pinned", "location": "Quickstart"},
+    {"displayed": "1 sea slug + 1 deer", "meaning": "first generated entry contents", "source_id": "readme-pinned", "location": "Quickstart output, entry 0"},
+    {"displayed": "4", "meaning": "reference answer", "source_id": "readme-pinned", "location": "Quickstart output, entry 0"},
+    {"displayed": "4", "meaning": "illustrative candidate response", "measured": false, "label": "Schematic / illustrative"},
+    {"displayed": "1.0", "meaning": "documented verifier result for the reference answer", "source_id": "readme-pinned", "location": "Quickstart assertion", "measured_model_performance": false}
+  ],
+  "not_claimed": ["Model accuracy", "Aggregate benchmark performance", "Universal binary scoring", "Universal exact string matching", "Interactive action loop", "Exact reconstruction of the paper's training system"]
+}

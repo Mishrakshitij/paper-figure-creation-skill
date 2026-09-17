@@ -8,11 +8,13 @@ A portable agent skill for three AI-paper figure types:
 
 The skill combines paper-specific visual design, editable vector authoring, reproducible plots and numerical evidence checks. Start by deciding what the reader needs to **see**: a changed representation, a candidate's path, an update loop, a spatial relationship, or a comparison taught by a worked example.
 
-![Revised MAE method: follow image content and patch identities through masking, encoding, reassembly and reconstruction](examples/mae-v2/figure.png)
+![Hybrid MAE method: an illustrative generated scene with exact masking, token identities, position restoration and masked-only loss](examples/mae-hybrid/figure.png)
 
 The [design revision](docs/design-upgrade.md) responds to feedback that the first gallery was too generic. It draws on actual author-hosted figures from SEAL, BAT, StudentSim, Qwen-Drive and WMRL. New examples include a same-paper MAE redesign, a SEAL teaser/method pair and a WMRL method. See the [gallery](examples/README.md) and [source-by-source critique](research/reference-upgrade/README.md).
 
 The new [setup-figure mode](skills/paper-figure-creation/references/benchmark-environment.md) covers static/procedural benchmarks, interactive environments, construction pipelines and controlled variants. Reporting scores on named datasets alone does not trigger it. See the [benchmark update](docs/benchmark-environment-update.md), [research record](research/benchmark-environment/README.md), and original WebArena and ReasoningGym examples in the [gallery](examples/README.md).
+
+The [art-direction update](docs/art-direction-update.md) adds focal composition, visible transformations, domain-specific objects and selective depth. Figures can use a rich vector scene or an optional illustrated asset with exact vector labels and wiring. The new MAE example is **hybrid**: its generated input scene is illustrative, its scientific geometry is deterministic, and its predicted output remains symbolic. See [art direction](skills/paper-figure-creation/references/art-direction.md) and [hybrid authoring](skills/paper-figure-creation/references/hybrid-authoring.md).
 
 ## Install
 

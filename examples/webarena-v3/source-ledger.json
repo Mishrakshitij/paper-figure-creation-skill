@@ -1,0 +1,81 @@
+{
+  "figure_kind": "benchmark_environment",
+  "data_status": "source-backed task contract with illustrative interaction",
+  "agent_run": false,
+  "sources": [
+    {
+      "id": "webarena-paper",
+      "url": "https://arxiv.org/html/2307.13854v4",
+      "version": "v4, 2024-04-16",
+      "locations": [
+        "Figure 1",
+        "Sections 2.1\u20132.4",
+        "Section 3.2",
+        "Appendix A.2",
+        "Appendix A.9"
+      ],
+      "supports": [
+        "self-hosted website categories",
+        "observation/action loop",
+        "observation alternatives",
+        "functional evaluation",
+        "reset and termination context"
+      ]
+    },
+    {
+      "id": "webarena-task601",
+      "url": "https://github.com/web-arena-x/webarena/blob/v0.2.0/config_files/test.raw.json",
+      "ref": "v0.2.0",
+      "blob_sha": "91e88d7c3bce867b7f7608c8229c84b7be11ef1e",
+      "location": "task_id 601",
+      "supports": [
+        "forum task",
+        "authenticated starting state",
+        "require_reset false",
+        "URL and post-content checks"
+      ],
+      "task": {
+        "task_id": 601,
+        "sites": [
+          "reddit"
+        ],
+        "require_login": true,
+        "start_url": "__REDDIT__",
+        "require_reset": false,
+        "goal_paraphrase": "Ask an appropriate forum whether a car is necessary in New York City.",
+        "required_question": "is car necessary in NYC",
+        "eval_types": [
+          "url_match",
+          "program_html"
+        ],
+        "reference_url": "__REDDIT__/f/nyc",
+        "url_note": "GOLD in PRED",
+        "post_url_resolver": "func:reddit_get_post_url('__last_url__')",
+        "post_text_locator": "document.querySelector('.submission__inner').outerText"
+      }
+    },
+    {
+      "id": "webarena-overview-pixels",
+      "url": "https://github.com/web-arena-x/webarena/blob/main/media/overview.png",
+      "blob_sha": "9c5920639b8d67de5149b56141c8a3d1a2074606",
+      "inspection": "Actual image pixels inspected through GitHub fetch_file base64",
+      "borrowed_principle": "Separate hosted world, natural-language intent, agent interaction and functional evaluation.",
+      "redistributed": false
+    }
+  ],
+  "illustrative_items": [
+    "page geometry and browser chrome",
+    "element ID 42",
+    "single click trace",
+    "rendered posted state"
+  ],
+  "omissions": [
+    "earlier navigation and typing",
+    "full action menu",
+    "explicit stop action",
+    "complete evaluator implementation"
+  ],
+  "claims": [],
+  "notes": "The conditional success label defines the check, not an observed result. No statistics, benchmark split or budget is added.",
+  "version_note": "Original source contract retained from examples/webarena-setup; this version changes composition, not scientific content."
+}

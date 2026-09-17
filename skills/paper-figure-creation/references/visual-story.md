@@ -92,3 +92,7 @@ At close inspection, the reader can recover dimensions, state indices, local equ
 These are conditional recipes, not templates to apply wholesale. In particular, a radar chart from a reference paper is appropriate only if its dimensions, normalization and comparisons make sense for the new evidence; attractive geometry alone is insufficient.
 
 Use [semantic-primitives.md](semantic-primitives.md) for reusable vector ingredients. Their role is to reduce drawing effort while preserving paper-specific content, not to make different algorithms look identical. Complete the separate scientific and communication reviews in [review.md](review.md).
+
+## From representation to art direction
+
+Once the representation contract is sound, use [art-direction.md](art-direction.md) when the composition still feels generic. Decide which relationship dominates, how objects look before their labels are read, what visible change teaches the operation, and how quiet context supports the focal example. For optional raster assets inside precise geometry, read [hybrid-authoring.md](hybrid-authoring.md).

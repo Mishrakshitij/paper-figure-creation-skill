@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="670" viewBox="0 0 1008 670"><rect width="1008" height="670" fill="white"/><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#65717a"/></marker></defs><g font-family="DejaVu Sans" fill="#25323c">
+<text x="24" y="28" font-size="20">Three composition sketches · Reasoning Gym setup</text>
+<text x="24" y="62" font-size="17">1  Split generated-entry sheet — selected</text>
+<rect x="24" y="76" width="360" height="34" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="34" y="101" font-size="15">leg_counting · size 10 · seed 42</text>
+<path d="M180 110 V130" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="24" y="132" width="360" height="86" rx="3" fill="#eef7f5" stroke="#65717a"/>
+<text x="34" y="157" font-size="15">Question: 1 sea slug + 1 deer</text>
+<text x="36" y="188" font-size="15">[large animal vignette]</text>
+<rect x="24" y="218" width="360" height="42" rx="3" fill="#fbf2e4" stroke="#65717a"/>
+<text x="34" y="243" font-size="15">answer 4 · metadata</text>
+<path d="M384 172 H476" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="480" y="149" width="135" height="46" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="490" y="174" font-size="15">Model</text>
+<path d="M615 172 H700" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="704" y="149" width="180" height="46" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="714" y="174" font-size="15">Candidate 4</text>
+<path d="M794 195 V218" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="704" y="222" width="250" height="42" rx="3" fill="#fbf2e4" stroke="#65717a"/>
+<text x="714" y="247" font-size="15">Task-specific verifier</text>
+<path d="M384 242 H700" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="446" y="232" font-size="15">complete entry</text>
+<text x="24" y="305" font-size="17">2  Horizontal assembly line</text>
+<rect x="24" y="328" width="180" height="67" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="34" y="353" font-size="15">Configuration</text>
+<rect x="268" y="328" width="220" height="67" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="278" y="353" font-size="15">Entry: slug + deer</text>
+<rect x="554" y="328" width="130" height="67" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="564" y="353" font-size="15">Model</text>
+<rect x="752" y="328" width="222" height="67" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="762" y="353" font-size="15">Verifier / score</text>
+<path d="M204 358 H264" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M488 358 H550" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M684 358 H748" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M376 395 V430 H865 V399" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="511" y="451" font-size="15">reference bypass</text>
+<text x="24" y="492" font-size="17">3  Access lanes</text>
+<rect x="24" y="512" width="184" height="105" rx="3" fill="#f5f6f6" stroke="#65717a"/>
+<text x="34" y="537" font-size="15">Generated entry</text>
+<rect x="258" y="512" width="716" height="48" rx="3" fill="#eef7f5" stroke="#65717a"/>
+<text x="268" y="537" font-size="15">Model-visible: question → model → candidate</text>
+<rect x="258" y="584" width="716" height="48" rx="3" fill="#fbf2e4" stroke="#65717a"/>
+<text x="268" y="609" font-size="15">Evaluator: complete entry + candidate → verifier</text>
+<path d="M208 540 H254" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M208 600 H254" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M858 560 V580" fill="none" stroke="#65717a" stroke-width="1.5" marker-end="url(#a)"/>
+</g></svg>

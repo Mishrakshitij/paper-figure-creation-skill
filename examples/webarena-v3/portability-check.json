@@ -1,0 +1,47 @@
+{
+  "rebuilt_from_cwd": "/tmp",
+  "all_required_exports": true,
+  "outputs": [
+    "composition-thumbnails.png",
+    "composition-thumbnails.svg",
+    "export-check.json",
+    "figure.pdf",
+    "figure.png",
+    "figure.svg",
+    "grayscale-proof.png",
+    "print-proof.png"
+  ],
+  "pdf_page_size_points": [
+    504.0,
+    356.3999938964844
+  ],
+  "svg_text_elements": 29,
+  "svg_embedded_images": 0,
+  "pdf_text_extractable": true,
+  "pdf_embedded_fonts": [
+    [
+      15,
+      "ttf",
+      "Type0",
+      "EVICAO+DejaVuSans-Bold",
+      "F1",
+      "Identity-H"
+    ],
+    [
+      22,
+      "ttf",
+      "Type0",
+      "BMQQDV+DejaVuSans",
+      "F2",
+      "Identity-H"
+    ],
+    [
+      29,
+      "ttf",
+      "Type0",
+      "FJGZKM+DejaVuSansMono",
+      "F3",
+      "Identity-H"
+    ]
+  ]
+}

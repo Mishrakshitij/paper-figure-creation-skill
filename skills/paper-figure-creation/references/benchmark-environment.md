@@ -10,6 +10,8 @@ Use `absent` when the supplied manuscript scope explicitly contains no eligible 
 
 When setup information is partial, distinguish omission in the figure from absence in the source. Read the relevant supplement or official implementation when available. If the paper has an eligible setup but omits an important detail, label it unresolved in the brief; omit an unsupported visual assertion. An explicitly requested speculative design must remain an illustrative proposal, never a reconstruction of a published setup.
 
+Classify new, adapted or existing **relative to the target manuscript**, not the age of a public benchmark or the fact that it has a repository. If no target-manuscript relation is established, record that uncertainty in the brief and omit an unsupported novelty/status label from a standalone explanatory figure. Do not invent a relation simply to satisfy a renderer field.
+
 Use the actual task as the unit of explanation: one question, repository issue, household episode, multi-turn conversation, simulation run, or generated artifact. Avoid mixing an individual episode, a dataset split and the final leaderboard into a single unlabeled flow.
 
 ## Extract the setup contract

@@ -2,6 +2,20 @@
 
 These are original explanatory redraws using published data. They are not the original authors' artwork or new experimental reproductions. Each directory preserves source/specification, editable vector output, PDF and PNG.
 
+## Art direction and optional hybrid illustration
+
+These examples explore a clearer focal relationship and richer pictorial content while retaining the source contract. This is a small design iteration, not a controlled comparison proving that richer imagery is always better. The [update and limitations](../docs/art-direction-update.md) and [independent review](../docs/art-direction-independent-review.md) record concrete findings.
+
+| Example | Editable exports and source | What is being tested |
+| --- | --- | --- |
+| WebArena, vector scene | [PNG](webarena-v3/figure.png) · [PDF](webarena-v3/figure.pdf) · [SVG](webarena-v3/figure.svg) · [source](webarena-v3/build_figure.py) | A focal browser state change, local action target and separate evaluator; taxonomy moved to supporting context |
+| MAE, hybrid method | [PNG](mae-hybrid/figure.png) · [PDF](mae-hybrid/figure.pdf) · [SVG](mae-hybrid/figure.svg) · [source](mae-hybrid/build_figure.py) | One generated illustrative scene, exact persistent patches and vector computation; symbolic prediction slots, no claimed model run |
+| ReasoningGym, independent forward test | [PNG](reasoning-gym-forward/reasoning-gym-setup.png) · [SVG](reasoning-gym-forward/reasoning-gym-setup.svg) · [source](reasoning-gym-forward/build_figure.py) | An independently chosen entry-sheet composition and original animal illustrations; initial output and review repairs preserved |
+
+![WebArena vector art direction](webarena-v3/figure.png)
+
+![MAE hybrid method](mae-hybrid/figure.png)
+
 ## Benchmark and environment setup figures
 
 The third mode activates only when the paper contains a substantive setup. These two original compositions test different setup families; they are guided worked examples, not experiments measuring the skill's superiority. The [update](../docs/benchmark-environment-update.md) records source checks and conditional-routing tests.

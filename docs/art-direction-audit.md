@@ -1,0 +1,31 @@
+# Art-direction audit
+
+Reviewed the actual rendered PNGs for `examples/webarena-setup/figure.png`, `examples/reasoning-gym-setup/figure.png` and `examples/mae-v2/figure.png`, together with the skill router, visual-story reference and design system. These are design judgments from those images, not a controlled comparison with image generation.
+
+The current guidance already covers concrete examples, stable identities, three reading scales and scientific correctness. The remaining gap is a more deliberate visual composition: selecting what becomes the memorable image, giving objects distinctive silhouettes, and distributing visual detail around that image. Adding more boxes, icons or saturated colors would not resolve it.
+
+## Observed opportunities
+
+| Figure | What already works | What weakens the first impression |
+| --- | --- | --- |
+| WebArena | Recognizable browser states; action target; explicit observation loop; separate functional evaluation | A full-width application taxonomy and goal banner precede the interaction. The generic agent box occupies the bridge between the two most informative objects. Similar borders and heading weights give overview, action and checking nearly equal emphasis. |
+| Reasoning Gym | A concrete slug/deer case; reproducible seed; private answer lane; task-specific verifier | A large configuration panel competes with the example. “Task generator,” “TEXT QUESTION” and “Reasoning model” repeat the visual weight of the animal question itself. The distinctive scene feels inserted into a form layout. |
+| MAE | The same recognizable scene survives masking; token identities persist; restoration and masked-only loss are explicit | A long horizontal pipeline and large unshuffle inset compete for attention. Many comparable text blocks weaken the immediate silhouette of “few visible patches, reconstruct missing content.” The method is legible, but its composition is more procedural than pictorial. |
+
+## Six decisions to add before final drawing
+
+1. **Choose a focal relationship and allocate contrast to it.** Name the one relationship that deserves the first glance, then make its objects form the strongest visual group. For WebArena this can be the same browser before and after a consequential action; for Reasoning Gym the generated question and withheld answer; for MAE the sparse visible input and reconstructed field. Secondary settings and taxonomies can become concise satellites. The focal group is not necessarily one large object, a headline, or the proposed method's logo.
+
+2. **Choose a domain-specific silhouette vocabulary.** Browser chrome, a task sheet, a scene cut into patches and a repository diff should look different before their labels are read. Preserve conventional machinery as compact blocks where appropriate. Use structure-bearing details: a browser's address bar, the edited lines of a diff, the actual selected sentence. Avoid making every object a rounded card or using arbitrary mascots. Reasoning Gym's animal drawing is useful because it teaches the task; enlarge its explanatory role rather than adding unrelated decoration.
+
+3. **Design the visual verb, not just its connecting arrow.** Specify how the important transformation appears in the objects: a patch disappears, a selected span persists into an edit, one browser element changes state, or shuffled identities visibly return to slots. Choose one clear device—aligned before/after states, an exploded view, a local change highlight, or a traced correspondence. Show only relations supported by the science. In MAE, patch correspondence can carry more of the explanation so that the large restoration inset becomes a focused supporting view.
+
+4. **Stage space to explain causality.** Position the action near the object it acts on and its visible consequence nearby. Keep observation, execution, scoring and parameter updates in distinct spatial paths when they have different meanings. Prefer proximity, shared alignment and a meaningful surrounding boundary to repeated enclosing cards. A WebArena action can be anchored directly to the submit control while the agent remains an identifiable compact participant. Do not move private evaluator information into the interaction merely to create a more continuous composition.
+
+5. **Use depth and material cues selectively.** Layering, slight offsets, cutaways, restrained shading or a local background plane may clarify ownership, stacks, occlusion or an environment's interior. Select the cue because it explains that relation, and retain a flat version if it adds no understanding. Maintain stable lighting and one perspective where an illustration benefits from them. Never add perspective to measured axes, make decorative stack thickness imply a quantity, or hide authoritative labels inside raster artwork. An attractive illustrated surface remains subordinate to exact data and wiring.
+
+6. **Create a rhythm of one rich region and quieter supporting regions.** Give the focal example enough internal detail to be recognizable; simplify conventional machinery and consolidate repeated qualifications in the caption. Retain on-canvas labels needed to prevent a scientific misreading, especially schematic versus observed output and private evaluation. Review both a thumbnail and the final-size proof: identify the first group noticed, the next object followed, and any area demanding disproportionate reading. Compare alternative compositions using the same scientific contract, not different amounts of information. The reviewer should recover the task and central change before reading every sentence.
+
+## Preserve these strengths
+
+Keep editable text and exact vector geometry for authoritative connections, quantitative plots and equations. Preserve source tracing, real versus schematic labels, persistent example identity, evaluator boundaries and the conditional setup-mode trigger. Image generation may supply a non-authoritative illustrative asset or a composition study; it cannot establish measured outcomes, valid architecture, or information access. Visual appeal and scientific correctness need separate review, and a more attractive picture is not evidence that the skill performs better overall.

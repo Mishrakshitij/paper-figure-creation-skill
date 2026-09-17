@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="7in" height="4.125in" viewBox="0 0 1008 594" role="img" aria-labelledby="title desc">
+<title id="title">Reasoning Gym benchmark setup</title><desc id="desc">Procedural leg-counting generation with size 10 and seed 42 produces an entry containing a question about one sea slug and one deer. The model receives only question text and produces an illustrative answer 4. A task-specific verifier receives the answer and the complete entry including reference answer and metadata. A reference answer check is documented to score 1.0. No aggregate model performance is shown.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8 Z" fill="#243239"/></marker></defs>
+<rect x="0" y="0" width="1008" height="594" rx="0" fill="white" stroke="none" stroke-width="1.5"/>
+<text x="24" y="31" font-family="DejaVu Sans" font-size="23" font-weight="bold" fill="#243239" text-anchor="start">Reasoning Gym: generate a question, verify an answer</text>
+<text x="24" y="75" font-family="DejaVu Sans" font-size="21" font-weight="bold" fill="#243239" text-anchor="start">a</text>
+<text x="48" y="75" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#243239" text-anchor="start">Construct one example</text>
+<text x="548" y="75" font-family="DejaVu Sans" font-size="21" font-weight="bold" fill="#243239" text-anchor="start">b</text>
+<text x="572" y="75" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#243239" text-anchor="start">Answer and verify</text>
+<g id="procedural-construction">
+<rect x="24" y="97" width="450" height="83" rx="7" fill="#f4f6f6" stroke="#a6b5b8" stroke-width="1.5"/>
+<text x="42" y="123" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#176c67" text-anchor="start">leg_counting</text>
+<text x="42" y="155" font-family="DejaVu Sans" font-size="18" font-weight="normal" fill="#243239" text-anchor="start">10 entries  ·  seed 42</text>
+<line x1="245" y1="114" x2="245" y2="162" stroke="#c1ccce" stroke-width="1.5" />
+<text x="254" y="123" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#243239" text-anchor="start">Procedural generator</text>
+<text x="264" y="153" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="start">Configurable complexity</text>
+<path d="M249 180 V205" fill="none" stroke="#243239" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+</g>
+<text x="548" y="140" font-family="DejaVu Sans" font-size="18" font-weight="normal" fill="#4f6267" text-anchor="start">Static question–answer interface</text>
+<g id="generated-entry">
+<path d="M24 214 H449 L474 239 V526 H24 Z" fill="white" stroke="#176c67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M449 214 V239 H474" fill="none" stroke="#176c67" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<text x="42" y="240" font-family="DejaVu Sans" font-size="16" font-weight="bold" fill="#176c67" text-anchor="start">QUESTION  ·  first generated entry</text>
+<text x="42" y="274" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#243239" text-anchor="start">How many legs in total for</text>
+<text x="42" y="301" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#243239" text-anchor="start">1 sea slug and 1 deer?</text>
+<rect x="40" y="315" width="418" height="117" rx="7" fill="#eff8f6" stroke="none" stroke-width="1.5"/>
+<g id="illustration-sea-slug" transform="translate(75 334)">
+<ellipse cx="65" cy="43" rx="65" ry="4" fill="#d2e6e1" stroke="none" stroke-width="1.5"/>
+<path d="M5 39 C15 38 20 24 30 26 C36 13 45 26 51 18 C61 8 66 20 75 17 C88 11 100 21 104 26 C119 29 133 31 133 38 C116 44 84 45 56 44 C35 46 16 44 5 39 Z" fill="#419387" stroke="#176c67" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M14 37 C33 35 43 38 55 34 C68 30 82 34 96 30 C109 32 118 32 126 36" fill="none" stroke="#bce1d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M34 28 C30 18 28 12 27 7 M44 23 C42 13 43 8 47 4" fill="none" stroke="#176c67" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<ellipse cx="25.9" cy="6" rx="2.8" ry="4.5" fill="#176c67" stroke="none" stroke-width="1.5"/>
+<ellipse cx="47" cy="4" rx="2.8" ry="4.5" fill="#176c67" stroke="none" stroke-width="1.5"/>
+<ellipse cx="58" cy="24" rx="2" ry="1.5" fill="#a9d5c9" stroke="none" stroke-width="1.5"/>
+<ellipse cx="69" cy="29" rx="2" ry="1.5" fill="#a9d5c9" stroke="none" stroke-width="1.5"/>
+<ellipse cx="81" cy="23" rx="2" ry="1.5" fill="#a9d5c9" stroke="none" stroke-width="1.5"/>
+<ellipse cx="94" cy="28" rx="2" ry="1.5" fill="#a9d5c9" stroke="none" stroke-width="1.5"/>
+<ellipse cx="49" cy="32" rx="2" ry="1.5" fill="#a9d5c9" stroke="none" stroke-width="1.5"/>
+</g>
+<text x="142" y="402" font-family="DejaVu Sans" font-size="17" font-weight="normal" fill="#243239" text-anchor="middle">1 sea slug</text>
+<text x="249" y="369" font-family="DejaVu Sans" font-size="27" font-weight="normal" fill="#4f6267" text-anchor="middle">+</text>
+<g id="illustration-deer" transform="translate(306 330) scale(.6)">
+<ellipse cx="57" cy="90" rx="72" ry="4" fill="#dce8e0" stroke="none" stroke-width="1.5"/>
+<path d="M33 51 L29 84 L25 89 H32 L39 57 M79 49 L84 81 L81 89 H89 L88 51" fill="#bc8b50" stroke="#805723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M6 39 C9 19 34 18 56 23 C68 23 76 12 80 1 L94 4 L87 35 C95 45 88 58 75 60 L27 58 C11 57 3 52 6 39 Z" fill="#d8ae70" stroke="#805723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M9 32 L-3 22 L-5 33 L8 42" fill="#eed7ad" stroke="#805723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M19 50 L18 86 L13 90 H22 L28 54 M64 54 L67 84 L63 90 H72 L72 51" fill="#d8ae70" stroke="#805723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M13 90 H22 M25 89 H32 M63 90 H72 M81 89 H89" fill="none" stroke="#56432b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M79 3 C77 -8 83 -14 94 -12 L109 -6 L120 -4 L120 3 L103 9 L93 12 L86 9" fill="#d8ae70" stroke="#805723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M89 -11 L77 -24 L93 -20 L99 -12" fill="#d8ae70" stroke="#805723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M87 -12 L85 -33 L78 -41 M85 -32 L93 -40 M85 -24 L74 -30" fill="none" stroke="#805723" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+<ellipse cx="105" cy="-3" rx="2.1" ry="2.1" fill="#243239" stroke="none" stroke-width="1.5"/>
+<ellipse cx="120" cy="-2" rx="2" ry="3" fill="#56432b" stroke="none" stroke-width="1.5"/>
+<path d="M82 21 C81 30 82 36 85 40" fill="none" stroke="#f2dfbd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<text x="348" y="402" font-family="DejaVu Sans" font-size="17" font-weight="normal" fill="#243239" text-anchor="middle">1 deer</text>
+<text x="249" y="423" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="middle">Illustration only; the model receives text.</text>
+<rect x="25" y="445" width="448" height="80" rx="0" fill="#fcf5e8" stroke="none" stroke-width="1.5"/>
+<line x1="25" y1="445" x2="473" y2="445" stroke="#846019" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="42" y="472" font-family="DejaVu Sans" font-size="19" font-weight="bold" fill="#846019" text-anchor="start">answer: 4</text>
+<text x="224" y="472" font-family="DejaVu Sans" font-size="18" font-weight="normal" fill="#846019" text-anchor="start">metadata: …</text>
+<text x="42" y="509" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="start">These fields are not sent to the model.</text>
+</g>
+<g id="model-visible-route">
+<text x="513" y="255" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#176c67" text-anchor="middle">question</text>
+<path d="M474 280 H547" fill="none" stroke="#243239" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="555" y="247" width="160" height="67" rx="8" fill="#f1f4f5" stroke="#6b7f88" stroke-width="1.7"/>
+<text x="635" y="274" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#243239" text-anchor="middle">Tested</text>
+<text x="635" y="299" font-family="DejaVu Sans" font-size="20" font-weight="bold" fill="#243239" text-anchor="middle">model</text>
+<path d="M715 280 H799" fill="none" stroke="#243239" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="807" y="227" width="177" height="113" rx="7" fill="white" stroke="#647a83" stroke-width="1.7"/>
+<text x="895.5" y="252" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#243239" text-anchor="middle">Candidate</text>
+<text x="895.5" y="293" font-family="DejaVu Sans" font-size="36" font-weight="bold" fill="#176c67" text-anchor="middle">4</text>
+<text x="895.5" y="322" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="middle">illustrative</text>
+<path d="M895 340 V416" fill="none" stroke="#243239" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="880" y="380" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="end">candidate answer</text>
+</g>
+<g id="evaluation-route">
+<text x="593" y="444" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#243239" text-anchor="middle">complete entry</text>
+<text x="593" y="468" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="middle">question, answer, metadata</text>
+<path d="M474 492 H711" fill="none" stroke="#243239" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="719" y="425" width="265" height="115" rx="8" fill="#fcf5e8" stroke="#846019" stroke-width="1.8"/>
+<text x="851.5" y="450" font-family="DejaVu Sans" font-size="19" font-weight="bold" fill="#846019" text-anchor="middle">Task-specific verifier</text>
+<text x="740" y="488" font-family="DejaVu Sans" font-size="18" font-weight="normal" fill="#4f6267" text-anchor="start">score</text>
+<text x="808" y="491" font-family="DejaVu Sans" font-size="29" font-weight="bold" fill="#846019" text-anchor="start">1.0</text>
+<text x="740" y="520" font-family="DejaVu Sans" font-size="16" font-weight="normal" fill="#4f6267" text-anchor="start">documented for reference 4</text>
+</g>
+<text x="24" y="570" font-family="DejaVu Sans" font-size="17" font-weight="normal" fill="#4f6267" text-anchor="start">Illustrative candidate; no model run. Scoring rules vary by task.</text>
+</svg>

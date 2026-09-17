@@ -1,0 +1,45 @@
+{
+  "figure_width_in": 7,
+  "figure_height_in": 4.15,
+  "text_outside_canvas": [],
+  "source_asset": "fox-input.jpg",
+  "source_sha256": "5296a3fbe52c8d6b9aae87a9c39bd3114e65d236b276271895d2e7ca8f866fd5",
+  "source_dimensions_px": [
+    600,
+    600
+  ],
+  "visible_patch_ids": [
+    2,
+    6,
+    11,
+    15
+  ],
+  "packed_patch_ids": [
+    11,
+    2,
+    15,
+    6
+  ],
+  "masked_patch_ids": [
+    1,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    16
+  ],
+  "visible_count": 4,
+  "mask_count": 12,
+  "encoder_input_count": 4,
+  "decoder_position_count": 16,
+  "loss_position_count": 12,
+  "predictions": "symbolic slots; no pixel reconstruction or numerical experiment",
+  "raster_content": "input image and its exact crops only; all text, arrows, frames and model geometry are vector",
+  "crop_identity_check": true
+}

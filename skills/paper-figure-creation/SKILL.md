@@ -21,7 +21,7 @@ Start with [visual-story.md](references/visual-story.md) when inventing a compos
 
 ### Conditional setup routing
 
-Do not add a third figure merely because a paper reports results on named benchmarks. Select benchmark/environment mode only when the manuscript or its primary supplement actually describes a benchmark, task-construction process, environment, or substantive evaluation setup that the reader needs to understand. Record the source location and whether the setup is **new, adapted, or existing**. A described existing environment can qualify; do not relabel it as the paper's contribution. Passing mentions, result tables alone, related-work surveys and generic dataset names do not qualify.
+Do not add a third figure merely because a paper reports results on named benchmarks. Select benchmark/environment mode only when the manuscript or its primary supplement actually describes a benchmark, task-construction process, environment, or substantive evaluation setup that the reader needs to understand. Record the source location and whether the setup is **new, adapted, or existing relative to this manuscript**. A described existing environment can qualify; do not relabel it as the paper's contribution. Passing mentions, result tables alone, related-work surveys and generic dataset names do not qualify.
 
 If presence is unclear, leave this mode unselected, inspect the available setup section or supplement, and record the missing information. If the user explicitly requests a setup figure, ask for the smallest missing source detail after extracting what is available; never invent an environment. A benchmark paper may need a teaser and setup figure without an algorithm architecture figure. The three modes are choices, not a mandatory package.
 
@@ -47,6 +47,8 @@ Turn the brief into a **representation contract**: the concrete input/output exa
 
 For a new complex figure, or when an existing composition has failed, sketch **three genuinely different compositions** before detailed drawing: change grouping, narrative order or the relation between overview and example, not merely colors. Select using the brief's communication needs. Routine local repairs can retain a proven composition. [visual-story.md](references/visual-story.md) gives concrete selection and repair recipes.
 
+Before polishing, choose a **focal relationship**: the concrete object and visible change that should dominate the first glance. Give that relationship recognizable structure and richer detail; keep supporting configuration and conventional machinery quieter. Read [art-direction.md](references/art-direction.md) when a correct figure still looks generic or when the user wants the visual richness associated with image generation. It covers scene composition, visual transformations, selective depth and attention.
+
 For a teaser, default to **30–40% of usable panel area for problem/example/idea and 60–70% for experimental evidence**. This is a layout preference, not a distribution of figure types or a license to invent evidence. Use 35:65 as a starting point. Adapt only for a concrete reason and record that reason. The first glance should reveal the task and the supported takeaway; the second should reveal the comparator and conditions.
 
 For a setup figure, choose the visual family before drawing: construction and scoring for a static benchmark; a concrete episode inside an environment boundary for interactive tasks; aligned cases for setup variants. Separate construction from execution and evaluator-only information from agent-visible inputs. The teaser's area ratio does not apply. Read [benchmark-environment.md](references/benchmark-environment.md) for the contract, layout recipes and failure checks.
@@ -57,7 +59,7 @@ Make scientific objects recognizable: a passage with a selected sentence, the sa
 
 ## Build an editable, reproducible artifact
 
-Prefer deterministic vector authoring: Matplotlib for experimental plots, SVG or native diagrams.net for geometry, and TikZ when the manuscript requires it. Use raster imagery only for real visual examples or clearly identified illustrations. Do not ask an image generator to draw quantitative axes, numbers, equations, or authoritative architecture wiring.
+Prefer deterministic vector authoring: Matplotlib for experimental plots, SVG or native diagrams.net for geometry, and TikZ when the manuscript requires it. Use raster imagery only for real visual examples or clearly identified illustrations. Do not ask an image generator to draw quantitative axes, numbers, equations, or authoritative architecture wiring. When a generated or observed scene materially helps teach the task, use the [hybrid-authoring workflow](references/hybrid-authoring.md): keep the illustration as a sourced asset and construct exact labels, masks, relations and plots in editable vector layers. A hybrid PDF/SVG is not fully vector; disclose the asset boundary. Image generation remains optional, and a rich vector-only scene is often the appropriate choice.
 
 The bundled engine is a starting point for compatible layouts. Use custom vector code or native diagram geometry when its grammar cannot express the chosen representation; do not simplify the scientific story merely to fit a renderer:
 

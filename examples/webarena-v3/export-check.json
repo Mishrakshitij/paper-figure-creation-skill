@@ -1,0 +1,307 @@
+{
+  "width_in": 7,
+  "height_in": 4.95,
+  "main_png_dpi": 220,
+  "pdf_proof_dpi": 110,
+  "minimum_font_pt": 8.5,
+  "text_outside_canvas": [],
+  "no_agent_run": true,
+  "all_labels_vector_text": true,
+  "notes": [
+    "UI, target ID and step are illustrative; source task checks are unchanged.",
+    "Geometry checks only page bounds; visual inspection is required.",
+    "No target manuscript provided; seven-inch placement only."
+  ],
+  "text_bounds": [
+    {
+      "text": "WebArena",
+      "font_pt": 14.0,
+      "bbox_px": [
+        22.0,
+        461.5,
+        113.12,
+        19.0
+      ]
+    },
+    {
+      "text": "Tasks on self-hosted websites",
+      "font_pt": 9.5,
+      "bbox_px": [
+        481.38,
+        464.5,
+        196.62,
+        13.0
+      ]
+    },
+    {
+      "text": "Goal",
+      "font_pt": 9.1,
+      "bbox_px": [
+        22.0,
+        430.5,
+        31.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Ask a suitable forum whether a car is necessary in New York City.",
+      "font_pt": 9.1,
+      "bbox_px": [
+        63.0,
+        430.5,
+        414.62,
+        13.0
+      ]
+    },
+    {
+      "text": "Forum  /f/nyc",
+      "font_pt": 8.7,
+      "bbox_px": [
+        294.0,
+        394.5,
+        80.38,
+        13.0
+      ]
+    },
+    {
+      "text": "1  Write a post",
+      "font_pt": 10.4,
+      "bbox_px": [
+        273.0,
+        357.0,
+        120.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Title",
+      "font_pt": 8.6,
+      "bbox_px": [
+        273.0,
+        329.5,
+        25.75,
+        13.0
+      ]
+    },
+    {
+      "text": "is car necessary in NYC",
+      "font_pt": 10.0,
+      "bbox_px": [
+        283.0,
+        305.5,
+        161.12,
+        14.0
+      ]
+    },
+    {
+      "text": "Text entered",
+      "font_pt": 8.7,
+      "bbox_px": [
+        273.0,
+        266.5,
+        75.5,
+        13.0
+      ]
+    },
+    {
+      "text": "[42] Post",
+      "font_pt": 9.3,
+      "bbox_px": [
+        562.94,
+        267.0,
+        66.12,
+        13.0
+      ]
+    },
+    {
+      "text": "Web agent",
+      "font_pt": 10.0,
+      "bbox_px": [
+        53.31,
+        322.0,
+        84.38,
+        14.0
+      ]
+    },
+    {
+      "text": "click [42]",
+      "font_pt": 9.2,
+      "bbox_px": [
+        57.38,
+        294.5,
+        76.25,
+        13.0
+      ]
+    },
+    {
+      "text": "observe",
+      "font_pt": 8.5,
+      "bbox_px": [
+        187.88,
+        341.5,
+        47.25,
+        13.0
+      ]
+    },
+    {
+      "text": "act",
+      "font_pt": 8.5,
+      "bbox_px": [
+        202.31,
+        275.5,
+        18.38,
+        13.0
+      ]
+    },
+    {
+      "text": "[42] accessibility target",
+      "font_pt": 8.5,
+      "bbox_px": [
+        22.0,
+        253.5,
+        140.25,
+        13.0
+      ]
+    },
+    {
+      "text": "After navigation + typing",
+      "font_pt": 8.5,
+      "bbox_px": [
+        22.0,
+        231.5,
+        149.88,
+        13.0
+      ]
+    },
+    {
+      "text": "Forum  /f/nyc",
+      "font_pt": 8.7,
+      "bbox_px": [
+        399.0,
+        233.5,
+        80.38,
+        13.0
+      ]
+    },
+    {
+      "text": "2  Published post",
+      "font_pt": 10.2,
+      "bbox_px": [
+        376.0,
+        198.0,
+        137.75,
+        14.0
+      ]
+    },
+    {
+      "text": "is car necessary in NYC",
+      "font_pt": 9.1,
+      "bbox_px": [
+        397.0,
+        168.5,
+        164.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Same question; changed website state",
+      "font_pt": 8.5,
+      "bbox_px": [
+        398.0,
+        127.5,
+        230.38,
+        13.0
+      ]
+    },
+    {
+      "text": "next observation",
+      "font_pt": 9.0,
+      "bbox_px": [
+        168.25,
+        196.0,
+        105.5,
+        13.0
+      ]
+    },
+    {
+      "text": "At completion",
+      "font_pt": 9.2,
+      "bbox_px": [
+        22.0,
+        133.5,
+        100.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Private reference checks",
+      "font_pt": 8.8,
+      "bbox_px": [
+        22.0,
+        112.5,
+        151.5,
+        13.0
+      ]
+    },
+    {
+      "text": "final URL + post DOM",
+      "font_pt": 8.5,
+      "bbox_px": [
+        443.0,
+        96.0,
+        127.62,
+        13.0
+      ]
+    },
+    {
+      "text": "URL contains /f/nyc",
+      "font_pt": 9.0,
+      "bbox_px": [
+        37.0,
+        70.0,
+        121.12,
+        13.0
+      ]
+    },
+    {
+      "text": "Post DOM contains the requested question",
+      "font_pt": 9.0,
+      "bbox_px": [
+        37.0,
+        48.5,
+        267.12,
+        13.0
+      ]
+    },
+    {
+      "text": "Success",
+      "font_pt": 10.2,
+      "bbox_px": [
+        517.0,
+        70.0,
+        63.38,
+        14.0
+      ]
+    },
+    {
+      "text": "if both checks pass",
+      "font_pt": 8.8,
+      "bbox_px": [
+        517.0,
+        47.5,
+        117.88,
+        13.0
+      ]
+    },
+    {
+      "text": "Task 601 \u00b7 v0.2.0 \u00b7 schematic UI, target ID and step; no agent run.",
+      "font_pt": 8.5,
+      "bbox_px": [
+        22.0,
+        9.5,
+        390.25,
+        13.0
+      ]
+    }
+  ]
+}

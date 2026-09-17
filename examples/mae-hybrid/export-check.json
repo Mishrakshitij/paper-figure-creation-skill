@@ -1,0 +1,28 @@
+{
+  "svg_text_nodes": 61,
+  "svg_image_nodes": 4,
+  "svg_raster_source": "one illustrative input reused as exact patches; no generated output",
+  "pdf_page_size_pt": [
+    504.0,
+    298.79998779296875
+  ],
+  "pdf_font_types": [
+    "Type0"
+  ],
+  "pdf_extractable_text_contains": [
+    true,
+    true,
+    true
+  ],
+  "files_bytes": {
+    "figure.svg": 541523,
+    "figure.pdf": 339422,
+    "figure.png": 382117,
+    "print-proof.png": 122393,
+    "assets/fox-input.jpg": 116287,
+    "grayscale-proof.png": 51914
+  },
+  "pdf_font_program_formats": [
+    "ttf"
+  ]
+}
