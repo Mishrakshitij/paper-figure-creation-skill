@@ -57,13 +57,22 @@ def _drawn_text(fig):
             if id(t) not in excluded and t.get_visible() and t.get_text().strip()]
 
 
-def audit_figure(fig, *, min_font_pt=None, tolerance_pt=.6):
+def audit_figure(fig, *, min_font_pt=None, tolerance_pt=.6, display_width_inches=None):
     """Inspect final pixel extents at the figure's declared physical size.
 
     Text overlaps use actual rendered bounding boxes, including rotated labels.
     This is conservative for diagonal labels and shaped glyphs; review flagged
     intersections visually. ``min_font_pt`` is an explicit project preference.
+    ``display_width_inches`` optionally checks the effective typography after
+    manuscript inclusion; it does not resize the figure or alter data geometry.
     """
+    scale = 1.0
+    if display_width_inches is not None:
+        if not math.isfinite(display_width_inches) or display_width_inches <= 0:
+            raise ValueError("display width must be finite and positive")
+        scale = display_width_inches / fig.get_figwidth()
+    if min_font_pt is not None and (not math.isfinite(min_font_pt) or min_font_pt <= 0):
+        raise ValueError("minimum font size must be finite and positive")
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     tolerance = tolerance_pt * fig.dpi / 72
@@ -90,8 +99,11 @@ def audit_figure(fig, *, min_font_pt=None, tolerance_pt=.6):
             path = artist.get_clip_path()
             if path is not None:
                 add("custom_clip_review", label, artist_id=identity)
-        if min_font_pt is not None and artist.get_fontsize() < min_font_pt:
-            add("small_text", label, font_size_pt=artist.get_fontsize(), minimum_pt=min_font_pt)
+        effective_font = artist.get_fontsize() * scale
+        if min_font_pt is not None and effective_font < min_font_pt:
+            add("small_text", label, font_size_pt=artist.get_fontsize(),
+                effective_font_size_pt=effective_font, minimum_pt=min_font_pt,
+                display_width_inches=display_width_inches)
         items.append((artist, bounds))
     for index, (a, box_a) in enumerate(items):
         for b, box_b in items[index+1:]:

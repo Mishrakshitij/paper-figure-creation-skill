@@ -643,7 +643,8 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
         draw_method_contents(ax,spec,theme)
         warnings += text_geometry_check(fig,spec,ax)
     else: raise ValueError(f"Unknown figure kind: {kind}")
-    layout_issues = audit_figure(fig, min_font_pt=f.get("min_font_pt"))
+    layout_issues = audit_figure(fig, min_font_pt=f.get("min_font_pt"),
+                                display_width_inches=f.get("display_width_inches"))
     warnings += [issue_message(issue) for issue in layout_issues]
     output=Path(output); output.parent.mkdir(parents=True,exist_ok=True)
     products=[]

@@ -35,6 +35,14 @@ type and spacing, and a visible scientific relationship. Treat unresolved crop,
 overlap, illegible labels and ambiguous routing as defects to repair; decorative
 effects and successful export do not compensate for them.
 
+For a coordinated paper-wide polish, read
+[publication-polish.md](references/publication-polish.md). Establish shared
+typography, semantic colors, panel labels and spacing, then improve each figure's
+composition for its own scientific question. Preserve numerical ledgers and
+compare the before/after figures at the actual manuscript width. The custom-code
+layout audit accepts `display_width_inches` to check effective font size after
+LaTeX scaling; a large source font can still become unreadable in the paper.
+
 ### Conditional setup routing
 
 Do not add a third figure merely because a paper reports results on named benchmarks. Select benchmark/environment mode only when the manuscript or its primary supplement actually describes a benchmark, task-construction process, environment, or substantive evaluation setup that the reader needs to understand. Record the source location and whether the setup is **new, adapted, or existing relative to this manuscript**. A described existing environment can qualify; do not relabel it as the paper's contribution. Passing mentions, result tables alone, related-work surveys and generic dataset names do not qualify.

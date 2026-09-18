@@ -60,6 +60,33 @@ class LayoutQualityTests(unittest.TestCase):
         self.assertGreater(len(artist.get_text().splitlines()), 1)
         self.assertEqual(artist.get_fontsize(), 10)
 
+    def test_manuscript_scaling_checks_effective_type_without_changing_geometry(self):
+        fig, ax = plt.subplots(figsize=(7, 3))
+        ax.axis("off")
+        text = ax.text(.2, .5, "Measured outcome", fontsize=9)
+        before = (fig.get_size_inches().copy(), text.get_position(), text.get_fontsize())
+        self.assertFalse(any(r["kind"] == "small_text" for r in audit_figure(fig, min_font_pt=8)))
+        issues = audit_figure(fig, min_font_pt=8, display_width_inches=3.5)
+        issue = next(r for r in issues if r["kind"] == "small_text")
+        self.assertEqual(issue["effective_font_size_pt"], 4.5)
+        self.assertTrue((fig.get_size_inches() == before[0]).all())
+        self.assertEqual((text.get_position(), text.get_fontsize()), before[1:])
+
+    def test_invalid_display_width_is_rejected(self):
+        fig, _ = plt.subplots()
+        for width in (0, -1, float("nan"), float("inf")):
+            with self.assertRaises(ValueError):
+                audit_figure(fig, display_width_inches=width)
+
+    def test_renderer_propagates_manuscript_size_to_layout_audit(self):
+        spec = json.loads((ROOT / "skills/paper-figure-creation/assets/method-template.json").read_text())
+        spec["figure"].update(min_font_pt=8, display_width_inches=2)
+        with tempfile.TemporaryDirectory() as d:
+            report = render(spec, Path(d) / "figure", formats=("svg",))
+        issues = [issue for issue in report["layout_issues"] if issue["kind"] == "small_text"]
+        self.assertTrue(issues)
+        self.assertTrue(all(issue["effective_font_size_pt"] < 8 for issue in issues))
+
     def test_unbreakable_word_is_retained_and_equation_is_not_split(self):
         fig, ax = plt.subplots()
         artist = ax.text(.1, .5, "Unbreakable_Identifier_0123456789")

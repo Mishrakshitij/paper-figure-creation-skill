@@ -152,7 +152,11 @@ Hard checks reject plotted finite observations outside the active limits, nonpos
 # Layout quality extensions
 
 `figure.min_font_pt` optionally declares this figure's minimum readable font
-size. The synthetic/mixed-data watermark respects this floor automatically;
+size. Optional `figure.display_width_inches` supplies the actual manuscript
+insertion width; the audit checks font sizes after that scale factor without
+changing the exported canvas. At half the source width, 9 pt becomes 4.5 pt.
+The synthetic/mixed-data watermark respects the source-size floor automatically;
+after reduction it must still pass the same effective-size audit.
 `figure.watermark_font_pt` may explicitly set its size, which remains subject
 to the same legibility and overflow checks. Nodes accept `wrap_label: true`
 and `text_padding_pt` (default 4) to wrap
