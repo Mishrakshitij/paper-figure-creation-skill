@@ -1,4 +1,4 @@
 interface:
   display_name: "Paper Figure Creation"
-  short_description: "AI paper teasers, methods, and benchmark setup figures"
-  default_prompt: "Use $paper-figure-creation to design figures from this manuscript and evidence, including a benchmark or environment setup figure only if the paper contains a substantive setup to explain."
+  short_description: "Visual paper figures with sourced assets and precise geometry"
+  default_prompt: "Use $paper-figure-creation to build visual, evidence-grounded paper figures with short labels, generated or web-sourced images and icons when helpful, precise continuous arrows, aligned geometry, and paper-size plus zoomed visual inspection."

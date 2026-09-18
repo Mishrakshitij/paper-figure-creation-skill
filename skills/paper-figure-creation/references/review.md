@@ -15,6 +15,8 @@ Use `pass`, `fail` or `not_applicable` with an evidence note. A failure leaves t
 | Correct setup, when selected | Task construction, information access, interactions, state and scoring match the source | Hidden reference leaks to the tested model; evaluator score is drawn as training feedback |
 | Correct method | Nodes, edges, losses, states and data access match the manuscript | Training labels appear as available inference inputs |
 | Usable output | File opens; critical text/marks visible at intended size; no clipped glyphs | SVG exists but labels disappear in the exported manuscript PDF |
+| Continuous, unambiguous connectors | Named start/end ports, visible complete paths, deliberate branch/merge markers, correct arrowhead direction | A white label hides a shaft; an arrow points to the wrong action; a gap detaches the tip from its target |
+| Layout and asset integrity | No unintended label/block overlap or overflow; consistent alignment and spacing; clean cutout edges | Text crosses a feature branch, a mask erases a subject detail, or final resizing moves labels off their objects |
 
 For digitized results, mark extraction as approximate and preserve source/extraction uncertainty. Do not silently convert approximate readings into precise headline claims. For synthetic examples, retain the synthetic label in the image, caption and metadata. If uncertainty is unavailable, disclose that fact instead of fabricating it.
 
@@ -40,6 +42,7 @@ Record a specific observation for each applicable gate. If the figure does not n
 1. Inspect a thumbnail without reading small text. Identify the entry point, main grouping, emphasized relationship and outcome. This checks hierarchy, not small-label legibility.
 2. Render the final PDF/SVG inside a page at the intended manuscript width. Inspect that page at final size for the worked example, reading path, comparison and labels. Judge density by whether these remain recoverable, not by counting objects.
 3. Inspect a larger rasterization for overlaps, incorrect glyphs, clipped labels, arrow endpoints, unexpected rasterization and line joins.
+   Trace every connector from source to target at enlarged size, with targeted crops for dense ports and junctions. Look behind label backgrounds and overlapping blocks for hidden shaft segments. Check both letter extents and their padding against boxes. See [geometry-and-inspection.md](geometry-and-inspection.md); `scripts/inspect_figure.py` produces reproducible PDF proofs but does not certify their visual correctness.
 4. Inspect grayscale. Where color carries essential distinctions, also examine an appropriate color-vision simulation. Do not call grayscale alone a complete color-accessibility test.
 5. Cross-check values against the ledger and names/symbols against the manuscript. Trace one actual or explicitly schematic example through the diagram, including branches and shared state. Check that the figure does not present a schematic outcome as experimental evidence.
 6. Check the same figure in the final manuscript PDF. Caption spacing and document rescaling can introduce problems absent from the standalone export.
