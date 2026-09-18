@@ -1,11 +1,15 @@
 ---
 name: paper-figure-creation
-description: Create or refine research-paper figures, experimental plots, architecture diagrams, and graphical abstracts with strong visual hierarchy, editable vector sources, evidence-grounded claims, and checks for overlaps, clipping, overflow, and readability at publication size. Use for paper figures and Overleaf or Word figure exports.
+description: Create and refine evidence-grounded paper figures, experimental plots, and architecture diagrams with consistent typography, editable vector geometry, meaningful visual examples, and checks for overlap, clipping, and readability at manuscript size.
 ---
 
 # Paper figure creation
 
 Make the contribution understandable on first inspection, then make every detail defensible on close reading. Design an original visual argument from the manuscript, algorithm, and experimental evidence. Correct labels on connected boxes are only a starting point: the reader should see what the objects are, what changes, and why that change matters.
+
+Prefer visually explanatory figures: show a recognizable input, the consequential transformation, and the output or decision. Use task scenes, meaningful icons, matched before/after examples, and a paper-specific analogy when they make that relationship easier to grasp. Consider a generated scene or object asset when pictorial content adds explanatory value. A clear symbolic figure remains appropriate when the algebra itself is the subject. Read [visual-elements.md](references/visual-elements.md) for asset selection, analogy mapping, visual references, and when to invoke image generation.
+
+Do not turn the abstract or implementation notes into paragraphs inside boxes. For an overview or method figure, establish a small label budget before drawing (often 30–60 prose words at one-column width, adjusted to the scientific contract). Prefer short object/action labels; move configuration, caveats, losses, and full definitions to the caption or manuscript. Equations and essential axis labels earn space when they explain the operation. Enlarging meaningful visual objects takes priority over adding icons around existing text. Reject a redesign if its silhouettes and relationships become meaningless when prose labels are covered.
 
 ## Choose the job
 
@@ -44,6 +48,7 @@ Extract from available files before asking questions:
 - **Reader and slot:** intended venue/template, one- or two-column width, target height, and selected figure mode(s).
 - **One sentence:** “Given [input/problem], [specific change] enables [supported outcome] under [scope].” If this cannot be stated clearly, resolve the science before polishing the layout.
 - **Example:** a small input and output that exposes the problem; identify whether it is observed experimental output or an illustrative schematic.
+- **Visual vocabulary:** recognizable task objects, useful icons, before/after correspondence, and any analogy with its scientific mapping and limits. Choose observed, original vector, or generated assets deliberately; record the role of each pictorial element.
 - **Novelty:** what computation, representation, training signal, or system arrangement changes relative to the relevant baseline.
 - **Evidence:** source files/table cells, methods, metrics and directions, dataset/split, evaluation protocol, budget/hardware, uncertainty, and limitations.
 - **Method contract, when relevant:** ordered operations, branch/merge semantics, tensor or object identities, trainable/frozen states, losses, and training versus inference paths.
@@ -61,6 +66,10 @@ For a new complex figure, or when an existing composition has failed, sketch **t
 
 Before polishing, choose a **focal relationship**: the concrete object and visible change that should dominate the first glance. Give that relationship recognizable structure and richer detail; keep supporting configuration and conventional machinery quieter. Read [art-direction.md](references/art-direction.md) when a correct figure still looks generic or when the user wants the visual richness associated with image generation. It covers scene composition, visual transformations, selective depth and attention.
 
+When the user asks for richer visuals or aesthetic architecture diagrams, make [visual-elements.md](references/visual-elements.md) and [art-direction.md](references/art-direction.md) part of the active workflow. Improve the representation, not just the palette: expose an operation inside its module, preserve one example across stages, or add a task vignette that explains the inputs. Use [hybrid-authoring.md](references/hybrid-authoring.md) when the selected composition benefits from generated imagery. If appropriate imagery is available, incorporate it into the completed figure rather than stopping at an image prompt.
+
+Generated images, web-searched images, downloaded PNG/SVG assets, official logos, model illustrations, and transparent cutouts are all available design choices when they explain the paper. Read [asset-sourcing.md](references/asset-sourcing.md) for search, download, source recording, background removal, and integration. Prefer originals from the relevant project/creator; inspect the actual pixels rather than trusting a search thumbnail. Use image editing to remove an illustration's background when helpful, then inspect edge quality on the final backdrop. Preserve exact official logos and experimental observations; obtain a clean source when generative editing would alter their identity or evidence.
+
 For a teaser, default to **30–40% of usable panel area for problem/example/idea and 60–70% for experimental evidence**. This is a layout preference, not a distribution of figure types or a license to invent evidence. Use 35:65 as a starting point. Adapt only for a concrete reason and record that reason. The first glance should reveal the task and the supported takeaway; the second should reveal the comparator and conditions.
 
 For a setup figure, choose the visual family before drawing: construction and scoring for a static benchmark; a concrete episode inside an environment boundary for interactive tasks; aligned cases for setup variants. Separate construction from execution and evaluator-only information from agent-visible inputs. The teaser's area ratio does not apply. Read [benchmark-environment.md](references/benchmark-environment.md) for the contract, layout recipes and failure checks.
@@ -68,6 +77,8 @@ For a setup figure, choose the visual family before drawing: construction and sc
 For a method figure, choose a topology that exposes the central operation: repeated candidate rows with aligned stages, paired baseline/proposal paths, a shared-state iteration, spatial geometry with a local operator inset, or another faithful structure. Plan branch and loop routing with the composition, before filling the available space.
 
 Make scientific objects recognizable: a passage with a selected sentence, the same grid before and after an operation, retained token identities, low-rank factors with dimensions, or an observed scene with vector overlays. Use only the detail needed to explain the change. Let repeated identities retain position or encoding, and show the novel transformation inside its module rather than highlighting an opaque “Ours” box.
+
+For diagrams with connectors, read [geometry-and-inspection.md](references/geometry-and-inspection.md). Assign named ports and route continuous paths around objects; do not hide a line under a label and mistake the resulting gap for a clean connector. Align related blocks, use deliberate routing channels and consistent spacing, and keep arrowheads attached to the intended target. Treat broken connectors, ambiguous crossings, wrong directions, clipping, text overflow, and unintended overlap as defects to repair before delivery. Neither a successful build nor an automatic geometry check proves this has been achieved.
 
 ## Build an editable, reproducible artifact
 
@@ -94,9 +105,12 @@ Choose one canonical geometry source. If editing a generated `.drawio` by hand, 
 
 Read [review.md](references/review.md). Always inspect actual rendered pixels at intended print size as well as an enlarged view. Code inspection or successful export cannot establish visual quality. If image inspection is unavailable, say so and mark visual review incomplete.
 
+Use `python scripts/inspect_figure.py figure.pdf --output-dir review --width-inches 5.5` when a reproducible PDF proof is useful; pass the actual manuscript width. Add targeted `--crop name:x0,y0,x1,y1` regions for dense connections, arrowheads, and text edges. Open the generated paper-size proof and enlarged crops with an image-viewing tool, record concrete defects, fix the editable source, and inspect the new exports again. Search and visually inspect relevant paper/reference images when a composition remains unclear; preserve the distinction between learning a visual grammar and copying artwork or scientific claims.
+
 1. **Evidence check:** trace plotted marks and claims to source cells; recompute improvements; preserve unfavorable results and qualify incomparable baselines.
 2. **Semantic check:** trace one example through the selected mode. For a method, verify arrows, merge operators, losses, conditioning, frozen states and inference access. For a setup, verify task construction, observation/action direction, state changes, information access, stopping and the exact success criterion; do not imply evaluation scores are training feedback unless the source says so.
 3. **Visual check:** inspect a thumbnail for grouping and emphasis, then the paper-width export for comprehension and legibility. Check correspondences, example-to-operator alignment, novelty visibility, grayscale, collisions, crop, and consistency between related figures. A clean export can still fail to explain the method.
+   Check each icon, scene and analogy as well: what scientific object or relationship does it explain, and could it imply an unmeasured result or nonexistent model component? Generated artwork and observed output must remain distinguishable. Decorative elements that compete with the mechanism should be simplified or removed.
 4. **Independent check when available:** give a reviewer the figure and caption without the intended interpretation. Ask mode-specific questions: task/change/result for a teaser, computation for a method, or task/input/actions/visibility/success criterion for a setup. Compare their answer with the brief. Do not treat a self-assigned score as an independent comprehension test.
 5. Repair the highest-impact observed failure, rerender, and recheck the affected criterion. Continue while concrete defects remain. If two revisions do not resolve a structural problem, change the layout rather than accumulating patches. Stop once hard gates pass and further changes are cosmetic; document material open limitations.
 

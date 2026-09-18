@@ -2,6 +2,8 @@
 
 Use this only when a pictorial asset helps explain the paper. A hybrid figure combines an illustrative or observed image with deterministic scientific geometry. Its goal is stronger recognition and visual storytelling while preserving source accuracy, editability and reproducibility.
 
+Assets can be generated, supplied, or downloaded from web/image search. Read [asset-sourcing.md](asset-sourcing.md) for retrieving actual originals, using official logos/icons, transparent cutouts and background removal. Searching is a way to obtain visual material or inspect design references, not a substitute for source verification. Exact connector geometry and label placement follow [geometry-and-inspection.md](geometry-and-inspection.md).
+
 ## Assign authority to each layer
 
 | Layer | Appropriate source/authoring | What it may establish |
