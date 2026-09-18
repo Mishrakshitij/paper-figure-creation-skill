@@ -1,6 +1,6 @@
 ---
 name: paper-figure-creation
-description: Create and refine evidence-grounded paper figures, experimental plots, and architecture diagrams with consistent typography, editable vector geometry, meaningful visual examples, and checks for overlap, clipping, and readability at manuscript size.
+description: Create and refine evidence-grounded paper figures, experimental plots, qualitative comparisons, and architecture diagrams with meaningful visual examples, editable vector geometry, and checks for scientific fidelity, overlap, clipping, and readability at manuscript size.
 ---
 
 # Paper figure creation
@@ -18,11 +18,19 @@ Do not turn the abstract or implementation notes into paragraphs inside boxes. F
 | Introduction teaser / graphical abstract | Show the problem, one concrete example, the changed idea, and the strongest supported evidence | [teaser.md](references/teaser.md) |
 | Method / architecture | Make the proposed computation reconstructable and its novelty localizable | [method.md](references/method.md) |
 | Experimental plot or multi-panel result figure | Make the comparison, uncertainty, units and limitations readable at the actual paper size | [evidence.md](references/evidence.md), [design-system.md](references/design-system.md), [layout-and-overflow.md](references/layout-and-overflow.md) |
+| Qualitative result or technical comparison | Show where matched examples differ, which measured criterion changes, and what the evidence can explain | [qualitative-comparisons.md](references/qualitative-comparisons.md) |
 | Benchmark / environment setup, **only when present in the paper** | Explain the task population, one concrete case, the available information or interactions, and how evaluation works | [benchmark-environment.md](references/benchmark-environment.md) |
 | Multiple figures | Select only applicable modes; share semantic colors, notation, component names and example identity | Selected references |
 | Rework an existing figure | Inspect its source and rendered image; preserve correct semantics and repair specific communication failures | Relevant mode plus [review.md](references/review.md) |
 
 Start with [visual-story.md](references/visual-story.md) when inventing a composition or repairing a weak figure. Read [evidence.md](references/evidence.md) before drawing numerical claims, [design-system.md](references/design-system.md) for physical styling and editable tools, and [semantic-primitives.md](references/semantic-primitives.md) when implementing worked examples. Use [pattern-atlas.md](references/pattern-atlas.md) for additional topology choices. Load these selectively; an ordinary figure request does not need the full research corpus.
+
+For requests such as “show why ours works,” combine the actual example with the
+available technical evidence. Read [qualitative-comparisons.md](references/qualitative-comparisons.md)
+for matched observations, criterion-level diagnostics, prediction comparisons and
+case-selection disclosure. A successful outcome, a lower prediction error and a
+causal explanation are different claims. Keep the figure's explanation within
+what the recorded experiment supports.
 
 For aesthetic refinement, dense multi-panel figures, long labels or clipping,
 read [layout-and-overflow.md](references/layout-and-overflow.md). It covers visual
@@ -134,5 +142,10 @@ Never certify a figure as “publication-ready” solely because the validator p
 ## Deliver
 
 Return the requested figure(s), a concise caption, and editable sources. Normally include vector PDF for LaTeX/Overleaf, editable SVG, high-resolution PNG for preview or document insertion, data/spec/source code, and a brief review/provenance record. Include `.drawio` when that is the selected editable workflow. Read [delivery.md](references/delivery.md) for integration and export checks.
+
+When integrating into a paper, review the actual compiled figure page and its
+neighbors, including caption placement, page budget and PDF navigation. For
+automatically refreshed outputs, identify the exact reviewed source/output
+snapshot so later renders cannot silently inherit an earlier review.
 
 State any unresolved source, scientific, or visual issue precisely. External uploads, publishing, or repository pushes require the current task's authorization; creating a figure does not authorize submitting a paper or altering unrelated files.

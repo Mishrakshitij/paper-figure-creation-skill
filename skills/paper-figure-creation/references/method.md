@@ -49,6 +49,16 @@ For paired comparisons, align unchanged stages and reuse the same input. Highlig
 
 Keep **fitting an operator** distinct from **applying it** when the inputs differ. For example, labeled anchor pairs fit a calibration map; other predicted scores enter its application, not its fitting data. Similarly, a generated configuration controls augmentation and optimization; its text need not be an SFT target. In a reward-selected update, make the selected training records recoverable, rather than drawing only a reward wire into the optimizer. These distinctions should be visible in ports, labels or local structure before the caption supplies exact formulas.
 
+## Compare implemented computations
+
+When comparing code-backed methods, extend the contract only for stages whose differences matter. Record the executed mode or call site, inputs available at that stage, output destination, parameter identity, and refresh trigger. Check operation order against the executed path: applying a correction before a context estimator is a different computation from applying it afterward. Distinguish observed inputs, candidate inputs, and evaluator-only targets; an input available to a downstream scorer need not be available to the module that infers context.
+
+Matching architecture or procedure does not establish shared trained weights. Label separately trained, copied, tied, or frozen parameters according to the implementation. A common background region or repeated block name should not silently assert parameter sharing. Preserve the baseline's retained capabilities while highlighting the proposed change; simplifying a local adapter must not erase the temporal, multimodal, or action-conditioned computation around it.
+
+For stateful or nested procedures, distinguish three update schedules where relevant: parameter optimization, context/state recomputation after new information, and reuse inside an inner search or refinement loop. Fixed weights can coexist with changing inferred state; a context held fixed during one search can be recomputed for the next. Put the corresponding refresh boundary on the diagram or in its compact caption. A static feed-forward figure needs no invented loop.
+
+A code-derived comparison establishes which operations run. A neighboring successful example does not establish that the highlighted operation caused that success. Keep implementation claims separate from measured behavior and from causal claims that require controlled evidence.
+
 ## Place and route
 
 Lay out the main path left-to-right or top-to-bottom; group by computational role rather than by aesthetic symmetry. For repeated branches, align equivalent operations into columns or rows so differences can be read without tracing every connector. Give branch and skip edges routing channels before fitting labels. Place feedback on the perimeter when that clarifies the main route, with an explicit destination and direction. Connect at explicit ports and keep arrowheads visible. Route around unrelated nodes. Avoid a crossover that can be mistaken for a merge; label or separate unavoidable crossings.

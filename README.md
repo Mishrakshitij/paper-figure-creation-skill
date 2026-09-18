@@ -1,12 +1,24 @@
 # Paper Figure Creation Skill
 
-A portable agent skill for three AI-paper figure types:
+A portable agent skill for AI-paper figures:
 
 - **Introduction teaser:** a concrete problem and proposed idea in roughly 35% of the usable area, with source-grounded experimental evidence in roughly 65%.
 - **Method / architecture:** an editable explanation of the computation, branches, training signals, and actual proposed change.
+- **Experimental plots:** matched comparisons, readable uncertainty, explicit units, and sourced improvements.
+- **Qualitative / technical comparisons:** aligned observed examples, measured success criteria, and diagnostics that distinguish outcomes from explanations.
 - **Benchmark / environment setup:** a concrete task, its inputs or interactions, information boundaries, and scoring—**selected only when the paper actually contains a substantive setup to explain**.
 
 The skill combines paper-specific visual design, editable vector authoring, reproducible plots and numerical evidence checks. Start by deciding what the reader needs to **see**: a changed representation, a candidate's path, an update loop, a spatial relationship, or a comparison taught by a worked example.
+
+For “show where and why our method works” requests, the
+[qualitative comparison guide](skills/paper-figure-creation/references/qualitative-comparisons.md)
+connects observed examples to criterion-level measurements and matched-input
+prediction diagnostics. It preserves failures and missing values, distinguishes
+shared architecture from shared weights, and limits causal claims to the available
+controls. The [delivery guide](skills/paper-figure-creation/references/delivery.md)
+also covers surrounding manuscript pages, PDF links, and reproducible review
+snapshots. These are portable instructions inside the skill folder; another
+specialized skill or this conversation is not required.
 
 ![Hybrid MAE method: an illustrative generated scene with exact masking, token identities, position restoration and masked-only loss](examples/mae-hybrid/figure.png)
 
@@ -43,11 +55,26 @@ cp -R skills/paper-figure-creation ~/.claude/skills/
 
 If an installation already exists, review your local customizations before replacing it. Project-local `.agents/skills/` and `.claude/skills/` are alternatives. These paths follow the [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills) and [Claude Code skill documentation](https://code.claude.com/docs/en/skills), checked September 2026. Other agents can load the standard [SKILL.md](skills/paper-figure-creation/SKILL.md) folder or read it explicitly; runtime capabilities still vary.
 
+To update an existing clone, pull the current branch with `git pull --ff-only`,
+review the changes, then copy the full skill folder to the location your agent
+actually discovers. Existing installations may use a different configured skills
+directory. Start a new session when the current session has already loaded an
+older version. Keep local customizations before replacing installed files.
+
 Example request:
 
 > Use paper-figure-creation to design the applicable figures for this manuscript: a teaser, a method diagram, and a benchmark/environment setup figure only if the paper describes a substantive setup. Use actual source facts and results, roughly 35% concept and 65% evidence in the teaser, and a 7-inch-wide draft. Export editable SVG, PDF, PNG, source data, and captions. Review at print size and fix concrete defects.
 
 Codex also supports `$paper-figure-creation`; Claude Code supports `/paper-figure-creation`. Attach the manuscript, method description or code, result tables, and target venue template when available. The skill has no model-name or API-key dependency.
+
+For an explanatory result figure, a useful request is:
+
+> Use paper-figure-creation to compare these recorded examples at the paper's
+> actual width. Show where behavior differs, the exact success criteria, and any
+> available diagnostic on matched inputs. Highlight supported improvements,
+> retain contrary evidence, explain the example-selection rule, and distinguish
+> observed outcomes from hypotheses about their cause. Inspect the exported
+> figure and its placement in the compiled paper.
 
 ## Design and build
 
