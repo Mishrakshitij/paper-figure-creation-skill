@@ -38,7 +38,10 @@ effects and successful export do not compensate for them.
 For a coordinated paper-wide polish, read
 [publication-polish.md](references/publication-polish.md). Establish shared
 typography, semantic colors, panel labels and spacing, then improve each figure's
-composition for its own scientific question. Preserve numerical ledgers and
+composition for its own scientific question. Use its comparison-to-geometry
+recipes and evidence-grounded headings; use the optical finishing guidance in
+[art-direction.md](references/art-direction.md) to refine visible alignment,
+matched crops and the space around the consequential change. Preserve numerical ledgers and
 compare the before/after figures at the actual manuscript width. The custom-code
 layout audit accepts `display_width_inches` to check effective font size after
 LaTeX scaling; a large source font can still become unreadable in the paper.
@@ -106,6 +109,10 @@ The renderer reports text intersections, clipping and legend overflow in
 and `figure.min_font_pt` for a project-specific legibility floor. Reserve room
 for wrapped text; a narrower label can still overflow vertically. A strict QA
 pass complements inspection of the final exported PDF and manuscript crop.
+For plots with legends inside data regions, enable
+`figure.check_data_occlusion: true` to review supported legend/data ink
+intersections. Move the legend or reserve a separate band when it obscures
+evidence; preserve every plotted value and uncertainty interval.
 
 Choose one canonical geometry source. If editing a generated `.drawio` by hand, either migrate the changes back into the JSON/source or make `.drawio` canonical and regenerate its exports. Do not overwrite manual edits by rerunning stale code. Keep chart data and plotting code separate from the diagram editor's cosmetic adjustments.
 

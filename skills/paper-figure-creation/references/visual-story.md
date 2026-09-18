@@ -52,6 +52,17 @@ Evidence link: Which plotted comparison tests the illustrated consequence.
 
 This is a design aid, not a new scientific specification. Check it against the manuscript. If the contract needs a claim the paper does not establish, revise the story before the graphics.
 
+When a figure combines mechanism and results, make the connection traceable.
+Reuse exact condition names and their visual encodings across the worked example
+and the experimental panel. For example, “masked input” and “restored input” can
+label the two schematic states and the corresponding measured conditions, if
+those are the conditions actually evaluated. The reader should see which test
+examines the illustrated consequence without matching an opaque module name to
+an unrelated legend. Keep example identity distinct from condition identity:
+label a teaching example as schematic, and identify an aggregate plot's population.
+Do not connect an illustrative output to an aggregate score as though that example
+produced the score, or let a mechanism sketch imply an unmeasured causal result.
+
 ## Compare different compositions
 
 For a complex new design or a failed composition, draw three rough thumbnails using the actual object names and representative content. Keep them cheap: rough geometry, example snippets and arrow routes are enough. Color variants of the same layout are one alternative.

@@ -49,6 +49,22 @@ Subtle layering can denote a stack, an inset can expose an interior operation, a
 
 Depth, thickness, area and glow can be read as quantity or importance. Do not let decorative stack thickness imply token count, perspective distort chart values, a bright border imply trainability, or realistic rendering turn a schematic outcome into apparent evidence. Use exact repeated elements when count matters, and explicit symbolic notation when it does not.
 
+## Finish the visible geometry
+
+After the composition works, align what the reader sees. Transparent padding in
+an image can make mathematically aligned objects look uneven; align the visible
+object or use consistent crops when the padding has no scientific meaning. Keep
+matched scene views at the same scale and crop, retaining context needed to judge
+the comparison. Harmonize perceived stroke weight between pictorial assets and
+vector overlays so a small callout does not overpower the operation it explains.
+
+Give a consequential detail room to register: a changed code span can sit within
+quiet unchanged context, and a selected patch can have a clear destination slot.
+Use consistent viewpoints for repeated objects and leave deliberate space around
+the change instead of adding a frame to every region. Make these adjustments to
+layout and explanatory overlays; never shift plotted coordinates, alter an
+observed image's geometry, or remove difficult evidence to achieve visual balance.
+
 ## Choose the authoring strategy
 
 | Strategy | Choose it when | Keep exact |

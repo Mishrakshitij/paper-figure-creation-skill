@@ -644,7 +644,8 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
         warnings += text_geometry_check(fig,spec,ax)
     else: raise ValueError(f"Unknown figure kind: {kind}")
     layout_issues = audit_figure(fig, min_font_pt=f.get("min_font_pt"),
-                                display_width_inches=f.get("display_width_inches"))
+                                display_width_inches=f.get("display_width_inches"),
+                                check_data_occlusion=f.get("check_data_occlusion", False))
     warnings += [issue_message(issue) for issue in layout_issues]
     output=Path(output); output.parent.mkdir(parents=True,exist_ok=True)
     products=[]
@@ -661,7 +662,8 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
     plt.close(fig)
     report={"figure_kind":kind,"dimensions_in":[width,height],"font_size_pt":theme["font_size"],
             "products":products,"errors":errors,"warnings":warnings,"layout_issues":layout_issues,
-            "verification_scope":"Chart point visibility and log domains; method/benchmark/custom-concept node bounds, edge-node intersections, node text containment; rendered text collisions, page/clip-box text overflow, legend bounds and optional minimum font size. Rotated text uses conservative bounding boxes; custom clip paths require visual review. Benchmark eligibility is a declared source-backed contract, not verified scientific truth. Human visual and scientific review remain required."}
+            "data_occlusion_check_requested":f.get("check_data_occlusion", False),
+            "verification_scope":"Chart point visibility and log domains; method/benchmark/custom-concept node bounds, edge-node intersections, node text containment; rendered text collisions, page/clip-box text overflow, legend bounds and optional minimum font size. Optional legend/data ink checks cover supported 2D artists only. Rotated text uses conservative bounding boxes; custom clip paths and unsupported geometry require visual review. Benchmark eligibility is a declared source-backed contract, not verified scientific truth. Human visual and scientific review remain required."}
     output.with_suffix(".qa.json").write_text(json.dumps(report,indent=2)+"\n")
     return report
 

@@ -51,6 +51,24 @@ proofs before changing a venue's type scale to match a screen preference.
    Avoid winner badges, headline gains without a matched comparison, or colored
    background areas that look like confidence regions.
 
+Choose geometry that exposes the comparison the reader needs to make:
+
+| Scientific question | Useful geometry | Meaning to preserve |
+|---|---|---|
+| How did the same cases change between two conditions? | Paired dots or short connected trajectories | Connect only actual matched cases; independent group means do not establish case-level pairing. |
+| Does a pattern hold across endpoints or datasets? | Aligned small multiples with consistent method order | Show each endpoint's units and uncertainty; share scales only when they are comparable. |
+| What quality/cost tradeoff do the measured operating points show? | Scatter with directly labeled operating points | Cost and quality must refer to the same method, operating point and evaluation population; state aggregation, and do not infer a smooth frontier from sparse points. |
+| Which component changes the outcome? | Shared-scale estimate rows for the full method and its ablations | Retain controls and intervals where reported; name what differs and do not imply causality beyond the experimental design. |
+
+Use a finding as a panel heading when the displayed evidence supports its exact
+scope. For example, a matched-budget comparison might support “Lower latency at
+the tested budget”; it would not automatically support “More efficient.” When
+uncertainty or coverage leaves the answer open, use a question such as “How does
+latency change at a matched budget?” Put a sourced delta beside the two marks it
+compares, with units and a clear leader or bracket in reserved space. Keep the
+comparator, conditions and uncertainty visible; do not calculate an interval for
+the difference from separate intervals without the necessary statistical inputs.
+
 For tables accompanying figures, preserve venue typography; align comparable
 number precision, label units in the header and use whitespace/clean horizontal
 rules instead of a dense boxed grid. Keep unknown markers and denominator notes

@@ -39,7 +39,8 @@ For a fraction-valued metric, convert to percent explicitly before calculating p
 
 ## Uncertainty and missing results
 
-- Declare `sd`, `se`, `ci`, or `range`; their meanings differ. Record the source of variation (seeds, data splits, sampled test items, etc.), exact uncertainty provenance, known sample size, and any computation method.
+- Declare `sd`, `se`, `ci`, or `range` when the source identifies it; their meanings differ. Record the source of variation (seeds, data splits, sampled test items, etc.), exact uncertainty provenance, known sample size, and any computation method.
+- If supplied interval endpoints lack a statistical definition, preserve them and label them "reported interval; type unspecified." Record the unknown type, level, method and sample size instead of inventing them. Use a custom draft renderer if needed: the portable validator only accepts its documented interval types. Do not relabel an unspecified interval as a CI or range to make validation pass; resolve its interpretation before making an uncertainty-dependent claim.
 - A confidence interval needs its level and method. Never relabel SD as CI, invent run counts, or infer significance from a visual gap. If raw replicates are available, use a justified statistical procedure and preserve the calculation script and inputs as an artifact source.
 - Preserve asymmetric bounds. The portable renderer accepts sourced symmetric half widths in `series.errors`; asymmetric intervals need a custom renderer with the same evidence check.
 - If uncertainty was not reported, omit error bars and say so when material. A warning is preferable to invented precision. Do not imply deterministic results merely because intervals are absent.

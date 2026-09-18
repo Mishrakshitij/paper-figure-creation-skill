@@ -35,6 +35,14 @@ pdftoppm -scale-to 1600 -png -singlefile output/figure.pdf output/figure-review
 
 Inspect the resulting image. A PDF with no fonts may intentionally contain outlined SVG text, but retaining editable text in the source remains valuable. Keep PDFs and SVGs vector where possible; a vector container around a low-resolution bitmap does not restore detail.
 
+If Poppler tools are absent, use an already available PDF renderer such as
+PyMuPDF or pypdfium2 for the same visual proof. Render the actual exported PDF
+at `inserted_width_inches * preview_ppi` pixels wide, retaining its aspect ratio,
+selected page box and rotation. Record the PDF hash, renderer, page and dimensions;
+inspect that proof and an enlarged detail. This fallback verifies neither font
+embedding nor editable text by itself; record those checks separately instead
+of declaring them passed because rasterization succeeded.
+
 For PNG, compute required pixels from physical inches × target DPI. At 7 inches and 300 DPI, width is 2100 pixels. Do not resample a small image and claim new detail. Keep original image crops, common qualitative scales, and any required image permissions or attribution in provenance.
 
 Generated examples in this repository are original explanatory redraws of published methods or data. They are not the authors' figures, new experiments, or reproductions of reported training runs.

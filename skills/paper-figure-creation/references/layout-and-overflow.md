@@ -111,12 +111,20 @@ Custom Matplotlib figures can reuse the same checks:
 
 ```python
 from layout_quality import audit_figure
-issues = audit_figure(fig, min_font_pt=8)  # only if 8 pt is this paper's floor
+issues = audit_figure(fig, min_font_pt=8, check_data_occlusion=True)
+# Use 8 pt only if it is this paper's floor; inspect all reported collisions.
 ```
 
 Bounds for rotated text are conservative; visually inspect flagged intersections.
 Custom clip paths are explicitly flagged for review rather than silently treated
-as safe. Automated checks cannot judge every mark/legend collision, font fallback,
+as safe. Optional `check_data_occlusion=True` (JSON:
+`figure.check_data_occlusion: true`) reports intersections between actual legend
+ink and supported 2D line, scatter, errorbar and filled-band ink. It respects
+artist clipping and supported draw order, including frameless legends. Its
+current-DPI raster check does not cover bars, images, meshes, polar/3D axes,
+cross-axes overlays or arbitrary custom artists. Treat findings as a reason to
+inspect and repair legend placement; an empty report is not full visual approval.
+Automated checks cannot judge every mark/legend collision, font fallback,
 arrowhead tangency, contrast interaction, SVG editor behavior or PDF crop.
 
 ## Deliver a verified rendering

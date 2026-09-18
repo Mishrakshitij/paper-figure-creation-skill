@@ -148,7 +148,7 @@ These checks establish a complete declared contract and reject an ineligible fig
 
 ## Bounded checks and review
 
-Hard checks reject plotted finite observations outside the active limits, nonpositive logarithmic coordinates, overlapping/out-of-bounds nodes and unknown endpoints. Method and benchmark geometry share the same node and text checks; these also run recursively for custom teaser concepts. Chart y-label gutters are measured and reserved inside their evidence panel. Pixel-based text containment reports potential overflowing node labels and off-page text; `--strict-layout` exits nonzero for those warnings. Edge crossings through unrelated nodes also warn. These checks do **not** certify scientific correctness, edge-edge crossings, legend collisions, overall text overlap or readability. Inspect PNG and PDF at final size and a grayscale/thumbnail view; revise the source and rerender. All final evidence, architecture, and setup semantics still need human scientific review.
+Hard checks reject plotted finite observations outside the active limits, nonpositive logarithmic coordinates, overlapping/out-of-bounds nodes and unknown endpoints. Method and benchmark geometry share the same node and text checks; these also run recursively for custom teaser concepts. Chart y-label gutters are measured and reserved inside their evidence panel. Rendered text bounds report potential overlap, overflowing node labels and off-page text; `--strict-layout` exits nonzero for those warnings. Edge crossings through unrelated nodes also warn. These bounded checks do **not** certify scientific correctness, every collision, edge-edge crossings or readability. Inspect PNG and PDF at final size and a grayscale/thumbnail view; revise the source and rerender. All final evidence, architecture, and setup semantics still need human scientific review.
 # Layout quality extensions
 
 `figure.min_font_pt` optionally declares this figure's minimum readable font
@@ -166,3 +166,13 @@ these produce warnings. Shared legends include series from every chart and
 choose enough rows to fit the available width. Their height, label collisions
 and final PDF appearance still require review. See
 [layout-and-overflow.md](layout-and-overflow.md) for repair decisions.
+
+`figure.check_data_occlusion: true` optionally checks legend ink against rendered
+2D lines, markers, scatter, errorbar stems and filled uncertainty bands. The
+default is false. Intersections produce `legend_data_overlap` review warnings
+and make `--strict-layout` fail. A frameless legend contributes its text and
+handles; a painted frame also contributes its area. This is a bounded raster
+check at the figure's current DPI, not proof that all data remain visible.
+Bars, images, meshes, polar/3D axes, cross-axes overlays and custom artists are
+outside coverage. Reposition legends or reserve a legend band; do not alter
+measurements to remove a warning.

@@ -1,4 +1,4 @@
 interface:
   display_name: "Paper Figure Creation"
-  short_description: "Visual paper figures with sourced assets and precise geometry"
-  default_prompt: "Use $paper-figure-creation to build visual, evidence-grounded paper figures with short labels, generated or web-sourced images and icons when helpful, precise continuous arrows, aligned geometry, and paper-size plus zoomed visual inspection."
+  short_description: "Creative, evidence-grounded figures with precise layout"
+  default_prompt: "Use $paper-figure-creation to design a distinctive visual argument from my paper's mechanisms and evidence, using meaningful examples, clear comparisons, editable geometry, and verified readability at manuscript size."
