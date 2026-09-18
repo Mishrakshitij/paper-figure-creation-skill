@@ -149,3 +149,16 @@ These checks establish a complete declared contract and reject an ineligible fig
 ## Bounded checks and review
 
 Hard checks reject plotted finite observations outside the active limits, nonpositive logarithmic coordinates, overlapping/out-of-bounds nodes and unknown endpoints. Method and benchmark geometry share the same node and text checks; these also run recursively for custom teaser concepts. Chart y-label gutters are measured and reserved inside their evidence panel. Pixel-based text containment reports potential overflowing node labels and off-page text; `--strict-layout` exits nonzero for those warnings. Edge crossings through unrelated nodes also warn. These checks do **not** certify scientific correctness, edge-edge crossings, legend collisions, overall text overlap or readability. Inspect PNG and PDF at final size and a grayscale/thumbnail view; revise the source and rerender. All final evidence, architecture, and setup semantics still need human scientific review.
+# Layout quality extensions
+
+`figure.min_font_pt` optionally declares this figure's minimum readable font
+size. The synthetic/mixed-data watermark respects this floor automatically;
+`figure.watermark_font_pt` may explicitly set its size, which remains subject
+to the same legibility and overflow checks. Nodes accept `wrap_label: true`
+and `text_padding_pt` (default 4) to wrap
+labels at measured word boundaries without shrinking or discarding text.
+The QA JSON includes structured `layout_issues`; `--strict-layout` fails when
+these produce warnings. Shared legends include series from every chart and
+choose enough rows to fit the available width. Their height, label collisions
+and final PDF appearance still require review. See
+[layout-and-overflow.md](layout-and-overflow.md) for repair decisions.

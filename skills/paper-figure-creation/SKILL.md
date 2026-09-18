@@ -1,6 +1,6 @@
 ---
 name: paper-figure-creation
-description: Create or revise evidence-grounded introduction teasers, method or architecture diagrams, and benchmark or environment setup figures for AI research papers, with editable vector sources, reproducible experimental plots, and visual review at publication size. Use for academic paper figures, graphical abstracts, and Overleaf or Word figure exports.
+description: Create or refine research-paper figures, experimental plots, architecture diagrams, and graphical abstracts with strong visual hierarchy, editable vector sources, evidence-grounded claims, and checks for overlaps, clipping, overflow, and readability at publication size. Use for paper figures and Overleaf or Word figure exports.
 ---
 
 # Paper figure creation
@@ -13,11 +13,23 @@ Make the contribution understandable on first inspection, then make every detail
 | --- | --- | --- |
 | Introduction teaser / graphical abstract | Show the problem, one concrete example, the changed idea, and the strongest supported evidence | [teaser.md](references/teaser.md) |
 | Method / architecture | Make the proposed computation reconstructable and its novelty localizable | [method.md](references/method.md) |
+| Experimental plot or multi-panel result figure | Make the comparison, uncertainty, units and limitations readable at the actual paper size | [evidence.md](references/evidence.md), [design-system.md](references/design-system.md), [layout-and-overflow.md](references/layout-and-overflow.md) |
 | Benchmark / environment setup, **only when present in the paper** | Explain the task population, one concrete case, the available information or interactions, and how evaluation works | [benchmark-environment.md](references/benchmark-environment.md) |
 | Multiple figures | Select only applicable modes; share semantic colors, notation, component names and example identity | Selected references |
 | Rework an existing figure | Inspect its source and rendered image; preserve correct semantics and repair specific communication failures | Relevant mode plus [review.md](references/review.md) |
 
 Start with [visual-story.md](references/visual-story.md) when inventing a composition or repairing a weak figure. Read [evidence.md](references/evidence.md) before drawing numerical claims, [design-system.md](references/design-system.md) for physical styling and editable tools, and [semantic-primitives.md](references/semantic-primitives.md) when implementing worked examples. Use [pattern-atlas.md](references/pattern-atlas.md) for additional topology choices. Load these selectively; an ordinary figure request does not need the full research corpus.
+
+For aesthetic refinement, dense multi-panel figures, long labels or clipping,
+read [layout-and-overflow.md](references/layout-and-overflow.md). It covers visual
+hierarchy, measured text wrapping, legend layout, collision checks and repairs
+that preserve the scientific content and final physical size.
+
+When the user requests a polished or premium figure, apply the publication finish
+criteria in that reference explicitly. Favor a coherent composition, disciplined
+type and spacing, and a visible scientific relationship. Treat unresolved crop,
+overlap, illegible labels and ambiguous routing as defects to repair; decorative
+effects and successful export do not compensate for them.
 
 ### Conditional setup routing
 
@@ -69,6 +81,12 @@ python scripts/render_figure.py figure.json --output output/figure --strict-layo
 ```
 
 Run commands relative to this skill directory, or resolve its absolute path first. Read [spec-format.md](references/spec-format.md) and adapt an asset spec when using the engine. Keep raw evidence authoritative: plotted values are references to an evidence ledger, not independent numbers typed onto a canvas. For custom code, preserve the same provenance and review requirements even if its layout exceeds the bundled engine.
+
+The renderer reports text intersections, clipping and legend overflow in
+`layout_issues`. Use node `wrap_label: true` for measured, word-preserving wrapping
+and `figure.min_font_pt` for a project-specific legibility floor. Reserve room
+for wrapped text; a narrower label can still overflow vertically. A strict QA
+pass complements inspection of the final exported PDF and manuscript crop.
 
 Choose one canonical geometry source. If editing a generated `.drawio` by hand, either migrate the changes back into the JSON/source or make `.drawio` canonical and regenerate its exports. Do not overwrite manual edits by rerunning stale code. Keep chart data and plotting code separate from the diagram editor's cosmetic adjustments.
 

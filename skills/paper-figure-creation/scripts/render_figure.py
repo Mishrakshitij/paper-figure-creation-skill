@@ -19,6 +19,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle, Ellip
 import numpy as np
 
 from figure_style import apply_theme, load_theme
+from layout_quality import audit_figure, issue_message, wrap_text_artist
 
 PORTS = {"left": (0, .5), "right": (1, .5), "top": (.5, 1), "bottom": (.5, 0)}
 
@@ -187,6 +188,20 @@ def check_chart_coordinates(chart, active_xlim=None, active_ylim=None):
                     tol=max(1,abs(lo),abs(hi))*1e-10
                     if v<lo-tol or v>hi+tol:
                         raise ValueError(f"Data point outside {axis} limits: series {series.get('id',series.get('label',''))}, point {i}, value {v}, limits {list(bounds)}")
+            uncertainty = series.get("errors")
+            if uncertainty is not None and uncertainty[i] is not None:
+                error = uncertainty[i]
+                axis = "x" if horizontal else "y"
+                if not isinstance(error, (int, float)) or not math.isfinite(error) or error < 0:
+                    raise ValueError("Error extents must be finite and nonnegative")
+                endpoints = (value-error, value+error)
+                if chart.get(axis+"scale") == "log" and endpoints[0] <= 0:
+                    raise ValueError(f"Uncertainty extends outside log {axis} domain")
+                if limits[axis] is not None:
+                    lo, hi = sorted(limits[axis])
+                    tol = max(1, abs(lo), abs(hi))*1e-10
+                    if endpoints[0] < lo-tol or endpoints[1] > hi+tol:
+                        raise ValueError(f"Uncertainty outside {axis} limits: point {i}, interval {endpoints}")
 
 
 def draw_chart(ax, chart, spec, theme, index=0):
@@ -318,13 +333,14 @@ def edge_points(edge, nodes):
 
 def draw_method_contents(ax, spec, theme):
     ax.set(xlim=(0, 1), ylim=(0, 1)); ax.axis("off")
-    for group in spec.get("groups", []):
+    for group_index, group in enumerate(spec.get("groups", [])):
         box(ax, group["x"], group["y"], group["w"], group["h"], theme,
             fill=group.get("fill", theme["panel"]), edge=theme["grid"], radius=.008, zorder=0)
-        text(ax, group["x"] + .013, group["y"] + group["h"] - .018,
-             group["label"], theme, size=theme["small_size"], color=theme["muted"], va="top")
+        label = text(ax, group["x"] + .013, group["y"] + group["h"] - .018,
+                     group["label"], theme, size=theme["small_size"], color=theme["muted"], va="top")
+        label.set_gid(f"group-label:{group_index}")
     nodes = {n["id"]: n for n in spec["nodes"]}
-    for edge in spec.get("edges", []):
+    for edge_index, edge in enumerate(spec.get("edges", [])):
         pts = edge_points(edge, nodes)
         color = theme["accent"] if edge.get("role") == "proposed" else theme["muted"]
         arrow(ax, pts, theme, edge.get("kind", "solid"), color=color,
@@ -334,9 +350,10 @@ def draw_method_contents(ax, spec, theme):
             if not pos:
                 a, b = pts[len(pts) // 2 - 1], pts[len(pts) // 2]
                 pos = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + .035]
-            text(ax, *pos, edge["label"], theme, size=theme["small_size"],
-                 ha="center", va="center", zorder=5,
-                 bbox={"facecolor": theme["paper"], "edgecolor": "none", "pad": 1})
+            label = text(ax, *pos, edge["label"], theme, size=theme["small_size"],
+                         ha="center", va="center", zorder=5,
+                         bbox={"facecolor": theme["paper"], "edgecolor": "none", "pad": 1})
+            label.set_gid(f"edge-label:{edge_index}")
     for n in nodes.values():
         x, y, w, h = (n[k] for k in ("x", "y", "w", "h"))
         accent = n.get("role") == "proposed"
@@ -365,16 +382,22 @@ def draw_method_contents(ax, spec, theme):
                  size=n.get("font_size", theme["font_size"]), weight="bold" if accent else "normal",
                  ha="center", va="center", zorder=3)
         a.set_gid("node-label:" + n["id"])
+        if n.get("wrap_label", False):
+            ax.figure.canvas.draw()
+            width_px = ax.transData.transform((x+w, y))[0] - ax.transData.transform((x, y))[0]
+            padding = float(n.get("text_padding_pt", 4)) * ax.figure.dpi / 72
+            wrap_text_artist(a, width_px - 2*padding, ax.figure.canvas.get_renderer())
         detail = n.get("detail") or (n.get("state") if n.get("state") in ("frozen", "trainable") else None)
         if detail:
             a = text(ax, x+w/2, y+h*(.09 if representation else .22), detail, theme, size=theme["small_size"],
                      color=theme["accent"] if accent else theme["muted"], ha="center", va="center", zorder=3)
             a.set_gid("node-detail:" + n["id"])
-    for label in spec.get("annotations", []):
-        text(ax, label["x"], label["y"], label["text"], theme,
+    for label_index, label in enumerate(spec.get("annotations", [])):
+        artist = text(ax, label["x"], label["y"], label["text"], theme,
              size=label.get("font_size", theme["small_size"]),
              color=theme["accent"] if label.get("role") == "proposed" else theme["muted"],
              ha=label.get("ha", "left"), va=label.get("va", "center"))
+        artist.set_gid(f"annotation:{label_index}")
 
 
 def drawio_export(spec, path, theme):
@@ -515,6 +538,15 @@ def text_geometry_check(fig, spec, ax):
     warnings = []
     for artist in ax.texts:
         gid = artist.get_gid()
+        if gid and gid.startswith(("group-label:", "edge-label:", "annotation:")):
+            bb = artist.get_window_extent(renderer)
+            for n in nodes.values():
+                lo = ax.transData.transform((n["x"], n["y"]))
+                hi = ax.transData.transform((n["x"]+n["w"], n["y"]+n["h"]))
+                dx = min(bb.x1, hi[0]) - max(bb.x0, lo[0])
+                dy = min(bb.y1, hi[1]) - max(bb.y0, lo[1])
+                if dx > 1 and dy > 1:
+                    warnings.append(f"Diagram label intersects node {n['id']}: {artist.get_text()!r}")
         if not gid or not gid.startswith("node-"): continue
         n = nodes[gid.split(":",1)[1]]
         lo = ax.transData.transform((n["x"],n["y"]))
@@ -547,8 +579,9 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
     if subtitle: fig.text(.035,.858,subtitle,fontsize=theme["small_size"],color=theme["muted"],va="top")
     data_status = spec.get("provenance",{}).get("data_status")
     if data_status in ("synthetic","mixed"):
+        watermark_size = f.get("watermark_font_pt", max(6.5, f.get("min_font_pt") or 0))
         fig.text(.965,.02,"SYNTHETIC DATA · DESIGN DEMO" if data_status=="synthetic" else "MIXED REPORTED / SYNTHETIC DATA",
-                 fontsize=6.5,color=theme["warm"],ha="right",va="bottom")
+                 fontsize=watermark_size,color=theme["warm"],ha="right",va="bottom")
     if f.get("note"):
         fig.text(.035,.025,f["note"],fontsize=theme["small_size"],color=theme["muted"],va="bottom")
     if kind == "teaser":
@@ -588,9 +621,21 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
                     raise ValueError("Chart labels leave too little data area; shorten labels, wrap names, or use a larger layout")
                 ax.set_position([pos.x0+shift,pos.y0,pos.width-shift,pos.height])
         if f.get("shared_legend"):
-            handles, labels = chart_axes[0].get_legend_handles_labels()
-            fig.legend(handles,labels,loc="lower center",bbox_to_anchor=(.5,.07),
-                       ncol=len(handles),handlelength=1.5,columnspacing=1.6)
+            legend_items = {}
+            for chart_ax in chart_axes:
+                handles, labels = chart_ax.get_legend_handles_labels()
+                for handle, label in zip(handles, labels):
+                    legend_items.setdefault(label, handle)
+            # Reserve every chart's series and wrap columns to the available page
+            # width. Never omit an entry or shrink its type to force a fit.
+            for ncols in range(max(1, len(legend_items)), 0, -1):
+                legend = fig.legend(list(legend_items.values()), list(legend_items),
+                                    loc="lower center", bbox_to_anchor=(.5,.07),
+                                    ncol=ncols, handlelength=1.5, columnspacing=1.6)
+                fig.canvas.draw()
+                if legend.get_window_extent(fig.canvas.get_renderer()).width <= fig.bbox.width*.93 or ncols == 1:
+                    break
+                legend.remove()
         fig.add_artist(plt.Line2D([left+share-.025]*2,[bottom-.03,top+.06],transform=fig.transFigure,color=theme["grid"],lw=.7))
     elif kind in ("method", "benchmark"):
         top=.79 if subtitle else .83
@@ -598,26 +643,8 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
         draw_method_contents(ax,spec,theme)
         warnings += text_geometry_check(fig,spec,ax)
     else: raise ValueError(f"Unknown figure kind: {kind}")
-    fig.canvas.draw()
-    canvas_renderer=fig.canvas.get_renderer()
-    from matplotlib.text import Text
-    inactive_tick_labels=set()
-    for canvas_ax in fig.axes:
-        for axis in (canvas_ax.xaxis,canvas_ax.yaxis):
-            lo,hi=sorted(axis.get_view_interval())
-            tol=(hi-lo)*1e-10
-            for tick in [*axis.get_major_ticks(),*axis.get_minor_ticks()]:
-                location=tick.get_loc()
-                if not math.isfinite(location) or location<lo-tol or location>hi+tol:
-                    inactive_tick_labels.update((id(tick.label1),id(tick.label2)))
-    for artist in fig.findobj(match=Text):
-        if id(artist) in inactive_tick_labels or not artist.get_visible() or not artist.get_text(): continue
-        # Suppress inactive tick labels generated outside explicitly fixed limits.
-        if artist.axes is not None and artist.get_clip_on(): continue
-        bb=artist.get_window_extent(canvas_renderer)
-        if bb.width == 0 or bb.height == 0: continue
-        if bb.x0 < -1 or bb.y0 < -1 or bb.x1 > fig.bbox.width+1 or bb.y1 > fig.bbox.height+1:
-            warnings.append("Text leaves the page: " + repr(artist.get_text()))
+    layout_issues = audit_figure(fig, min_font_pt=f.get("min_font_pt"))
+    warnings += [issue_message(issue) for issue in layout_issues]
     output=Path(output); output.parent.mkdir(parents=True,exist_ok=True)
     products=[]
     for fmt in formats:
@@ -632,8 +659,8 @@ def render(spec, output, formats=("svg","pdf","png"), theme_path=None):
         path=output.with_suffix(".drawio"); drawio_export(spec,path,theme); products.append(str(path))
     plt.close(fig)
     report={"figure_kind":kind,"dimensions_in":[width,height],"font_size_pt":theme["font_size"],
-            "products":products,"errors":errors,"warnings":warnings,
-            "verification_scope":"Chart point visibility and log domains; method/benchmark/custom-concept node bounds, edge-node intersections, node text containment; page text clipping. Benchmark eligibility is a declared source-backed contract, not verified scientific truth. Human visual and scientific review remain required."}
+            "products":products,"errors":errors,"warnings":warnings,"layout_issues":layout_issues,
+            "verification_scope":"Chart point visibility and log domains; method/benchmark/custom-concept node bounds, edge-node intersections, node text containment; rendered text collisions, page/clip-box text overflow, legend bounds and optional minimum font size. Rotated text uses conservative bounding boxes; custom clip paths require visual review. Benchmark eligibility is a declared source-backed contract, not verified scientific truth. Human visual and scientific review remain required."}
     output.with_suffix(".qa.json").write_text(json.dumps(report,indent=2)+"\n")
     return report
 
