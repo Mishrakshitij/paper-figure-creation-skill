@@ -1,0 +1,17 @@
+{
+  "title": "Composition template: replace constructed content with the paper's explanation",
+  "canvas": {"width_pt": 504, "height_pt": 210, "background": "white"},
+  "asset_root": ".",
+  "quality": {"minimum_font_size_pt": 7, "minimum_raster_ppi": 300},
+  "assets": [],
+  "overlays": [
+    {"type": "rect", "x": 10, "y": 30, "width": 164, "height": 164, "radius_pt": 6, "fill": "#F1F5F8", "stroke": "#D7E0E8"},
+    {"type": "text", "x": 10, "y": 18, "text": "a  Explain the mechanism", "font_size_pt": 9, "font_weight": "bold"},
+    {"type": "text", "x": 26, "y": 62, "text": "Place a meaningful illustration\nand exact vector internals here.", "font_size_pt": 8},
+    {"type": "text", "x": 194, "y": 18, "text": "b  Show the measured evidence", "font_size_pt": 9, "font_weight": "bold"},
+    {"type": "text", "x": 194, "y": 62, "text": "Import a validated live-text plot SVG.\nNo demonstration scores are supplied.", "font_size_pt": 8},
+    {"type": "arrow", "points": [[82, 95], [82, 125]], "stroke": "#147D92", "stroke_width_pt": 1.2},
+    {"type": "text", "x": 82, "y": 145, "text": "Transformation", "font_size_pt": 8, "anchor": "middle"},
+    {"type": "text", "x": 10, "y": 206, "text": "Constructed layout template • not experimental evidence", "font_size_pt": 7, "fill": "#526170"}
+  ]
+}

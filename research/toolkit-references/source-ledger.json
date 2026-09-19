@@ -1,0 +1,316 @@
+{
+  "reviewed_on": "2026-09-19",
+  "purpose": "Critical design and implementation reference review for paper-visual-design",
+  "scope": {
+    "repositories": 5,
+    "marketplace_pages": 1,
+    "pixel_reviewed_assets": 4,
+    "source_files": 20,
+    "not_performed": [
+      "No independent execution of upstream scripts.",
+      "No manuscript-scale PDF inspection of these reference assets.",
+      "No scientific replication of their paper claims.",
+      "No hundreds-paper review in this update."
+    ]
+  },
+  "reuse_policy": "Original implementation and original prose. No reviewed third-party code, artwork, icon, or dataset is copied or redistributed by this review.",
+  "marketplace": {
+    "url": "https://mcpmarket.com/tools/skills/scientific-figures-for-research",
+    "observed_name": "scientific-figures",
+    "observed_version": "0.2.0",
+    "current_upstream": "neuromechanist/research-skills",
+    "difference": "Marketplace describes a monolithic react-pdf pipeline; reviewed current source uses separate SVG composition, plotting, icons, diagram and QA skills.",
+    "license": "Listing terms not treated as a license for upstream code or assets."
+  },
+  "sources": [
+    {
+      "repo": "pengqianhan/codex-paper-figure-skill",
+      "license": "MIT",
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/pengqianhan/codex-paper-figure-skill/blob/5538ad98a8724ecb4ed70102514cd9e51c00c0ee/LICENSE",
+          "inspection": "license declaration inspected"
+        },
+        {
+          "path": "codex-paper-figure-skill/SKILL.md",
+          "url": "https://github.com/pengqianhan/codex-paper-figure-skill/blob/5538ad98a8724ecb4ed70102514cd9e51c00c0ee/codex-paper-figure-skill/SKILL.md",
+          "inspection": "source inspected"
+        }
+      ],
+      "pixel_reviewed_assets": [
+        {
+          "path": "outputs/icon-crispr/demo-icon-crispr-preview.png",
+          "url": "https://github.com/pengqianhan/codex-paper-figure-skill/blob/5538ad98a8724ecb4ed70102514cd9e51c00c0ee/outputs/icon-crispr/demo-icon-crispr-preview.png",
+          "inspection": "rendered PNG pixels inspected",
+          "redistributed": false
+        }
+      ],
+      "adopt": [
+        "Traceable dependency graph before layout.",
+        "Generate a composition reference, then rebuild native editable objects.",
+        "Keep icon sources and permissions explicit."
+      ],
+      "avoid": [
+        "Treating a generated reference as scientific authority.",
+        "Using equal cards and generic icons as a substitute for mechanism internals."
+      ],
+      "commit": "5538ad98a8724ecb4ed70102514cd9e51c00c0ee",
+      "repository_url": "https://github.com/pengqianhan/codex-paper-figure-skill",
+      "license_url": "https://github.com/pengqianhan/codex-paper-figure-skill/blob/5538ad98a8724ecb4ed70102514cd9e51c00c0ee/LICENSE"
+    },
+    {
+      "repo": "ChenLiu-1996/figures4papers",
+      "license": "CC-BY-NC-4.0",
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/LICENSE",
+          "inspection": "license declaration inspected"
+        },
+        {
+          "path": "scientific-figure-making/SKILL.md",
+          "url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/scientific-figure-making/SKILL.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "figure_ImmunoStruct/raw_data.py",
+          "url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/figure_ImmunoStruct/raw_data.py",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "figure_ImmunoStruct/plot_bars.py",
+          "url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/figure_ImmunoStruct/plot_bars.py",
+          "inspection": "source inspected"
+        }
+      ],
+      "pixel_reviewed_assets": [
+        {
+          "path": "assets/ImmunoStruct_results_IEDB.png",
+          "url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/assets/ImmunoStruct_results_IEDB.png",
+          "inspection": "rendered PNG pixels inspected",
+          "redistributed": false
+        },
+        {
+          "path": "assets/RNAGenScape_teaser.png",
+          "url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/assets/RNAGenScape_teaser.png",
+          "inspection": "rendered PNG pixels inspected",
+          "redistributed": false
+        }
+      ],
+      "adopt": [
+        "Repeated method colors and shared method ordering.",
+        "An ablation inclusion matrix aligned with outcome rows.",
+        "Keep the same scientific object in both conceptual comparison panels."
+      ],
+      "avoid": [
+        "Truncated bar axes as a default.",
+        "Inferring uncertainty type from a variable named std.",
+        "Copying the code or artwork into a permissively licensed toolkit."
+      ],
+      "commit": "3c181f85e82c6f24948fcaaf3be6696102b41d8d",
+      "repository_url": "https://github.com/ChenLiu-1996/figures4papers",
+      "license_url": "https://github.com/ChenLiu-1996/figures4papers/blob/3c181f85e82c6f24948fcaaf3be6696102b41d8d/LICENSE"
+    },
+    {
+      "repo": "Yuan1z0825/nature-skills",
+      "license": "Apache-2.0 at root; third-party assets have separate terms",
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/LICENSE",
+          "inspection": "license declaration inspected"
+        },
+        {
+          "path": "skills/nature-figure/SKILL.md",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/SKILL.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "skills/nature-figure/README.md",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/README.md",
+          "inspection": "targeted excerpt"
+        },
+        {
+          "path": "skills/nature-figure/manifest.yaml",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/manifest.yaml",
+          "inspection": "targeted excerpt"
+        },
+        {
+          "path": "skills/nature-figure/references/multipanel-evidence-architecture.md",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/references/multipanel-evidence-architecture.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "skills/nature-figure/references/asset-adaptation.md",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/references/asset-adaptation.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "skills/nature-figure/assets/figures4papers/THIRD_PARTY_NOTICES.md",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/assets/figures4papers/THIRD_PARTY_NOTICES.md",
+          "inspection": "source inspected"
+        }
+      ],
+      "pixel_reviewed_assets": [
+        {
+          "path": "skills/nature-figure/assets/chart-atlas/atlas-03-heatmaps.png",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/skills/nature-figure/assets/chart-atlas/atlas-03-heatmaps.png",
+          "inspection": "rendered PNG pixels inspected",
+          "redistributed": false
+        }
+      ],
+      "adopt": [
+        "Choose complementary evidence roles before choosing panel geometries.",
+        "Check semantic compatibility before adapting a template.",
+        "Audit final rendered dimensions, fonts and collisions."
+      ],
+      "avoid": [
+        "Assuming every atlas example has correct color semantics.",
+        "Using a journal-inspired style as official venue requirements.",
+        "Treating stale vendored notices as the current upstream license."
+      ],
+      "commit": "9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5",
+      "repository_url": "https://github.com/Yuan1z0825/nature-skills",
+      "license_url": "https://github.com/Yuan1z0825/nature-skills/blob/9cecfef6ac683fa59d7d15d2e22f98fa71dacaf5/LICENSE"
+    },
+    {
+      "repo": "Orchestra-Research/AI-Research-SKILLs",
+      "license": "MIT",
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/773a52944ba4747a18bd4ae9ade53fff041adcbc/LICENSE",
+          "inspection": "license declaration inspected"
+        },
+        {
+          "path": "20-ml-paper-writing/academic-plotting/SKILL.md",
+          "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/773a52944ba4747a18bd4ae9ade53fff041adcbc/20-ml-paper-writing/academic-plotting/SKILL.md",
+          "inspection": "source inspected"
+        }
+      ],
+      "pixel_reviewed_assets": [],
+      "adopt": [
+        "Route numerical data to deterministic plotting.",
+        "Extract entities and relationships from manuscript context.",
+        "Save source scripts and vector plot exports."
+      ],
+      "avoid": [
+        "Authoritative architecture wiring and labels embedded in generated raster.",
+        "Calling mean plus/minus standard deviation a confidence interval.",
+        "Assuming a named palette is sufficient accessibility verification."
+      ],
+      "commit": "773a52944ba4747a18bd4ae9ade53fff041adcbc",
+      "repository_url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
+      "license_url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/773a52944ba4747a18bd4ae9ade53fff041adcbc/LICENSE"
+    },
+    {
+      "repo": "neuromechanist/research-skills",
+      "license": "BSD-3-Clause",
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/neuromechanist/research-skills/blob/af4f609f395d825ea2d2dadddc223be70ae904da/LICENSE",
+          "inspection": "license declaration inspected"
+        },
+        {
+          "path": "plugins/figures/skills/scientific-figure/SKILL.md",
+          "url": "https://github.com/neuromechanist/research-skills/blob/af4f609f395d825ea2d2dadddc223be70ae904da/plugins/figures/skills/scientific-figure/SKILL.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "plugins/figures/skills/svg-primitives/SKILL.md",
+          "url": "https://github.com/neuromechanist/research-skills/blob/af4f609f395d825ea2d2dadddc223be70ae904da/plugins/figures/skills/svg-primitives/SKILL.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "plugins/figures/skills/figure-qa/SKILL.md",
+          "url": "https://github.com/neuromechanist/research-skills/blob/af4f609f395d825ea2d2dadddc223be70ae904da/plugins/figures/skills/figure-qa/SKILL.md",
+          "inspection": "source inspected"
+        },
+        {
+          "path": "plugins/figures/skills/ai-full-figure/scripts/overlay_labels.py",
+          "url": "https://github.com/neuromechanist/research-skills/blob/af4f609f395d825ea2d2dadddc223be70ae904da/plugins/figures/skills/ai-full-figure/scripts/overlay_labels.py",
+          "inspection": "source inspected"
+        }
+      ],
+      "pixel_reviewed_assets": [],
+      "adopt": [
+        "Build illustration, plots and schematics separately, then compose.",
+        "Preserve SVG text and inspect effective physical font sizes.",
+        "Use an independent reviewer with deterministic and visual checks."
+      ],
+      "avoid": [
+        "Passing point sizes as unitless pixel-viewBox values.",
+        "Adding physical scale bars without measured calibration.",
+        "Following the older marketplace snapshot instead of current source."
+      ],
+      "commit": "af4f609f395d825ea2d2dadddc223be70ae904da",
+      "repository_url": "https://github.com/neuromechanist/research-skills",
+      "license_url": "https://github.com/neuromechanist/research-skills/blob/af4f609f395d825ea2d2dadddc223be70ae904da/LICENSE"
+    }
+  ],
+  "verified_pitfalls": [
+    {
+      "source": "neuromechanist/research-skills",
+      "path": "plugins/figures/skills/ai-full-figure/scripts/overlay_labels.py",
+      "lines": [
+        115,
+        128,
+        195
+      ],
+      "finding": "font_size_pt is written as a unitless SVG font-size in a pixel-addressed viewBox.",
+      "inference": "For a 1024-unit-wide viewBox rendered at 89 mm, a numeric size of 8 is approximately 1.97 physical points, not 8.",
+      "formula": "8 * (89 / 25.4 * 72) / 1024",
+      "remedy": "Use a physical-point coordinate system or explicitly convert requested points through the complete scale."
+    },
+    {
+      "source": "ChenLiu-1996/figures4papers",
+      "path": "figure_ImmunoStruct/raw_data.py",
+      "lines": [
+        20,
+        21
+      ],
+      "finding": "The array called std divides the third metric by sqrt(5), while the first two entries are supplied without this division.",
+      "inference": "The field name alone does not establish a shared uncertainty definition.",
+      "remedy": "Require per-metric uncertainty definitions from the actual experiment or caption."
+    },
+    {
+      "source": "ChenLiu-1996/figures4papers",
+      "path": "figure_ImmunoStruct/plot_bars.py",
+      "lines": [
+        29,
+        40,
+        50,
+        60,
+        87
+      ],
+      "finding": "Large source canvases and nonzero bar-axis limits appear in demonstration code.",
+      "remedy": "Create at final physical size; retain zero bar baselines or use clearly scaled dot/interval plots."
+    },
+    {
+      "source": "Orchestra-Research/AI-Research-SKILLs",
+      "path": "20-ml-paper-writing/academic-plotting/SKILL.md",
+      "lines": [
+        353,
+        363,
+        393,
+        398
+      ],
+      "finding": "The confidence-band example uses mean plus/minus std; an example described as diverging uses YlOrRd.",
+      "remedy": "Verify statistical meaning and actual colormap behavior rather than copying headings."
+    },
+    {
+      "source": "Yuan1z0825/nature-skills",
+      "path": "skills/nature-figure/assets/chart-atlas/atlas-03-heatmaps.png",
+      "finding": "Rendered panels d/h/l/p are titled sequential and annotate negative numbers while showing colorbars beginning at zero.",
+      "remedy": "Validate sign, center, clipping and legend semantics against actual data."
+    },
+    {
+      "source": "Yuan1z0825/nature-skills",
+      "path": "skills/nature-figure/assets/figures4papers/THIRD_PARTY_NOTICES.md",
+      "finding": "Notice dated 2026-08-03 says upstream had no explicit license; current upstream LICENSE declares CC BY-NC4.0. It also refers to a MIT root license while current nature-skills root declares Apache-2.0.",
+      "remedy": "Verify current upstream and file-level notices before reuse; this review redistributes no assets."
+    }
+  ]
+}

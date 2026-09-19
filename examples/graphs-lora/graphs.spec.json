@@ -1,0 +1,1174 @@
+{
+  "version": 1,
+  "kind": "graphs",
+  "status": "final",
+  "figure": {
+    "width_in": 7.2,
+    "height_in": 3.95,
+    "font_pt": 8,
+    "title": "LoRA: accuracy with a smaller trainable update",
+    "subtitle": "All eight GPT-3 settings in Table 4; trainable parameters shown on a log scale",
+    "note": "No entry-specific uncertainty is reported; markers show point estimates."
+  },
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "method",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Section 4.1, printed page 4, Equation 3 and subsequent scaling/initialization/merge paragraphs; Section 4.2, printed page 5"
+      },
+      {
+        "id": "protocol",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Section D.4, printed pages 19-20; Table 12, printed page 21; Section 5.5 and Table 4 caption, printed page 8"
+      },
+      {
+        "id": "row_ft",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (Full FT) row with 175,255.8M trainable parameters"
+      },
+      {
+        "id": "row_bitfit",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (BitFit) row with 14.2M trainable parameters"
+      },
+      {
+        "id": "row_preembed",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (PreEmbed) row with 3.2M trainable parameters"
+      },
+      {
+        "id": "row_prelayer",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (PreLayer) row with 20.2M trainable parameters"
+      },
+      {
+        "id": "row_adapter7",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (AdapterH) row with 7.1M trainable parameters"
+      },
+      {
+        "id": "row_adapter40",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (AdapterH) row with 40.1M trainable parameters"
+      },
+      {
+        "id": "row_lora4",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (LoRA) row with 4.7M trainable parameters"
+      },
+      {
+        "id": "row_lora37",
+        "kind": "paper",
+        "locator": "https://arxiv.org/pdf/2106.09685v2",
+        "location": "Table 4, printed page 8 (PDF page index 7), GPT-3 (LoRA) row with 37.7M trainable parameters"
+      }
+    ],
+    "retrieved_utc": "2026-09-09",
+    "paper_version": "arXiv:2106.09685v2, 16 Oct 2021",
+    "extraction": "Web tool parsed original PDF text. Direct PDF download returned HTTP403. No digitization of plots.",
+    "inclusion": "All eight Table 4 settings on WikiSQL and MNLI-matched. Counts copied to task-context references to identify the same plotted method setting; no altered measurements.",
+    "task_uncertainty": {
+      "WikiSQL_typical_sd_pp": 0.5,
+      "MNLI_m_typical_sd_pp": 0.1,
+      "SAMSum_typical_sd_points": [
+        0.2,
+        0.2,
+        0.1
+      ],
+      "source_id": "protocol",
+      "interpretation": "Task-level typical standard deviations over random seeds, not entry-specific estimates. No chart error bars."
+    }
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "params",
+        "label": "Trainable parameters",
+        "unit": "million parameters",
+        "direction": "lower"
+      },
+      {
+        "id": "wiki",
+        "label": "WikiSQL logical-form accuracy",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "mnli",
+        "label": "MNLI-matched accuracy",
+        "unit": "percent",
+        "direction": "higher"
+      }
+    ],
+    "results": [
+      {
+        "id": "ft_wiki",
+        "method_id": "ft",
+        "metric_id": "wiki",
+        "source_id": "row_ft",
+        "value": 73.8,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_wiki_params",
+        "method_id": "ft",
+        "metric_id": "params",
+        "source_id": "row_ft",
+        "value": 175255.8,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "bitfit_wiki",
+        "method_id": "bitfit",
+        "metric_id": "wiki",
+        "source_id": "row_bitfit",
+        "value": 71.3,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_wiki_params",
+        "method_id": "bitfit",
+        "metric_id": "params",
+        "source_id": "row_bitfit",
+        "value": 14.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "preembed_wiki",
+        "method_id": "preembed",
+        "metric_id": "wiki",
+        "source_id": "row_preembed",
+        "value": 63.1,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_wiki_params",
+        "method_id": "preembed",
+        "metric_id": "params",
+        "source_id": "row_preembed",
+        "value": 3.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "prelayer_wiki",
+        "method_id": "prelayer",
+        "metric_id": "wiki",
+        "source_id": "row_prelayer",
+        "value": 70.1,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_wiki_params",
+        "method_id": "prelayer",
+        "metric_id": "params",
+        "source_id": "row_prelayer",
+        "value": 20.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "adapter7_wiki",
+        "method_id": "adapter7",
+        "metric_id": "wiki",
+        "source_id": "row_adapter7",
+        "value": 71.9,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_wiki_params",
+        "method_id": "adapter7",
+        "metric_id": "params",
+        "source_id": "row_adapter7",
+        "value": 7.1,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "adapter40_wiki",
+        "method_id": "adapter40",
+        "metric_id": "wiki",
+        "source_id": "row_adapter40",
+        "value": 73.2,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_wiki_params",
+        "method_id": "adapter40",
+        "metric_id": "params",
+        "source_id": "row_adapter40",
+        "value": 40.1,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "lora4_wiki",
+        "method_id": "lora4",
+        "metric_id": "wiki",
+        "source_id": "row_lora4",
+        "value": 73.4,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_wiki_params",
+        "method_id": "lora4",
+        "metric_id": "params",
+        "source_id": "row_lora4",
+        "value": 4.7,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "lora37_wiki",
+        "method_id": "lora37",
+        "metric_id": "wiki",
+        "source_id": "row_lora37",
+        "value": 74.0,
+        "source_column": "WikiSQL logical-form accuracy",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_wiki_params",
+        "method_id": "lora37",
+        "metric_id": "params",
+        "source_id": "row_lora37",
+        "value": 37.7,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "WikiSQL",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "ft_mnli",
+        "method_id": "ft",
+        "metric_id": "mnli",
+        "source_id": "row_ft",
+        "value": 89.5,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "ft_mnli_params",
+        "method_id": "ft",
+        "metric_id": "params",
+        "source_id": "row_ft",
+        "value": 175255.8,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "bitfit_mnli",
+        "method_id": "bitfit",
+        "metric_id": "mnli",
+        "source_id": "row_bitfit",
+        "value": 91.0,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "bitfit_mnli_params",
+        "method_id": "bitfit",
+        "metric_id": "params",
+        "source_id": "row_bitfit",
+        "value": 14.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "preembed_mnli",
+        "method_id": "preembed",
+        "metric_id": "mnli",
+        "source_id": "row_preembed",
+        "value": 88.6,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "preembed_mnli_params",
+        "method_id": "preembed",
+        "metric_id": "params",
+        "source_id": "row_preembed",
+        "value": 3.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "prelayer_mnli",
+        "method_id": "prelayer",
+        "metric_id": "mnli",
+        "source_id": "row_prelayer",
+        "value": 89.5,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "prelayer_mnli_params",
+        "method_id": "prelayer",
+        "metric_id": "params",
+        "source_id": "row_prelayer",
+        "value": 20.2,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "adapter7_mnli",
+        "method_id": "adapter7",
+        "metric_id": "mnli",
+        "source_id": "row_adapter7",
+        "value": 89.8,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter7_mnli_params",
+        "method_id": "adapter7",
+        "metric_id": "params",
+        "source_id": "row_adapter7",
+        "value": 7.1,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "adapter40_mnli",
+        "method_id": "adapter40",
+        "metric_id": "mnli",
+        "source_id": "row_adapter40",
+        "value": 91.5,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "adapter40_mnli_params",
+        "method_id": "adapter40",
+        "metric_id": "params",
+        "source_id": "row_adapter40",
+        "value": 40.1,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "lora4_mnli",
+        "method_id": "lora4",
+        "metric_id": "mnli",
+        "source_id": "row_lora4",
+        "value": 91.7,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora4_mnli_params",
+        "method_id": "lora4",
+        "metric_id": "params",
+        "source_id": "row_lora4",
+        "value": 4.7,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      },
+      {
+        "id": "lora37_mnli",
+        "method_id": "lora37",
+        "metric_id": "mnli",
+        "source_id": "row_lora37",
+        "value": 91.6,
+        "source_column": "MNLI-matched accuracy",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "lora37_mnli_params",
+        "method_id": "lora37",
+        "metric_id": "params",
+        "source_id": "row_lora37",
+        "value": 37.7,
+        "source_column": "Trainable parameters",
+        "comparison": {
+          "dataset": "MNLI-matched",
+          "split": "validation",
+          "budget": "2 epochs; batch size 128; AdamW; common pretrained GPT-3 175B",
+          "protocol": "Original paper Table 4. Learning rate tuned by method/dataset; best validation performance selected per run. Hardware NVIDIA Tesla V100. No equal-time or equal-parameter claim."
+        },
+        "uncertainty": null,
+        "applicability_note": "Table 4 trainable parameter count applies to this method setting on this task; source count is not re-estimated."
+      }
+    ],
+    "claims": []
+  },
+  "layout": {
+    "rows": 1,
+    "cols": 2,
+    "left": 0.085,
+    "right": 0.975,
+    "top": 0.78,
+    "bottom": 0.34,
+    "wspace": 0.27,
+    "shared_legend": true,
+    "legend_columns": 4,
+    "legend_y": 0.065
+  },
+  "charts": [
+    {
+      "type": "scatter",
+      "title": "WikiSQL",
+      "metric_id": "wiki",
+      "x_metric_id": "params",
+      "xscale": "log",
+      "xlim": [
+        2,
+        400000
+      ],
+      "ylim": [
+        61.5,
+        76
+      ],
+      "yticks": [
+        64,
+        68,
+        72,
+        76
+      ],
+      "xticks": [
+        10,
+        100,
+        1000,
+        10000,
+        100000
+      ],
+      "xticklabels": [
+        "10",
+        "100",
+        "1k",
+        "10k",
+        "100k"
+      ],
+      "xlabel": "Trainable parameters (millions) \u2193",
+      "ylabel": "Accuracy (%) \u2191",
+      "series": [
+        {
+          "id": "ft",
+          "label": "Full FT \u00b7 175,255.8M",
+          "role": "baseline",
+          "color": "#697783",
+          "marker": "o",
+          "markerfacecolor": "#697783",
+          "values": [
+            73.8
+          ],
+          "result_ids": [
+            "ft_wiki"
+          ],
+          "x_values": [
+            175255.8
+          ],
+          "x_result_ids": [
+            "ft_wiki_params"
+          ],
+          "point_labels": [
+            "Full FT"
+          ],
+          "point_label_offsets": [
+            [
+              -5,
+              -9
+            ]
+          ]
+        },
+        {
+          "id": "bitfit",
+          "label": "BitFit \u00b7 14.2M",
+          "role": "baseline",
+          "color": "#B76D31",
+          "marker": "s",
+          "markerfacecolor": "#B76D31",
+          "values": [
+            71.3
+          ],
+          "result_ids": [
+            "bitfit_wiki"
+          ],
+          "x_values": [
+            14.2
+          ],
+          "x_result_ids": [
+            "bitfit_wiki_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "preembed",
+          "label": "PreEmbed \u00b7 3.2M",
+          "role": "baseline",
+          "color": "#7564A2",
+          "marker": "^",
+          "markerfacecolor": "#7564A2",
+          "values": [
+            63.1
+          ],
+          "result_ids": [
+            "preembed_wiki"
+          ],
+          "x_values": [
+            3.2
+          ],
+          "x_result_ids": [
+            "preembed_wiki_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "prelayer",
+          "label": "PreLayer \u00b7 20.2M",
+          "role": "baseline",
+          "color": "#5388A6",
+          "marker": "v",
+          "markerfacecolor": "#5388A6",
+          "values": [
+            70.1
+          ],
+          "result_ids": [
+            "prelayer_wiki"
+          ],
+          "x_values": [
+            20.2
+          ],
+          "x_result_ids": [
+            "prelayer_wiki_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "adapter7",
+          "label": "AdapterH \u00b7 7.1M",
+          "role": "baseline",
+          "color": "#A8657D",
+          "marker": "P",
+          "markerfacecolor": "#A8657D",
+          "values": [
+            71.9
+          ],
+          "result_ids": [
+            "adapter7_wiki"
+          ],
+          "x_values": [
+            7.1
+          ],
+          "x_result_ids": [
+            "adapter7_wiki_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "adapter40",
+          "label": "AdapterH \u00b7 40.1M",
+          "role": "baseline",
+          "color": "#A8657D",
+          "marker": "X",
+          "markerfacecolor": "#A8657D",
+          "values": [
+            73.2
+          ],
+          "result_ids": [
+            "adapter40_wiki"
+          ],
+          "x_values": [
+            40.1
+          ],
+          "x_result_ids": [
+            "adapter40_wiki_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "lora4",
+          "label": "LoRA \u00b7 4.7M",
+          "role": "proposed",
+          "color": "#007D8A",
+          "marker": "D",
+          "markerfacecolor": "#007D8A",
+          "values": [
+            73.4
+          ],
+          "result_ids": [
+            "lora4_wiki"
+          ],
+          "x_values": [
+            4.7
+          ],
+          "x_result_ids": [
+            "lora4_wiki_params"
+          ],
+          "point_labels": [
+            "4.7M"
+          ],
+          "point_label_offsets": [
+            [
+              0,
+              9
+            ]
+          ]
+        },
+        {
+          "id": "lora37",
+          "label": "LoRA \u00b7 37.7M",
+          "role": "proposed",
+          "color": "#007D8A",
+          "marker": "d",
+          "markerfacecolor": "white",
+          "values": [
+            74.0
+          ],
+          "result_ids": [
+            "lora37_wiki"
+          ],
+          "x_values": [
+            37.7
+          ],
+          "x_result_ids": [
+            "lora37_wiki_params"
+          ],
+          "point_labels": [
+            "37.7M"
+          ],
+          "point_label_offsets": [
+            [
+              7,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "scatter",
+      "title": "MNLI-matched",
+      "metric_id": "mnli",
+      "x_metric_id": "params",
+      "xscale": "log",
+      "xlim": [
+        2,
+        400000
+      ],
+      "ylim": [
+        88.0,
+        93.0
+      ],
+      "yticks": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "xticks": [
+        10,
+        100,
+        1000,
+        10000,
+        100000
+      ],
+      "xticklabels": [
+        "10",
+        "100",
+        "1k",
+        "10k",
+        "100k"
+      ],
+      "xlabel": "Trainable parameters (millions) \u2193",
+      "ylabel": "Accuracy (%) \u2191",
+      "series": [
+        {
+          "id": "ft",
+          "label": "Full FT \u00b7 175,255.8M",
+          "role": "baseline",
+          "color": "#697783",
+          "marker": "o",
+          "markerfacecolor": "#697783",
+          "values": [
+            89.5
+          ],
+          "result_ids": [
+            "ft_mnli"
+          ],
+          "x_values": [
+            175255.8
+          ],
+          "x_result_ids": [
+            "ft_mnli_params"
+          ],
+          "point_labels": [
+            "Full FT"
+          ],
+          "point_label_offsets": [
+            [
+              -5,
+              -9
+            ]
+          ]
+        },
+        {
+          "id": "bitfit",
+          "label": "BitFit \u00b7 14.2M",
+          "role": "baseline",
+          "color": "#B76D31",
+          "marker": "s",
+          "markerfacecolor": "#B76D31",
+          "values": [
+            91.0
+          ],
+          "result_ids": [
+            "bitfit_mnli"
+          ],
+          "x_values": [
+            14.2
+          ],
+          "x_result_ids": [
+            "bitfit_mnli_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "preembed",
+          "label": "PreEmbed \u00b7 3.2M",
+          "role": "baseline",
+          "color": "#7564A2",
+          "marker": "^",
+          "markerfacecolor": "#7564A2",
+          "values": [
+            88.6
+          ],
+          "result_ids": [
+            "preembed_mnli"
+          ],
+          "x_values": [
+            3.2
+          ],
+          "x_result_ids": [
+            "preembed_mnli_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "prelayer",
+          "label": "PreLayer \u00b7 20.2M",
+          "role": "baseline",
+          "color": "#5388A6",
+          "marker": "v",
+          "markerfacecolor": "#5388A6",
+          "values": [
+            89.5
+          ],
+          "result_ids": [
+            "prelayer_mnli"
+          ],
+          "x_values": [
+            20.2
+          ],
+          "x_result_ids": [
+            "prelayer_mnli_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "adapter7",
+          "label": "AdapterH \u00b7 7.1M",
+          "role": "baseline",
+          "color": "#A8657D",
+          "marker": "P",
+          "markerfacecolor": "#A8657D",
+          "values": [
+            89.8
+          ],
+          "result_ids": [
+            "adapter7_mnli"
+          ],
+          "x_values": [
+            7.1
+          ],
+          "x_result_ids": [
+            "adapter7_mnli_params"
+          ],
+          "point_labels": [
+            ""
+          ],
+          "point_label_offsets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "id": "adapter40",
+          "label": "AdapterH \u00b7 40.1M",
+          "role": "baseline",
+          "color": "#A8657D",
+          "marker": "X",
+          "markerfacecolor": "#A8657D",
+          "values": [
+            91.5
+          ],
+          "result_ids": [
+            "adapter40_mnli"
+          ],
+          "x_values": [
+            40.1
+          ],
+          "x_result_ids": [
+            "adapter40_mnli_params"
+          ],
+          "point_labels": [
+            "AdapterH 40.1M \u00b7 91.5"
+          ],
+          "point_label_offsets": [
+            [
+              17,
+              -13
+            ]
+          ],
+          "label_leaders": true
+        },
+        {
+          "id": "lora4",
+          "label": "LoRA \u00b7 4.7M",
+          "role": "proposed",
+          "color": "#007D8A",
+          "marker": "D",
+          "markerfacecolor": "#007D8A",
+          "values": [
+            91.7
+          ],
+          "result_ids": [
+            "lora4_mnli"
+          ],
+          "x_values": [
+            4.7
+          ],
+          "x_result_ids": [
+            "lora4_mnli_params"
+          ],
+          "point_labels": [
+            "4.7M"
+          ],
+          "point_label_offsets": [
+            [
+              0,
+              9
+            ]
+          ]
+        },
+        {
+          "id": "lora37",
+          "label": "LoRA \u00b7 37.7M",
+          "role": "proposed",
+          "color": "#007D8A",
+          "marker": "d",
+          "markerfacecolor": "white",
+          "values": [
+            91.6
+          ],
+          "result_ids": [
+            "lora37_mnli"
+          ],
+          "x_values": [
+            37.7
+          ],
+          "x_result_ids": [
+            "lora37_mnli_params"
+          ],
+          "point_labels": [
+            "LoRA 37.7M \u00b7 91.6"
+          ],
+          "point_label_offsets": [
+            [
+              17,
+              18
+            ]
+          ],
+          "label_leaders": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Visual Design"
+  short_description: "Plan and build faithful paper figures and graphs"
+  default_prompt: "Use $paper-visual-design to plan and create clear, editable research figures and experimental graphs from my manuscript and data."

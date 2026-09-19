@@ -1,120 +1,109 @@
-# Paper Figure Creation Skill
+# Paper Visual Design
 
-A portable agent skill for AI-paper figures:
+A research-figure toolkit that starts with the science and a figure plan, then creates **teasers, method diagrams, conditional benchmark/setup figures, and standalone experimental graphs**. Optional image-generated illustrations combine with editable SVG labels, wiring, and reproducible plots.
 
-- **Introduction teaser:** a concrete problem and proposed idea in roughly 35% of the usable area, with source-grounded experimental evidence in roughly 65%.
-- **Method / architecture:** an editable explanation of the computation, branches, training signals, and actual proposed change.
-- **Experimental plots:** matched comparisons, readable uncertainty, explicit units, and sourced improvements.
-- **Qualitative / technical comparisons:** aligned observed examples, measured success criteria, and diagnostics that distinguish outcomes from explanations.
-- **Benchmark / environment setup:** a concrete task, its inputs or interactions, information boundaries, and scoring—**selected only when the paper actually contains a substantive setup to explain**.
+**Start with [`paper-visual-design`](skills/paper-visual-design/SKILL.md).** It is the new, self-contained planning and routing skill. The existing [`paper-figure-creation`](skills/paper-figure-creation/SKILL.md) remains available and supplies its bundled evidence checks and rendering foundation. Your existing customizations should be retained when installing an update.
 
-The skill combines paper-specific visual design, editable vector authoring, reproducible plots and numerical evidence checks. Start by deciding what the reader needs to **see**: a changed representation, a candidate's path, an update loop, a spatial relationship, or a comparison taught by a worked example.
+![SEAL hybrid teaser: editable explanation and all reported knowledge conditions](examples/seal-composed/seal-teaser.png)
 
-For “show where and why our method works” requests, the
-[qualitative comparison guide](skills/paper-figure-creation/references/qualitative-comparisons.md)
-connects observed examples to criterion-level measurements and matched-input
-prediction diagnostics. It preserves failures and missing values, distinguishes
-shared architecture from shared weights, and limits causal claims to the available
-controls. The [delivery guide](skills/paper-figure-creation/references/delivery.md)
-also covers surrounding manuscript pages, PDF links, and reproducible review
-snapshots. These are portable instructions inside the skill folder; another
-specialized skill or this conversation is not required.
+## Which workflow should the agent use?
 
-![Hybrid MAE method: an illustrative generated scene with exact masking, token identities, position restoration and masked-only loss](examples/mae-hybrid/figure.png)
+| Request | Route | Result |
+| --- | --- | --- |
+| “Plan the figures for this paper” | [Planning](skills/paper-visual-design/references/planning.md) | Applicable figure inventory, source contracts, composition choices, and build order |
+| “Explain the problem and why our method matters” | [Teaser](skills/paper-visual-design/references/teaser.md) | About 35% concept/example and 65% source-grounded comparison, unless a documented exception fits better |
+| “Show how the algorithm or architecture works” | [Method](skills/paper-visual-design/references/method.md) | Exact operations, component internals, branches, training/inference, and a consistent example |
+| “Explain the benchmark/environment” | [Setup](skills/paper-visual-design/references/benchmark.md) | Task instance, information access, interactions/construction, and scoring—only if a substantive setup exists in the paper |
+| “Plot the results, ablations, or tradeoffs” | [Graphs](skills/paper-visual-design/references/graphs.md) | Standalone reproducible vector graphs with source-traced values and truthful uncertainty |
+| “Show where and why our method works on recorded cases” | [Qualitative comparisons](skills/paper-visual-design/references/qualitative.md) | Matched observations, measured criteria, and diagnostics with explicit limits on causal claims |
+| “Combine illustrations, diagrams, and graph panels” | [Hybrid assembly](skills/paper-visual-design/references/hybrid.md) | One SVG composition with optional raster illustrations and exact editable scientific layers |
+| “Improve this figure” | Relevant route + [review](skills/paper-visual-design/references/review-delivery.md) | Specific communication defects repaired and revised pixels inspected |
 
-The [design revision](docs/design-upgrade.md) responds to feedback that the first gallery was too generic. It draws on actual author-hosted figures from SEAL, BAT, StudentSim, Qwen-Drive and WMRL. New examples include a same-paper MAE redesign, a SEAL teaser/method pair and a WMRL method. See the [gallery](examples/README.md) and [source-by-source critique](research/reference-upgrade/README.md).
+The existing qualitative-comparison, asset-sourcing, connector-routing, publication-polish, layout/overflow, and manuscript-review workflows are preserved in the foundation. The new front door routes to them when relevant.
 
-The new [setup-figure mode](skills/paper-figure-creation/references/benchmark-environment.md) covers static/procedural benchmarks, interactive environments, construction pipelines and controlled variants. Reporting scores on named datasets alone does not trigger it. See the [benchmark update](docs/benchmark-environment-update.md), [research record](research/benchmark-environment/README.md), and original WebArena and ReasoningGym examples in the [gallery](examples/README.md).
+These are choices, not a mandatory four-figure package. Benchmark mentions and result tables alone do not trigger a setup diagram. A benchmark paper need not invent an algorithm architecture. Image generation is useful when an illustrative asset helps; numerical plots and authoritative wiring always remain deterministic.
 
-The [art-direction update](docs/art-direction-update.md) adds focal composition, visible transformations, domain-specific objects and selective depth. Figures can use a rich vector scene or an optional illustrated asset with exact vector labels and wiring. The new MAE example is **hybrid**: its generated input scene is illustrative, its scientific geometry is deterministic, and its predicted output remains symbolic. See [art direction](skills/paper-figure-creation/references/art-direction.md) and [hybrid authoring](skills/paper-figure-creation/references/hybrid-authoring.md).
+## Install and invoke
 
-## Install
-
-Clone this repository:
+Copy the **entire** `skills/paper-visual-design` folder to your agent's personal or project skill directory. It includes `foundation/`, so another skill installation or repository checkout is not required at runtime. The repository's research and example folders are optional.
 
 ```bash
 git clone https://github.com/Mishrakshitij/paper-figure-creation-skill.git
 cd paper-figure-creation-skill
-```
-
-Copy the **entire** `skills/paper-figure-creation` folder into your agent's skill location. All runtime resources are inside that folder; the repository's research and gallery files are optional.
-
-For Codex, a personal installation is:
-
-```bash
+# Codex CLI personal skill; use a project .agents/skills directory if preferred.
 mkdir -p ~/.agents/skills
-cp -R skills/paper-figure-creation ~/.agents/skills/
+cp -R skills/paper-visual-design ~/.agents/skills/
+# Claude Code: copy the same folder into ~/.claude/skills/ instead.
 ```
 
-For Claude Code:
+To update a repository clone, use `git pull --ff-only`, inspect changes, then copy the full skill folder into the location your agent actually discovers. If that folder already exists, compare and preserve your customizations before replacing it. In ChatGPT, use the installed **Paper Visual Design** skill. Explicit invocation:
 
-```bash
-mkdir -p ~/.claude/skills
-cp -R skills/paper-figure-creation ~/.claude/skills/
-```
+> Use **$paper-visual-design** to plan the applicable figures and experimental graphs for this manuscript. Read the method and results first. Explore three compositions for complex figures, use generated illustrative assets only where useful, and keep labels, connections, and data plots editable. Export PDF, SVG, PNG, source, and a brief review record.
 
-If an installation already exists, review your local customizations before replacing it. Project-local `.agents/skills/` and `.claude/skills/` are alternatives. These paths follow the [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills) and [Claude Code skill documentation](https://code.claude.com/docs/en/skills), checked September 2026. Other agents can load the standard [SKILL.md](skills/paper-figure-creation/SKILL.md) folder or read it explicitly; runtime capabilities still vary.
+Claude Code can invoke `/paper-visual-design`. Attach the manuscript, relevant code/equations, result tables or raw measurements, and venue template when available. No specific model name or API key is required by the skill; optional image-generation capability depends on the host agent.
 
-To update an existing clone, pull the current branch with `git pull --ff-only`,
-review the changes, then copy the full skill folder to the location your agent
-actually discovers. Existing installations may use a different configured skills
-directory. Start a new session when the current session has already loaded an
-older version. Keep local customizations before replacing installed files.
+The companion `codex-paper-figure-skill` informed native editable-diagram planning. Its code/artwork is not copied and it is not a required dependency. See [companion integration](skills/paper-visual-design/references/companions.md).
 
-Example request:
+## Build a figure
 
-> Use paper-figure-creation to design the applicable figures for this manuscript: a teaser, a method diagram, and a benchmark/environment setup figure only if the paper describes a substantive setup. Use actual source facts and results, roughly 35% concept and 65% evidence in the teaser, and a 7-inch-wide draft. Export editable SVG, PDF, PNG, source data, and captions. Review at print size and fix concrete defects.
+The working sequence is **understand → plan → choose representation → build graphs/assets → compose → inspect → repair → deliver**. Save a compact [figure plan](skills/paper-visual-design/assets/figure-plan.md) first. Do not stop for approval on routine reversible work already requested.
 
-Codex also supports `$paper-figure-creation`; Claude Code supports `/paper-figure-creation`. Attach the manuscript, method description or code, result tables, and target venue template when available. The skill has no model-name or API-key dependency.
-
-For an explanatory result figure, a useful request is:
-
-> Use paper-figure-creation to compare these recorded examples at the paper's
-> actual width. Show where behavior differs, the exact success criteria, and any
-> available diagnostic on matched inputs. Highlight supported improvements,
-> retain contrary evidence, explain the example-selection rule, and distinguish
-> observed outcomes from hypotheses about their cause. Inspect the exported
-> figure and its placement in the compiled paper.
-
-## Design and build
-
-Read the skill's [visual-story workflow](skills/paper-figure-creation/references/visual-story.md) to choose representations and composition. It includes worked-example recipes, alternative topologies, persistent object identities and local mechanism views. The [semantic-object helpers](skills/paper-figure-creation/references/semantic-primitives.md) provide editable documents, tokens, model states, matrices, grids, configurations and routed connectors for custom compositions.
-
-The JSON renderer below is a starter for compatible layouts. Its output is not the quality target for every paper. Use custom vector geometry when the scientific explanation needs it; the newer examples show that route.
-
-The Python renderer needs Python 3.10+, Matplotlib and NumPy. The evidence validator uses the Python standard library.
+From this repository:
 
 ```bash
 python -m pip install -r requirements.txt
-python skills/paper-figure-creation/scripts/render_figure.py \
-  skills/paper-figure-creation/assets/teaser-template.json \
-  --output output/teaser --strict-layout
-python skills/paper-figure-creation/scripts/render_figure.py \
-  skills/paper-figure-creation/assets/method-template.json \
-  --output output/method --strict-layout
+python skills/paper-figure-creation/scripts/validate_evidence.py figure.json
+python skills/paper-figure-creation/scripts/render_graphs.py graphs.json --output output/graphs
+python skills/paper-figure-creation/scripts/render_figure.py method.json --output output/method --strict-layout
+python skills/paper-figure-creation/scripts/compose_svg.py composition.json --output output/figure --formats svg,pdf,png
 ```
 
-For an eligible benchmark or environment setup, adapt `assets/benchmark-template.json` and run it through the same renderer. Record presence and source location before selecting this mode; the template uses synthetic content solely to demonstrate the schema.
+In a standalone installation, the same scripts are under `paper-visual-design/foundation/scripts/`. The graph renderer supports dot, bar, line, and scatter plots; use custom Matplotlib for other justified encodings under the same evidence/review requirements. Hybrid SVG assembly uses physical points and preserves imported vector plots; PDF/PNG export needs **Inkscape**. See the [graph schema](skills/paper-figure-creation/references/graphs-spec.md) and [composition schema](skills/paper-figure-creation/references/composition-spec.md).
 
-Starter values are visibly labeled synthetic and are only for layout. Replace them with a sourced evidence ledger before using a figure in a paper. Read the [spec format](skills/paper-figure-creation/references/spec-format.md). Custom SVG, Matplotlib or TikZ layouts remain valid when a method needs a different visual structure.
+For model-size versus Elo, component ablations, learning curves, heatmaps, and distributions, use the [research graph recipes](skills/paper-visual-design/references/graph-recipes.md). They require project measurements and document rating-pool comparability, uncertainty, missing data, and scientific units. No user-specific Elo values are bundled.
 
-Outputs include editable-text SVG, vector PDF with embedded fonts, 300-DPI PNG and a bounded geometry report. Method and benchmark figures also export native `.drawio` cells. Native diagrams.net application rendering has not been verified; `.drawio` is an editable graph export, with JSON/source as the canonical geometry. See the [example gallery](examples/README.md).
+The starter renderer is useful for compatible layouts. Bespoke SVG, Matplotlib, TikZ, or native draw.io is encouraged when the scientific explanation requires different geometry. Keep one canonical geometry source. Never force the science into a convenient template.
 
-## Evidence and evaluation
+## Examples by job
 
-The [research record](research/README.md) separates a 500-paper proceedings corpus, automated PDF/caption retrieval, and 20 close visual reviews of official paper-related assets. It does **not** claim 500 hand-reviewed figures, a representative survey, or an objective ranking of the 500 best papers.
+| Job | Example and reproducible source | What to inspect |
+| --- | --- | --- |
+| Standalone graphs | [LoRA tradeoffs](examples/graphs-lora/) | All eight method/settings, two tasks, log parameter axis, and exact evidence references |
+| Hybrid teaser + graphs | [SEAL composition](examples/seal-composed/) | Generated illustrative asset + exact SVG explanation + all three knowledge conditions, including unfavorable comparisons |
+| Method | [Independent LoRA method](examples/lora-forward/) · [SEAL method](examples/seal/) · [MAE hybrid method](examples/mae-hybrid/) | Candidate branches and training return; persistent patch identities and masked-only loss |
+| Interactive setup | [WebArena](examples/webarena-v3/) | One concrete state change and a separate evaluator |
+| Procedural benchmark | [ReasoningGym](examples/reasoning-gym-forward/) | Generated task, model-visible question, and private scoring information |
 
-The gallery contains original explanatory figures for MAE, Transformer, LoRA, SEAL and WMRL, plus setup figures for WebArena and ReasoningGym. Numerical results are transcribed from papers, not newly reproduced experiments. The [first evaluation](docs/evaluation.md) is a historical record; its aggregate aesthetic scores are no longer an acceptance criterion. The revised skill uses separate scientific and communication gates, with concrete misunderstandings and repairs in the [design review](docs/design-upgrade.md). An independent agent used the earlier skill for the LoRA pair. The new figures are guided design iterations with separate comprehension review, not a controlled superiority benchmark.
+The [full gallery](examples/README.md) keeps earlier iterations for comparison. Examples are original explanatory redraws, not author-endorsed figures or newly reproduced experiments. Generated imagery and constructed examples are identified separately from reported evidence.
+
+## Repository map
+
+| Path | Purpose |
+| --- | --- |
+| `skills/paper-visual-design/` | Self-contained front door: concise router, workflow references, plan template, bundled foundation |
+| `skills/paper-figure-creation/` | Preserved foundation and canonical source of shared renderers, validators, design references, and templates |
+| `scripts/sync_visual_design_bundle.py` | Deterministically update/check the copied foundation; do not hand-edit both copies |
+| `examples/` | Source data, build scripts, editable outputs, captions, provenance, and visual reviews |
+| `tests/` | Evidence, setup eligibility, graph, renderer, and composition regression checks |
+| `research/` | Source/version ledgers and bounded visual-reference reviews |
+| `docs/` | Design plans, evaluation records, and change history |
+
+After changing the foundation, rebuild and check the bundle:
 
 ```bash
+python scripts/sync_visual_design_bundle.py
+python scripts/sync_visual_design_bundle.py --check
 python -m unittest discover -s tests -v
-python examples/build_specs.py
 ```
 
-The validator checks declared data, both chart axes, comparability, uncertainty and improvement arithmetic. For benchmark figures it also checks declared eligibility and source anchors, with different contract requirements for static and interactive setups. It cannot verify a source merely because a URL is present, detect every misleading prose claim, or judge whether an omitted baseline matters. Scientific review and actual pixel inspection remain required.
+## Quality, evidence, and limits
 
-## Provenance and license
+The skill preserves nine standing requirements: understand the science; explain visually; explore composition; combine optional generation with vector precision; style consistently; trace scientific claims; inspect and iterate; deliver reproducible editable artifacts; integrate and verify the manuscript when requested.
 
-The implementation and redraws are original. The supplied [Anthropic skills](https://github.com/anthropics/skills) and [Addy Osmani agent-skills](https://github.com/addyosmani/agent-skills) informed packaging and evaluation practices; [research notes](research/skill-repository-lessons.md) identify the inspected sources. Original paper figures and full paper PDFs are not redistributed.
+Checks cover declared values, both graph axes, comparison context, uncertainty and improvement arithmetic, conditional setup contracts, physical composition, and asset provenance. They cannot establish source truth, fair baseline selection, comprehension, or all visual collisions. Inspect actual PDF/PNG pixels at manuscript size and enlarged, and use independent scientific review when available. A valid export is not a publication-quality certificate.
 
-Original code and documentation are MIT licensed. Citations, paper titles, experimental facts, and linked third-party materials retain their respective provenance; this license does not grant rights to those authors' original figures.
+The [current plan](docs/toolkit-plan.md), [validation and review record](docs/toolkit-validation.md), and [reference review](research/toolkit-references/review.md) document this revision. This review inspected five reference repositories, 20 source/license files and four rendered assets. Earlier [research](research/README.md) includes a 500-paper metadata corpus, but does **not** claim 500 close visual reviews. No controlled superiority claim is made for this skill.
+
+## License and provenance
+
+Original code, documentation, and vector redraws are MIT licensed. Paper facts, citations, generated illustrations, and external assets retain their declared provenance; the repository license does not grant rights to third-party figures. See the [source/license ledger](research/toolkit-references/source-ledger.json). In particular, ChenLiu-1996/figures4papers currently uses CC BY-NC 4.0: it was inspected as a reference, and its code/artwork was not copied into this toolkit.

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="350" viewBox="0 0 1008 350"><rect width="1008" height="350" fill="white"/><g font-family="DejaVu Sans" fill="#182C3A">
+<path d="M336,12 V332" fill="none" stroke="#526371" stroke-width="1.5"/>
+<path d="M672,12 V332" fill="none" stroke="#526371" stroke-width="1.5"/>
+<text x="15" y="29" font-size="17">1  Shared-input branches</text>
+<text x="15" y="51" font-size="14">Chosen: data flow first</text>
+<text x="17" y="150" font-size="14">x</text>
+<path d="M30,145 H56 M56,145 V99 H91 M56,145 V210 H91" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="91" y="76" width="64" height="46" fill="#FFF4E8" stroke="#526371"/>
+<text x="98" y="104.0" font-size="14">W₀</text>
+<path d="M155,99 H296 V145" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="91" y="197" width="49" height="27" fill="#FFF4E8" stroke="#526371"/>
+<text x="98" y="215.5" font-size="14">A</text>
+<path d="M140,210 H168" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="168" y="184" width="26" height="52" fill="#FFF4E8" stroke="#526371"/>
+<text x="175" y="215.0" font-size="14">B</text>
+<path d="M194,210 H214" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="214" y="197" width="50" height="27" fill="#FFF4E8" stroke="#526371"/>
+<text x="221" y="215.5" font-size="14">α/r</text>
+<path d="M264,210 H296 V155" fill="none" stroke="#526371" stroke-width="1.5"/>
+<text x="287" y="155" font-size="14">+</text>
+<path d="M306,149 H319" fill="none" stroke="#526371" stroke-width="1.5"/>
+<text x="15" y="285" font-size="14">Separate merge strip below</text>
+<rect x="15" y="301" width="295" height="27" fill="#FFF4E8" stroke="#526371"/>
+<text x="22" y="319.5" font-size="14">Wmerged = W₀ + (α/r)BA</text>
+<text x="350" y="29" font-size="17">2  Vertical residual fork</text>
+<text x="350" y="51" font-size="14">Computation rises through two lanes</text>
+<text x="494" y="310" font-size="14">x</text>
+<path d="M501,296 V271 M501,271 H408 V195 M501,271 H588 V238" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="379" y="145" width="58" height="50" fill="#FFF4E8" stroke="#526371"/>
+<text x="386" y="175.0" font-size="14">W₀</text>
+<rect x="560" y="213" width="55" height="25" fill="#FFF4E8" stroke="#526371"/>
+<text x="567" y="230.5" font-size="14">A</text>
+<path d="M588,213 V184" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="574" y="149" width="28" height="35" fill="#FFF4E8" stroke="#526371"/>
+<text x="581" y="171.5" font-size="14">B</text>
+<path d="M588,149 V120" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="561" y="93" width="54" height="27" fill="#FFF4E8" stroke="#526371"/>
+<text x="568" y="111.5" font-size="14">α/r</text>
+<path d="M408,145 V79 H496 M588,93 V79 H507" fill="none" stroke="#526371" stroke-width="1.5"/>
+<text x="496" y="84" font-size="14">+</text>
+<path d="M501,68 V60" fill="none" stroke="#526371" stroke-width="1.5"/>
+<text x="350" y="332" font-size="14">Tall layout competes with deployment</text>
+<text x="686" y="29" font-size="17">3  Algebra-first factorization</text>
+<text x="686" y="51" font-size="14">Parameter dimensions first</text>
+<rect x="702" y="126" width="70" height="64" fill="#FFF4E8" stroke="#526371"/>
+<text x="709" y="163.0" font-size="14">W₀</text>
+<text x="785" y="164" font-size="14">+</text>
+<rect x="814" y="126" width="27" height="64" fill="#FFF4E8" stroke="#526371"/>
+<text x="821" y="163.0" font-size="14">B</text>
+<rect x="858" y="145" width="100" height="25" fill="#FFF4E8" stroke="#526371"/>
+<text x="865" y="162.5" font-size="14">A</text>
+<text x="814" y="107" font-size="14">scaled by α/r</text>
+<text x="705" y="216" font-size="14">d × k</text>
+<text x="811" y="216" font-size="14">d × r</text>
+<text x="882" y="216" font-size="14">r × k</text>
+<text x="695" y="276" font-size="14">x</text>
+<path d="M711,272 H743" fill="none" stroke="#526371" stroke-width="1.5"/>
+<rect x="743" y="254" width="131" height="36" fill="#FFF4E8" stroke="#526371"/>
+<text x="750" y="277.0" font-size="14">Wmerged</text>
+<path d="M874,272 H919" fill="none" stroke="#526371" stroke-width="1.5"/>
+<text x="930" y="277" font-size="14">h</text>
+<text x="686" y="332" font-size="14">Shared-input path is less visible</text>
+</g></svg>

@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "kind": "graphs",
+  "status": "draft",
+  "figure": {
+    "width_in": 3.5,
+    "height_in": 2.5,
+    "font_pt": 8,
+    "title": "Example comparison",
+    "subtitle": "SYNTHETIC DATA \u2014 layout demonstration"
+  },
+  "provenance": {
+    "data_status": "synthetic",
+    "sources": [
+      {
+        "id": "demo",
+        "kind": "synthetic",
+        "locator": "graphs-template.json",
+        "location": "Explicitly invented template values; replace before a paper claim"
+      }
+    ]
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "accuracy",
+        "label": "Accuracy",
+        "unit": "percent",
+        "direction": "higher"
+      }
+    ],
+    "results": [
+      {
+        "id": "a",
+        "method_id": "a",
+        "metric_id": "accuracy",
+        "source_id": "demo",
+        "value": 72,
+        "comparison": {
+          "dataset": "Illustrative task",
+          "split": "Illustrative held-out split",
+          "budget": "Illustrative common budget"
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "b",
+        "method_id": "b",
+        "metric_id": "accuracy",
+        "source_id": "demo",
+        "value": 77,
+        "comparison": {
+          "dataset": "Illustrative task",
+          "split": "Illustrative held-out split",
+          "budget": "Illustrative common budget"
+        },
+        "uncertainty": null
+      },
+      {
+        "id": "p",
+        "method_id": "p",
+        "metric_id": "accuracy",
+        "source_id": "demo",
+        "value": 84,
+        "comparison": {
+          "dataset": "Illustrative task",
+          "split": "Illustrative held-out split",
+          "budget": "Illustrative common budget"
+        },
+        "uncertainty": null
+      }
+    ],
+    "claims": []
+  },
+  "layout": {
+    "left": 0.3,
+    "right": 0.93,
+    "bottom": 0.25,
+    "top": 0.7
+  },
+  "charts": [
+    {
+      "type": "dot",
+      "title": "",
+      "panel_label": "",
+      "metric_id": "accuracy",
+      "categories": [
+        "Baseline A",
+        "Baseline B",
+        "Proposed"
+      ],
+      "xlabel": "Accuracy (%) \u2191",
+      "xlim": [
+        65,
+        90
+      ],
+      "value_labels": true,
+      "series": [
+        {
+          "id": "methods",
+          "label": "Methods",
+          "values": [
+            72,
+            77,
+            84
+          ],
+          "result_ids": [
+            "a",
+            "b",
+            "p"
+          ],
+          "point_colors": [
+            "#697783",
+            "#B76D31",
+            "#007D8A"
+          ],
+          "point_markers": [
+            "o",
+            "s",
+            "D"
+          ]
+        }
+      ]
+    }
+  ]
+}

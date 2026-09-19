@@ -1,0 +1,77 @@
+{
+  "renderer": "render_graphs.py",
+  "physical_size_in": [
+    7.2,
+    3.95
+  ],
+  "minimum_text_pt": 8.0,
+  "formats": [
+    "svg",
+    "pdf",
+    "png"
+  ],
+  "warnings": [],
+  "evidence": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      {
+        "code": "uncertainty_unreported",
+        "path": "evidence.results",
+        "message": "No uncertainty is declared for: ft_wiki, ft_wiki_params, bitfit_wiki, bitfit_wiki_params, preembed_wiki, preembed_wiki_params, prelayer_wiki, prelayer_wiki_params, adapter7_wiki, adapter7_wiki_params, adapter40_wiki, adapter40_wiki_params, lora4_wiki, lora4_wiki_params, lora37_wiki, lora37_wiki_params, ft_mnli, ft_mnli_params, bitfit_mnli, bitfit_mnli_params, preembed_mnli, preembed_mnli_params, prelayer_mnli, prelayer_mnli_params, adapter7_mnli, adapter7_mnli_params, adapter40_mnli, adapter40_mnli_params, lora4_mnli, lora4_mnli_params, lora37_mnli, lora37_mnli_params. Do not fabricate intervals or assert significance."
+      }
+    ],
+    "computed_claims": []
+  },
+  "layout_issues": [],
+  "data_occlusion_check_requested": true,
+  "panels": [
+    {
+      "title": "WikiSQL",
+      "type": "scatter",
+      "xlim": [
+        2.0,
+        400000.0
+      ],
+      "ylim": [
+        61.5,
+        76.0
+      ],
+      "plotted_result_ids": [
+        "ft_wiki",
+        "bitfit_wiki",
+        "preembed_wiki",
+        "prelayer_wiki",
+        "adapter7_wiki",
+        "adapter40_wiki",
+        "lora4_wiki",
+        "lora37_wiki"
+      ],
+      "missing_result_ids": []
+    },
+    {
+      "title": "MNLI-matched",
+      "type": "scatter",
+      "xlim": [
+        2.0,
+        400000.0
+      ],
+      "ylim": [
+        88.0,
+        93.0
+      ],
+      "plotted_result_ids": [
+        "ft_mnli",
+        "bitfit_mnli",
+        "preembed_mnli",
+        "prelayer_mnli",
+        "adapter7_mnli",
+        "adapter40_mnli",
+        "lora4_mnli",
+        "lora37_mnli"
+      ],
+      "missing_result_ids": []
+    }
+  ],
+  "review_limit": "Checks declared evidence, bounds, size, text overlap, and supported legend/data occlusion. Scientific truth and complete visual quality still require source and pixel review."
+}

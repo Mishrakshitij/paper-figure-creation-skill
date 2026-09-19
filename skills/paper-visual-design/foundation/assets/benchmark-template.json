@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "kind": "benchmark",
+  "status": "draft",
+  "figure": {
+    "width_in": 7.2,
+    "height_in": 4.5,
+    "title": "A task, an interaction loop, and a separate success check",
+    "subtitle": "ILLUSTRATIVE SETUP \u2014 a toy delivery environment, not a reported benchmark",
+    "note": "Illustrative source and layout; replace both before paper use."
+  },
+  "provenance": {
+    "data_status": "synthetic",
+    "sources": [
+      {
+        "id": "toy-contract",
+        "kind": "synthetic",
+        "locator": "Original illustrative delivery task; this file",
+        "location": "benchmark_setup: hand-authored task and episode rules, not paper evidence"
+      }
+    ]
+  },
+  "benchmark_setup": {
+    "presence": "present",
+    "source_id": "toy-contract",
+    "source_location": "This file's illustrative benchmark_setup contract; replace with a paper section or figure",
+    "contribution": "new_environment",
+    "family": "interactive_environment",
+    "unit_of_evaluation": "One toy parcel-delivery episode",
+    "instance_construction": "Hand-author a map, parcel start, destination, and initial agent location",
+    "agent_visible": [
+      "Delivery request",
+      "Current local view",
+      "Results of executed actions"
+    ],
+    "evaluator_only": [
+      "Authoritative final state",
+      "Private success predicate"
+    ],
+    "evaluation": "After the episode, the evaluator checks whether the parcel reached the requested destination; this is a binary task check, not measured performance",
+    "observation": "The current local view and public delivery request",
+    "actions": "Move to an adjacent accessible cell, pick up the parcel, or deliver the parcel",
+    "state_transition": "The chosen valid action updates the agent and parcel locations, then returns a new local view",
+    "reset": "Restore the map, parcel, and agent to the instance's initial state",
+    "termination": "The agent ends the attempt or the parcel is delivered"
+  },
+  "evidence": {
+    "metrics": [],
+    "results": [],
+    "claims": []
+  },
+  "nodes": [
+    {
+      "id": "task",
+      "x": 0.01,
+      "y": 0.6,
+      "w": 0.25,
+      "h": 0.25,
+      "label": "Deliver parcel\nto depot",
+      "detail": "Public task request",
+      "visibility": "public"
+    },
+    {
+      "id": "agent",
+      "x": 0.37,
+      "y": 0.6,
+      "w": 0.22,
+      "h": 0.25,
+      "label": "Agent",
+      "detail": "Chooses an action",
+      "visibility": "agent"
+    },
+    {
+      "id": "environment",
+      "x": 0.74,
+      "y": 0.59,
+      "w": 0.25,
+      "h": 0.28,
+      "label": "Environment",
+      "representation": {
+        "rows": 2,
+        "cols": 3,
+        "labels": [
+          "A",
+          "\u00b7",
+          "D",
+          "\u00b7",
+          "P",
+          "\u00b7"
+        ],
+        "selected": [
+          0,
+          4
+        ]
+      },
+      "detail": "Local view shown"
+    },
+    {
+      "id": "predicate",
+      "x": 0.37,
+      "y": 0.1,
+      "w": 0.22,
+      "h": 0.22,
+      "label": "Private rule",
+      "detail": "Parcel at depot?",
+      "visibility": "evaluator"
+    },
+    {
+      "id": "evaluator",
+      "x": 0.74,
+      "y": 0.1,
+      "w": 0.25,
+      "h": 0.22,
+      "label": "Success check",
+      "detail": "Pass or fail",
+      "visibility": "evaluator"
+    }
+  ],
+  "groups": [
+    {
+      "x": 0.35,
+      "y": 0.06,
+      "w": 0.65,
+      "h": 0.34,
+      "label": "EVALUATOR ONLY \u00b7 no feedback edge to the agent",
+      "fill": "#FFF4E8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "task",
+      "target": "agent"
+    },
+    {
+      "source": "agent",
+      "target": "environment",
+      "source_port": [
+        1,
+        0.25
+      ],
+      "target_port": [
+        0,
+        0.26
+      ],
+      "label": "Action",
+      "label_position": [
+        0.665,
+        0.63
+      ]
+    },
+    {
+      "source": "environment",
+      "target": "agent",
+      "source_port": "top",
+      "target_port": "top",
+      "via": [
+        [
+          0.865,
+          0.94
+        ],
+        [
+          0.48,
+          0.94
+        ]
+      ],
+      "label": "New observation",
+      "label_position": [
+        0.67,
+        0.94
+      ]
+    },
+    {
+      "source": "environment",
+      "target": "evaluator",
+      "source_port": "bottom",
+      "target_port": "top",
+      "label": "Final state",
+      "label_position": [
+        0.865,
+        0.47
+      ]
+    },
+    {
+      "source": "predicate",
+      "target": "evaluator",
+      "label": "Check",
+      "label_position": [
+        0.665,
+        0.245
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "x": 0.01,
+      "y": 0.98,
+      "text": "ONE EPISODE \u00b7 public task and interaction"
+    },
+    {
+      "x": 0.01,
+      "y": 0.38,
+      "text": "Reset initial state"
+    },
+    {
+      "x": 0.01,
+      "y": 0.3,
+      "text": "Stop: end or delivery"
+    },
+    {
+      "x": 0.01,
+      "y": 0.18,
+      "text": "A: agent   P: parcel"
+    },
+    {
+      "x": 0.01,
+      "y": 0.1,
+      "text": "D: destination"
+    }
+  ]
+}

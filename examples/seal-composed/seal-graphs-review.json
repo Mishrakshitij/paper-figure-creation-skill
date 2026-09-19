@@ -1,0 +1,91 @@
+{
+  "renderer": "render_graphs.py",
+  "physical_size_in": [
+    7.0,
+    3.4722222222222223
+  ],
+  "minimum_text_pt": 8.0,
+  "formats": [
+    "svg",
+    "pdf",
+    "png"
+  ],
+  "warnings": [],
+  "evidence": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      {
+        "code": "uncertainty_unreported",
+        "path": "evidence.results",
+        "message": "No uncertainty is declared for: base_single, base_cpt200, base_cpt2067, passage_single, passage_cpt200, passage_cpt2067, synthetic_single, synthetic_cpt200, synthetic_cpt2067, gpt41_single, gpt41_cpt200, gpt41_cpt2067, seal_single, seal_cpt200, seal_cpt2067. Do not fabricate intervals or assert significance."
+      }
+    ],
+    "computed_claims": []
+  },
+  "layout_issues": [],
+  "data_occlusion_check_requested": true,
+  "panels": [
+    {
+      "title": "1 passage\nLoRA",
+      "type": "dot",
+      "xlim": [
+        25.0,
+        70.0
+      ],
+      "ylim": [
+        4.5,
+        -0.5
+      ],
+      "plotted_result_ids": [
+        "base_single",
+        "passage_single",
+        "synthetic_single",
+        "gpt41_single",
+        "seal_single"
+      ],
+      "missing_result_ids": []
+    },
+    {
+      "title": "200 passages\nFull fine-tuning",
+      "type": "dot",
+      "xlim": [
+        25.0,
+        70.0
+      ],
+      "ylim": [
+        4.5,
+        -0.5
+      ],
+      "plotted_result_ids": [
+        "base_cpt200",
+        "passage_cpt200",
+        "synthetic_cpt200",
+        "gpt41_cpt200",
+        "seal_cpt200"
+      ],
+      "missing_result_ids": []
+    },
+    {
+      "title": "2,067 passages\nFull fine-tuning",
+      "type": "dot",
+      "xlim": [
+        25.0,
+        70.0
+      ],
+      "ylim": [
+        4.5,
+        -0.5
+      ],
+      "plotted_result_ids": [
+        "base_cpt2067",
+        "passage_cpt2067",
+        "synthetic_cpt2067",
+        "gpt41_cpt2067",
+        "seal_cpt2067"
+      ],
+      "missing_result_ids": []
+    }
+  ],
+  "review_limit": "Checks declared evidence, bounds, size, text overlap, and supported legend/data occlusion. Scientific truth and complete visual quality still require source and pixel review."
+}

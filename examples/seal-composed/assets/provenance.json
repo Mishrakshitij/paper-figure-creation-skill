@@ -1,0 +1,17 @@
+{
+  "asset": "passage-notebook.jpg",
+  "role": "Generated conceptual illustration; not a reported observation",
+  "generator": "Built-in image_gen",
+  "model": "Not exposed by tool; unknown",
+  "generated_utc": "2026-09-19",
+  "prompt": "Use case: scientific-educational. Asset type: a single text-free illustrative object to embed into an editable scientific paper SVG at small size. Primary request: an open notebook seen almost straight from above, two wide off-white pages with gently rounded lower corners, a narrow teal cloth spine and tiny subtle paper stack depth. Both pages must be completely blank with large uninterrupted flat white writing areas for precise vector text added later. Style: refined contemporary editorial scientific illustration, restrained muted teal and warm ivory, crisp clean silhouette, light soft shadow only, no glossy plastic, no ornament. Composition: centered notebook fills 85 percent of a square canvas; facing pages approximately rectangular and flat, symmetrical, no steep perspective. Background pure solid white. No letters, no words, no symbols, no lines of fake text, no arrows, no charts, no decorative objects, no watermark. This is an illustrative passage object, not experimental evidence.",
+  "original_png_sha256": "a355e1b8915364ac9c34809046791590992339d7fcf6cd2cea4857b6dde8290f",
+  "source_dimensions_px": [
+    1254,
+    1254
+  ],
+  "project_encoding": "RGB JPEG quality 92, optimized; same pixel dimensions, no cropping or geometrical transformation",
+  "external_reference_images": [],
+  "license_status": "Generated for this project. No external artwork was supplied or copied. No claim of a specific third-party asset license.",
+  "authoritative_layers": "All labels, numbers, arrows, parameter glyphs, and plots are separate editable vectors."
+}

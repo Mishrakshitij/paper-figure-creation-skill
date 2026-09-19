@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "kind": "teaser",
+  "status": "draft",
+  "figure": {
+    "width_in": 7.2,
+    "height_in": 3.4,
+    "title": "Use the informative tokens; spend less computation",
+    "subtitle": "Illustrative design example with synthetic data",
+    "note": "Fixed training protocol; timing uses identical hardware and batch size.",
+    "shared_legend": true
+  },
+  "provenance": {
+    "data_status": "synthetic",
+    "sources": [
+      {
+        "id": "demo",
+        "kind": "synthetic",
+        "locator": "Original design demonstration",
+        "location": "Hand-authored illustrative values; not experimental evidence"
+      }
+    ]
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "accuracy",
+        "label": "Accuracy",
+        "direction": "higher",
+        "unit": "percent"
+      },
+      {
+        "id": "time",
+        "label": "Inference time",
+        "direction": "lower",
+        "unit": "milliseconds"
+      }
+    ],
+    "results": [
+      {
+        "id": "a-baseline",
+        "method_id": "baseline",
+        "metric_id": "accuracy",
+        "value": 76,
+        "comparison": {
+          "dataset": "Task A",
+          "split": "test",
+          "budget": "same training budget",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "a-proposed",
+        "method_id": "proposed",
+        "metric_id": "accuracy",
+        "value": 80,
+        "comparison": {
+          "dataset": "Task A",
+          "split": "test",
+          "budget": "same training budget",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "b-baseline",
+        "method_id": "baseline",
+        "metric_id": "accuracy",
+        "value": 79,
+        "comparison": {
+          "dataset": "Task B",
+          "split": "test",
+          "budget": "same training budget",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "b-proposed",
+        "method_id": "proposed",
+        "metric_id": "accuracy",
+        "value": 83,
+        "comparison": {
+          "dataset": "Task B",
+          "split": "test",
+          "budget": "same training budget",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "c-baseline",
+        "method_id": "baseline",
+        "metric_id": "accuracy",
+        "value": 73,
+        "comparison": {
+          "dataset": "Task C",
+          "split": "test",
+          "budget": "same training budget",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "c-proposed",
+        "method_id": "proposed",
+        "metric_id": "accuracy",
+        "value": 79,
+        "comparison": {
+          "dataset": "Task C",
+          "split": "test",
+          "budget": "same training budget",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "time-baseline",
+        "method_id": "baseline",
+        "metric_id": "time",
+        "value": 100,
+        "comparison": {
+          "dataset": "Task A",
+          "split": "test",
+          "budget": "same hardware and batch size",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      },
+      {
+        "id": "time-proposed",
+        "method_id": "proposed",
+        "metric_id": "time",
+        "value": 70,
+        "comparison": {
+          "dataset": "Task A",
+          "split": "test",
+          "budget": "same hardware and batch size",
+          "protocol": "design-demo"
+        },
+        "source_id": "demo"
+      }
+    ],
+    "claims": [
+      {
+        "id": "faster",
+        "type": "reduction",
+        "baseline_result_id": "time-baseline",
+        "proposed_result_id": "time-proposed",
+        "display_value": 30,
+        "decimals": 0
+      }
+    ]
+  },
+  "concept": {
+    "kind": "token_grid",
+    "title": "Keep useful content",
+    "input_label": "A tokenized input",
+    "rows": 3,
+    "cols": 4,
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l"
+    ],
+    "selected": [
+      1,
+      5,
+      6,
+      10
+    ],
+    "operation_label": "Select",
+    "output_label": "4 useful tokens\ncontinue to the model",
+    "note": "Schematic selection"
+  },
+  "charts": [
+    {
+      "type": "dot",
+      "title": "Higher quality",
+      "metric_id": "accuracy",
+      "categories": [
+        "Task A",
+        "Task B",
+        "Task C"
+      ],
+      "xlabel": "Accuracy (%) \u2191",
+      "xlim": [
+        70,
+        88
+      ],
+      "xticks": [
+        70,
+        80,
+        88
+      ],
+      "series": [
+        {
+          "id": "baseline",
+          "label": "Baseline",
+          "role": "baseline",
+          "values": [
+            76,
+            79,
+            73
+          ],
+          "result_ids": [
+            "a-baseline",
+            "b-baseline",
+            "c-baseline"
+          ]
+        },
+        {
+          "id": "proposed",
+          "label": "Proposed",
+          "role": "proposed",
+          "values": [
+            80,
+            83,
+            79
+          ],
+          "result_ids": [
+            "a-proposed",
+            "b-proposed",
+            "c-proposed"
+          ]
+        }
+      ],
+      "legend_loc": "lower right"
+    },
+    {
+      "type": "bar",
+      "title": "Lower cost",
+      "metric_id": "time",
+      "categories": [
+        "Task A"
+      ],
+      "xlabel": "Time (ms) \u2193",
+      "xlim": [
+        0,
+        130
+      ],
+      "xticks": [
+        0,
+        50,
+        100
+      ],
+      "value_format": ".0f",
+      "claim_id": "faster",
+      "claim_label": "Time reduction: ",
+      "series": [
+        {
+          "id": "baseline",
+          "label": "Baseline",
+          "role": "baseline",
+          "values": [
+            100
+          ],
+          "result_ids": [
+            "time-baseline"
+          ]
+        },
+        {
+          "id": "proposed",
+          "label": "Proposed",
+          "role": "proposed",
+          "values": [
+            70
+          ],
+          "result_ids": [
+            "time-proposed"
+          ]
+        }
+      ],
+      "legend_loc": "lower right"
+    }
+  ]
+}

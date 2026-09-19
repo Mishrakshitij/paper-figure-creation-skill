@@ -2,6 +2,21 @@
 
 These are original explanatory redraws using published data. They are not the original authors' artwork or new experimental reproductions. Each directory preserves source/specification, editable vector output, PDF and PNG.
 
+## Current toolkit: graphs, composition, and independent method creation
+
+Start with the [new planning/router skill](../skills/paper-visual-design/SKILL.md). These examples exercise explicit production routes rather than a single generic layout. The [toolkit plan](../docs/toolkit-plan.md) records scope; each example records source, geometry, and review.
+
+| Route | Example | What it tests |
+| --- | --- | --- |
+| Standalone graphs | [LoRA](graphs-lora/) | All eight settings across two tasks, both axes traced, log-scale resource tradeoff |
+| Hybrid teaser + graphs | [SEAL](seal-composed/) | Generated notebook illustration, exact editable labels and adaptation geometry, all fifteen Table 2 values |
+| Independent method use | [LoRA forward task](lora-forward/) | A fresh agent uses the standalone skill on a primary method source |
+| Method and setup | Existing examples below | Detailed mechanism, interactive environment, and procedural task construction |
+
+![LoRA standalone graphs](graphs-lora/lora-tradeoff.png)
+
+![SEAL composed teaser](seal-composed/seal-teaser.png)
+
 ## Art direction and optional hybrid illustration
 
 These examples explore a clearer focal relationship and richer pictorial content while retaining the source contract. This is a small design iteration, not a controlled comparison proving that richer imagery is always better. The [update and limitations](../docs/art-direction-update.md) and [independent review](../docs/art-direction-independent-review.md) record concrete findings.

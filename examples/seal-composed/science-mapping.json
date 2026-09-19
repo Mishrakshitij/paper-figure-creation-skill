@@ -1,0 +1,41 @@
+{
+  "source": "https://arxiv.org/html/2506.10943v2",
+  "paper_version": "v2, 18 September 2025",
+  "verified_on": "2026-09-19",
+  "diagram_scope": "Knowledge-incorporation adaptation, after learning the self-edit generation policy. Not a full training algorithm.",
+  "relationships": [
+    {
+      "visual": "Passage to self-edit arrow",
+      "meaning": "The language model generates implications or restatements from a passage.",
+      "source_location": "Section 3.2, Knowledge Incorporation; Figure 2 caption"
+    },
+    {
+      "visual": "Self-edit to fine-tuning arrow",
+      "meaning": "The original passage and generated self-edit training sequences are used for a supervised parameter update.",
+      "source_location": "Section 3.2, Knowledge Incorporation; Section 4.2 and Table 2 adaptation-data definitions"
+    },
+    {
+      "visual": "Parameter glyph theta to theta-prime",
+      "meaning": "A symbolic model parameter change, not measured weight values or a literal depiction of all trainable parameters.",
+      "source_location": "Section 3.1; Algorithm 1 inner-loop update"
+    },
+    {
+      "visual": "Adapted parameters to no-passage question",
+      "meaning": "Evaluate the adapted language model on questions without the original passage in its context.",
+      "source_location": "Figure 2 caption; Section 4.2"
+    },
+    {
+      "visual": "Rewrite policy learned with RL note",
+      "meaning": "The omitted outer training loop rewards self-edits using adapted-model task performance.",
+      "source_location": "Section 3.1; Algorithm 1"
+    }
+  ],
+  "constructed_example": {
+    "passage": "In 1987, Lyra opened its archive.",
+    "self_edit": "The archive's opening year was 1987.",
+    "question": "When did the archive open?",
+    "status": "Invented for exposition; neither a source passage nor a measured model generation. No model answer or success is asserted."
+  },
+  "numerical_data": "All fifteen Table 2 means. Result-level source locations and method-specific comparison contexts are in results-panel.spec.json and seal-graphs.spec.json.",
+  "limitations": "No entry-specific uncertainty or statistical-significance inference. Matched compute is not asserted. The schematic does not replace the full SEAL method diagram."
+}

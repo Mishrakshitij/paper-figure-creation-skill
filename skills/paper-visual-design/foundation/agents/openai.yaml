@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Figure Creation"
+  short_description: "Creative, evidence-grounded figures with precise layout"
+  default_prompt: "Use $paper-figure-creation to design a distinctive visual argument from my paper's mechanisms and evidence, using meaningful examples, clear comparisons, editable geometry, and verified readability at manuscript size."

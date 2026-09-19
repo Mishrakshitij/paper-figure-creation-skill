@@ -1,0 +1,532 @@
+{
+  "version": 1,
+  "status": "draft",
+  "provenance": {
+    "data_status": "reported",
+    "sources": [
+      {
+        "id": "knowledge",
+        "kind": "paper",
+        "locator": "https://arxiv.org/html/2506.10943v2",
+        "location": "Table 2, all five rows and all three columns; Section 4.2 and Appendix B for protocol"
+      }
+    ],
+    "retrieved_utc": "2026-09-19",
+    "paper_version": "2506.10943v2 (18 September 2025)",
+    "extraction": "Exact HTML table values, checked against source rows. Project-page CPT prose is stale relative to v2 and excluded.",
+    "uncertainty": "No entry-specific uncertainty in Tables 1–2; no error bars or significance claim.",
+    "example_status": "Exact Table 2 values; no constructed quantitative evidence."
+  },
+  "evidence": {
+    "metrics": [
+      {
+        "id": "single",
+        "label": "No-context SQuAD accuracy: Single passage (LoRA)",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "cpt200",
+        "label": "No-context SQuAD accuracy: Continued pretraining: 200 passages",
+        "unit": "percent",
+        "direction": "higher"
+      },
+      {
+        "id": "cpt2067",
+        "label": "No-context SQuAD accuracy: Continued pretraining: 2067 passages",
+        "unit": "percent",
+        "direction": "higher"
+      }
+    ],
+    "results": [
+      {
+        "id": "base_single",
+        "method_id": "base",
+        "metric_id": "single",
+        "value": 32.7,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Base model row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "base_cpt200",
+        "method_id": "base",
+        "metric_id": "cpt200",
+        "value": 32.7,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Base model row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "base_cpt2067",
+        "method_id": "base",
+        "metric_id": "cpt2067",
+        "value": 29.0,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Base model row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "passage_single",
+        "method_id": "passage",
+        "metric_id": "single",
+        "value": 33.5,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Passage only row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "passage_cpt200",
+        "method_id": "passage",
+        "metric_id": "cpt200",
+        "value": 36.0,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Passage only row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "passage_cpt2067",
+        "method_id": "passage",
+        "metric_id": "cpt2067",
+        "value": 31.2,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Passage only row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "synthetic_single",
+        "method_id": "synthetic",
+        "metric_id": "single",
+        "value": 39.7,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Self-generated data row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "synthetic_cpt200",
+        "method_id": "synthetic",
+        "metric_id": "cpt200",
+        "value": 50.6,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Self-generated data row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "synthetic_cpt2067",
+        "method_id": "synthetic",
+        "metric_id": "cpt2067",
+        "value": 43.4,
+        "source_id": "knowledge",
+        "source_location": "Table 2: Self-generated data row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "gpt41_single",
+        "method_id": "gpt41",
+        "metric_id": "single",
+        "value": 46.3,
+        "source_id": "knowledge",
+        "source_location": "Table 2: GPT-4.1 data row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "gpt41_cpt200",
+        "method_id": "gpt41",
+        "metric_id": "cpt200",
+        "value": 59.4,
+        "source_id": "knowledge",
+        "source_location": "Table 2: GPT-4.1 data row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "gpt41_cpt2067",
+        "method_id": "gpt41",
+        "metric_id": "cpt2067",
+        "value": 49.2,
+        "source_id": "knowledge",
+        "source_location": "Table 2: GPT-4.1 data row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "seal_single",
+        "method_id": "seal",
+        "metric_id": "single",
+        "value": 47.0,
+        "source_id": "knowledge",
+        "source_location": "Table 2: SEAL row, Single passage (LoRA) column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "1 passage; LoRA; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "seal_cpt200",
+        "method_id": "seal",
+        "metric_id": "cpt200",
+        "value": 58.2,
+        "source_id": "knowledge",
+        "source_location": "Table 2: SEAL row, Continued pretraining: 200 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "200 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      },
+      {
+        "id": "seal_cpt2067",
+        "method_id": "seal",
+        "metric_id": "cpt2067",
+        "value": 46.4,
+        "source_id": "knowledge",
+        "source_location": "Table 2: SEAL row, Continued pretraining: 2067 passages column",
+        "comparison": {
+          "dataset": "SQuAD; Qwen2.5-7B",
+          "split": "Table 2 evaluation questions, no passage in context",
+          "budget": "2067 passages; full finetuning; method-specific tuned hyperparameters, not compute matched",
+          "protocol": "Section 4.2; reported Table 2 comparison"
+        }
+      }
+    ],
+    "claims": []
+  },
+  "kind": "graphs",
+  "figure": {
+    "width_in": 7.0,
+    "height_in": 3.4722222222222223,
+    "font_pt": 8,
+    "dpi": 150,
+    "title": "SEAL: knowledge incorporation across adaptation regimes",
+    "subtitle": "Qwen2.5-7B · SQuAD questions answered without the passage · Table 2",
+    "note": "Reported means; no entry-specific uncertainty. Tuned hyperparameters; not compute matched."
+  },
+  "layout": {
+    "rows": 1,
+    "cols": 3
+  },
+  "charts": [
+    {
+      "type": "dot",
+      "metric_id": "single",
+      "title": "1 passage\nLoRA",
+      "panel_label": "",
+      "categories": [
+        "Base model",
+        "Passage only",
+        "Passage +\nself-generated",
+        "Passage +\nGPT-4.1 data",
+        "SEAL"
+      ],
+      "xlim": [
+        25,
+        70
+      ],
+      "xticks": [
+        30,
+        45,
+        60
+      ],
+      "xlabel": "Accuracy (%)",
+      "value_labels": true,
+      "value_format": ".1f",
+      "rect": [
+        0.21428571428571427,
+        0.168,
+        0.22023809523809523,
+        0.572
+      ],
+      "series": [
+        {
+          "id": "methods",
+          "label": "Methods",
+          "values": [
+            32.7,
+            33.5,
+            39.7,
+            46.3,
+            47.0
+          ],
+          "result_ids": [
+            "base_single",
+            "passage_single",
+            "synthetic_single",
+            "gpt41_single",
+            "seal_single"
+          ],
+          "point_colors": [
+            "#74818A",
+            "#74818A",
+            "#74818A",
+            "#A96932",
+            "#007D8A"
+          ],
+          "point_markers": [
+            "o",
+            "s",
+            "^",
+            "D",
+            "*"
+          ],
+          "point_label_offsets": [
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dot",
+      "metric_id": "cpt200",
+      "title": "200 passages\nFull fine-tuning",
+      "panel_label": "",
+      "categories": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "xlim": [
+        25,
+        70
+      ],
+      "xticks": [
+        30,
+        45,
+        60
+      ],
+      "xlabel": "Accuracy (%)",
+      "value_labels": true,
+      "value_format": ".1f",
+      "rect": [
+        0.4722222222222222,
+        0.168,
+        0.22023809523809523,
+        0.572
+      ],
+      "series": [
+        {
+          "id": "methods",
+          "label": "Methods",
+          "values": [
+            32.7,
+            36.0,
+            50.6,
+            59.4,
+            58.2
+          ],
+          "result_ids": [
+            "base_cpt200",
+            "passage_cpt200",
+            "synthetic_cpt200",
+            "gpt41_cpt200",
+            "seal_cpt200"
+          ],
+          "point_colors": [
+            "#74818A",
+            "#74818A",
+            "#74818A",
+            "#A96932",
+            "#007D8A"
+          ],
+          "point_markers": [
+            "o",
+            "s",
+            "^",
+            "D",
+            "*"
+          ],
+          "point_label_offsets": [
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dot",
+      "metric_id": "cpt2067",
+      "title": "2,067 passages\nFull fine-tuning",
+      "panel_label": "",
+      "categories": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "xlim": [
+        25,
+        70
+      ],
+      "xticks": [
+        30,
+        45,
+        60
+      ],
+      "xlabel": "Accuracy (%)",
+      "value_labels": true,
+      "value_format": ".1f",
+      "rect": [
+        0.7301587301587301,
+        0.168,
+        0.22023809523809523,
+        0.572
+      ],
+      "series": [
+        {
+          "id": "methods",
+          "label": "Methods",
+          "values": [
+            29.0,
+            31.2,
+            43.4,
+            49.2,
+            46.4
+          ],
+          "result_ids": [
+            "base_cpt2067",
+            "passage_cpt2067",
+            "synthetic_cpt2067",
+            "gpt41_cpt2067",
+            "seal_cpt2067"
+          ],
+          "point_colors": [
+            "#74818A",
+            "#74818A",
+            "#74818A",
+            "#A96932",
+            "#007D8A"
+          ],
+          "point_markers": [
+            "o",
+            "s",
+            "^",
+            "D",
+            "*"
+          ],
+          "point_label_offsets": [
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

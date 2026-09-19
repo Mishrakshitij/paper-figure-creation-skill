@@ -1,0 +1,387 @@
+{
+  "canvas_pt": [
+    504.0,
+    342.0
+  ],
+  "canonical_geometry": "composition manifest",
+  "scientific_evidence_validated": false,
+  "assets": [
+    {
+      "id": "notebook",
+      "path": "assets/passage-notebook.jpg",
+      "sha256": "5245f28a99e5169f05c4e05936ea23552727ee6452422530955677f5de6d1b88",
+      "kind": "raster",
+      "box_pt": [
+        14.0,
+        60.0,
+        154.0,
+        154.0
+      ],
+      "provenance": {
+        "source": "Built-in image generation, 2026-09-19",
+        "role": "illustration",
+        "license_status": "Generated for this project; no external source artwork. Model identity not exposed."
+      },
+      "pixel_dimensions": [
+        1254,
+        1254
+      ],
+      "effective_ppi": 586.29
+    },
+    {
+      "id": "results",
+      "path": "results-panel.svg",
+      "sha256": "178793425adc52a74f83bb77bfabf3348ed99e1e371fb3984893165536ae300f",
+      "kind": "vector",
+      "box_pt": [
+        182.0,
+        76.0,
+        318.0,
+        220.0
+      ],
+      "provenance": {
+        "source": "SEAL Table 2, https://arxiv.org/html/2506.10943v2",
+        "role": "reported quantitative evidence",
+        "license_status": "Data replot; original vector design."
+      },
+      "editable_text_count": 37,
+      "minimum_font_size_pt": 8.0
+    }
+  ],
+  "labels": [
+    {
+      "text": "30",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "45",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "60",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "Base model",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "Passage only",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "Passage +",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "self-generated",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "Passage +",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "GPT-4.1 data",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "SEAL",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "32.7",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "33.5",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "39.7",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "46.3",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "47.0",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "1 passage",
+      "font_size_pt": 9.0,
+      "asset": "results"
+    },
+    {
+      "text": "LoRA",
+      "font_size_pt": 9.0,
+      "asset": "results"
+    },
+    {
+      "text": "30",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "45",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "60",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "32.7",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "36.0",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "50.6",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "59.4",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "58.2",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "200 passages",
+      "font_size_pt": 9.0,
+      "asset": "results"
+    },
+    {
+      "text": "Full FT",
+      "font_size_pt": 9.0,
+      "asset": "results"
+    },
+    {
+      "text": "30",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "45",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "60",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "29.0",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "31.2",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "43.4",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "49.2",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "46.4",
+      "font_size_pt": 8.0,
+      "asset": "results"
+    },
+    {
+      "text": "2,067 passages",
+      "font_size_pt": 9.0,
+      "asset": "results"
+    },
+    {
+      "text": "Full FT",
+      "font_size_pt": 9.0,
+      "asset": "results"
+    },
+    {
+      "text": "SEAL learns how to write its own training data",
+      "font_size_pt": 13.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Knowledge incorporation \u00b7 Qwen2.5-7B \u00b7 SQuAD without passage context",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "a   Rewrite, adapt, then answer",
+      "font_size_pt": 9.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "b   All methods, all three settings",
+      "font_size_pt": 9.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Mean no-context accuracy (%) \u2191",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "PASSAGE",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "SELF-EDIT",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "In 1987,",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Lyra opened",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "its archive.",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "The archive\u2019s",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "opening year",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "was 1987.",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Generated by LM\u03b8",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Constructed example",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Fine-tune on passage",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "+ self-edit",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "\u03b8",
+      "font_size_pt": 11.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "\u03b8\u2032",
+      "font_size_pt": 11.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Ask without the passage",
+      "font_size_pt": 9.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "\u201cWhen did the archive open?\u201d",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Rewrite policy learned with RL.",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "SEAL leads for one passage;",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "GPT-4.1 data leads in both CPT settings.",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    },
+    {
+      "text": "Table 2, arXiv:2506.10943v2 \u00b7 No uncertainty reported; tuned hyperparameters, not compute matched.",
+      "font_size_pt": 8.0,
+      "asset": "overlays"
+    }
+  ],
+  "warnings": [],
+  "exports": [
+    {
+      "format": "svg",
+      "path": "/workspace/scratch/51fe0065a464/paper-figure-creation-skill/examples/seal-composed/seal-teaser.svg",
+      "verified": true,
+      "check": "XML parsed; physical dimensions and asset references constructed"
+    },
+    {
+      "format": "pdf",
+      "path": "/workspace/scratch/51fe0065a464/paper-figure-creation-skill/examples/seal-composed/seal-teaser.pdf",
+      "verified": true,
+      "check": "Single PDF page and physical MediaBox dimensions verified; rendered appearance still requires inspection"
+    },
+    {
+      "format": "png",
+      "path": "/workspace/scratch/51fe0065a464/paper-figure-creation-skill/examples/seal-composed/seal-teaser.png",
+      "verified": true,
+      "check": "PNG dimensions 1050\u00d7712 checked against physical size at 150 DPI"
+    }
+  ],
+  "minimum_font_size_pt": 8.0,
+  "review_required": "Visual inspection is required: the compositor does not detect all overlaps, clipped glyphs, arrow crossings, or scientific errors",
+  "manifest_sha256": "9e02e87822aa4597d45c2bdd717027a6b63ba3b144b3ee263965a64d1abd3cf2"
+}

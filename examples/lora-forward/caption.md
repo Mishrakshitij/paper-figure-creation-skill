@@ -1,0 +1,3 @@
+**LoRA adaptation of a linear map.** (a) A shared input x∈ℝᵏ passes through a frozen pretrained matrix W₀∈ℝᵈˣᵏ and a trainable low-rank branch A∈ℝʳˣᵏ followed by B∈ℝᵈˣʳ. The scaled branch output is added coordinate-wise to the pretrained output: h=W₀x+(α/r)BAx, where r≪min(d,k). A is initialized with Gaussian noise and B with zeros, preserving the pretrained output at initialization. (b) After training, Wmerged=W₀+(α/r)BA can be stored and applied as one linear map. Shapes are symbolic and not to scale; no activations or experimental results are depicted. Mechanism redrawn from Hu et al., *LoRA*, arXiv:2106.09685v2, Figure 1 and §4.1, including the scale described immediately after Eq. (3).
+
+Primary source: https://arxiv.org/pdf/2106.09685v2
