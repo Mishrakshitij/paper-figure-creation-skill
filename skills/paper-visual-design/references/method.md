@@ -16,4 +16,6 @@ Preserve the topology through visual polish:
 
 Choose an editable geometry route: custom SVG/TikZ/Matplotlib for exact scientific objects, or native draw.io for interactive editing. A generated whole-figure composition may be a reference, but rebuild authoritative wiring and text. Keep one canonical source and verify native application exports if claiming draw.io delivery.
 
+Under the [house figure standard](../foundation/references/house-figure-standard.md), number the steps with subtle circled ①②③ that match the method text's (i), (ii), (iii) word for word; use generic labels such as "LLM agent" rather than model ids; drop seed numbers, multipliers and formulas used as labels; and check that every text box renders in the compiled PDF.
+
 Caption the concrete mechanism and scope. A reviewer should be able to trace one example and identify the proposal without guessing what arrows mean.

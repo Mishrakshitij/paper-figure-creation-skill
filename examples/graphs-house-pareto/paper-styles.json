@@ -1,0 +1,24 @@
+{
+  "lora": {
+    "role": "proposed"
+  },
+  "ft": {
+    "role": "reference"
+  },
+  "bitfit": {
+    "role": "baseline",
+    "color": "#7C8894"
+  },
+  "preembed": {
+    "role": "baseline",
+    "color": "#4F6D87"
+  },
+  "prelayer": {
+    "role": "baseline",
+    "color": "#9C8F7E"
+  },
+  "adapter": {
+    "role": "baseline",
+    "color": "#5F8479"
+  }
+}

@@ -9,7 +9,8 @@ Use the foundation's [review guide](../foundation/references/review.md) and [del
 3. Trace one example through the figure. Verify object identity, count, operations, learned/frozen states, information access, and return routes. For graphs, identify every method/setting without relying on color alone and verify axes/units/uncertainty.
 4. Inspect grayscale and approximate color-vision views when useful. Such simulations do not establish universal accessibility; redundant labels/markers remain necessary.
 5. Ask an independent reviewer, when available, to explain the figure from its pixels and caption. Provide source material for scientific checking, but do not leak the expected interpretation into a comprehension check.
-6. Record concrete defects and repair the highest-impact one first. Re-export and inspect the changed result. If repeated local fixes cannot resolve congestion, change the layout. Do not inflate a self-assigned aesthetic score into a measured quality claim.
+6. When the house figure standard applies, run its checklist (section 12): role encodings, arrows, print sizes, captions, compact layout and provenance. Check the compiled pages too: no page holds a single figure, wrapped text is at least as tall as its figure, and every diagram text box renders.
+7. Record concrete defects and repair the highest-impact one first. Re-export and inspect the changed result. If repeated local fixes cannot resolve congestion, change the layout. Do not inflate a self-assigned aesthetic score into a measured quality claim.
 
 ## Deliver the artifact set
 

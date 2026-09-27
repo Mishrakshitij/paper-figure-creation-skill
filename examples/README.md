@@ -9,6 +9,7 @@ Start with the [new planning/router skill](../skills/paper-visual-design/SKILL.m
 | Route | Example | What it tests |
 | --- | --- | --- |
 | Standalone graphs | [LoRA](graphs-lora/) | All eight settings across two tasks, both axes traced, log-scale resource tradeoff |
+| House-style Pareto teaser | [LoRA Pareto](graphs-house-pareto/) | The same ledger under the house preset: computed step frontier, role encodings, arrows from the ledger, 6 pt labels at `\linewidth` |
 | Hybrid teaser + graphs | [SEAL](seal-composed/) | Generated notebook illustration, exact editable labels and adaptation geometry, all fifteen Table 2 values |
 | Independent method use | [LoRA forward task](lora-forward/) | A fresh agent uses the standalone skill on a primary method source |
 | Method and setup | Existing examples below | Detailed mechanism, interactive environment, and procedural task construction |

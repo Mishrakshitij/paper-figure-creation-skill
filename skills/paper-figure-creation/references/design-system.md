@@ -6,6 +6,8 @@ Read this after choosing the visual argument in [visual-story.md](visual-story.m
 
 Set the physical width before choosing font sizes. When unspecified, use the skill's 7-inch two-column draft and record that assumption. Obtain the actual manuscript width before final delivery. Redesign a dense two-column figure for one column rather than uniformly shrinking it.
 
+Papers that follow the [house figure standard](house-figure-standard.md) use its sizes instead: figures built at `\linewidth`, labels about 6 pt, panel titles about 7.5 pt, nothing below 5.3 pt.
+
 | Item | Authored starting point | Adjust when |
 |---|---|---|
 | Main labels and axes | 8.5–10 pt at final size | Venue requires another size; final-size inspection finds crowding |

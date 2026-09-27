@@ -49,6 +49,8 @@ If a drawn example is illustrative, label it as a schematic in the panel or capt
 | Which component matters? | Ablation dot plot or paired differences | Same backbone/training protocol; distinguish components from competing methods |
 | What fails? | Matched qualitative pairs plus quantitative scope | Representative selection rule and observed outputs |
 
+When the headline claim is a quality–cost trade-off, the house standard's page-one teaser plots the quality metric against the cost that matters, with a Pareto step frontier computed from the plotted points (`pareto` in [graphs-spec.md](graphs-spec.md)), ours as a large hot-colour star and baselines as muted circles. See [house-figure-standard.md](house-figure-standard.md), section 1. Do not invent a cost axis for a claim that has none.
+
 Use one strong plot if it answers the claim. Add a second only when it supplies a distinct necessary axis, such as cost versus quality, robustness, or an ablation. Do not pack unrelated datasets into one axis to reach a desired visual density.
 
 A strong reference may use a dense radar, many small panels or a large benchmark summary. Reuse such a form only when the new data and reader's question justify it. Radar geometry can imply comparisons through arbitrary axis order, scales and filled area; aligned dot plots or small multiples often make metric-specific comparisons easier. Explain normalization if used and keep the original units recoverable. Do not copy chart types as a visual theme.

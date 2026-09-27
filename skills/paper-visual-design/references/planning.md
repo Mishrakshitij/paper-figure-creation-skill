@@ -6,7 +6,7 @@ Write the smallest useful plan before rendering. Inspect sources, not only the a
 
 Map each central reader question to a figure or panel. Record omitted routes and why. A methods paper may need teaser + method + graphs; a benchmark paper may need teaser + setup + graphs, without architecture. A performance-plot request may need only graphs. A requested setup with no substantive source remains unresolved, not fabricated.
 
-Use the user's venue template. Otherwise start a clearly labeled 7-inch/two-column draft, usually with 8–9 pt body labels; the actual template controls submission dimensions. Separate dimensions of an individual plot from the assembled figure. Scaling a 7-inch plot into a 3-inch slot also scales all its text.
+Use the user's venue template. Under the [house figure standard](../foundation/references/house-figure-standard.md), build each figure at the template's `\linewidth` (5.5 in for ICLR and NeurIPS) with about 6 pt labels. Otherwise start a clearly labeled 7-inch/two-column draft, usually with 8–9 pt body labels; the actual template controls submission dimensions. Separate dimensions of an individual plot from the assembled figure. Scaling a 7-inch plot into a 3-inch slot also scales all its text.
 
 ## Three compositions for complex figures
 
@@ -26,7 +26,7 @@ For every plotted quantity retain source/version, exact cell/file/row, method, m
 
 ## Build order
 
-1. Source ledger and scientific contract.
+1. Source ledger and scientific contract; the paper's style registry (one entry per method, one colour per task) before the first figure.
 2. Three sketches when complex, then selected geometry.
 3. Exact graphs at intended final size.
 4. Vector mechanism objects and any useful generated assets.

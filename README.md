@@ -15,6 +15,7 @@ A research-figure toolkit that starts with the science and a figure plan, then c
 | “Show how the algorithm or architecture works” | [Method](skills/paper-visual-design/references/method.md) | Exact operations, component internals, branches, training/inference, and a consistent example |
 | “Explain the benchmark/environment” | [Setup](skills/paper-visual-design/references/benchmark.md) | Task instance, information access, interactions/construction, and scoring—only if a substantive setup exists in the paper |
 | “Plot the results, ablations, or tradeoffs” | [Graphs](skills/paper-visual-design/references/graphs.md) | Standalone reproducible vector graphs with source-traced values and truthful uncertainty |
+| “Make it in our house style” or a quality–cost teaser | [House figure standard](skills/paper-figure-creation/references/house-figure-standard.md) | Page-one Pareto teaser with a computed step frontier, star/diamond/circle/square role encodings, ↑/↓ on every metric axis, `\linewidth` builds with 6 pt labels |
 | “Show where and why our method works on recorded cases” | [Qualitative comparisons](skills/paper-visual-design/references/qualitative.md) | Matched observations, measured criteria, and diagnostics with explicit limits on causal claims |
 | “Combine illustrations, diagrams, and graph panels” | [Hybrid assembly](skills/paper-visual-design/references/hybrid.md) | One SVG composition with optional raster illustrations and exact editable scientific layers |
 | “Improve this figure” | Relevant route + [review](skills/paper-visual-design/references/review-delivery.md) | Specific communication defects repaired and revised pixels inspected |
@@ -53,14 +54,16 @@ From this repository:
 ```bash
 python -m pip install -r requirements.txt
 python skills/paper-figure-creation/scripts/validate_evidence.py figure.json
-python skills/paper-figure-creation/scripts/render_graphs.py graphs.json --output output/graphs
+python skills/paper-figure-creation/scripts/render_graphs.py graphs.json --output output/graphs --styles paper-styles.json
 python skills/paper-figure-creation/scripts/render_figure.py method.json --output output/method --strict-layout
 python skills/paper-figure-creation/scripts/compose_svg.py composition.json --output output/figure --formats svg,pdf,png
 ```
 
 In a standalone installation, the same scripts are under `paper-visual-design/foundation/scripts/`. The graph renderer supports dot, bar, line, and scatter plots; use custom Matplotlib for other justified encodings under the same evidence/review requirements. Hybrid SVG assembly uses physical points and preserves imported vector plots; PDF/PNG export needs **Inkscape**. See the [graph schema](skills/paper-figure-creation/references/graphs-spec.md) and [composition schema](skills/paper-figure-creation/references/composition-spec.md).
 
-For model-size versus Elo, component ablations, learning curves, heatmaps, and distributions, use the [research graph recipes](skills/paper-visual-design/references/graph-recipes.md). They require project measurements and document rating-pool comparability, uncertainty, missing data, and scientific units. No user-specific Elo values are bundled.
+`figure.preset: "house"` applies the house figure standard, a chart `pareto` block computes the Pareto frontier from the plotted points, and one style registry per paper (`--styles`, template in `skills/paper-figure-creation/assets/paper-styles-template.json`) keeps every method's role, colour and marker identical across figures.
+
+For Pareto teasers, scaling sweeps, RL training dynamics, model-size versus Elo, component ablations, learning curves, heatmaps, and distributions, use the [research graph recipes](skills/paper-visual-design/references/graph-recipes.md). They require project measurements and document rating-pool comparability, uncertainty, missing data, and scientific units. No user-specific Elo values are bundled.
 
 The starter renderer is useful for compatible layouts. Bespoke SVG, Matplotlib, TikZ, or native draw.io is encouraged when the scientific explanation requires different geometry. Keep one canonical geometry source. Never force the science into a convenient template.
 
@@ -69,6 +72,7 @@ The starter renderer is useful for compatible layouts. Bespoke SVG, Matplotlib, 
 | Job | Example and reproducible source | What to inspect |
 | --- | --- | --- |
 | Standalone graphs | [LoRA tradeoffs](examples/graphs-lora/) | All eight method/settings, two tasks, log parameter axis, and exact evidence references |
+| House-style Pareto teaser | [LoRA Pareto](examples/graphs-house-pareto/) | Same ledger under the house preset: computed step frontier, role encodings from a paper style registry, arrows from the ledger, 6 pt text at 5.5 in |
 | Hybrid teaser + graphs | [SEAL composition](examples/seal-composed/) | Generated illustrative asset + exact SVG explanation + all three knowledge conditions, including unfavorable comparisons |
 | Method | [Independent LoRA method](examples/lora-forward/) · [SEAL method](examples/seal/) · [MAE hybrid method](examples/mae-hybrid/) | Candidate branches and training return; persistent patch identities and masked-only loss |
 | Interactive setup | [WebArena](examples/webarena-v3/) | One concrete state change and a separate evaluator |

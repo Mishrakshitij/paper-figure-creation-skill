@@ -4,6 +4,32 @@ Use only the recipe that answers the manuscript's question. These are design
 contracts, not fixed layouts. Obtain missing measurements from project artifacts;
 do not substitute plausible values or transfer published results to the user's work.
 
+## Page-one Pareto teaser (quality versus cost)
+
+Plot the headline quality metric on y against the cost a user pays on x:
+tokens read per call, training accelerator-seconds, latency or trainable
+parameters. Link both axes to results for the same method and context
+(`x_metric_id`, `x_result_ids`), so the better directions come from the ledger.
+Add `pareto: true`: the renderer computes the non-dominated points and draws the
+staircase between the measured points, legend last. Under the house preset, our
+settings are stars in one hot colour with "(ours)", ablations hollow diamonds,
+baselines muted circles and prompted or reference models black squares. Use one
+series per method with one point per setting, so each method has one legend
+entry. When model families are evaluated separately, draw one aligned panel per
+family with a shared y scale. `examples/graphs-house-pareto/` is a worked
+example. A frontier describes these observations under these objectives; it
+does not show that a method wins at matched cost.
+
+## Scaling sweeps and training dynamics
+
+Give each scalability axis its own graph in one styling: model size within a
+family (parameters on x, often log), input or context length, number of rules
+or updates, number of seeds, and cost. For RL training runs, show reward, KL
+divergence, loss and completion length as aligned small multiples at the
+recorded steps, one colour per method as in every other figure. Replace a graph
+whose axis saturates and no longer separates the methods; state that result in
+words instead.
+
 ## Model size versus Elo
 
 Use a scatterplot with parameter count on x and the reported rating on y. A log x
@@ -61,7 +87,7 @@ line charts for ordered measurements and scatter for disconnected budgets.
 
 ## Task heatmaps and distributions
 
-Heatmaps need a visible colorbar, units, and explicit missing-cell styling.
+Heatmaps need a visible colorbar, units, and explicit missing-cell styling. Under the house standard, cells show percentages in one number format, every heatmap keeps one orientation (for example methods as rows and tasks as columns) and one stated colour direction, each takes at most about 30% of a page, and several go in a 2 × 2 grid. Regenerate a heatmap from its data; never paste a stitched image.
 Separate incompatible metrics or use a disclosed normalization whose reference
 is recorded. Use a sequential scale for magnitude and a centered diverging scale
 for signed changes. A numeric annotation must map to its actual color scale.

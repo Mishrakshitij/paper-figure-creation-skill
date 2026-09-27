@@ -1,6 +1,6 @@
 ---
 name: paper-figure-creation
-description: Create and refine evidence-grounded AI-paper teasers, method or architecture diagrams, standalone experimental graphs, qualitative comparisons, and benchmark or environment setup figures when a substantive setup exists, with meaningful examples, editable vector geometry, and checks for fidelity, overlap, clipping, and readability at manuscript size.
+description: Create and refine evidence-grounded AI-paper teasers, method or architecture diagrams, standalone experimental graphs, qualitative comparisons, and benchmark or environment setup figures when a substantive setup exists, with meaningful examples, editable vector geometry, and checks for fidelity, overlap, clipping, and readability at manuscript size. Includes the owner's house figure standard and a renderer for Pareto trade-off teasers with role encodings and ledger-derived axis arrows.
 ---
 
 # Paper figure creation
@@ -22,6 +22,10 @@ Do not turn the abstract or implementation notes into paragraphs inside boxes. F
 | Benchmark / environment setup, **only when present in the paper** | Explain the task population, one concrete case, the available information or interactions, and how evaluation works | [benchmark-environment.md](references/benchmark-environment.md) |
 | Multiple figures | Select only applicable modes; share semantic colors, notation, component names and example identity | Selected references |
 | Rework an existing figure | Inspect its source and rendered image; preserve correct semantics and repair specific communication failures | Relevant mode plus [review.md](references/review.md) |
+
+### House figure standard
+
+For papers by the repository owner (GitHub: Mishrakshitij) and their research group, read [house-figure-standard.md](references/house-figure-standard.md) before designing. It replaces the generic starting points in this skill: a page-one teaser that plots quality against cost with a computed Pareto step frontier; ours as a large hot-colour star labelled "(ours)", ablations as hollow diamonds, baselines as muted circles and references as black squares, identical in every figure and table; a better-direction arrow on every metric axis; figures built at `\linewidth` with about 6 pt labels and nothing below 5.3 pt; bold-takeaway captions; compact layouts; and plots only from result artifacts. For other papers, apply it when the authors ask for that style. The venue template and the authors' explicit requests take precedence.
 
 Start with [visual-story.md](references/visual-story.md) when inventing a composition or repairing a weak figure. Read [evidence.md](references/evidence.md) before drawing numerical claims, [design-system.md](references/design-system.md) for physical styling and editable tools, and [semantic-primitives.md](references/semantic-primitives.md) when implementing worked examples. Use [pattern-atlas.md](references/pattern-atlas.md) for additional topology choices. Load these selectively; an ordinary figure request does not need the full research corpus.
 
@@ -64,7 +68,7 @@ If presence is unclear, leave this mode unselected, inspect the available setup 
 
 For a paper-wide production plan, use **paper-visual-design** when installed. It adds dedicated planning, graphs, and hybrid assembly workflows while preserving this skill as its bundled foundation. Existing direct invocations of this skill remain valid. Preserve local customizations when installing either skill.
 
-Standalone plots use `scripts/render_graphs.py` and the same evidence ledger as teaser panels; read [graphs-spec.md](references/graphs-spec.md). Compose editable vector panels with illustrative raster assets using `scripts/compose_svg.py`; read [composition-spec.md](references/composition-spec.md). Both routes require actual pixel inspection and scientific review. Build imported plots at their final physical size and inspect their effective text size after scaling.
+Standalone plots use `scripts/render_graphs.py` and the same evidence ledger as teaser panels; read [graphs-spec.md](references/graphs-spec.md). Its `figure.preset: "house"` applies the house standard, a chart `pareto` block computes the frontier from the plotted points, and one style registry (`--styles paper-styles.json`, template in `assets/paper-styles-template.json`) keeps each method's encoding identical across all figures of a paper. Compose editable vector panels with illustrative raster assets using `scripts/compose_svg.py`; read [composition-spec.md](references/composition-spec.md). Both routes require actual pixel inspection and scientific review. Build imported plots at their final physical size and inspect their effective text size after scaling.
 
 ## Establish a compact figure brief
 

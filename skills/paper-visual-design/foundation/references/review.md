@@ -17,6 +17,7 @@ Use `pass`, `fail` or `not_applicable` with an evidence note. A failure leaves t
 | Usable output | File opens; critical text/marks visible at intended size; no clipped glyphs | SVG exists but labels disappear in the exported manuscript PDF |
 | Continuous, unambiguous connectors | Named start/end ports, visible complete paths, deliberate branch/merge markers, correct arrowhead direction | A white label hides a shaft; an arrow points to the wrong action; a gap detaches the tip from its target |
 | Layout and asset integrity | No unintended label/block overlap or overflow; consistent alignment and spacing; clean cutout edges | Text crosses a feature branch, a mask erases a subject detail, or final resizing moves labels off their objects |
+| House standard, when it applies | The checklist in [house-figure-standard.md](house-figure-standard.md), section 12: role encodings, arrows, print sizes, captions, compact layout, provenance | A baseline drawn as a star, an axis without its better direction, 4 pt tick labels after scaling, or a teaser frontier drawn by hand |
 
 For digitized results, mark extraction as approximate and preserve source/extraction uncertainty. Do not silently convert approximate readings into precise headline claims. For synthetic examples, retain the synthetic label in the image, caption and metadata. If uncertainty is unavailable, disclose that fact instead of fabricating it.
 

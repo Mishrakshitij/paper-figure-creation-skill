@@ -6,6 +6,8 @@ Use roughly 30–40% of usable panel area for the problem and proposed change, a
 
 Show a recognizable input, the failure or limitation, and a visible changed operation. Keep one worked example through the proposal. Replace a generic box saying “our method” with its decisive transformation. Keep the conceptual panel simple enough to read before the caption.
 
+Under the [house figure standard](../foundation/references/house-figure-standard.md), a trade-off claim gets the page-one Pareto teaser in [graph recipes](graph-recipes.md), and Figure 1 stays on page 1: when fonts grow, keep the teaser's size and tighten its layout.
+
 Use [graphs](graphs.md) for evidence. Include the relevant baseline family and important tradeoffs, not only favorable rows. If a proposed method loses under some conditions, show that plainly and bound the headline. Do not insert an attractive “30% better” annotation unless the declared source and arithmetic establish that exact scoped claim.
 
 A teaser is a visual abstract, not a miniature full methods section. Move candidate selection/training loops to the method figure when they crowd the main message. A benchmark teaser can show the problem/task example and coverage or performance evidence without inventing a proposed algorithm.

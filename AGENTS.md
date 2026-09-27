@@ -2,7 +2,7 @@
 
 Read `skills/paper-visual-design/SKILL.md` first for paper-figure requests. Select only applicable workflows. Read `README.md` for repository navigation and build commands.
 
-- Preserve the user's scientific and visual preferences. Plan a new complex figure before rendering; keep a concrete source/evidence contract and explore three distinct compositions.
+- Preserve the user's scientific and visual preferences. For the owner's papers, apply `skills/paper-figure-creation/references/house-figure-standard.md` and render graphs with `figure.preset: "house"` and one style registry per paper. Plan a new complex figure before rendering; keep a concrete source/evidence contract and explore three distinct compositions.
 - Treat standalone graphs as a first-class workflow. Generate illustrative assets only; construct exact scientific labels, topology, and quantitative marks with editable vector tools.
 - Select benchmark/environment figures only when the paper describes a substantive setup. Do not infer a new benchmark contribution from dataset names in a results table.
 - Edit shared tools and foundation guidance in `skills/paper-figure-creation/`. `skills/paper-visual-design/foundation/` is a generated copy, not a second hand-maintained source. Run `python scripts/sync_visual_design_bundle.py` after changing the foundation, then `--check`.

@@ -1,0 +1,7 @@
+{
+  "ours": {"role": "proposed"},
+  "ours_no_component": {"role": "ablation"},
+  "strongest_baseline": {"role": "baseline", "color": "#4F6D87"},
+  "second_baseline": {"role": "baseline", "color": "#7C8894"},
+  "prompted_model": {"role": "reference"}
+}
